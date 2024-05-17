@@ -1,12 +1,18 @@
 import React from "react";
-import "./App.css";
-import Test from "./page/test";
+import { Header, Header_InnerBox } from "./header/headerStyle";
+import { Main } from "./main/mainStyle";
+import { Footer, Footer_InnerBox } from "./footer/footerStyle";
 
 function App() {
   return (
     <div className="App">
-      <Test />
-      <h1>Main</h1>
+      <Header>
+        <Header_InnerBox>Header</Header_InnerBox>
+      </Header>
+      <Main>Main</Main>
+      <Footer>
+        <Footer_InnerBox>Footer</Footer_InnerBox>
+      </Footer>
     </div>
   );
 }
