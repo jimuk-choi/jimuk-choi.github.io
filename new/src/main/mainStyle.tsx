@@ -8,5 +8,5 @@ export const Main = styled.div`
   height: calc(100vh - 120px);
   padding: 8px;
   box-sizing: border-box;
-  background-color: yellow;
+  background-color: teal;
 `;
