@@ -27,7 +27,7 @@ function Hub() {
   return (
     <div>
       <h1>Hub Page</h1>
-      <Link to="https://jimukchoi.github.io/JMC.github.io/">
+      <Link target="blank" to="https://jimukchoi.github.io/JMC.github.io/">
         <Button>Previous</Button>
       </Link>
       <Link to="/test01">
