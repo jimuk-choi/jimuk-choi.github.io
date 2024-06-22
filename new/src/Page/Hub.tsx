@@ -26,7 +26,7 @@ export const Button = styled.button`
 function Hub() {
   return (
     <div>
-      <h1>Hub Page</h1>
+      <h1>Hub Page 123</h1>
       <Link target="blank" to="https://jimukchoi.github.io/JMC.github.io/">
         <Button>Previous</Button>
       </Link>
