@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Test01 from "./Page/test01";
+import Test01 from "./Page/main";
 import Test02 from "./Page/test02";
 
 const Router = () => {

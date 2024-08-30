@@ -6,7 +6,7 @@ import {
   MainSectionTitleWrapper,
 } from "../component_Style/heading/h1";
 
-function Test01() {
+function Main() {
   return (
     <>
       <MainSectionTitleWrapper>
@@ -20,4 +20,4 @@ function Test01() {
     </>
   );
 }
-export default Test01;
+export default Main;
