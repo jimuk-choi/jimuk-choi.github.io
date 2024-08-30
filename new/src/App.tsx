@@ -1,5 +1,5 @@
 import { Header, Header_InnerBox } from "./component_Style/header/headerStyle";
-import { Main } from "./component_Style/main/mainStyle";
+import { MainSection } from "./component_Style/section/mainSectionStyle";
 import { Footer, Footer_InnerBox } from "./component_Style/footer/footerStyle";
 import { Routes, Route } from "react-router-dom";
 import Test01 from "./Page/main";
@@ -14,15 +14,31 @@ function App() {
       <Header>
         <Header_InnerBox>Header</Header_InnerBox>
       </Header>
-      <Main>
+      <MainSection>
         <Routes>
           <Route path="/Hub" element={<Hub />} />
           <Route path="/" element={<Test01 />} />
         </Routes>
-      </Main>
-      <Footer>
-        <Footer_InnerBox>Footer</Footer_InnerBox>
-      </Footer>
+        <div
+          style={{
+            width: "100px",
+            height: "400px",
+          }}
+        >
+          test
+        </div>
+        <div
+          style={{
+            width: "100px",
+            height: "400px",
+          }}
+        >
+          test
+        </div>
+        <Footer>
+          <Footer_InnerBox>Footer</Footer_InnerBox>
+        </Footer>
+      </MainSection>
     </div>
   );
 }
