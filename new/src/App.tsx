@@ -1,6 +1,6 @@
-import { Header, Header_InnerBox } from "./header/headerStyle";
-import { Main } from "./main/footerStyle";
-import { Footer, Footer_InnerBox } from "./footer/footerStyle";
+import { Header, Header_InnerBox } from "./component_Style/header/headerStyle";
+import { Main } from "./component_Style/main/mainStyle";
+import { Footer, Footer_InnerBox } from "./component_Style/footer/footerStyle";
 import { Routes, Route } from "react-router-dom";
 import Test01 from "./Page/test01";
 import Hub from "./Page/Hub";
