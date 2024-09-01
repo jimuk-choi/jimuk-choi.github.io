@@ -1,13 +1,10 @@
 import styled from "@emotion/styled";
 
-export const MainSection = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const MainSectionTitleWrapper = styled.div`
   width: 100%;
-  flex-direction: column;
-  /* height: calc(100vh - 120px); */
-  padding: 0px;
-  box-sizing: border-box;
-  background-color: teal;
+  height: 100vh;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
