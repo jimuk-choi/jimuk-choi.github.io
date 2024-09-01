@@ -11,9 +11,8 @@ export const MainSectionTitleWrapper = styled.div`
 
 export const MainSectionTitle = styled.h1`
   mix-blend-mode: overlay;
-  font-size: 160px;
+  font-size: 16rem;
   color: #000000;
-  font-family: "Helvetica Neue-Bold", Helvetica;
   font-weight: 700;
   letter-spacing: 12.8px;
   line-height: normal;

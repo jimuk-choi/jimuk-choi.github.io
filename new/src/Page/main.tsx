@@ -10,8 +10,24 @@ function Main() {
   return (
     <>
       <MainSectionTitleWrapper>
-        <MainSectionTitle>Heading01 Test</MainSectionTitle>
+        <MainSectionTitle>Hello</MainSectionTitle>
       </MainSectionTitleWrapper>
+      <div
+        style={{
+          width: "100px",
+          height: "400px",
+        }}
+      >
+        test
+      </div>
+      <div
+        style={{
+          width: "100px",
+          height: "400px",
+        }}
+      >
+        test
+      </div>
 
       {/* <h1>test01 Page</h1> */}
       {/* <Link to="/">
