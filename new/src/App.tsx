@@ -34,19 +34,35 @@ function App() {
             <button style={{ fontSize: "1.8rem" }}>menu03</button>
             <button style={{ fontSize: "1.8rem" }}>menu04</button>
           </MenuBox>
-          <button
-            style={{
-              fontSize: "1.8rem",
-              color: "white",
-              backgroundColor: "#F2887A",
-              padding: "12px 48px",
-              borderRadius: "8px",
-              fontWeight: "bold",
-              letterSpacing: "4%",
-            }}
-          >
-            Contact Me Now
-          </button>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <button
+              style={{
+                fontSize: "1.8rem",
+                border: "1px solid #000000",
+                color: "#000000",
+                backgroundColor: "#ffffff",
+                padding: "12px 16px",
+                borderRadius: "8px",
+                fontWeight: "bold",
+                letterSpacing: "4%",
+              }}
+            >
+              En
+            </button>
+            <button
+              style={{
+                fontSize: "1.8rem",
+                color: "white",
+                backgroundColor: "#F2887A",
+                padding: "12px 48px",
+                borderRadius: "8px",
+                fontWeight: "bold",
+                letterSpacing: "4%",
+              }}
+            >
+              Contact Me Now
+            </button>
+          </div>
         </Header_InnerBox>
       </Header>
       <MainSection>
