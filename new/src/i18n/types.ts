@@ -10,3 +10,7 @@ export interface HeaderTexts {
 export interface FooterTexts {
   footerText: string;
 }
+
+export interface Main_Section_Greeting {
+  GreetingTitle: string;
+}

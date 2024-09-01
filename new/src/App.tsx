@@ -15,9 +15,9 @@ import Hub from "./Page/Hub";
 import Logo from "./assets/Logo.svg";
 // data
 import texts_en_header from "./i18n/en/header.json";
-import texts_ko_header from "./i18n/kr/header.json";
+import texts_kr_header from "./i18n/kr/header.json";
 import texts_en_footer from "./i18n/en/footer.json";
-import texts_ko_footer from "./i18n/kr/footer.json";
+import texts_kr_footer from "./i18n/kr/footer.json";
 // type
 import { HeaderTexts, FooterTexts } from "./i18n/types";
 
@@ -28,11 +28,11 @@ const textsData: {
 } = {
   header: {
     en: texts_en_header,
-    ko: texts_ko_header,
+    ko: texts_kr_header,
   },
   footer: {
     en: texts_en_footer,
-    ko: texts_ko_footer,
+    ko: texts_kr_footer,
   },
 };
 

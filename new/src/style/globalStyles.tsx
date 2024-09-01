@@ -12,10 +12,10 @@ const GlobalStyles = () => (
       }
       html {
         font-size: 62.5%;
-        margin: 0;
-        padding: 0;
       }
       body {
+        margin: 0;
+        padding: 0;
         font-family: "Helvetica Neue", sans-serif;
       }
       button {
