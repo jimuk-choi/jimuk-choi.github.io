@@ -6,11 +6,11 @@ import {
   Header_InnerBox,
   LogoBox,
   MenuBox,
-} from "./component_Style/header/headerStyle";
+} from "./components/header/headerStyle";
 //page
 import Test01 from "./Page/main";
 /* import { MainSection } from "./component_Style/section/mainSectionStyle"; */
-import { Footer, Footer_InnerBox } from "./component_Style/footer/footerStyle";
+import { Footer, Footer_InnerBox } from "./components/footer/footerStyle";
 import Hub from "./Page/Hub";
 import Logo from "./assets/Logo.svg";
 // data

@@ -14,4 +14,5 @@ export interface FooterTexts {
 export interface Main_Section_Greeting {
   GreetingTitle: string;
   test: string;
+  test2: string;
 }
