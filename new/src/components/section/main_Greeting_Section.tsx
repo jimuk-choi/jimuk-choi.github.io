@@ -12,7 +12,7 @@ function MainGreetingSection() {
       : require("../../i18n/kr/main_Section_Greeting.json");
 
   return (
-    <MainSectionTitleWrapper>
+    <MainSectionTitleWrapper variant="primary">
       <MainSectionTitle>
         <p>{jsonData.test}</p>
         <p>{jsonData.GreetingTitle}</p>

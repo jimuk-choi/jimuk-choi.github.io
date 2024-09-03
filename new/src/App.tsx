@@ -7,9 +7,12 @@ import {
   LogoBox,
   MenuBox,
 } from "./components/header/headerStyle";
+import styled from "@emotion/styled";
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "./style/colors";
+
 //page
 import Test01 from "./Page/main";
-/* import { MainSection } from "./component_Style/section/mainSectionStyle"; */
 import { Footer, Footer_InnerBox } from "./components/footer/footerStyle";
 import Hub from "./Page/Hub";
 import Logo from "./assets/Logo.svg";
@@ -20,6 +23,8 @@ import texts_en_footer from "./i18n/en/footer.json";
 import texts_kr_footer from "./i18n/kr/footer.json";
 // type
 import { HeaderTexts, FooterTexts } from "./i18n/types";
+
+import { Button_A, Button_B } from "./components/button/button_style01";
 
 const textsData: {
   header: Record<"en" | "ko", HeaderTexts>;
@@ -52,73 +57,78 @@ function App() {
   const currentFooterTexts = textsData.footer[language];
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
-      <div className="App">
-        <GlobalStyles />
-        <Routes>
-          <Route path="/Hub" element={<Hub />} />
-          <Route path="/" element={<Test01 />} />
-        </Routes>
-        <Header>
-          <Header_InnerBox>
-            <LogoBox>
-              <img
-                src={Logo}
-                alt=""
-                style={{ width: "80px", height: "auto" }}
-              />
-            </LogoBox>
-            <MenuBox>
-              <button style={{ fontSize: "1.8rem" }}>
-                {currentHeaderTexts.menu01}
-              </button>
-              <button style={{ fontSize: "1.8rem" }}>
-                {currentHeaderTexts.menu02}
-              </button>
-              <button style={{ fontSize: "1.8rem" }}>
-                {currentHeaderTexts.menu03}
-              </button>
-              <button style={{ fontSize: "1.8rem" }}>
-                {currentHeaderTexts.menu04}
-              </button>
-            </MenuBox>
-            <div style={{ display: "flex", gap: "8px" }}>
-              <button
-                style={{
-                  fontSize: "1.8rem",
-                  border: "1px solid #000000",
-                  color: "#000000",
-                  backgroundColor: "#ffffff",
-                  width: "60px",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                  letterSpacing: "4%",
-                }}
-                onClick={toggleLanguage}
-              >
-                {currentHeaderTexts.buttonText}
-              </button>
-              <button
-                style={{
-                  fontSize: "1.8rem",
-                  color: "white",
-                  backgroundColor: "#F2887A",
-                  padding: "12px 48px",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                  letterSpacing: "4%",
-                }}
-              >
-                {currentHeaderTexts.contactText}
-              </button>
-            </div>
-          </Header_InnerBox>
-        </Header>
-        <Footer>
-          <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
-        </Footer>
-      </div>
-    </LanguageContext.Provider>
+    <ThemeProvider theme={theme}>
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <div className="App">
+          <GlobalStyles />
+          <Routes>
+            <Route path="/Hub" element={<Hub />} />
+            <Route path="/" element={<Test01 />} />
+          </Routes>
+          <Header>
+            <Header_InnerBox>
+              <LogoBox>
+                <img
+                  src={Logo}
+                  alt=""
+                  style={{ width: "80px", height: "auto" }}
+                />
+              </LogoBox>
+              <MenuBox>
+                <button style={{ fontSize: "1.8rem" }}>
+                  {currentHeaderTexts.menu01}
+                </button>
+                <button style={{ fontSize: "1.8rem" }}>
+                  {currentHeaderTexts.menu02}
+                </button>
+                <button style={{ fontSize: "1.8rem" }}>
+                  {currentHeaderTexts.menu03}
+                </button>
+                <button style={{ fontSize: "1.8rem" }}>
+                  {currentHeaderTexts.menu04}
+                </button>
+              </MenuBox>
+              <div style={{ display: "flex", gap: "8px" }}>
+                <button
+                  style={{
+                    fontSize: "1.8rem",
+                    border: "1px solid #000000",
+                    color: "#000000",
+                    backgroundColor: "#ffffff",
+                    width: "60px",
+                    borderRadius: "8px",
+                    fontWeight: "bold",
+                    letterSpacing: "4%",
+                  }}
+                  onClick={toggleLanguage}
+                >
+                  {currentHeaderTexts.buttonText}
+                </button>
+                <button
+                  style={{
+                    fontSize: "1.8rem",
+                    color: "white",
+                    backgroundColor: "#F2887A",
+                    padding: "12px 48px",
+                    borderRadius: "8px",
+                    fontWeight: "bold",
+                    letterSpacing: "4%",
+                  }}
+                >
+                  {currentHeaderTexts.contactText}
+                </button>
+
+                <Button_A variant="primary">ButtonA</Button_A>
+                <Button_B variant="secondary">ButtonB</Button_B>
+              </div>
+            </Header_InnerBox>
+          </Header>
+          <Footer>
+            <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
+          </Footer>
+        </div>
+      </LanguageContext.Provider>
+    </ThemeProvider>
   );
 }
 

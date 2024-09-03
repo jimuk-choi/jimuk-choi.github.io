@@ -1,9 +1,16 @@
 import styled from "@emotion/styled";
 
-export const MainSectionTitleWrapper = styled.div`
+interface MainSectionTitleWrapperProps {
+  variant?: "primary" | "secondary";
+}
+
+export const MainSectionTitleWrapper = styled.div<MainSectionTitleWrapperProps>`
   width: 100%;
   height: 100vh;
-  background-color: pink;
+  background-color: ${(props) =>
+    props.variant === "primary"
+      ? props.theme.Bg.whitef8f
+      : props.theme.Bg.whitefff};
   display: flex;
   justify-content: center;
   align-items: center;
