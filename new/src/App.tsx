@@ -124,9 +124,8 @@ function App() {
                 </button>
 
                 <Button_A onClick={toggleDarkMode} variant="primary">
-                  ButtonA
+                  DarkMode
                 </Button_A>
-                <Button_B variant="secondary">ButtonB</Button_B>
               </div>
             </Header_InnerBox>
           </Header>
