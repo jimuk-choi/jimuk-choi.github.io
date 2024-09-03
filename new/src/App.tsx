@@ -9,7 +9,7 @@ import {
 } from "./components/header/headerStyle";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "@emotion/react";
-import { theme } from "./style/colors";
+import { LightTheme, DarkTheme } from "./style/colors";
 
 //page
 import Test01 from "./Page/main";
@@ -48,16 +48,21 @@ const LanguageContext = createContext({
 
 function App() {
   const [language, setLanguage] = useState<"en" | "ko">("en");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === "en" ? "ko" : "en"));
   };
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
 
   const currentHeaderTexts = textsData.header[language];
   const currentFooterTexts = textsData.footer[language];
+  const currentTheme = isDarkMode ? DarkTheme : LightTheme;
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={currentTheme}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
         <div className="App">
           <GlobalStyles />
@@ -118,7 +123,9 @@ function App() {
                   {currentHeaderTexts.contactText}
                 </button>
 
-                <Button_A variant="primary">ButtonA</Button_A>
+                <Button_A onClick={toggleDarkMode} variant="primary">
+                  ButtonA
+                </Button_A>
                 <Button_B variant="secondary">ButtonB</Button_B>
               </div>
             </Header_InnerBox>
