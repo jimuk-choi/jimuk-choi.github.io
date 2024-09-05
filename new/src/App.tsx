@@ -29,8 +29,7 @@ import texts_en_footer from "./i18n/en/footer.json";
 import texts_kr_footer from "./i18n/kr/footer.json";
 // type
 import { HeaderTexts, FooterTexts } from "./i18n/types";
-
-import { Button_A, Button_B } from "./components/button/button_style01";
+import { Button_A } from "./components/button/button_style01";
 
 const textsData: {
   header: Record<"en" | "ko", HeaderTexts>;
