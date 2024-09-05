@@ -31,6 +31,7 @@ import texts_kr_footer from "./i18n/kr/footer.json";
 import { HeaderTexts, FooterTexts } from "./i18n/types";
 
 import { Button_A, Button_B } from "./components/button/button_style01";
+/* import Video from "../public/videos"; */
 
 const textsData: {
   header: Record<"en" | "ko", HeaderTexts>;
@@ -147,6 +148,7 @@ function App() {
               </div>
             </Header_InnerBox>
           </Header>
+<<<<<<< HEAD
           <StyledVideo
             ref={videoRef}
             key={isDarkMode.toString()}
@@ -163,6 +165,9 @@ function App() {
               type="video/mp4"
             />
           </StyledVideo>
+=======
+
+>>>>>>> 4e54e01 (imported video)
           <Footer>
             <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
           </Footer>

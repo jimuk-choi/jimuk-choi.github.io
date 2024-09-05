@@ -22,6 +22,7 @@ const GlobalStyles = () => (
         border: none;
         background-color: transparent;
         font-family: "Helvetica Neue", sans-serif;
+        cursor: pointer;
       }
     `}
   />
