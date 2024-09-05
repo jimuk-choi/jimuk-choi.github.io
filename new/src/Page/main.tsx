@@ -10,8 +10,7 @@ function Main() {
     <>
       <MainGreetingSection />
       <MainTestSection />
-      <MainGreetingSection />
-      <MainGreetingSection />
+
       {/* 기타 내용 */}
     </>
   );
