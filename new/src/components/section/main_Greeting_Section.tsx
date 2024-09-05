@@ -12,11 +12,6 @@ const VideoWrapper = styled.div`
   position: absolute;
   z-index: -999;
 `;
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  /* display: block; */
-`;
 
 const GreetingSection = styled.div`
   width: 100%;
@@ -34,12 +29,6 @@ function MainGreetingSection() {
 
   return (
     <GreetingSection>
-      <VideoWrapper>
-        <StyledVideo autoPlay loop muted>
-          {/* <source src="../src/assets/Video_01.mov" type="video/quicktime" /> */}
-          <source src="Videos/Video_01.mp4" type="video/mp4" />
-        </StyledVideo>
-      </VideoWrapper>
       <MainSectionTitleWrapper variant="primary">
         <MainSectionTitle>
           <p>{jsonData.test}</p>
