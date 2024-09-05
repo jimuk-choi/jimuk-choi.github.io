@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useRef,
+} from "react";
 import { Routes, Route } from "react-router-dom";
 import GlobalStyles from "./style/globalStyles";
 import {
@@ -45,10 +51,15 @@ const LanguageContext = createContext({
   language: "en",
   setLanguage: (lang: "en" | "ko") => {},
 });
-
+const StyledVideo = styled.video`
+  width: 100%;
+  height: auto;
+  /* display: block; */
+`;
 function App() {
   const [language, setLanguage] = useState<"en" | "ko">("en");
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === "en" ? "ko" : "en"));
@@ -60,6 +71,13 @@ function App() {
   const currentHeaderTexts = textsData.header[language];
   const currentFooterTexts = textsData.footer[language];
   const currentTheme = isDarkMode ? DarkTheme : LightTheme;
+
+  useEffect(() => {
+    // 다크 모드 상태가 변경될 때 비디오를 다시 로드
+    if (videoRef.current) {
+      videoRef.current.load(); // 비디오 소스를 다시 로드
+    }
+  }, [isDarkMode]); // isDarkMode가 변경될 때마다 호출
 
   return (
     <ThemeProvider theme={currentTheme}>
@@ -129,6 +147,22 @@ function App() {
               </div>
             </Header_InnerBox>
           </Header>
+          <StyledVideo
+            ref={videoRef}
+            key={isDarkMode.toString()}
+            autoPlay
+            loop
+            muted
+          >
+            <source
+              src={
+                isDarkMode
+                  ? "Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오
+                  : "Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오
+              }
+              type="video/mp4"
+            />
+          </StyledVideo>
           <Footer>
             <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
           </Footer>
@@ -140,3 +174,4 @@ function App() {
 
 export { LanguageContext };
 export default App;
+
