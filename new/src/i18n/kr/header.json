@@ -1,5 +1,7 @@
 {
   "buttonText": "EN",
+  "buttonDarkMode": "DarkMode",
+  "buttonLightMode": "LightMode",
   "contactText": "지금 연락주세요",
   "menu01": "홈",
   "menu02": "소개",

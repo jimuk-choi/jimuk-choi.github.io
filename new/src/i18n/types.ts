@@ -1,5 +1,7 @@
 export interface HeaderTexts {
   buttonText: string;
+  buttonDarkMode: string;
+  buttonLightMode: string;
   contactText: string;
   menu01: string;
   menu02: string;

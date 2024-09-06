@@ -63,6 +63,7 @@ function App() {
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === "en" ? "ko" : "en"));
   };
+
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
@@ -141,7 +142,9 @@ function App() {
                 </button>
 
                 <Button_A onClick={toggleDarkMode} variant="primary">
-                  DarkMode
+                  {isDarkMode
+                    ? currentHeaderTexts.buttonLightMode
+                    : currentHeaderTexts.buttonDarkMode}
                 </Button_A>
               </div>
             </Header_InnerBox>

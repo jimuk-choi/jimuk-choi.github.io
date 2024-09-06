@@ -1,5 +1,7 @@
 {
   "buttonText": "KR",
+  "buttonDarkMode": "DarkMode",
+  "buttonLightMode": "LightMode",
   "contactText": "Contact Me Now",
   "menu01": "Home",
   "menu02": "About",
