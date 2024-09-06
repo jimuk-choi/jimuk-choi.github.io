@@ -19,6 +19,7 @@ import { LightTheme, DarkTheme } from "./style/colors";
 
 //page
 import Test01 from "./Page/main";
+import Main from "./Page/main";
 import { Footer, Footer_InnerBox } from "./components/footer/footerStyle";
 import Hub from "./Page/Hub";
 import Logo from "./assets/Logo.svg";
@@ -80,13 +81,13 @@ function App() {
   }, [isDarkMode]); // isDarkMode가 변경될 때마다 호출
 
   return (
-    <ThemeProvider theme={currentTheme}>
+    <ThemeProvider theme={isDarkMode ? DarkTheme : LightTheme}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
         <div className="App">
           <GlobalStyles />
           <Routes>
+            <Route path="/" element={<Main isDarkMode={isDarkMode} />} />
             <Route path="/Hub" element={<Hub />} />
-            <Route path="/" element={<Test01 />} />
           </Routes>
           <Header>
             <Header_InnerBox>
@@ -149,7 +150,7 @@ function App() {
               </div>
             </Header_InnerBox>
           </Header>
-          <StyledVideo
+          {/* <StyledVideo
             ref={videoRef}
             key={isDarkMode.toString()}
             autoPlay
@@ -164,7 +165,7 @@ function App() {
               }
               type="video/mp4"
             />
-          </StyledVideo>
+          </StyledVideo> */}
           <Footer>
             <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
           </Footer>

@@ -7,10 +7,10 @@ interface MainSectionTitleWrapperProps {
 export const MainSectionTitleWrapper = styled.div<MainSectionTitleWrapperProps>`
   width: 100%;
   height: 100vh;
-  background-color: ${(props) =>
+  /* background-color: ${(props) =>
     props.variant === "primary"
       ? props.theme.Bg.whitef8f
-      : props.theme.Bg.whitefff};
+      : props.theme.Bg.whitefff}; */
   display: flex;
   justify-content: center;
   align-items: center;
