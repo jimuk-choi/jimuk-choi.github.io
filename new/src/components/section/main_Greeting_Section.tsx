@@ -78,8 +78,8 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
           <source
             src={
               isDarkMode
-                ? `${process.env.PUBLIC_URL}/Videos/Video_02_DarkMode.mp4` // 다크 모드일 때 재생할 비디오
-                : `${process.env.PUBLIC_URL}/Videos/Video_02_LightMode.mp4` // 라이트 모드일 때 재생할 비디오
+                ? `${process.env.PUBLIC_URL}Videos/Video_02_DarkMode.mp4` // 다크 모드일 때 재생할 비디오
+                : `${process.env.PUBLIC_URL}Videos/Video_02_LightMode.mp4` // 라이트 모드일 때 재생할 비디오
             }
             type="video/mp4"
           />
