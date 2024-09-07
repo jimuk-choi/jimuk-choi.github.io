@@ -89,7 +89,7 @@ function App() {
             <Route path="/Hub" element={<Hub />} />
           </Routes>
           <Header>
-            <Header_InnerBox>
+            <Header_InnerBox variant="primary">
               <LogoBox>
                 <img
                   src={Logo}

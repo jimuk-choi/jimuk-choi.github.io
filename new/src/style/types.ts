@@ -10,6 +10,7 @@ declare module "@emotion/react" {
       Button_Secondary: string;
       whitefff: string;
       whitef8f: string;
+      white10: string;
     };
     Color: {
       Button_Primary: string;
@@ -25,6 +26,7 @@ export interface MyTheme extends Theme {
     Button_Secondary: string;
     whitefff: string;
     whitef8f: string;
+    white10: string;
   };
   Color: {
     Button_Primary: string;

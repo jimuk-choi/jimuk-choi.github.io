@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import Logo from "../../logo.svg";
 
+interface HeadingProps {
+  variant?: "primary" | "secondary";
+}
+
 export const Header = styled.header`
   font-size: 2.4rem;
   width: 100%;
@@ -13,13 +17,17 @@ export const Header = styled.header`
   z-index: 999;
 `;
 
-export const Header_InnerBox = styled.div`
+export const Header_InnerBox = styled.div<HeadingProps>`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 12px;
-  background-color: #fff;
+  padding: 40px;
+  background-color: ${(props) =>
+    props.variant === "primary"
+      ? props.theme.Bg.white10
+      : props.theme.Bg.whitefff};
   padding: 0 32px;
 `;
 
