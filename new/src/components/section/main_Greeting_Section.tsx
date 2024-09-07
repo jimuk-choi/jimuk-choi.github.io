@@ -59,12 +59,14 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
           <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
           <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
           <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
+
           <Heading01
             style={{
               position: "absolute",
               top: "120%",
               left: "50%",
               transform: "translate(-50%, -50%)",
+              color: "#050505",
             }}
           >
             {jsonData.test}
@@ -76,10 +78,10 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
           <source
             src={
               isDarkMode
-                ? /* ? "/Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오 */
-                  "Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오
-                : /* : "/Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오 */
-                  "Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오
+                ? "/Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오
+                : "/Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오
+              /* ? "Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오 */
+              /* : "Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오 */
             }
             type="video/mp4"
           />

@@ -29,7 +29,7 @@ export const MainSectionTitle = styled.h1`
   font-size: 16rem;
   width: 100%;
   text-align: center;
-  color: #000000;
+  color: #050505;
   font-weight: 700;
   letter-spacing: 10px;
   line-height: normal;
@@ -46,4 +46,5 @@ export const Heading01 = styled.h1`
   font-weight: 700;
   letter-spacing: 4%;
   line-height: normal;
+  letter-spacing: 4px;
 `;
