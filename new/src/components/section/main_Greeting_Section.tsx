@@ -67,7 +67,7 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
               transform: "translate(-50%, -50%)",
             }}
           >
-            <p>{jsonData.test}</p>
+            {jsonData.test}
           </Heading01>
         </MainSectionTitleWrapperInnerBox>
       </MainSectionTitleWrapper>

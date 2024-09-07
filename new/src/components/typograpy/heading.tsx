@@ -27,9 +27,11 @@ export const MainSectionTitle = styled.h1`
   mix-blend-mode: overlay;
   position: absolute;
   font-size: 16rem;
+  width: 100%;
+  text-align: center;
   color: #000000;
   font-weight: 700;
-  letter-spacing: 8%;
+  letter-spacing: 10px;
   line-height: normal;
   top: -20%;
   left: 50%;
@@ -37,6 +39,8 @@ export const MainSectionTitle = styled.h1`
 `;
 
 export const Heading01 = styled.h1`
+  width: 100%;
+  text-align: center;
   font-size: 4rem;
   color: #000000;
   font-weight: 700;
