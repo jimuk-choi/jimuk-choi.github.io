@@ -17,6 +17,7 @@ declare module "@emotion/react" {
     Color: {
       Button_Primary: string;
       Button_Secondary: string;
+      Button_Third: string;
     };
     Border: {
       Button_Secondary: string;
