@@ -9,8 +9,8 @@ export const MainSectionTitleWrapper = styled.div<MainSectionTitleWrapperProps>`
   height: 100vh;
   /* background-color: ${(props) =>
     props.variant === "primary"
-      ? props.theme.Bg.whitef8f
-      : props.theme.Bg.whitefff}; */
+      ? props.theme.Bg.white90
+      : props.theme.Bg.white}; */
   display: flex;
   flex-direction: column;
   justify-content: center;

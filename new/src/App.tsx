@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  useRef,
-} from "react";
+import React, { createContext, useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import GlobalStyles from "./style/globalStyles";
 import {
@@ -30,7 +24,7 @@ import texts_en_footer from "./i18n/en/footer.json";
 import texts_kr_footer from "./i18n/kr/footer.json";
 // type
 import { HeaderTexts, FooterTexts } from "./i18n/types";
-import { Button_A } from "./components/button/button_style01";
+import { Button_A, Button_B } from "./components/button/button_style01";
 
 const textsData: {
   header: Record<"en" | "ko", HeaderTexts>;
@@ -90,7 +84,7 @@ function App() {
           </Routes>
           <Header>
             <Header_InnerBox isDarkMode={isDarkMode}>
-              <LogoBox>
+              <LogoBox isDarkMode={isDarkMode}>
                 <img
                   src={Logo}
                   alt=""
@@ -113,39 +107,16 @@ function App() {
                 </button>
               </MenuBox>
               <div style={{ display: "flex", gap: "8px" }}>
-                <button
-                  style={{
-                    fontSize: "1.8rem",
-                    border: "1px solid #000000",
-                    color: "#000000",
-                    backgroundColor: "#ffffff",
-                    width: "60px",
-                    borderRadius: "8px",
-                    fontWeight: "bold",
-                    letterSpacing: "4%",
-                  }}
-                  onClick={toggleLanguage}
-                >
+                <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
                   {currentHeaderTexts.buttonText}
-                </button>
-                <button
-                  style={{
-                    fontSize: "1.8rem",
-                    color: "white",
-                    backgroundColor: "#F2887A",
-                    padding: "12px 48px",
-                    borderRadius: "8px",
-                    fontWeight: "bold",
-                    letterSpacing: "4%",
-                  }}
-                >
-                  {currentHeaderTexts.contactText}
-                </button>
-
-                <Button_A onClick={toggleDarkMode} variant="primary">
+                </Button_B>
+                <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>
                   {isDarkMode
                     ? currentHeaderTexts.buttonLightMode
                     : currentHeaderTexts.buttonDarkMode}
+                </Button_B>
+                <Button_A isDarkMode={isDarkMode}>
+                  {currentHeaderTexts.contactText}
                 </Button_A>
               </div>
             </Header_InnerBox>

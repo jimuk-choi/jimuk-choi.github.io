@@ -8,28 +8,35 @@ declare module "@emotion/react" {
     Bg: {
       Button_Primary: string;
       Button_Secondary: string;
-      whitefff: string;
-      whitef8f: string;
-      white10: string;
+      white: string;
+      white90: string;
+      whiteT20: string;
     };
     Color: {
       Button_Primary: string;
       Button_Secondary: string;
     };
+    Border: {
+      Button_Secondary: string;
+    };
   }
 }
 
-// 사용자 정의 테마 타입 정의
+/* // 사용자 정의 테마 타입 정의
 export interface MyTheme extends Theme {
   Bg: {
     Button_Primary: string;
     Button_Secondary: string;
-    whitefff: string;
-    whitef8f: string;
-    white10: string;
+    white: string;
+    white90: string;
+    whiteT20: string;
   };
   Color: {
     Button_Primary: string;
     Button_Secondary: string;
   };
+  Border: {
+    Button_Secondary: string;
+  };
 }
+ */

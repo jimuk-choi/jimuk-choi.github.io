@@ -27,15 +27,18 @@ export const Header_InnerBox = styled.div<
   border-radius: 12px;
   padding: 40px;
   background-color: ${(props) =>
-    props.isDarkMode ? props.theme.Bg.white10 : props.theme.Bg.whitefff};
+    props.isDarkMode ? props.theme.Bg.whiteT20 : props.theme.Bg.white};
   padding: 0 32px;
 `;
 
-export const LogoBox = styled.div`
+export const LogoBox = styled.div<HeadingProps & { isDarkMode: boolean }>`
   display: flex;
   align-items: center;
-  width: 205px;
+  width: 400px;
   gap: 1rem;
+  p {
+    color: ${(props) => props.theme.Color.Button_Secondary};
+  }
 `;
 
 export const MenuBox = styled.div`
