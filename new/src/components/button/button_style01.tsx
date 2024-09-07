@@ -22,3 +22,11 @@ export const Button_B = styled.button<ButtonProps & { isDarkMode: boolean }>`
   font-weight: bold;
   font-size: 1.8rem;
 `;
+
+export const Button_C = styled.button<ButtonProps & { isDarkMode: boolean }>`
+  color: ${(props) => props.theme.Color.Button_Secondary};
+  /* padding: 12px 24px; */
+  border-radius: 8px;
+  font-weight: normal;
+  font-size: 1.8rem;
+`;

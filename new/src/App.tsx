@@ -24,7 +24,11 @@ import texts_en_footer from "./i18n/en/footer.json";
 import texts_kr_footer from "./i18n/kr/footer.json";
 // type
 import { HeaderTexts, FooterTexts } from "./i18n/types";
-import { Button_A, Button_B } from "./components/button/button_style01";
+import {
+  Button_A,
+  Button_B,
+  Button_C,
+} from "./components/button/button_style01";
 
 const textsData: {
   header: Record<"en" | "ko", HeaderTexts>;
@@ -93,18 +97,19 @@ function App() {
                 <p style={{ fontWeight: "bold", fontSize: "22px" }}>JMC</p>
               </LogoBox>
               <MenuBox>
-                <button style={{ fontSize: "1.8rem" }}>
+                <Button_C isDarkMode={false}>
                   {currentHeaderTexts.menu01}
-                </button>
-                <button style={{ fontSize: "1.8rem" }}>
+                </Button_C>
+
+                <Button_C isDarkMode={false}>
                   {currentHeaderTexts.menu02}
-                </button>
-                <button style={{ fontSize: "1.8rem" }}>
+                </Button_C>
+                <Button_C isDarkMode={false}>
                   {currentHeaderTexts.menu03}
-                </button>
-                <button style={{ fontSize: "1.8rem" }}>
+                </Button_C>
+                <Button_C isDarkMode={false}>
                   {currentHeaderTexts.menu04}
-                </button>
+                </Button_C>
               </MenuBox>
               <div style={{ display: "flex", gap: "8px" }}>
                 <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>

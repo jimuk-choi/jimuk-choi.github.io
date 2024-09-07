@@ -45,5 +45,5 @@ export const MenuBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 60px;
 `;
