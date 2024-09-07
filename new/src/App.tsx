@@ -71,7 +71,6 @@ function App() {
 
   const currentHeaderTexts = textsData.header[language];
   const currentFooterTexts = textsData.footer[language];
-  const currentTheme = isDarkMode ? DarkTheme : LightTheme;
 
   useEffect(() => {
     // 다크 모드 상태가 변경될 때 비디오를 다시 로드

@@ -1,8 +1,18 @@
-import { MainSectionTitleWrapper, MainSectionTitle } from "../heading/h1";
+import {
+  MainSectionTitleWrapper,
+  MainSectionTitleWrapperInnerBox,
+  MainSectionTitle,
+  Heading01,
+} from "../typograpy/heading";
 import { useContext } from "react";
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
 import styled from "@emotion/styled";
 import { useRef, useEffect } from "react";
+
+const GreetingSection = styled.div`
+  width: 100%;
+  height: 100vh;
+`;
 
 const VideoWrapper = styled.div`
   width: 100%;
@@ -13,11 +23,6 @@ const VideoWrapper = styled.div`
   /* position: relative; */
   /* z-index: 100; */
   z-index: -999;
-`;
-
-const GreetingSection = styled.div`
-  width: 100%;
-  height: 100vh;
 `;
 
 const StyledVideo = styled.video`
@@ -50,10 +55,21 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
   return (
     <GreetingSection>
       <MainSectionTitleWrapper variant="primary">
-        <MainSectionTitle>
-          <p>{jsonData.test}</p>
-          <p>{jsonData.GreetingTitle}</p>
-        </MainSectionTitle>
+        <MainSectionTitleWrapperInnerBox>
+          <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
+          <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
+          <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
+          <Heading01
+            style={{
+              position: "absolute",
+              top: "120%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <p>{jsonData.test}</p>
+          </Heading01>
+        </MainSectionTitleWrapperInnerBox>
       </MainSectionTitleWrapper>
       <VideoWrapper>
         <StyledVideo ref={videoRef} autoPlay loop muted>

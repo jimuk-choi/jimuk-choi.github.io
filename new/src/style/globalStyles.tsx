@@ -18,6 +18,11 @@ const GlobalStyles = () => (
         padding: 0;
         font-family: "Helvetica Neue", sans-serif;
       }
+      p,
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
       button {
         border: none;
         background-color: transparent;
