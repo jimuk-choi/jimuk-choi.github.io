@@ -96,7 +96,7 @@ function App() {
                   alt=""
                   style={{ width: "18px", height: "18px" }}
                 />
-                <p style={{ fontWeight: "bold", fontSize: "22px" }}>JMC</p>
+                <p style={{ fontWeight: "bold", fontSize: "22px" }}>JMC11</p>
               </LogoBox>
               <MenuBox>
                 <button style={{ fontSize: "1.8rem" }}>
