@@ -4,7 +4,7 @@ export const palette = {
   primary100: "#F2887a",
   secondary100: "#ff0000",
   whitefff: "#ffffff",
-  white10: "rgba(255,255,255,0.1)",
+  white10: "rgba(255,255,255,0.2)",
   whitef8f: "#F8F8F6",
   black30: "#303030",
 };

@@ -89,13 +89,14 @@ function App() {
             <Route path="/Hub" element={<Hub />} />
           </Routes>
           <Header>
-            <Header_InnerBox variant="primary">
+            <Header_InnerBox isDarkMode={isDarkMode}>
               <LogoBox>
                 <img
                   src={Logo}
                   alt=""
-                  style={{ width: "80px", height: "auto" }}
+                  style={{ width: "18px", height: "18px" }}
                 />
+                <p style={{ fontWeight: "bold", fontSize: "22px" }}>JMC</p>
               </LogoBox>
               <MenuBox>
                 <button style={{ fontSize: "1.8rem" }}>

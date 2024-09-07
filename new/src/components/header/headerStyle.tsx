@@ -17,7 +17,9 @@ export const Header = styled.header`
   z-index: 999;
 `;
 
-export const Header_InnerBox = styled.div<HeadingProps>`
+export const Header_InnerBox = styled.div<
+  HeadingProps & { isDarkMode: boolean }
+>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -25,15 +27,15 @@ export const Header_InnerBox = styled.div<HeadingProps>`
   border-radius: 12px;
   padding: 40px;
   background-color: ${(props) =>
-    props.variant === "primary"
-      ? props.theme.Bg.white10
-      : props.theme.Bg.whitefff};
+    props.isDarkMode ? props.theme.Bg.white10 : props.theme.Bg.whitefff};
   padding: 0 32px;
 `;
 
 export const LogoBox = styled.div`
   display: flex;
+  align-items: center;
   width: 205px;
+  gap: 1rem;
 `;
 
 export const MenuBox = styled.div`
