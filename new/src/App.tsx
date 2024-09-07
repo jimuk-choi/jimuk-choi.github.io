@@ -49,11 +49,7 @@ const LanguageContext = createContext({
   language: "en",
   setLanguage: (lang: "en" | "ko") => {},
 });
-const StyledVideo = styled.video`
-  width: 100%;
-  height: auto;
-  /* display: block; */
-`;
+
 function App() {
   const [language, setLanguage] = useState<"en" | "ko">("en");
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -65,6 +61,10 @@ function App() {
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:jimook1995@naver.com";
   };
 
   const currentHeaderTexts = textsData.header[language];
@@ -120,28 +120,13 @@ function App() {
                     ? currentHeaderTexts.buttonLightMode
                     : currentHeaderTexts.buttonDarkMode}
                 </Button_B>
-                <Button_A isDarkMode={isDarkMode}>
+                <Button_A onClick={handleEmailClick} isDarkMode={isDarkMode}>
                   {currentHeaderTexts.contactText}
                 </Button_A>
               </div>
             </Header_InnerBox>
           </Header>
-          {/* <StyledVideo
-            ref={videoRef}
-            key={isDarkMode.toString()}
-            autoPlay
-            loop
-            muted
-          >
-            <source
-              src={
-                isDarkMode
-                  ? "Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오
-                  : "Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오
-              }
-              type="video/mp4"
-            />
-          </StyledVideo> */}
+
           <Footer>
             <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
           </Footer>
