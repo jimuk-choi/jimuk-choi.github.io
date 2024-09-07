@@ -7,7 +7,6 @@ import {
   LogoBox,
   MenuBox,
 } from "./components/header/headerStyle";
-import styled from "@emotion/styled";
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
 

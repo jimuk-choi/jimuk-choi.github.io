@@ -21,6 +21,8 @@ export const LightTheme: Theme = {
     white90: palette.white90,
     whiteT20: palette.whiteT20,
     Button_Primary: palette.Light_primary_Main,
+    Button_Primary_Hover: palette.Light_primary80,
+    Button_Primary_Active: palette.Light_primary100,
     Button_Secondary: palette.white,
   },
   Color: {
@@ -38,6 +40,8 @@ export const DarkTheme: Theme = {
     white90: palette.black,
     whiteT20: palette.whiteT20,
     Button_Primary: palette.Dark_primary100,
+    Button_Primary_Hover: palette.Light_primary80,
+    Button_Primary_Active: palette.Light_primary100,
     Button_Secondary: palette.gray30,
   },
   Color: {

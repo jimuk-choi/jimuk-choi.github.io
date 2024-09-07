@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import exp from "constants";
 
 interface ButtonProps {
   variant?: "primary" | "secondary";
@@ -11,6 +12,13 @@ export const Button_A = styled.button<ButtonProps & { isDarkMode: boolean }>`
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.8rem;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background-color: ${(props) => props.theme.Bg.Button_Primary_Hover};
+  }
+  &:active {
+    background-color: ${(props) => props.theme.Bg.Button_Primary_Active};
+  }
 `;
 
 export const Button_B = styled.button<ButtonProps & { isDarkMode: boolean }>`

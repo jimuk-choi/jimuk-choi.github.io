@@ -8,6 +8,8 @@ declare module "@emotion/react" {
     Bg: {
       Button_Primary: string;
       Button_Secondary: string;
+      Button_Primary_Hover: string;
+      Button_Primary_Active: string;
       white: string;
       white90: string;
       whiteT20: string;
