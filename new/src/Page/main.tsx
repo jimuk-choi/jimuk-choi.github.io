@@ -13,7 +13,7 @@ function Main({ isDarkMode }: MainProps) {
   return (
     <>
       <MainGreetingSection isDarkMode={isDarkMode} />
-      <MainTestSection />
+      {/* <MainTestSection /> */}
     </>
   );
 }

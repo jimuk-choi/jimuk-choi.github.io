@@ -19,7 +19,8 @@ const GlobalStyles = () => (
         font-family: "Helvetica Neue", sans-serif;
       }
       p,
-      h1 {
+      h1,
+      h2 {
         margin: 0;
         padding: 0;
       }

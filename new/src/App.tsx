@@ -126,9 +126,9 @@ function App() {
             </Header_InnerBox>
           </Header>
 
-          <Footer>
+          {/* <Footer>
             <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
-          </Footer>
+          </Footer> */}
         </div>
       </LanguageContext.Provider>
     </ThemeProvider>

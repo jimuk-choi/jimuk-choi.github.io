@@ -3,6 +3,7 @@ import {
   MainSectionTitleWrapperInnerBox,
   MainSectionTitle,
   Heading01,
+  Heading02,
 } from "../typograpy/heading";
 import { useContext } from "react";
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
@@ -56,21 +57,11 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
     <GreetingSection>
       <MainSectionTitleWrapper>
         <MainSectionTitleWrapperInnerBox>
+          <Heading02 isDarkMode={isDarkMode}>Jimuk Choi</Heading02>
           <MainSectionTitle isDarkMode={isDarkMode}>
             {jsonData.GreetingTitle}
           </MainSectionTitle>
-
-          <Heading01
-            isDarkMode={isDarkMode}
-            style={{
-              position: "absolute",
-              top: "120%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            {jsonData.test}
-          </Heading01>
+          <Heading01 isDarkMode={isDarkMode}>{jsonData.test}</Heading01>
         </MainSectionTitleWrapperInnerBox>
       </MainSectionTitleWrapper>
       <VideoWrapper>
