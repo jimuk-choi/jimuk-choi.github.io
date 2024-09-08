@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import Logo from "../../logo.svg";
 
-interface HeadingProps {
-  variant?: "primary" | "secondary";
-}
+/* interface HeadingProps {
+  variant?: string;
+} */
 
 export const Header = styled.header`
   font-size: 2.4rem;
@@ -17,9 +17,7 @@ export const Header = styled.header`
   z-index: 999;
 `;
 
-export const Header_InnerBox = styled.div<
-  HeadingProps & { isDarkMode: boolean }
->`
+export const Header_InnerBox = styled.div<{ isDarkMode: boolean }>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -31,7 +29,7 @@ export const Header_InnerBox = styled.div<
   padding: 0 32px;
 `;
 
-export const LogoBox = styled.div<HeadingProps & { isDarkMode: boolean }>`
+export const LogoBox = styled.div<{ isDarkMode: boolean }>`
   display: flex;
   align-items: center;
   width: 400px;

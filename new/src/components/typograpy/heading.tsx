@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
 
-interface MainSectionProps {
-  variant?: "primary" | "secondary";
-}
-
 export const MainSectionTitleWrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -16,12 +12,12 @@ export const MainSectionTitleWrapper = styled.div`
 export const MainSectionTitleWrapperInnerBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 16px;
   width: 100%;
 `;
 
-export const MainSectionTitle = styled.h1<
-  MainSectionProps & { isDarkMode: boolean }
->`
+export const MainSectionTitle = styled.h1<{ isDarkMode: boolean }>`
   mix-blend-mode: ${(props) => (props.isDarkMode ? "exclusion" : "color-burn")};
   font-size: 16rem;
   width: 100%;
@@ -32,7 +28,7 @@ export const MainSectionTitle = styled.h1<
   line-height: normal;
 `;
 
-export const Heading01 = styled.h1<MainSectionProps & { isDarkMode: boolean }>`
+export const Heading01 = styled.h1<{ isDarkMode: boolean }>`
   mix-blend-mode: ${(props) => (props.isDarkMode ? "exclusion" : "color-burn")};
   width: 100%;
   text-align: center;
@@ -44,7 +40,7 @@ export const Heading01 = styled.h1<MainSectionProps & { isDarkMode: boolean }>`
   letter-spacing: 4px;
 `;
 
-export const Heading02 = styled.h2<MainSectionProps & { isDarkMode: boolean }>`
+export const Heading02 = styled.h2<{ isDarkMode: boolean }>`
   mix-blend-mode: ${(props) => (props.isDarkMode ? "exclusion" : "color-burn")};
   width: 100%;
   text-align: center;

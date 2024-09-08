@@ -1,11 +1,7 @@
 import styled from "@emotion/styled";
 import exp from "constants";
 
-interface ButtonProps {
-  variant?: "primary" | "secondary";
-}
-
-export const Button_A = styled.button<ButtonProps & { isDarkMode: boolean }>`
+export const Button_A = styled.button<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.Button_Primary};
   color: ${(props) => props.theme.Color.Button_Primary};
   padding: 12px 48px;
@@ -21,7 +17,7 @@ export const Button_A = styled.button<ButtonProps & { isDarkMode: boolean }>`
   }
 `;
 
-export const Button_B = styled.button<ButtonProps & { isDarkMode: boolean }>`
+export const Button_B = styled.button<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.Button_Secondary};
   color: ${(props) => props.theme.Color.Button_Secondary};
   border: 1px solid ${(props) => props.theme.Border.Button_Secondary};
@@ -31,7 +27,7 @@ export const Button_B = styled.button<ButtonProps & { isDarkMode: boolean }>`
   font-size: 1.8rem;
 `;
 
-export const Button_C = styled.button<ButtonProps & { isDarkMode: boolean }>`
+export const Button_C = styled.button<{ isDarkMode: boolean }>`
   color: ${(props) => props.theme.Color.Button_Secondary};
   /* padding: 12px 24px; */
   border-radius: 8px;

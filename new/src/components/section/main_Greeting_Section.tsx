@@ -9,6 +9,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
 import styled from "@emotion/styled";
 import { useRef, useEffect } from "react";
+import { Rectangle_L } from "../shape/rectangle";
 
 const GreetingSection = styled.div`
   width: 100%;
@@ -58,6 +59,7 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
       <MainSectionTitleWrapper>
         <MainSectionTitleWrapperInnerBox>
           <Heading02 isDarkMode={isDarkMode}>Jimuk Choi</Heading02>
+          <Rectangle_L />
           <MainSectionTitle isDarkMode={isDarkMode}>
             {jsonData.GreetingTitle}
           </MainSectionTitle>
