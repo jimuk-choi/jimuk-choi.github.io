@@ -1,16 +1,12 @@
 import styled from "@emotion/styled";
 
-interface MainSectionTitleWrapperProps {
+interface MainSectionProps {
   variant?: "primary" | "secondary";
 }
 
-export const MainSectionTitleWrapper = styled.div<MainSectionTitleWrapperProps>`
+export const MainSectionTitleWrapper = styled.div`
   width: 100%;
   height: 100vh;
-  /* background-color: ${(props) =>
-    props.variant === "primary"
-      ? props.theme.Bg.white90
-      : props.theme.Bg.white}; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,13 +19,15 @@ export const MainSectionTitleWrapperInnerBox = styled.div`
   position: relative;
 `;
 
-export const MainSectionTitle = styled.h1`
-  mix-blend-mode: overlay;
+export const MainSectionTitle = styled.h1<
+  MainSectionProps & { isDarkMode: boolean }
+>`
+  mix-blend-mode: ${(props) => (props.isDarkMode ? "exclusion" : "color-burn")};
   position: absolute;
   font-size: 16rem;
   width: 100%;
   text-align: center;
-  color: #050505;
+  color: ${(props) => props.theme.Color.white};
   font-weight: 700;
   letter-spacing: 10px;
   line-height: normal;
@@ -38,11 +36,13 @@ export const MainSectionTitle = styled.h1`
   transform: translate(-50%, 0%);
 `;
 
-export const Heading01 = styled.h1`
+export const Heading01 = styled.h1<MainSectionProps & { isDarkMode: boolean }>`
+  mix-blend-mode: ${(props) => (props.isDarkMode ? "exclusion" : "color-burn")};
   width: 100%;
   text-align: center;
   font-size: 4rem;
-  color: #000000;
+  color: ${(props) => props.theme.Color.white};
+
   font-weight: 700;
   letter-spacing: 4%;
   line-height: normal;

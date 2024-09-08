@@ -15,6 +15,7 @@ declare module "@emotion/react" {
       whiteT20: string;
     };
     Color: {
+      white: string;
       Button_Primary: string;
       Button_Secondary: string;
       Button_Third: string;

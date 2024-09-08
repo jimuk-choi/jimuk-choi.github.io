@@ -93,7 +93,7 @@ function App() {
                   alt=""
                   style={{ width: "18px", height: "18px" }}
                 />
-                <p style={{ fontWeight: "bold", fontSize: "22px" }}>JM123</p>
+                <p style={{ fontWeight: "bold", fontSize: "22px" }}>JMC</p>
               </LogoBox>
               <MenuBox>
                 <Button_C isDarkMode={false}>

@@ -54,19 +54,19 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
 
   return (
     <GreetingSection>
-      <MainSectionTitleWrapper variant="primary">
+      <MainSectionTitleWrapper>
         <MainSectionTitleWrapperInnerBox>
-          <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
-          <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
-          <MainSectionTitle>{jsonData.GreetingTitle}</MainSectionTitle>
+          <MainSectionTitle isDarkMode={isDarkMode}>
+            {jsonData.GreetingTitle}
+          </MainSectionTitle>
 
           <Heading01
+            isDarkMode={isDarkMode}
             style={{
               position: "absolute",
               top: "120%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              color: "#050505",
             }}
           >
             {jsonData.test}
@@ -84,30 +84,6 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
             type="video/mp4"
           />
         </StyledVideo>
-
-        {/* <StyledVideo ref={videoRef} autoPlay loop muted>
-          <source
-            src={
-              isDarkMode
-                ? `${process.env.PUBLIC_URL}Videos/Video_02_DarkMode.mp4` // 다크 모드일 때 재생할 비디오
-                : `${process.env.PUBLIC_URL}Videos/Video_02_LightMode.mp4` // 라이트 모드일 때 재생할 비디오
-            }
-            type="video/mp4"
-          />
-        </StyledVideo> */}
-
-        {/* <StyledVideo ref={videoRef} autoPlay loop muted>
-          <source
-            src={
-              isDarkMode
-                ? "/Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오
-                : "/Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오
-              // ? "Videos/Video_02_DarkMode.mp4" // 다크 모드일 때 재생할 비디오
-              // : "Videos/Video_02_LightMode.mp4" // 라이트 모드일 때 재생할 비디오
-            }
-            type="video/mp4"
-          />
-        </StyledVideo> */}
       </VideoWrapper>
     </GreetingSection>
   );

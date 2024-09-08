@@ -10,7 +10,7 @@ export const palette = {
   whiteT20: "rgba(255,255,255,0.2)",
   white90: "#FAF9FA",
   black: "#222222",
-  black_Main: "#373538",
+  black_Main: "#262527",
   gray30: "#b2b2b2",
 };
 
@@ -26,6 +26,7 @@ export const LightTheme: Theme = {
     Button_Secondary: palette.white,
   },
   Color: {
+    white: palette.black,
     Button_Primary: palette.white,
     Button_Secondary: palette.black,
     Button_Third: palette.Light_primary_Main,
@@ -46,6 +47,7 @@ export const DarkTheme: Theme = {
     Button_Secondary: palette.gray30,
   },
   Color: {
+    white: palette.white,
     Button_Primary: palette.white,
     Button_Secondary: palette.white,
     Button_Third: palette.Light_primary_Main,
