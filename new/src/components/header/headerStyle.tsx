@@ -126,8 +126,7 @@ export const MobileMenuInnerBox = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
-  padding: 40px 72px;
+  padding: 40px 80px;
 `;
 export const MobileMenuCloseBox = styled.div`
   display: flex;
@@ -135,11 +134,31 @@ export const MobileMenuCloseBox = styled.div`
   width: 100%;
   padding: 20px 0;
 `;
+export const MobileMenuMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+`;
+export const MobileMenuBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+`;
+export const MbileMenuButtonBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+`;
 export const MobileMenuCloseButton = styled(CloseIcon)<{
   isDarkMode: boolean;
   isOpen: boolean;
 }>`
-  width: 40px;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
   color: ${(props) => props.theme.Color.white};
 `;

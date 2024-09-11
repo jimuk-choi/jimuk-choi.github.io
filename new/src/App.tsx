@@ -15,6 +15,9 @@ import {
   MobileMenuInnerBox,
   MobileMenuCloseBox,
   MobileMenuCloseButton,
+  MobileMenuMain,
+  MbileMenuButtonBox,
+  MobileMenuBox,
 } from "./components/header/headerStyle";
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
@@ -38,6 +41,7 @@ import {
   Button_B,
   Button_C,
 } from "./components/button/button_style01";
+import { HamburgerMenuButton } from "./components/button/button_hamburger";
 
 const textsData: {
   header: Record<"en" | "ko", HeaderTexts>;
@@ -148,6 +152,38 @@ function App() {
                     isOpen={isMenuOpen}
                   ></MobileMenuCloseButton>
                 </MobileMenuCloseBox>
+                <MobileMenuMain>
+                  <MobileMenuBox>
+                    <HamburgerMenuButton>
+                      {currentHeaderTexts.menu01}
+                    </HamburgerMenuButton>
+                    <HamburgerMenuButton>
+                      {currentHeaderTexts.menu02}
+                    </HamburgerMenuButton>
+                    <HamburgerMenuButton>
+                      {currentHeaderTexts.menu03}
+                    </HamburgerMenuButton>
+                    <HamburgerMenuButton>
+                      {currentHeaderTexts.menu04}
+                    </HamburgerMenuButton>
+                  </MobileMenuBox>
+                  <MbileMenuButtonBox>
+                    <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>
+                      {isDarkMode
+                        ? currentHeaderTexts.buttonLightMode
+                        : currentHeaderTexts.buttonDarkMode}
+                    </Button_B>
+                    <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
+                      {currentHeaderTexts.buttonText}
+                    </Button_B>
+                    <Button_A
+                      onClick={handleEmailClick}
+                      isDarkMode={isDarkMode}
+                    >
+                      {currentHeaderTexts.contactText}
+                    </Button_A>
+                  </MbileMenuButtonBox>
+                </MobileMenuMain>
               </MobileMenuInnerBox>
             </MobileMenu>
           </Header>
