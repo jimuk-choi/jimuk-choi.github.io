@@ -1,12 +1,9 @@
 import styled from "@emotion/styled";
-import Logo from "../../logo.svg";
-
-/* interface HeadingProps {
-  variant?: string;
-} */
+import { breakpoints } from "../../style/breakpoints";
+import { ReactComponent as CloseIcon } from "../../assets/x.svg";
 
 export const Header = styled.header`
-  font-size: 2.4rem;
+  /* font-size: 2.4rem; */
   width: 100%;
   height: 80px;
   display: flex;
@@ -15,6 +12,9 @@ export const Header = styled.header`
   position: fixed;
   top: 24px;
   z-index: 999;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    padding: 0 40px;
+  }
 `;
 
 export const Header_InnerBox = styled.div<{ isDarkMode: boolean }>`
@@ -29,7 +29,7 @@ export const Header_InnerBox = styled.div<{ isDarkMode: boolean }>`
   padding: 0 32px;
 `;
 
-export const LogoBox = styled.div<{ isDarkMode: boolean }>`
+export const Header_LogoBox = styled.div<{ isDarkMode: boolean }>`
   display: flex;
   align-items: center;
   width: 400px;
@@ -37,11 +37,109 @@ export const LogoBox = styled.div<{ isDarkMode: boolean }>`
   p {
     color: ${(props) => props.theme.Color.Button_Secondary};
   }
+  @media (max-width: ${breakpoints.desktopL}px) {
+    width: 200px;
+  }
+  @media (max-width: ${breakpoints.desktopM}px) {
+    width: 150px;
+  }
+  @media (max-width: ${breakpoints.desktopS}px) {
+    width: 100px;
+  }
 `;
 
-export const MenuBox = styled.div`
+export const Header_LogoImg = styled.img`
+  width: 18px;
+  height: 18px;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const Header_LogoText = styled.div<{ isDarkMode: boolean }>`
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: ${(props) => props.theme.Color.white};
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 1.8rem;
+  }
+`;
+
+export const Header_MenuBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 60px;
+  @media (max-width: ${breakpoints.desktopS}px) {
+    gap: 40px;
+  }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    gap: 28px;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    display: none;
+  }
+`;
+
+export const Header_ButtonBox = styled.div`
+  display: flex;
+  gap: 8px;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    gap: 6px;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    display: none;
+  }
+`;
+
+//Mobile Hedaer
+export const HamburgerWrapper = styled.button`
+  display: none;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+`;
+export const Hamburger = styled.div`
+  display: flex;
+  width: 36px;
+  height: 2px;
+  background-color: ${(props) => props.theme.Color.white};
+`;
+export const MobileMenu = styled.div<{ isOpen: boolean }>`
+  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  width: 100%;
+  height: 100vh;
+  background-color: ${(props) => props.theme.Bg.white90};
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+`;
+export const MobileMenuInnerBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 40px 72px;
+`;
+export const MobileMenuCloseBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px 0;
+`;
+export const MobileMenuCloseButton = styled(CloseIcon)<{
+  isDarkMode: boolean;
+  isOpen: boolean;
+}>`
+  width: 40px;
+  cursor: pointer;
+  color: ${(props) => props.theme.Color.white};
 `;

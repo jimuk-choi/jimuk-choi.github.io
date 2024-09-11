@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import exp from "constants";
+import { breakpoints } from "../../style/breakpoints";
 
 export const Button_A = styled.button<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.Button_Primary};
@@ -15,6 +15,10 @@ export const Button_A = styled.button<{ isDarkMode: boolean }>`
   &:active {
     background-color: ${(props) => props.theme.Bg.Button_Primary_Active};
   }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 1.6rem;
+    padding: 12px 24px;
+  }
 `;
 
 export const Button_B = styled.button<{ isDarkMode: boolean }>`
@@ -25,6 +29,10 @@ export const Button_B = styled.button<{ isDarkMode: boolean }>`
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.8rem;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 1.6rem;
+    padding: 12px 18px;
+  }
 `;
 
 export const Button_C = styled.button<{ isDarkMode: boolean }>`
@@ -34,6 +42,9 @@ export const Button_C = styled.button<{ isDarkMode: boolean }>`
   font-weight: normal;
   font-size: 1.8rem;
   transition: 0.2s ease-in-out;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 1.6rem;
+  }
   &:hover {
     color: ${(props) => props.theme.Color.Button_Third};
   }

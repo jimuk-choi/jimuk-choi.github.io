@@ -4,8 +4,17 @@ import GlobalStyles from "./style/globalStyles";
 import {
   Header,
   Header_InnerBox,
-  LogoBox,
-  MenuBox,
+  Header_LogoBox,
+  Header_MenuBox,
+  Header_LogoText,
+  Header_LogoImg,
+  Header_ButtonBox,
+  Hamburger,
+  HamburgerWrapper,
+  MobileMenu,
+  MobileMenuInnerBox,
+  MobileMenuCloseBox,
+  MobileMenuCloseButton,
 } from "./components/header/headerStyle";
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
@@ -16,6 +25,7 @@ import Main from "./Page/main";
 import { Footer, Footer_InnerBox } from "./components/footer/footerStyle";
 import Hub from "./Page/Hub";
 import Logo from "./assets/Logo.svg";
+
 // data
 import texts_en_header from "./i18n/en/header.json";
 import texts_kr_header from "./i18n/kr/header.json";
@@ -53,6 +63,7 @@ function App() {
   const [language, setLanguage] = useState<"en" | "ko">("en");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === "en" ? "ko" : "en"));
@@ -60,6 +71,10 @@ function App() {
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
   const handleEmailClick = () => {
@@ -87,15 +102,11 @@ function App() {
           </Routes>
           <Header>
             <Header_InnerBox isDarkMode={isDarkMode}>
-              <LogoBox isDarkMode={isDarkMode}>
-                <img
-                  src={Logo}
-                  alt=""
-                  style={{ width: "18px", height: "18px" }}
-                />
-                <p style={{ fontWeight: "bold", fontSize: "22px" }}>JMC</p>
-              </LogoBox>
-              <MenuBox>
+              <Header_LogoBox isDarkMode={isDarkMode}>
+                <Header_LogoImg src={Logo} alt="" />
+                <Header_LogoText isDarkMode={isDarkMode}>JMC</Header_LogoText>
+              </Header_LogoBox>
+              <Header_MenuBox>
                 <Button_C isDarkMode={false}>
                   {currentHeaderTexts.menu01}
                 </Button_C>
@@ -109,8 +120,8 @@ function App() {
                 <Button_C isDarkMode={false}>
                   {currentHeaderTexts.menu04}
                 </Button_C>
-              </MenuBox>
-              <div style={{ display: "flex", gap: "8px" }}>
+              </Header_MenuBox>
+              <Header_ButtonBox>
                 <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
                   {currentHeaderTexts.buttonText}
                 </Button_B>
@@ -122,8 +133,23 @@ function App() {
                 <Button_A onClick={handleEmailClick} isDarkMode={isDarkMode}>
                   {currentHeaderTexts.contactText}
                 </Button_A>
-              </div>
+              </Header_ButtonBox>
+              <HamburgerWrapper onClick={toggleMenu}>
+                <Hamburger />
+                <Hamburger />
+              </HamburgerWrapper>
             </Header_InnerBox>
+            <MobileMenu isOpen={isMenuOpen}>
+              <MobileMenuInnerBox>
+                <MobileMenuCloseBox>
+                  <MobileMenuCloseButton
+                    isDarkMode={isDarkMode}
+                    onClick={toggleMenu}
+                    isOpen={isMenuOpen}
+                  ></MobileMenuCloseButton>
+                </MobileMenuCloseBox>
+              </MobileMenuInnerBox>
+            </MobileMenu>
           </Header>
 
           {/* <Footer>
