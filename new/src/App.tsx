@@ -16,12 +16,15 @@ import {
   MobileMenuCloseBox,
   MobileMenuCloseButton,
   MobileMenuMain,
-  MbileMenuButtonBox,
+  MobileMenuButtonBox,
   MobileMenuBox,
+  MobileMenuBg,
 } from "./components/header/headerStyle";
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
-
+//assets
+import object_Light from "./assets/object_Light.png";
+import object_Dark from "./assets/object_Dark.png";
 //page
 import Test01 from "./Page/main";
 import Main from "./Page/main";
@@ -95,6 +98,8 @@ function App() {
     }
   }, [isDarkMode]); // isDarkMode가 변경될 때마다 호출
 
+  const ImgSrc = isDarkMode ? object_Dark : object_Light;
+
   return (
     <ThemeProvider theme={isDarkMode ? DarkTheme : LightTheme}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
@@ -149,6 +154,7 @@ function App() {
               </HamburgerWrapper>
             </Header_InnerBox>
             <MobileMenu isOpen={isMenuOpen}>
+              <MobileMenuBg src={ImgSrc} />
               <MobileMenuInnerBox>
                 <MobileMenuCloseBox>
                   <MobileMenuCloseButton
@@ -177,7 +183,7 @@ function App() {
                       </HamburgerMenuButton>
                     </Link>
                   </MobileMenuBox>
-                  <MbileMenuButtonBox>
+                  <MobileMenuButtonBox>
                     <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>
                       {isDarkMode
                         ? currentHeaderTexts.buttonLightMode
@@ -192,7 +198,7 @@ function App() {
                     >
                       {currentHeaderTexts.contactText}
                     </Button_A>
-                  </MbileMenuButtonBox>
+                  </MobileMenuButtonBox>
                 </MobileMenuMain>
               </MobileMenuInnerBox>
             </MobileMenu>

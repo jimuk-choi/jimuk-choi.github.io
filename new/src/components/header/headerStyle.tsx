@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { breakpoints } from "../../style/breakpoints";
 import { ReactComponent as CloseIcon } from "../../assets/x.svg";
+import object_Light from "../../assets/object_Light.png";
 
 export const Header = styled.header`
   /* font-size: 2.4rem; */
@@ -124,7 +125,13 @@ export const MobileMenu = styled.div<{ isOpen: boolean }>`
   transform: translate(-50%, -50%);
   z-index: 9999;
 `;
-
+export const MobileMenuBg = styled.img`
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: -60%;
+  opacity: 0.4;
+`;
 export const MobileMenuInnerBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -171,7 +178,7 @@ export const MobileMenuBox = styled.div`
   align-items: flex-end;
   width: 100%;
 `;
-export const MbileMenuButtonBox = styled.div`
+export const MobileMenuButtonBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
