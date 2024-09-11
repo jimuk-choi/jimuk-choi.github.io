@@ -154,16 +154,16 @@ function App() {
                 </MobileMenuCloseBox>
                 <MobileMenuMain>
                   <MobileMenuBox>
-                    <HamburgerMenuButton>
+                    <HamburgerMenuButton isDarkMode={isDarkMode}>
                       {currentHeaderTexts.menu01}
                     </HamburgerMenuButton>
-                    <HamburgerMenuButton>
+                    <HamburgerMenuButton isDarkMode={isDarkMode}>
                       {currentHeaderTexts.menu02}
                     </HamburgerMenuButton>
-                    <HamburgerMenuButton>
+                    <HamburgerMenuButton isDarkMode={isDarkMode}>
                       {currentHeaderTexts.menu03}
                     </HamburgerMenuButton>
-                    <HamburgerMenuButton>
+                    <HamburgerMenuButton isDarkMode={isDarkMode}>
                       {currentHeaderTexts.menu04}
                     </HamburgerMenuButton>
                   </MobileMenuBox>

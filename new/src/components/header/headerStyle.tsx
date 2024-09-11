@@ -127,6 +127,9 @@ export const MobileMenuInnerBox = styled.div`
   align-items: center;
   width: 100%;
   padding: 40px 80px;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 40px 40px;
+  }
 `;
 export const MobileMenuCloseBox = styled.div`
   display: flex;
@@ -152,6 +155,9 @@ export const MbileMenuButtonBox = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 8px;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    flex-direction: column;
+  }
 `;
 export const MobileMenuCloseButton = styled(CloseIcon)<{
   isDarkMode: boolean;
