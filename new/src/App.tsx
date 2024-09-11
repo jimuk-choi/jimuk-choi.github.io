@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import GlobalStyles from "./style/globalStyles";
 import {
   Header,
@@ -121,9 +121,14 @@ function App() {
                 <Button_C isDarkMode={false}>
                   {currentHeaderTexts.menu03}
                 </Button_C>
-                <Button_C isDarkMode={false}>
-                  {currentHeaderTexts.menu04}
-                </Button_C>
+                <Link
+                  target="blank"
+                  to="https://jimukchoi.github.io/JMC.github.io/"
+                >
+                  <Button_C isDarkMode={false}>
+                    {currentHeaderTexts.menu04}
+                  </Button_C>
+                </Link>
               </Header_MenuBox>
               <Header_ButtonBox>
                 <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
@@ -163,9 +168,14 @@ function App() {
                     <HamburgerMenuButton isDarkMode={isDarkMode}>
                       {currentHeaderTexts.menu03}
                     </HamburgerMenuButton>
-                    <HamburgerMenuButton isDarkMode={isDarkMode}>
-                      {currentHeaderTexts.menu04}
-                    </HamburgerMenuButton>
+                    <Link
+                      target="blank"
+                      to="https://jimukchoi.github.io/JMC.github.io/"
+                    >
+                      <HamburgerMenuButton isDarkMode={isDarkMode}>
+                        {currentHeaderTexts.menu04}
+                      </HamburgerMenuButton>
+                    </Link>
                   </MobileMenuBox>
                   <MbileMenuButtonBox>
                     <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>

@@ -15,6 +15,9 @@ export const Header = styled.header`
   @media (max-width: ${breakpoints.desktopXS}px) {
     padding: 0 40px;
   }
+  @media (max-width: ${breakpoints.mobileL}px) {
+    padding: 0 12px;
+  }
 `;
 
 export const Header_InnerBox = styled.div<{ isDarkMode: boolean }>`
@@ -121,6 +124,7 @@ export const MobileMenu = styled.div<{ isOpen: boolean }>`
   transform: translate(-50%, -50%);
   z-index: 9999;
 `;
+
 export const MobileMenuInnerBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -136,6 +140,23 @@ export const MobileMenuCloseBox = styled.div`
   justify-content: flex-end;
   width: 100%;
   padding: 20px 0;
+`;
+/* export const MobileMenuCloseButton = styled(CloseIcon)<{
+  isDarkMode: boolean;
+  isOpen: boolean;
+}>`
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  color: ${(props) => props.theme.Color.white};
+`; */
+export const MobileMenuCloseButton = styled(CloseIcon, {
+  shouldForwardProp: (prop) => !["isDarkMode", "isOpen"].includes(prop),
+})<{ isDarkMode: boolean; isOpen: boolean }>`
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  color: ${(props) => props.theme.Color.white};
 `;
 export const MobileMenuMain = styled.div`
   display: flex;
@@ -158,13 +179,4 @@ export const MbileMenuButtonBox = styled.div`
   @media (max-width: ${breakpoints.tabletS}px) {
     flex-direction: column;
   }
-`;
-export const MobileMenuCloseButton = styled(CloseIcon)<{
-  isDarkMode: boolean;
-  isOpen: boolean;
-}>`
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  color: ${(props) => props.theme.Color.white};
 `;
