@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   HeaderSection,
@@ -24,7 +24,6 @@ import { HamburgerMenuButton } from "../button/button_hamburger";
 import { LanguageContext } from "../../App";
 import object_Light from "../../assets/object_Light.png";
 import object_Dark from "../../assets/object_Dark.png";
-import Logo from "../../assets/Logo.svg";
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -58,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({
     <HeaderSection>
       <Header_InnerBox isDarkMode={isDarkMode}>
         <Header_LogoBox isDarkMode={isDarkMode}>
-          <Header_LogoImg src={Logo} alt="" />
+          <Header_LogoImg isDarkMode={isDarkMode} />
           <Header_LogoText isDarkMode={isDarkMode}>JMC</Header_LogoText>
         </Header_LogoBox>
         <Header_MenuBox>

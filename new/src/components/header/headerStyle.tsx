@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { breakpoints } from "../../style/breakpoints";
 import { ReactComponent as CloseIcon } from "../../assets/x.svg";
-import object_Light from "../../assets/object_Light.png";
+import { ReactComponent as Logo } from "../../assets/Logo.svg";
 
 export const HeaderSection = styled.header`
   /* font-size: 2.4rem; */
@@ -51,10 +51,13 @@ export const Header_LogoBox = styled.div<{ isDarkMode: boolean }>`
     width: 100px;
   }
 `;
-
-export const Header_LogoImg = styled.img`
+export const Header_LogoImg = styled(Logo, {
+  shouldForwardProp: (prop) => !["isDarkMode"].includes(prop),
+})<{ isDarkMode: boolean }>`
   width: 18px;
   height: 18px;
+  cursor: pointer;
+  color: ${(props) => props.theme.Bg.Button_Primary};
   @media (max-width: ${breakpoints.desktopXS}px) {
     width: 16px;
     height: 16px;
@@ -148,15 +151,6 @@ export const MobileMenuCloseBox = styled.div`
   width: 100%;
   padding: 20px 0;
 `;
-/* export const MobileMenuCloseButton = styled(CloseIcon)<{
-  isDarkMode: boolean;
-  isOpen: boolean;
-}>`
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  color: ${(props) => props.theme.Color.white};
-`; */
 export const MobileMenuCloseButton = styled(CloseIcon, {
   shouldForwardProp: (prop) => !["isDarkMode", "isOpen"].includes(prop),
 })<{ isDarkMode: boolean; isOpen: boolean }>`
