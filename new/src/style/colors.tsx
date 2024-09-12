@@ -39,7 +39,7 @@ export const LightTheme: Theme = {
 export const DarkTheme: Theme = {
   Bg: {
     white: palette.white,
-    white90: palette.black,
+    white90: palette.black_Main,
     whiteT20: palette.whiteT20,
     Button_Primary: palette.Dark_primary100,
     Button_Primary_Hover: palette.Light_primary80,

@@ -1,7 +1,5 @@
 import MainGreetingSection from "../components/section/main_Greeting_Section";
-import { useContext } from "react";
-import { LanguageContext } from "../App"; // 컨텍스트 경로 업데이트 필요
-import MainTestSection from "../components/section/main_Test_Section";
+import MainWhoIamSection from "../components/section/main_WhoIamt_Section";
 
 interface MainProps {
   isDarkMode: boolean;
@@ -13,7 +11,7 @@ function Main({ isDarkMode }: MainProps) {
   return (
     <>
       <MainGreetingSection isDarkMode={isDarkMode} />
-      {/* <MainTestSection /> */}
+      <MainWhoIamSection isDarkMode={isDarkMode} />
     </>
   );
 }

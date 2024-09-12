@@ -58,8 +58,8 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
       videoRef.current.load(); // 비디오 소스
       gsap.fromTo(
         videoRef.current,
-        { opacity: 0, scale: 3 },
-        { opacity: 1, scale: 1, duration: 2.2, ease: "Power3.easeOut" }
+        { scale: 3 },
+        { scale: 1, duration: 2.2, ease: "Power3.easeOut" }
       );
     }
 
@@ -87,24 +87,24 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
   }, [isDarkMode]);
 
   // 현재 언어에 맞는 데이터를 동적으로 불러옵니다.
-  const jsonData =
+  const TextData =
     language === "en"
-      ? require("../../i18n/en/main_Section_Greeting.json")
-      : require("../../i18n/kr/main_Section_Greeting.json");
+      ? require("../../i18n/en/main_Section.json")
+      : require("../../i18n/kr/main_Section.json");
 
   return (
     <GreetingSection>
       <MainSectionTitleWrapper>
         <MainSectionTitleWrapperInnerBox>
           <Heading02 ref={Heading02_Ref} isDarkMode={isDarkMode}>
-            {jsonData.Name}
+            {TextData.Greeting.Name}
           </Heading02>
           <Rectangle_L ref={Rectangle_L_Ref} />
           <MainSectionTitle ref={MainSectionTitle_Ref} isDarkMode={isDarkMode}>
-            {jsonData.GreetingTitle}
+            {TextData.Greeting.GreetingTitle}
           </MainSectionTitle>
           <Heading01 ref={Heading01_Ref} isDarkMode={isDarkMode}>
-            {jsonData.Slogan}
+            {TextData.Greeting.Slogan}
           </Heading01>
         </MainSectionTitleWrapperInnerBox>
       </MainSectionTitleWrapper>

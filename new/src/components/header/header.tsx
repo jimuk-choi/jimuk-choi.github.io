@@ -58,7 +58,9 @@ const Header: React.FC<HeaderProps> = ({
       <Header_InnerBox isDarkMode={isDarkMode}>
         <Header_LogoBox isDarkMode={isDarkMode}>
           <Header_LogoImg isDarkMode={isDarkMode} />
-          <Header_LogoText isDarkMode={isDarkMode}>JMC</Header_LogoText>
+          <Header_LogoText isDarkMode={isDarkMode}>
+            {currentHeaderTexts.LogoText}
+          </Header_LogoText>
         </Header_LogoBox>
         <Header_MenuBox>
           <Button_C isDarkMode={isDarkMode}>
