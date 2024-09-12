@@ -3,7 +3,7 @@ import { breakpoints } from "../../style/breakpoints";
 import { ReactComponent as CloseIcon } from "../../assets/x.svg";
 import object_Light from "../../assets/object_Light.png";
 
-export const Header = styled.header`
+export const HeaderSection = styled.header`
   /* font-size: 2.4rem; */
   width: 100%;
   height: 80px;

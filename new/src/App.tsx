@@ -1,25 +1,7 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import GlobalStyles from "./style/globalStyles";
-import {
-  Header,
-  Header_InnerBox,
-  Header_LogoBox,
-  Header_MenuBox,
-  Header_LogoText,
-  Header_LogoImg,
-  Header_ButtonBox,
-  Hamburger,
-  HamburgerWrapper,
-  MobileMenu,
-  MobileMenuInnerBox,
-  MobileMenuCloseBox,
-  MobileMenuCloseButton,
-  MobileMenuMain,
-  MobileMenuButtonBox,
-  MobileMenuBox,
-  MobileMenuBg,
-} from "./components/header/headerStyle";
+import Header from "./components/header/header";
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
 //assets
@@ -39,12 +21,6 @@ import texts_en_footer from "./i18n/en/footer.json";
 import texts_kr_footer from "./i18n/kr/footer.json";
 // type
 import { HeaderTexts, FooterTexts } from "./i18n/types";
-import {
-  Button_A,
-  Button_B,
-  Button_C,
-} from "./components/button/button_style01";
-import { HamburgerMenuButton } from "./components/button/button_hamburger";
 
 const textsData: {
   header: Record<"en" | "ko", HeaderTexts>;
@@ -88,7 +64,6 @@ function App() {
     window.location.href = "mailto:jimook1995@naver.com";
   };
 
-  const currentHeaderTexts = textsData.header[language];
   const currentFooterTexts = textsData.footer[language];
 
   useEffect(() => {
@@ -97,8 +72,6 @@ function App() {
       videoRef.current.load(); // 비디오 소스를 다시 로드
     }
   }, [isDarkMode]); // isDarkMode가 변경될 때마다 호출
-
-  const ImgSrc = isDarkMode ? object_Dark : object_Light;
 
   return (
     <ThemeProvider theme={isDarkMode ? DarkTheme : LightTheme}>
@@ -109,100 +82,11 @@ function App() {
             <Route path="/" element={<Main isDarkMode={isDarkMode} />} />
             <Route path="/Hub" element={<Hub />} />
           </Routes>
-          <Header>
-            <Header_InnerBox isDarkMode={isDarkMode}>
-              <Header_LogoBox isDarkMode={isDarkMode}>
-                <Header_LogoImg src={Logo} alt="" />
-                <Header_LogoText isDarkMode={isDarkMode}>JMC</Header_LogoText>
-              </Header_LogoBox>
-              <Header_MenuBox>
-                <Button_C isDarkMode={false}>
-                  {currentHeaderTexts.menu01}
-                </Button_C>
-
-                <Button_C isDarkMode={false}>
-                  {currentHeaderTexts.menu02}
-                </Button_C>
-                <Button_C isDarkMode={false}>
-                  {currentHeaderTexts.menu03}
-                </Button_C>
-                <Link
-                  target="blank"
-                  to="https://jimukchoi.github.io/JMC.github.io/"
-                >
-                  <Button_C isDarkMode={false}>
-                    {currentHeaderTexts.menu04}
-                  </Button_C>
-                </Link>
-              </Header_MenuBox>
-              <Header_ButtonBox>
-                <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
-                  {currentHeaderTexts.buttonText}
-                </Button_B>
-                <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>
-                  {isDarkMode
-                    ? currentHeaderTexts.buttonLightMode
-                    : currentHeaderTexts.buttonDarkMode}
-                </Button_B>
-                <Button_A onClick={handleEmailClick} isDarkMode={isDarkMode}>
-                  {currentHeaderTexts.contactText}
-                </Button_A>
-              </Header_ButtonBox>
-              <HamburgerWrapper onClick={toggleMenu}>
-                <Hamburger />
-                <Hamburger />
-              </HamburgerWrapper>
-            </Header_InnerBox>
-            <MobileMenu isOpen={isMenuOpen}>
-              <MobileMenuBg src={ImgSrc} />
-              <MobileMenuInnerBox>
-                <MobileMenuCloseBox>
-                  <MobileMenuCloseButton
-                    isDarkMode={isDarkMode}
-                    onClick={toggleMenu}
-                    isOpen={isMenuOpen}
-                  ></MobileMenuCloseButton>
-                </MobileMenuCloseBox>
-                <MobileMenuMain>
-                  <MobileMenuBox>
-                    <HamburgerMenuButton isDarkMode={isDarkMode}>
-                      {currentHeaderTexts.menu01}
-                    </HamburgerMenuButton>
-                    <HamburgerMenuButton isDarkMode={isDarkMode}>
-                      {currentHeaderTexts.menu02}
-                    </HamburgerMenuButton>
-                    <HamburgerMenuButton isDarkMode={isDarkMode}>
-                      {currentHeaderTexts.menu03}
-                    </HamburgerMenuButton>
-                    <Link
-                      target="blank"
-                      to="https://jimukchoi.github.io/JMC.github.io/"
-                    >
-                      <HamburgerMenuButton isDarkMode={isDarkMode}>
-                        {currentHeaderTexts.menu04}
-                      </HamburgerMenuButton>
-                    </Link>
-                  </MobileMenuBox>
-                  <MobileMenuButtonBox>
-                    <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>
-                      {isDarkMode
-                        ? currentHeaderTexts.buttonLightMode
-                        : currentHeaderTexts.buttonDarkMode}
-                    </Button_B>
-                    <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
-                      {currentHeaderTexts.buttonText}
-                    </Button_B>
-                    <Button_A
-                      onClick={handleEmailClick}
-                      isDarkMode={isDarkMode}
-                    >
-                      {currentHeaderTexts.contactText}
-                    </Button_A>
-                  </MobileMenuButtonBox>
-                </MobileMenuMain>
-              </MobileMenuInnerBox>
-            </MobileMenu>
-          </Header>
+          <Header
+            isDarkMode={isDarkMode}
+            toggleDarkMode={toggleDarkMode}
+            toggleLanguage={toggleLanguage}
+          />
 
           {/* <Footer>
             <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
