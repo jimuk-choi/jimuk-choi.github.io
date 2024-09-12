@@ -34,6 +34,7 @@ export const Button_B = styled.button<{ isDarkMode: boolean }>`
     padding: 12px 18px;
   }
 `;
+Button_B.displayName = "Button_B";
 
 export const Button_C = styled.button<{ isDarkMode: boolean }>`
   color: ${(props) => props.theme.Color.Button_Secondary};

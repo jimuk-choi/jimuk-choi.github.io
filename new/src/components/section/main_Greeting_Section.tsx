@@ -55,29 +55,34 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
   useEffect(() => {
     //배경 비디오
     if (videoRef.current) {
-      videoRef.current.load(); // 비디오 소스를 다시 로드
+      videoRef.current.load(); // 비디오 소스
+      gsap.fromTo(
+        videoRef.current,
+        { opacity: 0, scale: 3 },
+        { opacity: 1, scale: 1, duration: 2.2, ease: "Power3.easeOut" }
+      );
     }
 
     //GSAP 애니메이션
     gsap.fromTo(
       Heading02_Ref.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1.5, ease: "Power3.easeOut" }
+      { opacity: 0, y: 180 },
+      { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
     );
     gsap.fromTo(
       Rectangle_L_Ref.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1.5, ease: "Power3.easeOut" }
+      { opacity: 0, y: 180 },
+      { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
     );
     gsap.fromTo(
       Heading01_Ref.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1.5, ease: "Power3.easeOut" }
+      { opacity: 0, y: 180 },
+      { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
     );
     gsap.fromTo(
       MainSectionTitle_Ref.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1.5, ease: "Power3.easeOut" }
+      { opacity: 0, y: 180 },
+      { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
     );
   }, [isDarkMode]);
 
