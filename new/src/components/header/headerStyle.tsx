@@ -118,7 +118,7 @@ export const Hamburger = styled.div`
   background-color: ${(props) => props.theme.Color.white};
 `;
 export const MobileMenu = styled.div<{ isOpen: boolean }>`
-  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
   width: 100%;
   height: 100vh;
   background-color: ${(props) => props.theme.Bg.white90};
@@ -127,7 +127,10 @@ export const MobileMenu = styled.div<{ isOpen: boolean }>`
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  transition: 0.2s ease-out;
 `;
+
 export const MobileMenuBg = styled.img`
   height: 100%;
   position: absolute;
@@ -139,7 +142,7 @@ export const MobileMenuInnerBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  height: 90vh;
   padding: 40px 80px;
   @media (max-width: ${breakpoints.tabletS}px) {
     padding: 40px 40px;
