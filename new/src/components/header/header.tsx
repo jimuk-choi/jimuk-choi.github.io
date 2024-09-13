@@ -65,26 +65,52 @@ const Header: React.FC<HeaderProps> = ({
           </Header_LogoText>
         </Header_LogoBox>
         <Header_MenuBox>
-          <Button_C isDarkMode={isDarkMode}>
+          <Button_C
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            isDarkMode={isDarkMode}
+          >
             {currentHeaderTexts.menu01}
           </Button_C>
-          <Button_C isDarkMode={isDarkMode}>
+          <Button_C
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            isDarkMode={isDarkMode}
+          >
             {currentHeaderTexts.menu02}
           </Button_C>
-          <Button_C isDarkMode={isDarkMode}>
+          <Button_C
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            isDarkMode={isDarkMode}
+          >
             {currentHeaderTexts.menu03}
           </Button_C>
           <Link target="blank" to="https://jimukchoi.github.io/JMC.github.io/">
-            <Button_C isDarkMode={isDarkMode}>
+            <Button_C
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+              isDarkMode={isDarkMode}
+            >
               {currentHeaderTexts.menu04}
             </Button_C>
           </Link>
         </Header_MenuBox>
         <Header_ButtonBox>
-          <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
+          <Button_B
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            onClick={toggleLanguage}
+            isDarkMode={isDarkMode}
+          >
             {currentHeaderTexts.buttonText}
           </Button_B>
-          <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>
+          <Button_B
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            onClick={toggleDarkMode}
+            isDarkMode={isDarkMode}
+          >
             {isDarkMode
               ? currentHeaderTexts.buttonLightMode
               : currentHeaderTexts.buttonDarkMode}
