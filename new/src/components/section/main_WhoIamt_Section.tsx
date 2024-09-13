@@ -92,7 +92,7 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           scrollTrigger: {
             trigger: Heading03_Title_Ref.current,
             start: "top 80%",
-            end: "bottom 60%",
+            end: "bottom 75%",
             scrub: true,
             /* markers: true, */
           },
@@ -106,7 +106,7 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           scrollTrigger: {
             trigger: Rectangle_Ref.current,
             start: "top 80%",
-            end: "bottom 60%",
+            end: "bottom 75%",
             scrub: true,
             /* markers: true, */
           },
@@ -120,7 +120,7 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           scrollTrigger: {
             trigger: Heading03_SubTitle_Ref.current,
             start: "top 80%",
-            end: "bottom 60%",
+            end: "bottom 75%",
             scrub: true,
             /* markers: true, */
           },
@@ -134,7 +134,7 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           scrollTrigger: {
             trigger: SubTitle_M_Ref.current,
             start: "top 80%",
-            end: "bottom 60%",
+            end: "bottom 75%",
             scrub: true,
             /* markers: true, */
           },
