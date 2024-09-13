@@ -10,14 +10,16 @@ const CursorStyle = styled.div<{ isDarkMode: boolean }>`
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  transition: transform 0.15s ease-in-out, background-color 0.15s;
+  /* transition: transform 0.15s ease-in-out, background-color 0.15s; */
+  transition: width 0.15s ease-in-out, height 0.15s ease-in-out,
+    transform 0.15s ease-in-out, background-color 0.15s ease-in-out;
   backdrop-filter: blur(4px);
   opacity: 0.8;
 
   &.hover {
     width: 60px;
     height: 60px;
-    opacity: 0.4;
+    opacity: 0.6;
     /* background-color: ${(props) => props.theme.Bg.white90}; */
     border: 2px solid #ffffff;
   }

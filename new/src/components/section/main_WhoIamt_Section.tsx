@@ -1,15 +1,20 @@
 import styled from "@emotion/styled";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
-
+//GSAP
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 //img
 import object_Light from "../../assets/object_Light.png";
 import object_Dark from "../../assets/object_Dark.png";
 //component
-import { Heading02, Heading03 } from "../typograpy/heading";
+import { Heading03 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { Subtitle_M } from "../typograpy/subtitle";
 import { breakpoints } from "../../style/breakpoints";
+
+//gsap plugin 등록
+gsap.registerPlugin(ScrollTrigger);
 
 const WhoIamSection = styled.div`
   padding: 200px 160px;
@@ -71,17 +76,86 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
 
   const ImgSrc = isDarkMode ? object_Dark : object_Light;
 
+  //gsap 애니메이션
+  const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
+  const Rectangle_Ref = useRef<HTMLDivElement>(null);
+  const Heading03_SubTitle_Ref = useRef<HTMLHeadingElement>(null);
+  const SubTitle_M_Ref = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (Heading03_Title_Ref.current && SubTitle_M_Ref.current) {
+      gsap.fromTo(
+        Heading03_Title_Ref.current,
+        { opacity: 0 }, //시작
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: Heading03_Title_Ref.current,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true,
+            /* markers: true, */
+          },
+        }
+      );
+      gsap.fromTo(
+        Rectangle_Ref.current,
+        { opacity: 0 }, //시작
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: Rectangle_Ref.current,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true,
+            /* markers: true, */
+          },
+        }
+      );
+      gsap.fromTo(
+        Heading03_SubTitle_Ref.current,
+        { opacity: 0 }, //시작
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: Heading03_SubTitle_Ref.current,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true,
+            /* markers: true, */
+          },
+        }
+      );
+      gsap.fromTo(
+        SubTitle_M_Ref.current,
+        { opacity: 0 }, //시작
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: SubTitle_M_Ref.current,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: true,
+            /* markers: true, */
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <WhoIamSection>
       <WhoIamBg isDarkMode={isDarkMode} src={ImgSrc} alt="" />
       <WhoIamSectionInnerBox>
-        <Heading03 isDarkMode={isDarkMode}>{TextData.WhoIam.Title}</Heading03>
-        <Rectangle_L />
+        <Heading03 ref={Heading03_Title_Ref} isDarkMode={isDarkMode}>
+          {TextData.WhoIam.Title}
+        </Heading03>
+        <Rectangle_L ref={Rectangle_Ref} />
         <WhoIamTextBox>
-          <Heading03 isDarkMode={isDarkMode}>
+          <Heading03 ref={Heading03_SubTitle_Ref} isDarkMode={isDarkMode}>
             {TextData.WhoIam.MainText}
           </Heading03>
-          <Subtitle_M isDarkMode={isDarkMode}>
+          <Subtitle_M ref={SubTitle_M_Ref} isDarkMode={isDarkMode}>
             {TextData.WhoIam.SubText}
           </Subtitle_M>
         </WhoIamTextBox>

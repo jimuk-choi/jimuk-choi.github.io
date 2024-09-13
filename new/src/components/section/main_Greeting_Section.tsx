@@ -9,7 +9,6 @@ import {
 import { useContext, useRef, useEffect } from "react";
 //GSAP
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 //Text
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
 //Shape
