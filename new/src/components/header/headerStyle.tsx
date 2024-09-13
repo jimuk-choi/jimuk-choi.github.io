@@ -159,7 +159,7 @@ export const MobileMenuCloseButton = styled(CloseIcon, {
 })<{ isDarkMode: boolean; isOpen: boolean }>`
   width: 28px;
   height: 28px;
-  cursor: pointer;
+  /* cursor: pointer; */
   color: ${(props) => props.theme.Color.white};
 `;
 export const MobileMenuMain = styled.div`

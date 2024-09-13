@@ -9,6 +9,7 @@ import object_Dark from "../../assets/object_Dark.png";
 import { Heading02, Heading03 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { Subtitle_M } from "../typograpy/subtitle";
+import { breakpoints } from "../../style/breakpoints";
 
 const WhoIamSection = styled.div`
   padding: 200px 160px;
@@ -16,6 +17,12 @@ const WhoIamSection = styled.div`
   position: relative;
   overflow: hidden;
   z-index: -2;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    padding: 120px 40px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 56px 32px;
+  }
 `;
 const WhoIamBg = styled.img<{ isDarkMode: boolean }>`
   position: absolute;
@@ -24,6 +31,9 @@ const WhoIamBg = styled.img<{ isDarkMode: boolean }>`
   transform: translate(-50%, -50%) scale(3.4);
   z-index: -1;
   opacity: 0.3;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    transform: translate(-50%, -50%) scale(2);
+  }
 `;
 const WhoIamSectionInnerBox = styled.div`
   display: flex;
@@ -38,6 +48,12 @@ const WhoIamTextBox = styled.div`
   gap: 24px;
   padding: 0 100px;
   margin: 40px 0 0 0;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    padding: 0 20px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 0;
+  }
 `;
 
 interface WhoIamProps {
@@ -62,9 +78,9 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
         <Heading03 isDarkMode={isDarkMode}>{TextData.WhoIam.Title}</Heading03>
         <Rectangle_L />
         <WhoIamTextBox>
-          <Heading02 isDarkMode={isDarkMode}>
+          <Heading03 isDarkMode={isDarkMode}>
             {TextData.WhoIam.MainText}
-          </Heading02>
+          </Heading03>
           <Subtitle_M isDarkMode={isDarkMode}>
             {TextData.WhoIam.SubText}
           </Subtitle_M>

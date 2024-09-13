@@ -1,0 +1,56 @@
+import React, { useState, useEffect } from "react";
+import styled from "@emotion/styled";
+
+const CursorStyle = styled.div<{ isDarkMode: boolean }>`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.Bg.Button_Primary};
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.15s ease-in-out, background-color 0.15s;
+  backdrop-filter: blur(4px);
+  opacity: 0.8;
+
+  &.hover {
+    width: 60px;
+    height: 60px;
+    opacity: 0.4;
+    /* background-color: ${(props) => props.theme.Bg.white90}; */
+    border: 2px solid #ffffff;
+  }
+`;
+
+const Cursor = ({
+  isHovering,
+  isDarkMode, // Props로 추가
+}: {
+  isHovering: boolean;
+  isDarkMode: boolean; // 타입 추가
+}) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updateMousePosition = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", updateMousePosition);
+
+    return () => {
+      window.removeEventListener("mousemove", updateMousePosition);
+    };
+  }, []);
+
+  return (
+    <CursorStyle
+      className={isHovering ? "hover" : ""}
+      isDarkMode={isDarkMode}
+      style={{ top: `${position.y}px`, left: `${position.x}px` }}
+    />
+  );
+};
+
+export default Cursor;

@@ -4,7 +4,7 @@ import {
   MainSectionTitleWrapperInnerBox,
   MainSectionTitle,
   Heading01,
-  Heading03,
+  Heading03_Exclusion,
 } from "../typograpy/heading";
 import { useContext, useRef, useEffect } from "react";
 //GSAP
@@ -96,9 +96,9 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
     <GreetingSection>
       <MainSectionTitleWrapper>
         <MainSectionTitleWrapperInnerBox>
-          <Heading03 ref={Heading02_Ref} isDarkMode={isDarkMode}>
+          <Heading03_Exclusion ref={Heading02_Ref} isDarkMode={isDarkMode}>
             {TextData.Greeting.Name}
-          </Heading03>
+          </Heading03_Exclusion>
           <Rectangle_L ref={Rectangle_L_Ref} />
           <MainSectionTitle ref={MainSectionTitle_Ref} isDarkMode={isDarkMode}>
             {TextData.Greeting.GreetingTitle}

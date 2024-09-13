@@ -108,6 +108,12 @@ export const Heading03_Exclusion = styled.h3<{ isDarkMode: boolean }>`
   letter-spacing: 6px;
   line-height: normal;
   letter-spacing: 4px;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 2.2rem;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const Heading03 = styled.h3<{ isDarkMode: boolean }>`
@@ -119,4 +125,10 @@ export const Heading03 = styled.h3<{ isDarkMode: boolean }>`
   letter-spacing: 4px;
   line-height: normal;
   letter-spacing: 4px;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 2.2rem;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 1.6rem;
+  }
 `;

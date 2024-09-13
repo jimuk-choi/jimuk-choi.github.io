@@ -29,12 +29,14 @@ interface HeaderProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
   toggleLanguage: () => void;
+  setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Header: React.FC<HeaderProps> = ({
   isDarkMode,
   toggleDarkMode,
   toggleLanguage,
+  setIsHovering,
 }) => {
   const { language } = useContext(LanguageContext); // 언어 정보를 가져오는 컨텍스트
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,7 +89,12 @@ const Header: React.FC<HeaderProps> = ({
               ? currentHeaderTexts.buttonLightMode
               : currentHeaderTexts.buttonDarkMode}
           </Button_B>
-          <Button_A onClick={handleEmailClick} isDarkMode={isDarkMode}>
+          <Button_A
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            onClick={handleEmailClick}
+            isDarkMode={isDarkMode}
+          >
             {currentHeaderTexts.contactText}
           </Button_A>
         </Header_ButtonBox>

@@ -17,6 +17,7 @@ const GlobalStyles = () => (
         margin: 0;
         padding: 0;
         font-family: "Helvetica Neue", sans-serif;
+        cursor: none;
       }
       p,
       h1,
@@ -29,7 +30,8 @@ const GlobalStyles = () => (
         border: none;
         background-color: transparent;
         font-family: "Helvetica Neue", sans-serif;
-        cursor: pointer;
+        cursor: none;
+        /* cursor: pointer; */
       }
     `}
   />
