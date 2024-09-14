@@ -69,12 +69,13 @@ const MainBox = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  gap: 80px;
 `;
 const MainBox_ImgBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 45%;
+  width: 40%;
   padding: 0 24px;
   box-sizing: border-box;
 `;
@@ -84,12 +85,15 @@ const MainBox_Img = styled.img<{ isOpen: boolean }>`
   height: ${(props) => (props.isOpen ? "180px" : "100px")};
   color: ${(props) => (props.isOpen ? "red" : "black")}; // 색상 설정
 `;
+
 const MainBox_TextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 60%;
+  padding: 0 40px 0 0;
+  gap: 24px;
 `;
 const MainBox_TextBox_TitleBox = styled.div`
   display: flex;
