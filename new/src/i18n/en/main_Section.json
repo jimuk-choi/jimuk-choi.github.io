@@ -8,5 +8,40 @@
     "Title": "Who I am",
     "MainText": "I am truly passionate about what I do. It’s not just about creating visually appealing designs, but about solving problems and delivering a better user experience.",
     "SubText": "Hello, I’m Jimuk Choi, a UI/UX designer with over 3 years of experience. I prioritize user experience and strive for designs that are both functional and aesthetically pleasing. With skills in design, 3D, video, and development, I focus on simplifying complex user flows. I particularly excel in creating designs that are feasible for implementation. I have worked on projects across various industries, and my goal is to continue creating innovative designs that make a positive impact."
+  },
+  "MyServices": {
+    "Title": "My Services",
+    "List": [
+      {
+        "id": 1,
+        "img": "WebDesign_Object",
+        "title": "Web Design",
+        "content": "Transforming ideas into stunning, user-friendly websites that captivate and engage. My expertise in web design ensures that every project not only looks exceptional but also performs seamlessly across all devices."
+      },
+      {
+        "id": 2,
+        "img": "AppDesign_Object",
+        "title": "App Design",
+        "content": "Crafting intuitive and visually appealing app interfaces that delight users and enhance their experience. My app design approach focuses on creating seamless interactions and innovative solutions."
+      },
+      {
+        "id": 3,
+        "img": "DesignSystems_Object",
+        "title": "DesignSystems",
+        "content": "Developing comprehensive design systems that streamline design and development processes. My approach ensures consistency and efficiency, empowering teams to build cohesive and scalable solutions."
+      },
+      {
+        "id": 4,
+        "img": "Webflow_Object",
+        "title": "Webflow",
+        "content": "Harnessing the power of Webflow to create dynamic, responsive websites with ease. My skills in Webflow enable me to deliver visually stunning websites that are both functional and flexible."
+      },
+      {
+        "id": 5,
+        "img": "Branding_Object",
+        "title": "Branding",
+        "content": "Designing compelling brand identities that resonate and leave a lasting impression. My branding expertise helps businesses articulate their unique value and connect with their audience effectively."
+      }
+    ]
   }
 }

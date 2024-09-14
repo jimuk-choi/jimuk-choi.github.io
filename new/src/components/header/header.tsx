@@ -124,7 +124,11 @@ const Header: React.FC<HeaderProps> = ({
             {currentHeaderTexts.contactText}
           </Button_A>
         </Header_ButtonBox>
-        <HamburgerWrapper onClick={toggleMenu}>
+        <HamburgerWrapper
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          onClick={toggleMenu}
+        >
           <Hamburger />
           <Hamburger />
         </HamburgerWrapper>
@@ -137,38 +141,71 @@ const Header: React.FC<HeaderProps> = ({
               isDarkMode={isDarkMode}
               onClick={toggleMenu}
               isOpen={isMenuOpen}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
             />
           </MobileMenuCloseBox>
           <MobileMenuMain>
             <MobileMenuBox>
-              <HamburgerMenuButton isDarkMode={isDarkMode}>
+              <HamburgerMenuButton
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                isDarkMode={isDarkMode}
+              >
                 {currentHeaderTexts.menu01}
               </HamburgerMenuButton>
-              <HamburgerMenuButton isDarkMode={isDarkMode}>
+              <HamburgerMenuButton
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                isDarkMode={isDarkMode}
+              >
                 {currentHeaderTexts.menu02}
               </HamburgerMenuButton>
-              <HamburgerMenuButton isDarkMode={isDarkMode}>
+              <HamburgerMenuButton
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                isDarkMode={isDarkMode}
+              >
                 {currentHeaderTexts.menu03}
               </HamburgerMenuButton>
               <Link
                 target="blank"
                 to="https://jimukchoi.github.io/JMC.github.io/"
               >
-                <HamburgerMenuButton isDarkMode={isDarkMode}>
+                <HamburgerMenuButton
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  isDarkMode={isDarkMode}
+                >
                   {currentHeaderTexts.menu04}
                 </HamburgerMenuButton>
               </Link>
             </MobileMenuBox>
             <MobileMenuButtonBox>
-              <Button_B onClick={toggleDarkMode} isDarkMode={isDarkMode}>
+              <Button_B
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                onClick={toggleDarkMode}
+                isDarkMode={isDarkMode}
+              >
                 {isDarkMode
                   ? currentHeaderTexts.buttonLightMode
                   : currentHeaderTexts.buttonDarkMode}
               </Button_B>
-              <Button_B onClick={toggleLanguage} isDarkMode={isDarkMode}>
+              <Button_B
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                onClick={toggleLanguage}
+                isDarkMode={isDarkMode}
+              >
                 {currentHeaderTexts.buttonText}
               </Button_B>
-              <Button_A onClick={handleEmailClick} isDarkMode={isDarkMode}>
+              <Button_A
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                onClick={handleEmailClick}
+                isDarkMode={isDarkMode}
+              >
                 {currentHeaderTexts.contactText}
               </Button_A>
             </MobileMenuButtonBox>

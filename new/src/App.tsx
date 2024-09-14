@@ -55,7 +55,12 @@ function App() {
           <GlobalStyles />
           <Cursor isHovering={isHovering} isDarkMode={isDarkMode} />
           <Routes>
-            <Route path="/" element={<Main isDarkMode={isDarkMode} />} />
+            <Route
+              path="/"
+              element={
+                <Main setIsHovering={setIsHovering} isDarkMode={isDarkMode} />
+              }
+            />
             <Route path="/Hub" element={<Hub />} />
           </Routes>
           <Header
