@@ -29,7 +29,8 @@ export const Header_InnerBox = styled.div<{ isDarkMode: boolean }>`
   border-radius: 12px;
   padding: 40px;
   background-color: ${(props) =>
-    props.isDarkMode ? props.theme.Bg.whiteT20 : props.theme.Bg.white};
+    props.isDarkMode ? props.theme.Bg.whiteT20 : props.theme.Bg.whiteT20};
+  backdrop-filter: blur(10px);
   padding: 0 32px;
 `;
 
