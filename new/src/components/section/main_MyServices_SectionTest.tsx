@@ -38,11 +38,21 @@ const ListBox = styled.div`
   width: 100%;
   padding: 48px 0;
   border-bottom: 1px solid #aaaaaa;
+  :nth-of-type(1) {
+    border-top: 1px solid #aaaaaa;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 32px 0 24px 0;
+  }
 `;
 
 const ListTopBox = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const NumberBox = styled.div`
@@ -52,6 +62,12 @@ const NumberBox = styled.div`
   width: 200px;
   font-size: 2.4rem;
   color: ${(props) => props.theme.Color.white};
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 120px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    display: none;
+  }
 `;
 
 const MainBox = styled.div`
@@ -59,6 +75,14 @@ const MainBox = styled.div`
   justify-content: center;
   width: 100%;
   gap: 80px;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    gap: 40px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const MainBox_ImgBox = styled.div`
@@ -68,12 +92,22 @@ const MainBox_ImgBox = styled.div`
   width: 40%;
   padding: 0 24px;
   box-sizing: border-box;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 32%;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const MainBox_Img = styled.div<{ isDarkMode: boolean; isOpen: boolean }>`
   display: flex;
   width: ${(props) => (props.isOpen ? "180px" : "100px")};
   color: ${(props) => props.theme.Color.white};
+  @media (max-width: ${breakpoints.tabletS}px) {
+    width: ${(props) => (props.isOpen ? "140px" : "100px")};
+  }
 `;
 
 const MainBox_TextBox = styled.div`
@@ -85,6 +119,14 @@ const MainBox_TextBox = styled.div`
   padding: 0 40px 0 0;
   gap: 24px;
   color: ${(props) => props.theme.Color.white};
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 0 2px 0 0;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const MainBox_TextBox_TitleBox = styled.div`
@@ -92,17 +134,33 @@ const MainBox_TextBox_TitleBox = styled.div`
   width: 100%;
   font-size: 4.8rem;
   color: ${(props) => props.theme.Color.white};
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 2.8rem;
+    justify-content: center;
+  }
 `;
 
 const MainBox_TextBox_ContentBox = styled.div<{ isOpen: boolean }>`
   display: ${(props) => (props.isOpen ? "flex" : "none")};
   width: 100%;
   font-size: 1.8rem;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 1.6rem;
+    width: 80%;
+  }
 `;
 
 const ButtonBox = styled.div`
   display: flex;
   width: 200px;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 120px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 2.8rem;
+    justify-content: center;
+    margin: 30px 0 0 0;
+  }
 `;
 
 const OpenButton = styled.button`
