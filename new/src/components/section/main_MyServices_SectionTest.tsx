@@ -38,7 +38,8 @@ const ListBox = styled.div<{ isOpen: boolean }>`
   width: 100%;
   padding: 48px 0;
   border-bottom: 1px solid #aaaaaa;
-  background-color: ${(props) => (props.isOpen ? "#F8EFEE" : "transparent")};
+  background-color: ${(props) =>
+    props.isOpen ? props.theme.Bg.Primary40 : "transparent"};
   :nth-of-type(1) {
     border-top: 1px solid #aaaaaa;
   }
