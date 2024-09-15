@@ -31,13 +31,14 @@ const MyServicesSectionListWrapper = styled.div`
   margin: 40px 0 0 0;
 `;
 
-const ListBox = styled.div`
+const ListBox = styled.div<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   padding: 48px 0;
   border-bottom: 1px solid #aaaaaa;
+  background-color: ${(props) => (props.isOpen ? "#F8EFEE" : "transparent")};
   :nth-of-type(1) {
     border-top: 1px solid #aaaaaa;
   }
@@ -55,13 +56,14 @@ const ListTopBox = styled.div`
   }
 `;
 
-const NumberBox = styled.div`
+const NumberBox = styled.div<{ isOpen: boolean }>`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 200px;
   font-size: 2.4rem;
-  color: ${(props) => props.theme.Color.white};
+  color: ${(props) =>
+    props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
   @media (max-width: ${breakpoints.tabletL}px) {
     width: 120px;
   }
@@ -104,7 +106,9 @@ const MainBox_ImgBox = styled.div`
 const MainBox_Img = styled.div<{ isDarkMode: boolean; isOpen: boolean }>`
   display: flex;
   width: ${(props) => (props.isOpen ? "180px" : "100px")};
-  color: ${(props) => props.theme.Color.white};
+  /* color: ${(props) => props.theme.Color.white}; */
+  color: ${(props) =>
+    props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
   @media (max-width: ${breakpoints.tabletS}px) {
     width: ${(props) => (props.isOpen ? "140px" : "100px")};
   }
@@ -129,11 +133,12 @@ const MainBox_TextBox = styled.div`
   }
 `;
 
-const MainBox_TextBox_TitleBox = styled.div`
+const MainBox_TextBox_TitleBox = styled.div<{ isOpen: boolean }>`
   display: flex;
   width: 100%;
   font-size: 4.8rem;
-  color: ${(props) => props.theme.Color.white};
+  color: ${(props) =>
+    props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
   @media (max-width: ${breakpoints.tabletS}px) {
     font-size: 2.8rem;
     justify-content: center;
@@ -144,6 +149,8 @@ const MainBox_TextBox_ContentBox = styled.div<{ isOpen: boolean }>`
   display: ${(props) => (props.isOpen ? "flex" : "none")};
   width: 100%;
   font-size: 1.8rem;
+  color: ${(props) =>
+    props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
   @media (max-width: ${breakpoints.tabletS}px) {
     font-size: 1.6rem;
     width: 80%;
@@ -163,9 +170,11 @@ const ButtonBox = styled.div`
   }
 `;
 
-const OpenButton = styled.button`
+const OpenButton = styled.button<{ isOpen: boolean }>`
   font-size: 1.8rem;
-  color: ${(props) => props.theme.Color.white};
+  color: ${(props) =>
+    props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
+  /* color: ${(props) => props.theme.Color.white}; */
 `;
 
 // TypeScript 인터페이스
@@ -226,9 +235,11 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
           {services.map((service) => {
             const ServiceImage = getServiceImage(service.img);
             return (
-              <ListBox key={service.id}>
+              <ListBox key={service.id} isOpen={openList === service.id}>
                 <ListTopBox>
-                  <NumberBox>{service.id}</NumberBox>
+                  <NumberBox isOpen={openList === service.id}>
+                    {service.id}
+                  </NumberBox>
                   <MainBox>
                     <MainBox_ImgBox>
                       {ServiceImage && (
@@ -240,7 +251,9 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
                       )}
                     </MainBox_ImgBox>
                     <MainBox_TextBox>
-                      <MainBox_TextBox_TitleBox>
+                      <MainBox_TextBox_TitleBox
+                        isOpen={openList === service.id}
+                      >
                         {service.title}
                       </MainBox_TextBox_TitleBox>
                       <MainBox_TextBox_ContentBox
@@ -255,6 +268,7 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
                       onMouseEnter={() => setIsHovering(true)}
                       onMouseLeave={() => setIsHovering(false)}
                       onClick={() => toggleButton(service.id)}
+                      isOpen={openList === service.id}
                     >
                       {openList === service.id ? "[ Close ]" : "[ Open ]"}
                     </OpenButton>
