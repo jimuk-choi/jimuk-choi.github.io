@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
-import { useState, useContext, useMemo } from "react";
+import { useState, useContext, useMemo, useRef, useEffect } from "react";
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
+
+//GSAP
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { ReactComponent as WebDesign_Object } from "../../assets/WebDesign_Object.svg";
 import { ReactComponent as AppDesign_Object } from "../../assets/AppDesign_Object.svg";
 import { ReactComponent as DesignSystems_Object } from "../../assets/DesignSystems_Object.svg";
@@ -9,6 +14,9 @@ import { ReactComponent as Branding_Object } from "../../assets/Branding_Object.
 import { Heading03 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { breakpoints } from "../../style/breakpoints";
+
+//gsap plugin 등록
+gsap.registerPlugin(ScrollTrigger);
 
 // Styled-components
 const MyServicesSection = styled.div`
@@ -107,9 +115,9 @@ const MainBox_ImgBox = styled.div`
 const MainBox_Img = styled.div<{ isDarkMode: boolean; isOpen: boolean }>`
   display: flex;
   width: ${(props) => (props.isOpen ? "180px" : "100px")};
-  /* color: ${(props) => props.theme.Color.white}; */
   color: ${(props) =>
     props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
+  transition: width 0.4s ease-in-out;
   @media (max-width: ${breakpoints.tabletS}px) {
     width: ${(props) => (props.isOpen ? "140px" : "100px")};
   }
@@ -224,6 +232,28 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
         return null;
     }
   };
+
+  //gsap 애니메이션
+  const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (Heading03_Title_Ref.current) {
+      gsap.fromTo(
+        Heading03_Title_Ref.current,
+        { opacity: 0 }, //시작
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: Heading03_Title_Ref.current,
+            start: "top 80%",
+            end: "bottom 75%",
+            scrub: true,
+            /* markers: true, */
+          },
+        }
+      );
+    }
+  }, []);
 
   return (
     <MyServicesSection>

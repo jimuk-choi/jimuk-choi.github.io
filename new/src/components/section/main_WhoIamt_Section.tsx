@@ -83,7 +83,11 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
   const SubTitle_M_Ref = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    if (Heading03_Title_Ref.current && SubTitle_M_Ref.current) {
+    if (
+      Heading03_Title_Ref.current &&
+      SubTitle_M_Ref.current &&
+      Heading03_SubTitle_Ref
+    ) {
       gsap.fromTo(
         Heading03_Title_Ref.current,
         { opacity: 0 }, //시작
