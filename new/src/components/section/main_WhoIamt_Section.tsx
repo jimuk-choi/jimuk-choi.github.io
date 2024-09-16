@@ -95,8 +95,8 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           opacity: 1,
           scrollTrigger: {
             trigger: Heading03_Title_Ref.current,
-            start: "top 80%",
-            end: "bottom 75%",
+            start: "top 85%",
+            end: "bottom 80%",
             scrub: true,
             /* markers: true, */
           },
@@ -109,8 +109,8 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           opacity: 1,
           scrollTrigger: {
             trigger: Rectangle_Ref.current,
-            start: "top 80%",
-            end: "bottom 75%",
+            start: "top 85%",
+            end: "bottom 80%",
             scrub: true,
             /* markers: true, */
           },
@@ -123,8 +123,8 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           opacity: 1,
           scrollTrigger: {
             trigger: Heading03_SubTitle_Ref.current,
-            start: "top 80%",
-            end: "bottom 75%",
+            start: "top 85%",
+            end: "bottom 80%",
             scrub: true,
             /* markers: true, */
           },
@@ -137,8 +137,8 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
           opacity: 1,
           scrollTrigger: {
             trigger: SubTitle_M_Ref.current,
-            start: "top 80%",
-            end: "bottom 75%",
+            start: "top 85%",
+            end: "bottom 80%",
             scrub: true,
             /* markers: true, */
           },
