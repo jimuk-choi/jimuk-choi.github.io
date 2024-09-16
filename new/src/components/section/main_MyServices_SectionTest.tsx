@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useState, useContext, useMemo, useRef, useEffect } from "react";
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
 
-//GSAP
+// GSAP
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,7 +15,7 @@ import { Heading03 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { breakpoints } from "../../style/breakpoints";
 
-//gsap plugin 등록
+// GSAP plugin 등록
 gsap.registerPlugin(ScrollTrigger);
 
 // Styled-components
@@ -183,7 +183,6 @@ const OpenButton = styled.button<{ isOpen: boolean }>`
   font-size: 1.8rem;
   color: ${(props) =>
     props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
-  /* color: ${(props) => props.theme.Color.white}; */
 `;
 
 // TypeScript 인터페이스
@@ -233,14 +232,16 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
     }
   };
 
-  //gsap 애니메이션
+  // gsap 애니메이션
   const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
+  const Rectangle_Ref = useRef<HTMLDivElement>(null);
+  const ListBox_Refs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     if (Heading03_Title_Ref.current) {
       gsap.fromTo(
         Heading03_Title_Ref.current,
-        { opacity: 0 }, //시작
+        { opacity: 0 },
         {
           opacity: 1,
           scrollTrigger: {
@@ -248,25 +249,62 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
             start: "top 80%",
             end: "bottom 75%",
             scrub: true,
-            /* markers: true, */
           },
         }
       );
+      gsap.fromTo(
+        Rectangle_Ref.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: Rectangle_Ref.current,
+            start: "top 80%",
+            end: "bottom 75%",
+            scrub: true,
+          },
+        }
+      );
+      // 각 리스트 박스에 대해 애니메이션 적용
+      ListBox_Refs.current.forEach((listBox) => {
+        if (listBox) {
+          gsap.fromTo(
+            listBox,
+            { opacity: 0, y: 50 }, // 시작 상태
+            {
+              opacity: 1,
+              y: 0,
+              scrollTrigger: {
+                trigger: listBox,
+                start: "top 80%",
+                end: "bottom 75%",
+                scrub: true,
+              },
+            }
+          );
+        }
+      });
     }
   }, []);
 
   return (
     <MyServicesSection>
       <MyServicesSectionInnerBox>
-        <Heading03 isDarkMode={isDarkMode}>
+        <Heading03 ref={Heading03_Title_Ref} isDarkMode={isDarkMode}>
           {TextData.MyServices.Title}
         </Heading03>
-        <Rectangle_L />
+        <Rectangle_L ref={Rectangle_Ref} />
         <MyServicesSectionListWrapper>
-          {services.map((service) => {
+          {services.map((service, index) => {
             const ServiceImage = getServiceImage(service.img);
             return (
-              <ListBox key={service.id} isOpen={openList === service.id}>
+              <ListBox
+                key={service.id}
+                isOpen={openList === service.id}
+                ref={(el) =>
+                  (ListBox_Refs.current[index] = el as HTMLDivElement)
+                }
+              >
                 <ListTopBox>
                   <NumberBox isOpen={openList === service.id}>
                     {service.id}
