@@ -31,6 +31,7 @@ export const Header_InnerBox = styled.div<{ isDarkMode: boolean }>`
   background-color: ${(props) =>
     props.isDarkMode ? props.theme.Bg.whiteT20 : props.theme.Bg.whiteT20};
   backdrop-filter: blur(10px);
+  box-shadow: 2px 2px 12px #ededed;
   padding: 0 32px;
 `;
 
