@@ -46,7 +46,26 @@
   },
   "ToolIUse": {
     "Title": "Tool I Use",
-    "MainText": "I am truly passionate about what I do. It’s not just about creating visually appealing designs, but about solving problems and delivering a better user experience.",
-    "SubText": "Hello, I’m Jimuk Choi, a UI/UX designer with over 3 years of experience. I prioritize user experience and strive for designs that are both functional and aesthetically pleasing. With skills in design, 3D, video, and development, I focus on simplifying complex user flows. I particularly excel in creating designs that are feasible for implementation. I have worked on projects across various industries, and my goal is to continue creating innovative designs that make a positive impact."
+    "AdobePhotoshop": "어도비 포토샵",
+    "AdobeIllustrator": "어도비 일러스트레이터",
+    "AdobeXD": "어도비 XD",
+    "AdobeInDesign": "어도비 인디자인",
+    "AdobeAffterEffects": "어도비 에프터 이펙트",
+    "Zeplin": "제플린",
+    "Figma": "피그마",
+    "Blender": "블렌더",
+    "HTML": "HTML",
+    "CSS": "CSS",
+    "Javascript": "자바스크립트",
+    "SCSS": "SCSS",
+    "React": "리액트",
+    "Typescript": "타입스크립트",
+    "jQuery": "제이쿼리",
+    "Git": "깃",
+    "Notion": "노션",
+    "Confluence": "컨플루언스",
+    "Excel": "엑셀",
+    "Powerpoint": "파워포인트",
+    "Word": "워드"
   }
 }
