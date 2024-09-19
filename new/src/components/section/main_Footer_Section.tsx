@@ -21,7 +21,7 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = styled.div`
-  padding: 180px 160px 320px 160px;
+  padding: 140px 160px 320px 160px;
   background-color: ${(props) => props.theme.Bg.white90};
   position: relative;
   overflow: hidden;
@@ -52,7 +52,6 @@ const FooterSectionInnerBox = styled.div`
 const ButtonBox = styled.div`
   display: flex;
   gap: 16px;
-  position: relative;
 `;
 
 interface FooterProps {
@@ -72,10 +71,8 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
   const ImgSrc = isDarkMode ? object_Dark : object_Light;
 
   //gsap 애니메이션
-  const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
-  const Rectangle_Ref = useRef<HTMLDivElement>(null);
-  const Heading03_SubTitle_Ref = useRef<HTMLHeadingElement>(null);
-  const SubTitle_M_Ref = useRef<HTMLParagraphElement>(null);
+  const MainFooterSectionTitle_Ref = useRef<HTMLHeadingElement>(null);
+  const ButtonBox_Ref = useRef<HTMLDivElement>(null);
 
   const handleEmailClick = () => {
     window.location.href = "mailto:jimook1995@naver.com";
@@ -85,18 +82,15 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
   };
 
   useEffect(() => {
-    if (
-      Heading03_Title_Ref.current &&
-      SubTitle_M_Ref.current &&
-      Heading03_SubTitle_Ref
-    ) {
+    if (MainFooterSectionTitle_Ref.current) {
       gsap.fromTo(
-        Heading03_Title_Ref.current,
-        { opacity: 0 }, //시작
+        MainFooterSectionTitle_Ref.current,
+        { opacity: 0, y: 50 }, //시작
         {
           opacity: 1,
+          y: 0,
           scrollTrigger: {
-            trigger: Heading03_Title_Ref.current,
+            trigger: MainFooterSectionTitle_Ref.current,
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
@@ -105,40 +99,13 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
         }
       );
       gsap.fromTo(
-        Rectangle_Ref.current,
-        { opacity: 0 }, //시작
+        ButtonBox_Ref.current,
+        { opacity: 0, y: 50 }, //시작
         {
           opacity: 1,
+          y: 0,
           scrollTrigger: {
-            trigger: Rectangle_Ref.current,
-            start: "top 85%",
-            end: "bottom 80%",
-            scrub: true,
-            /* markers: true, */
-          },
-        }
-      );
-      gsap.fromTo(
-        Heading03_SubTitle_Ref.current,
-        { opacity: 0 }, //시작
-        {
-          opacity: 1,
-          scrollTrigger: {
-            trigger: Heading03_SubTitle_Ref.current,
-            start: "top 85%",
-            end: "bottom 80%",
-            scrub: true,
-            /* markers: true, */
-          },
-        }
-      );
-      gsap.fromTo(
-        SubTitle_M_Ref.current,
-        { opacity: 0 }, //시작
-        {
-          opacity: 1,
-          scrollTrigger: {
-            trigger: SubTitle_M_Ref.current,
+            trigger: ButtonBox_Ref.current,
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
@@ -154,10 +121,13 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
       <FooterBG isDarkMode={isDarkMode} src={ImgSrc} alt="" />
       <FooterSectionInnerBox>
         <MainFooterSectionTitleWrapperInnerBox>
-          <MainFooterSectionTitle isDarkMode={isDarkMode}>
+          <MainFooterSectionTitle
+            ref={MainFooterSectionTitle_Ref}
+            isDarkMode={isDarkMode}
+          >
             {TextData.Footer.Title}
           </MainFooterSectionTitle>
-          <ButtonBox>
+          <ButtonBox ref={ButtonBox_Ref}>
             <Button_D
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}

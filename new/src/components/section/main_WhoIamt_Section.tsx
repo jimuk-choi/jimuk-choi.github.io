@@ -118,9 +118,10 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
       );
       gsap.fromTo(
         Heading03_SubTitle_Ref.current,
-        { opacity: 0 }, //시작
+        { opacity: 0, y: 50 }, //시작
         {
           opacity: 1,
+          y: 0,
           scrollTrigger: {
             trigger: Heading03_SubTitle_Ref.current,
             start: "top 85%",
@@ -132,9 +133,10 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
       );
       gsap.fromTo(
         SubTitle_M_Ref.current,
-        { opacity: 0 }, //시작
+        { opacity: 0, y: 50 }, //시작
         {
           opacity: 1,
+          y: 0,
           scrollTrigger: {
             trigger: SubTitle_M_Ref.current,
             start: "top 85%",

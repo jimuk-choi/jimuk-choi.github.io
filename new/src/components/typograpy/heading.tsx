@@ -56,7 +56,7 @@ export const MainGreetingSectionTitle = styled.h1<{ isDarkMode: boolean }>`
 export const MainFooterSectionTitleWrapperInnerBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 56px;
   width: 100%;
 `;
 

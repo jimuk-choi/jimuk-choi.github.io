@@ -173,9 +173,10 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
       );
       gsap.fromTo(
         Img.current,
-        { opacity: 0 }, //시작
+        { opacity: 0, y: 50 }, //시작
         {
           opacity: 1,
+          y: 0,
           scrollTrigger: {
             trigger: Img.current,
             start: "top 85%",

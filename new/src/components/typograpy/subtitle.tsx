@@ -16,7 +16,7 @@ export const Subtitle_M = styled.p<{ isDarkMode: boolean }>`
 `;
 
 export const Subtitle_S_MainToolIUse = styled.p<{ isDarkMode: boolean }>`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: ${(props) => props.theme.Color.white};
   font-weight: 900;
   text-align: center;
