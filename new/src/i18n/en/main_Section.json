@@ -67,5 +67,12 @@
     "Excel": "Excel",
     "Powerpoint": "Powerpoint",
     "Word": "Word"
+  },
+  "Footer": {
+    "Title": "Let's Talk.",
+    "Email_Button_title": "E-mail",
+    "Email_Button_Content": "jimook950@gmail.com",
+    "PhoneNumber_Button_title": "Phone Number",
+    "PhoneNumber_Button_Content": "+82 10 8440 6462"
   }
 }

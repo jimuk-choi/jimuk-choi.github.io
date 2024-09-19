@@ -11,7 +11,11 @@ import object_Dark from "../../assets/object_Dark.png";
 import { MainFooterSectionTitle } from "../typograpy/heading";
 import { MainFooterSectionTitleWrapperInnerBox } from "../typograpy/heading";
 import { breakpoints } from "../../style/breakpoints";
-import { Button_D } from "../button/button_style01";
+import {
+  Button_D,
+  Button_D_Title,
+  Button_D_Content,
+} from "../button/button_style01";
 
 //gsap plugin 등록
 gsap.registerPlugin(ScrollTrigger);
@@ -151,7 +155,7 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
       <FooterSectionInnerBox>
         <MainFooterSectionTitleWrapperInnerBox>
           <MainFooterSectionTitle isDarkMode={isDarkMode}>
-            Let's Talk.
+            {TextData.Footer.Title}
           </MainFooterSectionTitle>
           <ButtonBox>
             <Button_D
@@ -160,8 +164,12 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
               onClick={handleEmailClick}
               isDarkMode={isDarkMode}
             >
-              <p>E-mail</p>
-              <p>jimook950@gmail.com</p>
+              <Button_D_Title isDarkMode={isDarkMode}>
+                {TextData.Footer.Email_Button_title}
+              </Button_D_Title>
+              <Button_D_Content isDarkMode={isDarkMode}>
+                {TextData.Footer.Email_Button_Content}
+              </Button_D_Content>
             </Button_D>
             <Button_D
               onMouseEnter={() => setIsHovering(true)}
@@ -169,8 +177,12 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
               onClick={handlePhoneClick}
               isDarkMode={isDarkMode}
             >
-              <p>Phone Number</p>
-              <p>010-8440-6462</p>
+              <Button_D_Title isDarkMode={isDarkMode}>
+                {TextData.Footer.PhoneNumber_Button_title}
+              </Button_D_Title>
+              <Button_D_Content isDarkMode={isDarkMode}>
+                {TextData.Footer.PhoneNumber_Button_Content}
+              </Button_D_Content>
             </Button_D>
           </ButtonBox>
         </MainFooterSectionTitleWrapperInnerBox>
