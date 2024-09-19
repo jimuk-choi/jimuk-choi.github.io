@@ -1,15 +1,14 @@
 import styled from "@emotion/styled";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useMemo, useRef } from "react";
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
-//GSAP
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-//img
+// img
 import Photoshop from "../../assets/photoshop.png";
 import Illustrator from "../../assets/illustrator.png";
 import XD from "../../assets/xd.png";
 import InDesign from "../../assets/indesign.png";
-import AfterEffexts from "../../assets/aftereffects.png";
+import AfterEffects from "../../assets/aftereffects.png";
 import Zeplin from "../../assets/zeplin.png";
 import Figma from "../../assets/figma.png";
 import Blender from "../../assets/blender.png";
@@ -26,13 +25,12 @@ import Confluence from "../../assets/confluence.png";
 import Excel from "../../assets/excel.png";
 import Powerpoint from "../../assets/powerpoint.png";
 import Word from "../../assets/word.png";
-//component
+// component
 import { Heading03 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { Subtitle_S } from "../typograpy/subtitle";
 import { breakpoints } from "../../style/breakpoints";
 
-//gsap plugin 등록
 gsap.registerPlugin(ScrollTrigger);
 
 const ToolIUseSection = styled.div`
@@ -48,12 +46,14 @@ const ToolIUseSection = styled.div`
     padding: 56px 32px;
   }
 `;
+
 const ToolIUseSectionInnerBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
 `;
+
 const ToolIUseImgBoxWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -64,6 +64,7 @@ const ToolIUseImgBoxWrapper = styled.div`
   padding: 0 100px;
   margin: 80px 0 0 0;
 `;
+
 const ToolIUseImgBox = styled.div`
   display: flex;
   align-items: center;
@@ -71,6 +72,7 @@ const ToolIUseImgBox = styled.div`
   gap: 24px;
   width: 180px;
 `;
+
 const ToolIUseImg = styled.img`
   width: 44px;
 `;
@@ -87,6 +89,34 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
     language === "en"
       ? require("../../i18n/en/main_Section.json")
       : require("../../i18n/kr/main_Section.json");
+
+  // 이미지와 텍스트 데이터를 배열로 관리
+  const tools = useMemo(
+    () => [
+      { img: Photoshop, text: TextData.ToolIUse.AdobePhotoshop },
+      { img: Illustrator, text: TextData.ToolIUse.AdobeIllustrator },
+      { img: XD, text: TextData.ToolIUse.AdobeXD },
+      { img: InDesign, text: TextData.ToolIUse.AdobeInDesign },
+      { img: AfterEffects, text: TextData.ToolIUse.AdobeAffterEffects },
+      { img: Zeplin, text: TextData.ToolIUse.Zeplin },
+      { img: Figma, text: TextData.ToolIUse.Figma },
+      { img: Blender, text: TextData.ToolIUse.Blender },
+      { img: HTML, text: TextData.ToolIUse.HTML },
+      { img: CSS, text: TextData.ToolIUse.CSS },
+      { img: Javascript, text: TextData.ToolIUse.Javascript },
+      { img: SCSS, text: TextData.ToolIUse.SCSS },
+      { img: React, text: TextData.ToolIUse.React },
+      { img: Typescript, text: TextData.ToolIUse.Typescript },
+      { img: jQuery, text: TextData.ToolIUse.jQuery },
+      { img: Git, text: TextData.ToolIUse.Git },
+      { img: Notion, text: TextData.ToolIUse.Notion },
+      { img: Confluence, text: TextData.ToolIUse.Confluence },
+      { img: Excel, text: TextData.ToolIUse.Excel },
+      { img: Powerpoint, text: TextData.ToolIUse.Powerpoint },
+      { img: Word, text: TextData.ToolIUse.Word },
+    ],
+    [TextData]
+  );
 
   //gsap 애니메이션
   const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
@@ -105,7 +135,6 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
-            /* markers: true, */
           },
         }
       );
@@ -119,7 +148,6 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
-            /* markers: true, */
           },
         }
       );
@@ -133,7 +161,6 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
-            /* markers: true, */
           },
         }
       );
@@ -148,132 +175,12 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
         </Heading03>
         <Rectangle_L ref={Rectangle_Ref} />
         <ToolIUseImgBoxWrapper ref={Img}>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Photoshop} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.AdobePhotoshop}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Illustrator} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.AdobeIllustrator}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={XD} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.AdobeXD}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={InDesign} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.AdobeInDesign}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={AfterEffexts} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.AdobeAffterEffects}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Zeplin} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Zeplin}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Figma} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Figma}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Blender} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Blender}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={HTML} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.HTML}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={CSS} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.CSS}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Javascript} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Javascript}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={SCSS} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.SCSS}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={React} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.React}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Typescript} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Typescript}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={jQuery} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.jQuery}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Git} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Git}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Notion} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Notion}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Confluence} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Confluence}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Excel} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Excel}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Powerpoint} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Powerpoint}
-            </Subtitle_S>
-          </ToolIUseImgBox>
-          <ToolIUseImgBox>
-            <ToolIUseImg src={Word} />
-            <Subtitle_S isDarkMode={isDarkMode}>
-              {TextData.ToolIUse.Word}
-            </Subtitle_S>
-          </ToolIUseImgBox>
+          {tools.map((tool, index) => (
+            <ToolIUseImgBox key={index}>
+              <ToolIUseImg src={tool.img} />
+              <Subtitle_S isDarkMode={isDarkMode}>{tool.text}</Subtitle_S>
+            </ToolIUseImgBox>
+          ))}
         </ToolIUseImgBoxWrapper>
       </ToolIUseSectionInnerBox>
     </ToolIUseSection>
