@@ -56,8 +56,12 @@ export const MainGreetingSectionTitle = styled.h1<{ isDarkMode: boolean }>`
 export const MainFooterSectionTitleWrapperInnerBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 32px;
   width: 100%;
+  box-sizing: border-box;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 12px 32px;
+  }
 `;
 
 export const MainFooterSectionTitle = styled.h1<{ isDarkMode: boolean }>`
@@ -67,29 +71,23 @@ export const MainFooterSectionTitle = styled.h1<{ isDarkMode: boolean }>`
   font-weight: 700;
   letter-spacing: 20px;
   line-height: normal;
-  @media (max-width: ${breakpoints.desktopL}px) {
+
+  @media (max-width: ${breakpoints.desktopS}px) {
     font-size: 16rem;
   }
-  @media (max-width: ${breakpoints.desktopM}px) {
+  @media (max-width: ${breakpoints.desktopXS}px) {
     font-size: 14rem;
   }
-  @media (max-width: ${breakpoints.desktopS}px) {
-    font-size: 12rem;
-  }
-  @media (max-width: ${breakpoints.desktopXS}px) {
-    font-size: 9rem;
-  }
   @media (max-width: ${breakpoints.tabletL}px) {
-    font-size: 6rem;
+    font-size: 10rem;
     letter-spacing: 12px;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
-    font-size: 4rem;
-    letter-spacing: 6px;
+    font-size: 6rem;
+    letter-spacing: 0px;
   }
   @media (max-width: ${breakpoints.mobileM}px) {
-    font-size: 3.6rem;
-    letter-spacing: 4px;
+    font-size: 5.2rem;
   }
 `;
 

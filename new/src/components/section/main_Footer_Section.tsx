@@ -26,11 +26,11 @@ const Footer = styled.div`
   position: relative;
   overflow: hidden;
   z-index: 0;
-  @media (max-width: ${breakpoints.desktopXS}px) {
-    padding: 120px 40px;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 100px 40px 160px 40px;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
-    padding: 56px 32px;
+    padding: 40px 0px 100px 0px;
   }
 `;
 const FooterBG = styled.img<{ isDarkMode: boolean }>`
@@ -52,6 +52,10 @@ const FooterSectionInnerBox = styled.div`
 const ButtonBox = styled.div`
   display: flex;
   gap: 16px;
+  width: 100%;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    flex-direction: column;
+  }
 `;
 
 interface FooterProps {
@@ -91,8 +95,8 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
           y: 0,
           scrollTrigger: {
             trigger: MainFooterSectionTitle_Ref.current,
-            start: "top 85%",
-            end: "bottom 80%",
+            start: "top 100%",
+            end: "bottom 100%",
             scrub: true,
             /* markers: true, */
           },
@@ -106,8 +110,8 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
           y: 0,
           scrollTrigger: {
             trigger: ButtonBox_Ref.current,
-            start: "top 85%",
-            end: "bottom 80%",
+            start: "top 100%",
+            end: "bottom 100%",
             scrub: true,
             /* markers: true, */
           },

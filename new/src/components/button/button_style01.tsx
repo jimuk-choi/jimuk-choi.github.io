@@ -62,15 +62,39 @@ export const Button_D = styled.button<{ isDarkMode: boolean }>`
   border-radius: 50px;
   font-weight: bold;
   font-size: 1.8rem;
-  @media (max-width: ${breakpoints.desktopXS}px) {
-    font-size: 1.6rem;
-    padding: 12px 18px;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 12px 32px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 12px 32px;
+    justify-content: center;
+  }
+  @media (max-width: ${breakpoints.mobileM}px) {
+    padding: 12px 16px;
   }
 `;
 export const Button_D_Title = styled.p<{ isDarkMode: boolean }>`
   font-size: 2.2rem;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: ${breakpoints.mobileL}px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: ${breakpoints.mobileM}px) {
+    font-size: 1.4rem;
+  }
 `;
 export const Button_D_Content = styled.p<{ isDarkMode: boolean }>`
   font-size: 1.8rem;
   font-weight: normal;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: ${breakpoints.mobileL}px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: ${breakpoints.mobileM}px) {
+    font-size: 1.2rem;
+  }
 `;
