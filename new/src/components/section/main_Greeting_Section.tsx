@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import {
   MainSectionTitleWrapper,
-  MainSectionTitleWrapperInnerBox,
-  MainSectionTitle,
+  MainGreetingSectionTitleWrapperInnerBox,
+  MainGreetingSectionTitle,
   Heading01,
   Heading03,
 } from "../typograpy/heading";
@@ -95,18 +95,21 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
   return (
     <GreetingSection>
       <MainSectionTitleWrapper>
-        <MainSectionTitleWrapperInnerBox>
+        <MainGreetingSectionTitleWrapperInnerBox>
           <Heading03 ref={Heading02_Ref} isDarkMode={isDarkMode}>
             {TextData.Greeting.Name}
           </Heading03>
           <Rectangle_L ref={Rectangle_L_Ref} />
-          <MainSectionTitle ref={MainSectionTitle_Ref} isDarkMode={isDarkMode}>
+          <MainGreetingSectionTitle
+            ref={MainSectionTitle_Ref}
+            isDarkMode={isDarkMode}
+          >
             {TextData.Greeting.GreetingTitle}
-          </MainSectionTitle>
+          </MainGreetingSectionTitle>
           <Heading01 ref={Heading01_Ref} isDarkMode={isDarkMode}>
             {TextData.Greeting.Slogan}
           </Heading01>
-        </MainSectionTitleWrapperInnerBox>
+        </MainGreetingSectionTitleWrapperInnerBox>
       </MainSectionTitleWrapper>
       <VideoWrapper>
         <StyledVideo ref={videoRef} autoPlay loop muted>

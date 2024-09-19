@@ -12,14 +12,6 @@ import Test01 from "./Page/main";
 import Main from "./Page/main";
 import { Footer, Footer_InnerBox } from "./components/footer/footerStyle";
 import Hub from "./Page/Hub";
-import Logo from "./assets/Logo.svg";
-// data
-import texts_en_header from "./i18n/en/header.json";
-import texts_kr_header from "./i18n/kr/header.json";
-import texts_en_footer from "./i18n/en/footer.json";
-import texts_kr_footer from "./i18n/kr/footer.json";
-// type
-import { HeaderTexts, FooterTexts } from "./i18n/types";
 
 // 언어 컨텍스트 생성
 const LanguageContext = createContext({

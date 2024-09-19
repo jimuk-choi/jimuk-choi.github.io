@@ -28,7 +28,7 @@ import Word from "../../assets/word.png";
 // component
 import { Heading03 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
-import { Subtitle_S } from "../typograpy/subtitle";
+import { Subtitle_S_MainToolIUse } from "../typograpy/subtitle";
 import { breakpoints } from "../../style/breakpoints";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -63,6 +63,12 @@ const ToolIUseImgBoxWrapper = styled.div`
   width: 100%;
   padding: 0 100px;
   margin: 80px 0 0 0;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    gap: 28px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    gap: 28px;
+  }
 `;
 
 const ToolIUseImgBox = styled.div`
@@ -70,11 +76,25 @@ const ToolIUseImgBox = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 24px;
-  width: 180px;
+  width: 160px;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 150px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    width: 48px;
+    gap: 12px;
+  }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    width: 40px;
+    gap: 28px;
+  }
 `;
 
 const ToolIUseImg = styled.img`
   width: 44px;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 36px;
+  }
 `;
 
 interface WhoIamProps {
@@ -178,7 +198,9 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
           {tools.map((tool, index) => (
             <ToolIUseImgBox key={index}>
               <ToolIUseImg src={tool.img} />
-              <Subtitle_S isDarkMode={isDarkMode}>{tool.text}</Subtitle_S>
+              <Subtitle_S_MainToolIUse isDarkMode={isDarkMode}>
+                {tool.text}
+              </Subtitle_S_MainToolIUse>
             </ToolIUseImgBox>
           ))}
         </ToolIUseImgBoxWrapper>

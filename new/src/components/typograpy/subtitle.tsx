@@ -15,15 +15,18 @@ export const Subtitle_M = styled.p<{ isDarkMode: boolean }>`
   }
 `;
 
-export const Subtitle_S = styled.p<{ isDarkMode: boolean }>`
+export const Subtitle_S_MainToolIUse = styled.p<{ isDarkMode: boolean }>`
   font-size: 1.8rem;
   color: ${(props) => props.theme.Color.white};
   font-weight: 900;
   text-align: center;
   @media (max-width: ${breakpoints.desktopXS}px) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
-    font-size: 1.4rem;
+    font-size: 1rem;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    display: none;
   }
 `;

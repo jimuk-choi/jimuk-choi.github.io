@@ -50,3 +50,19 @@ export const Button_C = styled.button<{ isDarkMode: boolean }>`
     color: ${(props) => props.theme.Color.Button_Third};
   }
 `;
+
+export const Button_D = styled.button<{ isDarkMode: boolean }>`
+  display: flex;
+  gap: 16px;
+  background-color: ${(props) => props.theme.Bg.Button_Secondary};
+  color: ${(props) => props.theme.Color.Button_Secondary};
+  border: 1px solid ${(props) => props.theme.Border.Button_Secondary};
+  padding: 16px 48px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.8rem;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 1.6rem;
+    padding: 12px 18px;
+  }
+`;

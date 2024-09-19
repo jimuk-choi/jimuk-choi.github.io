@@ -10,7 +10,7 @@ export const MainSectionTitleWrapper = styled.div`
   align-items: center;
 `;
 
-export const MainSectionTitleWrapperInnerBox = styled.div`
+export const MainGreetingSectionTitleWrapperInnerBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,11 +18,51 @@ export const MainSectionTitleWrapperInnerBox = styled.div`
   width: 100%;
 `;
 
-export const MainSectionTitle = styled.h1<{ isDarkMode: boolean }>`
+export const MainGreetingSectionTitle = styled.h1<{ isDarkMode: boolean }>`
   mix-blend-mode: ${(props) => (props.isDarkMode ? "exclusion" : "color-burn")};
   font-size: 18rem;
   width: 100%;
   text-align: center;
+  color: ${(props) => props.theme.Color.white};
+  font-weight: 700;
+  letter-spacing: 20px;
+  line-height: normal;
+  @media (max-width: ${breakpoints.desktopL}px) {
+    font-size: 16rem;
+  }
+  @media (max-width: ${breakpoints.desktopM}px) {
+    font-size: 14rem;
+  }
+  @media (max-width: ${breakpoints.desktopS}px) {
+    font-size: 12rem;
+  }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 9rem;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    font-size: 6rem;
+    letter-spacing: 12px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 4rem;
+    letter-spacing: 6px;
+  }
+  @media (max-width: ${breakpoints.mobileM}px) {
+    font-size: 3.6rem;
+    letter-spacing: 4px;
+  }
+`;
+
+export const MainFooterSectionTitleWrapperInnerBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+`;
+
+export const MainFooterSectionTitle = styled.h1<{ isDarkMode: boolean }>`
+  font-size: 18rem;
+  width: 100%;
   color: ${(props) => props.theme.Color.white};
   font-weight: 700;
   letter-spacing: 20px;

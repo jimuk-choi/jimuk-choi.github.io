@@ -2,7 +2,7 @@ import MainGreetingSection from "../components/section/main_Greeting_Section";
 import MainWhoIamSection from "../components/section/main_WhoIamt_Section";
 import MainMyServicesSection from "../components/section/main_MyServices_Section";
 import MainToolIUseSection from "../components/section/main_ToolIUse_Section";
-import { SetStateAction } from "react";
+import MainFooterSection from "../components/section/main_Footer_Section";
 
 interface MainProps {
   isDarkMode: boolean;
@@ -21,6 +21,10 @@ function Main({ isDarkMode, setIsHovering }: MainProps) {
         setIsHovering={setIsHovering}
       />
       <MainToolIUseSection isDarkMode={isDarkMode} />
+      <MainFooterSection
+        isDarkMode={isDarkMode}
+        setIsHovering={setIsHovering}
+      />
     </>
   );
 }
