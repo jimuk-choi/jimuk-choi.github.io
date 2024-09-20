@@ -1,6 +1,10 @@
 import { Global, css } from "@emotion/react";
 
-const GlobalStyles = () => (
+interface GlobalStylesProps {
+  isDarkMode: boolean;
+}
+
+const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
   <Global
     styles={css`
       @font-face {
@@ -32,6 +36,10 @@ const GlobalStyles = () => (
         font-family: "Helvetica Neue", sans-serif;
         cursor: none;
         /* cursor: pointer; */
+      }
+      ::selection {
+        color: ${isDarkMode ? "#ffffff" : "#000000"};
+        background-color: ${isDarkMode ? "#87615c" : "#ffd0c9"};
       }
     `}
   />

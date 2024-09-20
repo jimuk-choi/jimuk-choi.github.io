@@ -44,7 +44,7 @@ function App() {
     <ThemeProvider theme={isDarkMode ? DarkTheme : LightTheme}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
         <div className="App">
-          <GlobalStyles />
+          <GlobalStyles isDarkMode={isDarkMode} />
           <Cursor isHovering={isHovering} isDarkMode={isDarkMode} />
           <Routes>
             <Route
