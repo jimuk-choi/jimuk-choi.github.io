@@ -67,5 +67,12 @@
     "Excel": "엑셀",
     "Powerpoint": "파워포인트",
     "Word": "워드"
+  },
+  "Footer": {
+    "Title": "Let's Talk.",
+    "Email_Button_title": "이메일",
+    "Email_Button_Content": "jimook950@gmail.com",
+    "PhoneNumber_Button_title": "전화번호",
+    "PhoneNumber_Button_Content": "+82 10 8440 6462"
   }
 }
