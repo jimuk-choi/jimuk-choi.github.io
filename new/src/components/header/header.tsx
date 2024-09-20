@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import {
   HeaderSection,
@@ -65,27 +66,43 @@ const Header: React.FC<HeaderProps> = ({
           </Header_LogoText>
         </Header_LogoBox>
         <Header_MenuBox>
-          <Button_C
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            isDarkMode={isDarkMode}
-          >
-            {currentHeaderTexts.menu01}
-          </Button_C>
-          <Button_C
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            isDarkMode={isDarkMode}
-          >
-            {currentHeaderTexts.menu02}
-          </Button_C>
-          <Button_C
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            isDarkMode={isDarkMode}
-          >
-            {currentHeaderTexts.menu03}
-          </Button_C>
+          <NavLink to="/">
+            {({ isActive }) => (
+              <Button_C
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                isDarkMode={isDarkMode}
+                isActive={isActive} // isActive를 Button_C에 전달
+              >
+                {currentHeaderTexts.menu01}
+              </Button_C>
+            )}
+          </NavLink>
+          <NavLink to="/Works">
+            {({ isActive }) => (
+              <Button_C
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                isDarkMode={isDarkMode}
+                isActive={isActive} // isActive를 Button_C에 전달
+              >
+                {currentHeaderTexts.menu02}
+              </Button_C>
+            )}
+          </NavLink>
+          <NavLink to="/Process">
+            {({ isActive }) => (
+              <Button_C
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                isDarkMode={isDarkMode}
+                isActive={isActive} // isActive를 Button_C에 전달
+              >
+                {currentHeaderTexts.menu03}
+              </Button_C>
+            )}
+          </NavLink>
+
           <Link target="blank" to="https://jimukchoi.github.io/JMC.github.io/">
             <Button_C
               onMouseEnter={() => setIsHovering(true)}

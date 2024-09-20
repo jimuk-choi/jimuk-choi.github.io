@@ -8,10 +8,10 @@ import Cursor from "./style/cursor";
 //Header
 import Header from "./components/header/header";
 //page
-import Test01 from "./Page/main";
+
 import Main from "./Page/main";
-import { Footer, Footer_InnerBox } from "./components/footer/footerStyle";
-import Hub from "./Page/Hub";
+import Works from "./Page/Works";
+import Process from "./Page/Process";
 
 // 언어 컨텍스트 생성
 const LanguageContext = createContext({
@@ -53,7 +53,21 @@ function App() {
                 <Main setIsHovering={setIsHovering} isDarkMode={isDarkMode} />
               }
             />
-            <Route path="/Hub" element={<Hub />} />
+            <Route
+              path="/Works"
+              element={
+                <Works isDarkMode={isDarkMode} setIsHovering={setIsHovering} />
+              }
+            />
+            <Route
+              path="/Process"
+              element={
+                <Process
+                  isDarkMode={isDarkMode}
+                  setIsHovering={setIsHovering}
+                />
+              }
+            />
           </Routes>
           <Header
             isDarkMode={isDarkMode}
