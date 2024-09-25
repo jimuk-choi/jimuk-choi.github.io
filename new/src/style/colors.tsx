@@ -9,11 +9,16 @@ export const palette = {
   Dark_primary40: "#7b5753",
   secondary100: "#ff0000",
   white: "#ffffff",
-  whiteT20: "rgba(255,255,255,0.2)",
   white90: "#FAF9FA",
+  white80: "#fefefe",
+  whiteT20: "rgba(255,255,255,0.2)",
   black: "#222222",
+  black90: "#3f3f3f",
+  black50: "#505050",
   black_Main: "#262527",
+  gray80: "#808080",
   gray30: "#b2b2b2",
+  gray20: "#f7f7f7",
 };
 
 // 테마 객체를 정의합니다.
@@ -27,12 +32,15 @@ export const LightTheme: Theme = {
     Button_Primary_Hover: palette.Light_primary80,
     Button_Primary_Active: palette.Light_primary100,
     Button_Secondary: palette.white,
+    Card_Primary: palette.white80,
+    InnerCard_Primary: palette.gray20,
   },
   Color: {
     white: palette.black,
     Button_Primary: palette.white,
     Button_Secondary: palette.black,
     Button_Third: palette.Light_primary_Main,
+    Paragraph: palette.gray80,
   },
   Border: {
     Button_Secondary: palette.black,
@@ -49,12 +57,15 @@ export const DarkTheme: Theme = {
     Button_Primary_Hover: palette.Light_primary80,
     Button_Primary_Active: palette.Light_primary100,
     Button_Secondary: palette.gray30,
+    Card_Primary: palette.black90,
+    InnerCard_Primary: palette.black50,
   },
   Color: {
     white: palette.white,
     Button_Primary: palette.white,
     Button_Secondary: palette.white,
     Button_Third: palette.Light_primary_Main,
+    Paragraph: palette.white,
   },
   Border: {
     Button_Secondary: palette.white,

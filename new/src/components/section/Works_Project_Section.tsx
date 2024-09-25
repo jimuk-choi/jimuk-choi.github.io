@@ -1,0 +1,194 @@
+import styled from "@emotion/styled";
+import { Heading02 } from "../typograpy/heading";
+import { useContext, useRef, useEffect } from "react";
+import { Subtitle_XL, Subtitle_L } from "../typograpy/subtitle";
+import { P_L, P_M } from "../typograpy/paragraph";
+//GSAP
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+//Text
+import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
+//Card
+import { Card_L, Card_L_InnerCard } from "../Card/Card";
+//Button
+import { Button_E } from "../button/button_style01";
+//img
+import StowGenie_Cover_Img from "../../assets/Works_StowGenie_Main.jpg";
+import MUKI_Cover_Img from "../../assets/Works_MUKI_Main.jpg";
+import Photoshop from "../../assets/photoshop.png";
+import Illustrator from "../../assets/illustrator.png";
+import XD from "../../assets/xd.png";
+import Figma from "../../assets/figma.png";
+import HTML from "../../assets/html.png";
+import CSS from "../../assets/css.png";
+import React from "../../assets/react.png";
+import Git from "../../assets/git.png";
+import Confluence from "../../assets/confluence.png";
+import { ReactComponent as ArrowRightUp } from "../../assets/ArrowRightUp.svg";
+
+const ProjectSectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.Bg.white90};
+  padding: 140px 80px 32px 80px;
+`;
+const Card_L_Introduce_Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  width: 60%;
+  height: 900px;
+`;
+const Card_L_InnerCard_Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+const Card_L_Introduce_Title_Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 0 32px;
+`;
+const Card_L_Introduce_Title_Box = styled.div`
+  display: flex;
+`;
+const Card_L_Introduce_Title_Number = styled.div`
+  font-size: 40px;
+  color: ${(props) => props.theme.Color.white};
+`;
+const Card_L_Img_Wrapper = styled.div`
+  width: 40%;
+  border-radius: 40px;
+  overflow: hidden;
+`;
+const Card_L_Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+const UsedTool_ImgBox = styled.div`
+  display: flex;
+  gap: 16px;
+`;
+const UsedTool_Img = styled.img`
+  width: 48px;
+`;
+
+export const Arrow_Img = styled(ArrowRightUp, {
+  shouldForwardProp: (prop) => !["isDarkMode"].includes(prop),
+})<{ isDarkMode: boolean }>`
+  width: 32px;
+  height: 32px;
+  /* cursor: pointer; */
+  color: ${(props) => props.theme.Color.white};
+`;
+
+interface MainProjectSectionProps {
+  isDarkMode: boolean;
+  setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
+}
+function WorksProjetSection({
+  isDarkMode,
+  setIsHovering,
+}: MainProjectSectionProps) {
+  const { language } = useContext(LanguageContext); // 현재 언어 정보 가져오기
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  //Title Ref 설정
+  const MainSectionTitle_Ref = useRef(null);
+  const Heading04_Ref = useRef(null);
+  const Rectangle_L_Ref = useRef(null);
+
+  // 다크 모드 상태에 따라 비디오를 다시 로드
+  useEffect(() => {
+    //배경 비디오
+    if (videoRef.current) {
+      videoRef.current.load(); // 비디오 소스
+      gsap.fromTo(
+        videoRef.current,
+        { scale: 3 },
+        { scale: 1, duration: 2.2, ease: "Power3.easeOut" }
+      );
+    }
+
+    //GSAP 애니메이션
+    gsap.fromTo(
+      MainSectionTitle_Ref.current,
+      { opacity: 0, y: 180 },
+      { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
+    );
+  }, [isDarkMode]);
+
+  // 현재 언어에 맞는 데이터를 동적으로 불러옵니다.
+  const TextData =
+    language === "en"
+      ? require("../../i18n/en/Works_Section.json")
+      : require("../../i18n/kr/Works_Section.json");
+
+  return (
+    <ProjectSectionWrapper>
+      <Card_L isDarkMode={isDarkMode}>
+        <Card_L_Introduce_Wrapper>
+          <Card_L_Introduce_Title_Section>
+            <Subtitle_L isDarkMode={isDarkMode}>
+              Container Ship Loading Solution
+            </Subtitle_L>
+            <Card_L_Introduce_Title_Box>
+              <Heading02 isDarkMode={isDarkMode}>StowGenie</Heading02>
+              <Card_L_Introduce_Title_Number>#01</Card_L_Introduce_Title_Number>
+            </Card_L_Introduce_Title_Box>
+            <P_L isDarkMode={isDarkMode}>
+              Embark on a Magical Voyage with StowGenie – Where Every Container
+              Finds its Perfect Location!
+            </P_L>
+          </Card_L_Introduce_Title_Section>
+          <Card_L_InnerCard_Wrapper>
+            <Card_L_InnerCard isDarkMode={isDarkMode}>
+              <Subtitle_XL isDarkMode={isDarkMode}>
+                What is the StowGenie?
+              </Subtitle_XL>
+              <P_M isDarkMode={isDarkMode}>
+                This solution helps planners manage container loading tasks more
+                easily and efficiently compared to existing tools. By
+                incorporating Gamification, Data Visualization, Web Interaction,
+                AI, and UI/UX, it simplifies and automates the process. As a
+                result, the solution significantly improves work efficiency and
+                user experience for planners.
+              </P_M>
+            </Card_L_InnerCard>
+            <Card_L_InnerCard isDarkMode={isDarkMode}>
+              <Subtitle_XL isDarkMode={isDarkMode}>Used Tool</Subtitle_XL>
+              <UsedTool_ImgBox>
+                <UsedTool_Img src={Photoshop} />
+                <UsedTool_Img src={Illustrator} />
+                <UsedTool_Img src={XD} />
+                <UsedTool_Img src={Figma} />
+                <UsedTool_Img src={HTML} />
+                <UsedTool_Img src={CSS} />
+                <UsedTool_Img src={React} />
+                <UsedTool_Img src={Git} />
+                <UsedTool_Img src={Confluence} />
+              </UsedTool_ImgBox>
+            </Card_L_InnerCard>
+            <Button_E
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+              isDarkMode={isDarkMode}
+            >
+              <Subtitle_XL isDarkMode={isDarkMode}>Go to Page.</Subtitle_XL>
+              <Arrow_Img isDarkMode={isDarkMode} />
+            </Button_E>
+          </Card_L_InnerCard_Wrapper>
+        </Card_L_Introduce_Wrapper>
+
+        <Card_L_Img_Wrapper>
+          <Card_L_Img src={StowGenie_Cover_Img} />
+        </Card_L_Img_Wrapper>
+      </Card_L>
+    </ProjectSectionWrapper>
+  );
+}
+export default WorksProjetSection;

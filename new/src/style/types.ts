@@ -14,12 +14,15 @@ declare module "@emotion/react" {
       white90: string;
       whiteT20: string;
       Primary40: string;
+      Card_Primary: string;
+      InnerCard_Primary: string;
     };
     Color: {
       white: string;
       Button_Primary: string;
       Button_Secondary: string;
       Button_Third: string;
+      Paragraph: string;
     };
     Border: {
       Button_Secondary: string;

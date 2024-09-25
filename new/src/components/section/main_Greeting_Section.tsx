@@ -18,6 +18,7 @@ import { Rectangle_L } from "../shape/rectangle";
 const GreetingSection = styled.div`
   width: 100%;
   height: 100vh;
+  /* overflow: hidden; */
 `;
 
 const VideoWrapper = styled.div`
@@ -48,7 +49,7 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
   //Title Ref 설정
   const MainSectionTitle_Ref = useRef(null);
   const Heading01_Ref = useRef(null);
-  const Heading02_Ref = useRef(null);
+  const Heading04_Ref = useRef(null);
   const Rectangle_L_Ref = useRef(null);
 
   // 다크 모드 상태에 따라 비디오를 다시 로드
@@ -65,7 +66,7 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
 
     //GSAP 애니메이션
     gsap.fromTo(
-      Heading02_Ref.current,
+      Heading04_Ref.current,
       { opacity: 0, y: 180 },
       { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
     );
@@ -96,7 +97,7 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
     <GreetingSection>
       <MainSectionTitleWrapper>
         <MainGreetingSectionTitleWrapperInnerBox>
-          <Heading03 ref={Heading02_Ref} isDarkMode={isDarkMode}>
+          <Heading03 ref={Heading04_Ref} isDarkMode={isDarkMode}>
             {TextData.Greeting.Name}
           </Heading03>
           <Rectangle_L ref={Rectangle_L_Ref} />

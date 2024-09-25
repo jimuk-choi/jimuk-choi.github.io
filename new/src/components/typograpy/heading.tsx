@@ -126,12 +126,20 @@ export const Heading01 = styled.h1<{ isDarkMode: boolean }>`
     letter-spacing: -0.2px;
   }
 `;
-export const Heading02 = styled.h3<{ isDarkMode: boolean }>`
+export const Heading04 = styled.h2<{ isDarkMode: boolean }>`
   width: 100%;
   text-align: center;
   font-size: 2.8rem;
   color: ${(props) => props.theme.Color.white};
   font-weight: 700;
+  letter-spacing: 6px;
+  line-height: normal;
+  letter-spacing: 4px;
+`;
+export const Heading02 = styled.h4<{ isDarkMode: boolean }>`
+  font-size: 12rem;
+  color: ${(props) => props.theme.Color.white};
+  font-weight: 400;
   letter-spacing: 6px;
   line-height: normal;
   letter-spacing: 4px;

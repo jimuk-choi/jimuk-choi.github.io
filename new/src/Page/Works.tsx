@@ -1,4 +1,4 @@
-import WorksTestSection from "../components/section/Works_Test_Section";
+import WorksProjetSection from "../components/section/Works_Project_Section";
 
 interface MainProps {
   isDarkMode: boolean;
@@ -8,7 +8,10 @@ interface MainProps {
 function Works({ isDarkMode, setIsHovering }: MainProps) {
   return (
     <>
-      <WorksTestSection isDarkMode={isDarkMode} />
+      <WorksProjetSection
+        isDarkMode={isDarkMode}
+        setIsHovering={setIsHovering}
+      />
     </>
   );
 }

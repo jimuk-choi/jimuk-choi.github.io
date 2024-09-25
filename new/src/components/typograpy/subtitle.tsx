@@ -1,6 +1,20 @@
 import styled from "@emotion/styled";
 import { breakpoints } from "../../style/breakpoints";
 
+export const Subtitle_XL = styled.p<{ isDarkMode: boolean }>`
+  font-size: 3.2rem;
+  color: ${(props) => props.theme.Color.white};
+  font-weight: 900;
+  letter-spacing: 2px;
+`;
+
+export const Subtitle_L = styled.p<{ isDarkMode: boolean }>`
+  font-size: 2.8rem;
+  color: ${(props) => props.theme.Color.white};
+  font-weight: 900;
+  letter-spacing: 2px;
+`;
+
 export const Subtitle_M = styled.p<{ isDarkMode: boolean }>`
   font-size: 2.4rem;
   color: ${(props) => props.theme.Color.white};

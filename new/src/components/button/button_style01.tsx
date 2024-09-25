@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakpoints } from "../../style/breakpoints";
+import ArroRightUp from "../../assets/ArrowRightUP.svg";
 
 export const Button_A = styled.button<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.Button_Primary};
@@ -102,5 +103,25 @@ export const Button_D_Content = styled.p<{ isDarkMode: boolean }>`
   }
   @media (max-width: ${breakpoints.mobileM}px) {
     font-size: 1.2rem;
+  }
+`;
+
+export const Button_E = styled.button<{ isDarkMode: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 32px;
+  border-radius: 32px;
+  background-color: ${(props) => props.theme.Bg.InnerCard_Primary};
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 12px 32px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 12px 32px;
+    justify-content: center;
+  }
+  @media (max-width: ${breakpoints.mobileM}px) {
+    padding: 12px 16px;
   }
 `;

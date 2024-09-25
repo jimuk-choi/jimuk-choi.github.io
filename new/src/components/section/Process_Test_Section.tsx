@@ -32,7 +32,7 @@ function ProcessTestSection({ isDarkMode }: MainGreetingSectionProps) {
   //Title Ref 설정
   const MainSectionTitle_Ref = useRef(null);
   const Heading01_Ref = useRef(null);
-  const Heading02_Ref = useRef(null);
+  const Heading04_Ref = useRef(null);
   const Rectangle_L_Ref = useRef(null);
 
   // 다크 모드 상태에 따라 비디오를 다시 로드
@@ -64,7 +64,7 @@ function ProcessTestSection({ isDarkMode }: MainGreetingSectionProps) {
     <GreetingSection>
       <MainSectionTitleWrapper>
         <MainGreetingSectionTitleWrapperInnerBox>
-          <Heading03 ref={Heading02_Ref} isDarkMode={isDarkMode}>
+          <Heading03 ref={Heading04_Ref} isDarkMode={isDarkMode}>
             {TextData.Greeting.PageName}
           </Heading03>
           <Rectangle_L ref={Rectangle_L_Ref} />
