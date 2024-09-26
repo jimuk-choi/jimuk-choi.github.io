@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
 import GlobalStyles from "./style/globalStyles";
-/* import { Routes, Route, Link } from "react-router-dom"; */
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
 //Cursor
@@ -49,61 +48,54 @@ function App() {
         <div className="App">
           <GlobalStyles isDarkMode={isDarkMode} />
           <Cursor isHovering={isHovering} isDarkMode={isDarkMode} />
-          <Router>
-            {" "}
-            {/* HashRouter로 변경 */}
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <Main setIsHovering={setIsHovering} isDarkMode={isDarkMode} />
-                }
-              />
-              <Route
-                path="/Works"
-                element={
-                  <Works
-                    isDarkMode={isDarkMode}
-                    setIsHovering={setIsHovering}
-                  />
-                }
-              />
-              <Route
-                path="/Works/StowGenie"
-                element={
-                  <WorksStowGenie
-                    isDarkMode={isDarkMode}
-                    setIsHovering={setIsHovering}
-                  />
-                }
-              />
-              <Route
-                path="/Works/MUKI"
-                element={
-                  <WorksMUKI
-                    isDarkMode={isDarkMode}
-                    setIsHovering={setIsHovering}
-                  />
-                }
-              />
-              <Route
-                path="/Process"
-                element={
-                  <Process
-                    isDarkMode={isDarkMode}
-                    setIsHovering={setIsHovering}
-                  />
-                }
-              />
-            </Routes>
-          </Router>{" "}
-          {/* HashRouter로 변경 */}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main setIsHovering={setIsHovering} isDarkMode={isDarkMode} />
+              }
+            />
+            <Route
+              path="/Works"
+              element={
+                <Works isDarkMode={isDarkMode} setIsHovering={setIsHovering} />
+              }
+            />
+            <Route
+              path="/Works/StowGenie"
+              element={
+                <WorksStowGenie
+                  isDarkMode={isDarkMode}
+                  setIsHovering={setIsHovering}
+                />
+              }
+            />
+            <Route
+              path="/Works/MUKI"
+              element={
+                <WorksMUKI
+                  isDarkMode={isDarkMode}
+                  setIsHovering={setIsHovering}
+                />
+              }
+            />
+            <Route
+              path="/Process"
+              element={
+                <Process
+                  isDarkMode={isDarkMode}
+                  setIsHovering={setIsHovering}
+                />
+              }
+            />
+          </Routes>
           <Header
             isDarkMode={isDarkMode}
             toggleDarkMode={toggleDarkMode}
             toggleLanguage={toggleLanguage}
             setIsHovering={setIsHovering}
           />
+
           {/* <Footer>
             <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
           </Footer> */}
