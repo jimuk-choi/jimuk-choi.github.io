@@ -31,6 +31,9 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
         margin: 0;
         padding: 0;
       }
+      a {
+        text-decoration: none;
+      }
       button {
         border: none;
         background-color: transparent;

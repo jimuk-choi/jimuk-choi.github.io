@@ -12,6 +12,8 @@ import Header from "./components/header/header";
 import Main from "./Page/main";
 import Works from "./Page/Works";
 import Process from "./Page/Process";
+import WorksStowGenie from "./Page/Works_StowGenie";
+import WorksMUKI from "./Page/Works_MUKI";
 
 // 언어 컨텍스트 생성
 const LanguageContext = createContext({
@@ -57,6 +59,24 @@ function App() {
               path="/Works"
               element={
                 <Works isDarkMode={isDarkMode} setIsHovering={setIsHovering} />
+              }
+            />
+            <Route
+              path="/Works/StowGenie"
+              element={
+                <WorksStowGenie
+                  isDarkMode={isDarkMode}
+                  setIsHovering={setIsHovering}
+                />
+              }
+            />
+            <Route
+              path="/Works/MUKI"
+              element={
+                <WorksMUKI
+                  isDarkMode={isDarkMode}
+                  setIsHovering={setIsHovering}
+                />
               }
             />
             <Route

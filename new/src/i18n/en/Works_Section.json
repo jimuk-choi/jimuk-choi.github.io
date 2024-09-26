@@ -1,6 +1,108 @@
 {
-  "Greeting": {
-    "PageName": "Works",
-    "ComingSoon": "Coming Soon..."
+  "StowGenie": {
+    "SubTitle": "Container Ship Loading Solution",
+    "Title": "StowGenie",
+    "Number": "#01",
+    "Slogan": "Embark on a Magical Voyage with StowGenie – Where Every Container Finds its Perfect Location!",
+    "Card": [
+      {
+        "id": 1,
+        "title": "What is the StowGenie?",
+        "content": "This solution helps planners manage container loading tasks more easily and efficiently compared to existing tools. By incorporating Gamification, Data Visualization, Web Interaction, AI, and UI/UX, it simplifies and automates the process. As a result, the solution significantly improves work efficiency and user experience for planners."
+      },
+      {
+        "id": 2,
+        "title": "Used Tool"
+      },
+      {
+        "id": 3,
+        "title": "Go to Detail Page."
+      }
+    ],
+    "Chip": [
+      {
+        "id": 1,
+        "label": "GUI"
+      },
+      {
+        "id": 2,
+        "label": "UX"
+      },
+      {
+        "id": 3,
+        "label": "Design System - Atomic Design"
+      },
+      {
+        "id": 4,
+        "label": "Prototype"
+      },
+      {
+        "id": 5,
+        "label": "Data Visualization"
+      },
+      {
+        "id": 6,
+        "label": "Gamification"
+      },
+      {
+        "id": 7,
+        "label": "Web"
+      },
+      {
+        "id": 8,
+        "label": "Agile"
+      }
+    ]
+  },
+  "MUKI": {
+    "SubTitle": "User Location-Based Solution",
+    "Title": "MUKI",
+    "Number": "#02",
+    "Slogan": "Business innovation, realized directly in the field.",
+    "Card": [
+      {
+        "id": 1,
+        "title": "What is the MUKI?",
+        "content": "MUKI is a solution that significantly enhances the efficiency of bancassurance sales agents by automating the manual task of writing daily reports, which used to be done with a notebook. Using a location-based app, sales agents can now automatically log their tasks in real-time without needing to return to the office. This allows for seamless task management on the go, while managers can easily oversee the activities of their sales teams. In this project, I was responsible for UI/UX design and publishing, creating a user-friendly interface and improving the overall user experience."
+      },
+      {
+        "id": 2,
+        "title": "Used Tool"
+      },
+      {
+        "id": 3,
+        "title": "Go to Detail Page."
+      }
+    ],
+    "Chip": [
+      {
+        "id": 1,
+        "label": "GUI"
+      },
+      {
+        "id": 2,
+        "label": "UX"
+      },
+      {
+        "id": 3,
+        "label": "Design System - Atomic Design"
+      },
+      {
+        "id": 4,
+        "label": "Prototype"
+      },
+      {
+        "id": 5,
+        "label": "Web"
+      },
+      {
+        "id": 6,
+        "label": "Mobile"
+      },
+      {
+        "id": 7,
+        "label": "Agile"
+      }
+    ]
   }
 }
