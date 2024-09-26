@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
 import GlobalStyles from "./style/globalStyles";
-import { Routes, Route, Link } from "react-router-dom";
+/* import { Routes, Route, Link } from "react-router-dom"; */
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
 //Cursor
