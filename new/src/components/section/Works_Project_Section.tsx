@@ -248,7 +248,7 @@ function WorksProjetSection({
             </Subtitle_L>
             <Card_L_Introduce_Title_Box>
               <Heading02 isDarkMode={isDarkMode}>
-                {TextData.MUKI.Title}
+                {TextData.MUKI.Title}ㅆㄴㅅㄷ
               </Heading02>
               <Card_L_Introduce_Title_Number>
                 {TextData.MUKI.Number}
