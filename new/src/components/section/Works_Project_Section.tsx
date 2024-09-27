@@ -189,7 +189,8 @@ function WorksProjetSection({
                 <UsedTool_Img src={Confluence} />
               </UsedTool_ImgBox>
             </Card_L_InnerCard>
-            <NavLink to="/Works/StowGenie">
+            {/* <NavLink to="/Works/StowGenie"> */}
+            <NavLink to="/">
               <Button_E
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
@@ -278,7 +279,8 @@ function WorksProjetSection({
                 <UsedTool_Img src={Confluence} />
               </UsedTool_ImgBox>
             </Card_L_InnerCard>
-            <NavLink to="/Works/MUKI">
+            {/* <NavLink to="/Works/MUKI"> */}
+            <NavLink to="/">
               <Button_E
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}

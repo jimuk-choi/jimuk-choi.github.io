@@ -61,7 +61,7 @@ function App() {
                 <Works isDarkMode={isDarkMode} setIsHovering={setIsHovering} />
               }
             />
-            <Route
+            {/* <Route
               path="/Works/StowGenie"
               element={
                 <WorksStowGenie
@@ -78,7 +78,7 @@ function App() {
                   setIsHovering={setIsHovering}
                 />
               }
-            />
+            /> */}
             <Route
               path="/Process"
               element={
