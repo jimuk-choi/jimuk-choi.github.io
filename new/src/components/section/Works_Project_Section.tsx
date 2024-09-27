@@ -189,19 +189,6 @@ function WorksProjetSection({
                 <UsedTool_Img src={Confluence} />
               </UsedTool_ImgBox>
             </Card_L_InnerCard>
-            <NavLink to="/Works/StowGenie">
-              <Button_E
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                isDarkMode={isDarkMode}
-                style={{ width: "100%" }}
-              >
-                <Subtitle_XL isDarkMode={isDarkMode}>
-                  {TextData.StowGenie.Card[2].title}
-                </Subtitle_XL>
-                <Arrow_Img isDarkMode={isDarkMode} />
-              </Button_E>
-            </NavLink>
           </Card_L_InnerCard_Wrapper>
         </Card_L_Introduce_Wrapper>
 
@@ -278,19 +265,6 @@ function WorksProjetSection({
                 <UsedTool_Img src={Confluence} />
               </UsedTool_ImgBox>
             </Card_L_InnerCard>
-            <NavLink to="/Works/MUKI">
-              <Button_E
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                isDarkMode={isDarkMode}
-                style={{ width: "100%" }}
-              >
-                <Subtitle_XL isDarkMode={isDarkMode}>
-                  {TextData.StowGenie.Card[2].title}
-                </Subtitle_XL>
-                <Arrow_Img isDarkMode={isDarkMode} />
-              </Button_E>
-            </NavLink>
           </Card_L_InnerCard_Wrapper>
         </Card_L_Introduce_Wrapper>
 

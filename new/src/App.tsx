@@ -71,24 +71,7 @@ function App() {
                   />
                 }
               />
-              <Route
-                path="/Works/StowGenie"
-                element={
-                  <WorksStowGenie
-                    isDarkMode={isDarkMode}
-                    setIsHovering={setIsHovering}
-                  />
-                }
-              />
-              <Route
-                path="/Works/MUKI"
-                element={
-                  <WorksMUKI
-                    isDarkMode={isDarkMode}
-                    setIsHovering={setIsHovering}
-                  />
-                }
-              />
+
               <Route
                 path="/Process"
                 element={
