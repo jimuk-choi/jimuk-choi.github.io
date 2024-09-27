@@ -55,7 +55,7 @@ function App() {
           <div className="App">
             <GlobalStyles isDarkMode={isDarkMode} />
             <Cursor isHovering={isHovering} isDarkMode={isDarkMode} />
-            <Routes>
+            {/* <Routes>
               <Route
                 path="/"
                 element={
@@ -81,7 +81,7 @@ function App() {
                   />
                 }
               />
-            </Routes>
+            </Routes> */}
             <Header
               isDarkMode={isDarkMode}
               toggleDarkMode={toggleDarkMode}
