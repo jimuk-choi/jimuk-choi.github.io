@@ -108,6 +108,7 @@ interface MainProjectSectionProps {
   isDarkMode: boolean;
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
 function WorksProjetSection({
   isDarkMode,
   setIsHovering,
@@ -235,7 +236,7 @@ function WorksProjetSection({
             </Subtitle_L>
             <Card_L_Introduce_Title_Box>
               <Heading02 isDarkMode={isDarkMode}>
-                {TextData.MUKI.Title}
+                {TextData.MUKI.Title}TEST
               </Heading02>
               <Card_L_Introduce_Title_Number>
                 {TextData.MUKI.Number}
