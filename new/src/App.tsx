@@ -1,6 +1,11 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
 import GlobalStyles from "./style/globalStyles";
-import { Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom"; // BrowserRouter를 Router로 이름을 변경하여 사용
 import { ThemeProvider } from "@emotion/react";
 import { LightTheme, DarkTheme } from "./style/colors";
 //Cursor
@@ -45,61 +50,63 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? DarkTheme : LightTheme}>
       <LanguageContext.Provider value={{ language, setLanguage }}>
-        <div className="App">
-          <GlobalStyles isDarkMode={isDarkMode} />
-          <Cursor isHovering={isHovering} isDarkMode={isDarkMode} />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Main setIsHovering={setIsHovering} isDarkMode={isDarkMode} />
-              }
+        {/* 여기서 BrowserRouter를 사용하고 있으므로 다른 Router가 필요 없음 */}
+        <BrowserRouter>
+          <div className="App">
+            <GlobalStyles isDarkMode={isDarkMode} />
+            <Cursor isHovering={isHovering} isDarkMode={isDarkMode} />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Main setIsHovering={setIsHovering} isDarkMode={isDarkMode} />
+                }
+              />
+              <Route
+                path="/Works"
+                element={
+                  <Works
+                    isDarkMode={isDarkMode}
+                    setIsHovering={setIsHovering}
+                  />
+                }
+              />
+              <Route
+                path="/Works/StowGenie"
+                element={
+                  <WorksStowGenie
+                    isDarkMode={isDarkMode}
+                    setIsHovering={setIsHovering}
+                  />
+                }
+              />
+              <Route
+                path="/Works/MUKI"
+                element={
+                  <WorksMUKI
+                    isDarkMode={isDarkMode}
+                    setIsHovering={setIsHovering}
+                  />
+                }
+              />
+              <Route
+                path="/Process"
+                element={
+                  <Process
+                    isDarkMode={isDarkMode}
+                    setIsHovering={setIsHovering}
+                  />
+                }
+              />
+            </Routes>
+            <Header
+              isDarkMode={isDarkMode}
+              toggleDarkMode={toggleDarkMode}
+              toggleLanguage={toggleLanguage}
+              setIsHovering={setIsHovering}
             />
-            <Route
-              path="/Works"
-              element={
-                <Works isDarkMode={isDarkMode} setIsHovering={setIsHovering} />
-              }
-            />
-            <Route
-              path="/Works/StowGenie"
-              element={
-                <WorksStowGenie
-                  isDarkMode={isDarkMode}
-                  setIsHovering={setIsHovering}
-                />
-              }
-            />
-            <Route
-              path="/Works/MUKI"
-              element={
-                <WorksMUKI
-                  isDarkMode={isDarkMode}
-                  setIsHovering={setIsHovering}
-                />
-              }
-            />
-            <Route
-              path="/Process"
-              element={
-                <Process
-                  isDarkMode={isDarkMode}
-                  setIsHovering={setIsHovering}
-                />
-              }
-            />
-          </Routes>
-          <Header
-            isDarkMode={isDarkMode}
-            toggleDarkMode={toggleDarkMode}
-            toggleLanguage={toggleLanguage}
-            setIsHovering={setIsHovering}
-          />
-
-          {/* <Footer>
-            <Footer_InnerBox>{currentFooterTexts.footerText}</Footer_InnerBox>
-          </Footer> */}
-        </div>
+          </div>
+        </BrowserRouter>
       </LanguageContext.Provider>
     </ThemeProvider>
   );
