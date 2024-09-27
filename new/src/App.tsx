@@ -55,7 +55,7 @@ function App() {
           <div className="App">
             <GlobalStyles isDarkMode={isDarkMode} />
             <Cursor isHovering={isHovering} isDarkMode={isDarkMode} />
-            {/* <Routes>
+            <Routes>
               <Route
                 path="/"
                 element={
@@ -71,7 +71,24 @@ function App() {
                   />
                 }
               />
-
+              <Route
+                path="/Works/StowGenie"
+                element={
+                  <WorksStowGenie
+                    isDarkMode={isDarkMode}
+                    setIsHovering={setIsHovering}
+                  />
+                }
+              />
+              <Route
+                path="/Works/MUKI"
+                element={
+                  <WorksMUKI
+                    isDarkMode={isDarkMode}
+                    setIsHovering={setIsHovering}
+                  />
+                }
+              />
               <Route
                 path="/Process"
                 element={
@@ -81,7 +98,7 @@ function App() {
                   />
                 }
               />
-            </Routes> */}
+            </Routes>
             <Header
               isDarkMode={isDarkMode}
               toggleDarkMode={toggleDarkMode}

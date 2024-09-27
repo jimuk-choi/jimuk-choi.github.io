@@ -191,6 +191,19 @@ function WorksProjetSection({
               </UsedTool_ImgBox>
             </Card_L_InnerCard>
           </Card_L_InnerCard_Wrapper>
+          <NavLink to="/Works/StowGenie">
+            <Button_E
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+              isDarkMode={isDarkMode}
+              style={{ width: "100%" }}
+            >
+              <Subtitle_XL isDarkMode={isDarkMode}>
+                {TextData.StowGenie.Card[2].title}
+              </Subtitle_XL>
+              <Arrow_Img isDarkMode={isDarkMode} />
+            </Button_E>
+          </NavLink>
         </Card_L_Introduce_Wrapper>
 
         <Card_L_Img_Wrapper>
@@ -236,7 +249,7 @@ function WorksProjetSection({
             </Subtitle_L>
             <Card_L_Introduce_Title_Box>
               <Heading02 isDarkMode={isDarkMode}>
-                {TextData.MUKI.Title}TEST2222
+                {TextData.MUKI.Title}
               </Heading02>
               <Card_L_Introduce_Title_Number>
                 {TextData.MUKI.Number}
@@ -267,6 +280,19 @@ function WorksProjetSection({
               </UsedTool_ImgBox>
             </Card_L_InnerCard>
           </Card_L_InnerCard_Wrapper>
+          <NavLink to="/Works/MUKI">
+            <Button_E
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+              isDarkMode={isDarkMode}
+              style={{ width: "100%" }}
+            >
+              <Subtitle_XL isDarkMode={isDarkMode}>
+                {TextData.StowGenie.Card[2].title}
+              </Subtitle_XL>
+              <Arrow_Img isDarkMode={isDarkMode} />
+            </Button_E>
+          </NavLink>
         </Card_L_Introduce_Wrapper>
 
         <Card_L_Img_Wrapper>
