@@ -87,7 +87,7 @@ const Card_L_Introduce_Title_Number = styled.div`
   color: ${(props) => props.theme.Color.white};
 `;
 const Card_L_Img_Wrapper = styled.div`
-  /* width: 40%; */
+  width: 72%;
   border-radius: 40px;
   overflow: hidden;
   position: relative;

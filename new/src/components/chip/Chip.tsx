@@ -22,7 +22,7 @@ export const Chip_M_Storke = styled.div<{ isDarkMode: boolean }>`
   width: fit-content;
   height: fit-content;
   border: 1.5px solid ${(props) => props.theme.Border.Button_Secondary};
-  color: #222222;
+  color: ${(props) => props.theme.Border.Button_Secondary};
   padding: 8px 16px;
   border-radius: 50px;
   font-weight: 600;
