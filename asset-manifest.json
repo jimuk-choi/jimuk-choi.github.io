@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.ad6d3225.js",
-    "static/js/453.f0e33eac.chunk.js": "/static/js/453.f0e33eac.chunk.js",
-    "static/media/Works_MUKI_Main.webp": "/static/media/Works_MUKI_Main.ae6c2209a2db155e9959.webp",
-    "static/media/Works_StowGenie_Main.webp": "/static/media/Works_StowGenie_Main.ca60cdffb7c015916a23.webp",
-    "static/media/object_Dark.png": "/static/media/object_Dark.a82ece464bf03c72fdea.png",
-    "static/media/object_Light.png": "/static/media/object_Light.deccb0001abf37eee629.png",
-    "static/media/DesignSystems_Object.svg": "/static/media/DesignSystems_Object.26afc9f6d43fbfb4abae4732fca9881c.svg",
-    "static/media/Webflow_Object.svg": "/static/media/Webflow_Object.c4fa29e96b89fedff086b1648fa8d2f8.svg",
-    "static/media/AppDesign_Object.svg": "/static/media/AppDesign_Object.073aec73406c080f7479727891203218.svg",
-    "static/media/WebDesign_Object.svg": "/static/media/WebDesign_Object.92ec5739ec8fdf9c1e8dd3ea4744a1c4.svg",
-    "static/media/Branding_Object.svg": "/static/media/Branding_Object.f1ba3a2bbd502d667cd0e7177b236f64.svg",
-    "index.html": "/index.html",
-    "static/media/x.svg": "/static/media/x.15f0d3c5a46a3e516196aa682f365610.svg",
-    "static/media/ArrowRightUp.svg": "/static/media/ArrowRightUp.95c08bb79295771f3d2767365bdd7320.svg",
-    "static/media/Logo.svg": "/static/media/Logo.ee125afdac620f02fc5e2700154534fc.svg",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.ad6d3225.js.map": "/static/js/main.ad6d3225.js.map",
-    "453.f0e33eac.chunk.js.map": "/static/js/453.f0e33eac.chunk.js.map"
+    "main.css": "/new/static/css/main.e6c13ad2.css",
+    "main.js": "/new/static/js/main.cb12692b.js",
+    "static/js/453.f0e33eac.chunk.js": "/new/static/js/453.f0e33eac.chunk.js",
+    "static/media/Works_MUKI_Main.webp": "/new/static/media/Works_MUKI_Main.ae6c2209a2db155e9959.webp",
+    "static/media/Works_StowGenie_Main.webp": "/new/static/media/Works_StowGenie_Main.ca60cdffb7c015916a23.webp",
+    "static/media/object_Dark.png": "/new/static/media/object_Dark.a82ece464bf03c72fdea.png",
+    "static/media/object_Light.png": "/new/static/media/object_Light.deccb0001abf37eee629.png",
+    "static/media/DesignSystems_Object.svg": "/new/static/media/DesignSystems_Object.26afc9f6d43fbfb4abae4732fca9881c.svg",
+    "static/media/Webflow_Object.svg": "/new/static/media/Webflow_Object.c4fa29e96b89fedff086b1648fa8d2f8.svg",
+    "static/media/AppDesign_Object.svg": "/new/static/media/AppDesign_Object.073aec73406c080f7479727891203218.svg",
+    "static/media/WebDesign_Object.svg": "/new/static/media/WebDesign_Object.92ec5739ec8fdf9c1e8dd3ea4744a1c4.svg",
+    "static/media/Branding_Object.svg": "/new/static/media/Branding_Object.f1ba3a2bbd502d667cd0e7177b236f64.svg",
+    "index.html": "/new/index.html",
+    "static/media/x.svg": "/new/static/media/x.15f0d3c5a46a3e516196aa682f365610.svg",
+    "static/media/ArrowRightUp.svg": "/new/static/media/ArrowRightUp.95c08bb79295771f3d2767365bdd7320.svg",
+    "static/media/Logo.svg": "/new/static/media/Logo.ee125afdac620f02fc5e2700154534fc.svg",
+    "main.e6c13ad2.css.map": "/new/static/css/main.e6c13ad2.css.map",
+    "main.cb12692b.js.map": "/new/static/js/main.cb12692b.js.map",
+    "453.f0e33eac.chunk.js.map": "/new/static/js/453.f0e33eac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.ad6d3225.js"
+    "static/js/main.cb12692b.js"
   ]
 }
