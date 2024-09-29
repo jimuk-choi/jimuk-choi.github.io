@@ -135,6 +135,7 @@ const Card_M_TopBox_Number = styled.div`
   display: flex;
   font-size: 1.8rem;
   font-weight: 500;
+  color: ${(props) => props.theme.Color.white};
 `;
 const Card_M_TopBox_ChipBox = styled.div`
   display: flex;
