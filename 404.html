@@ -1,7 +1,13 @@
 <script type="text/javascript">
   var redirect = function () {
-    var url = window.location.pathname;
-    window.location.replace("/" + url + "#");
+    // 현재 경로를 가져옵니다.
+    var pathname = window.location.pathname;
+    // 호스트와 프로토콜을 포함한 기본 URL을 가져옵니다.
+    var origin = window.location.origin;
+    // 새로운 URL을 구성합니다.
+    var newUrl = origin + "/#" + pathname;
+    // 새로운 URL로 리디렉션합니다.
+    window.location.replace(newUrl);
   };
   redirect();
 </script>
