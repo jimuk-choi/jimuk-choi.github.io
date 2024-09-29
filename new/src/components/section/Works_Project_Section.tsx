@@ -153,6 +153,7 @@ const Card_M_CenterBox_ImgWrapper_Web = styled.div`
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  border: 1.5px solid #efefef;
 `;
 
 const Card_M_Img = styled.img`
@@ -561,7 +562,7 @@ function WorksProjetSection({
             onClick={handleEmailClick}
             isDarkMode={isDarkMode}
           >
-            Contact Me
+            Contact Me Now
           </Button_A>
         </Card_S_JobSeeking>
       </Card_M_Box>
