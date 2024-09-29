@@ -21,3 +21,16 @@ export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.InnerCard_Primary};
   /* color: ${(props) => props.theme.Color.Button_Primary}; */
 `;
+
+export const Card_M = styled.div<{ isDarkMode: boolean }>`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  padding: 40px;
+  border-radius: 40px;
+  background-color: ${(props) => props.theme.Bg.Card_Primary};
+  box-shadow: ${(props) =>
+    props.isDarkMode ? "none" : "2px 2px 12px #ededed;"};
+  /* color: ${(props) => props.theme.Color.Button_Primary}; */
+`;

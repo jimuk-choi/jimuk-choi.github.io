@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import object_Light from "../../assets/object_Light.png";
 import object_Dark from "../../assets/object_Dark.png";
 //component
-import { Heading03 } from "../typograpy/heading";
+import { Heading04 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { Subtitle_M } from "../typograpy/subtitle";
 import { breakpoints } from "../../style/breakpoints";
@@ -77,24 +77,24 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
   const ImgSrc = isDarkMode ? object_Dark : object_Light;
 
   //gsap 애니메이션
-  const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
+  const Heading04_Title_Ref = useRef<HTMLHeadingElement>(null);
   const Rectangle_Ref = useRef<HTMLDivElement>(null);
-  const Heading03_SubTitle_Ref = useRef<HTMLHeadingElement>(null);
+  const Heading04_SubTitle_Ref = useRef<HTMLHeadingElement>(null);
   const SubTitle_M_Ref = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     if (
-      Heading03_Title_Ref.current &&
+      Heading04_Title_Ref.current &&
       SubTitle_M_Ref.current &&
-      Heading03_SubTitle_Ref
+      Heading04_SubTitle_Ref
     ) {
       gsap.fromTo(
-        Heading03_Title_Ref.current,
+        Heading04_Title_Ref.current,
         { opacity: 0 }, //시작
         {
           opacity: 1,
           scrollTrigger: {
-            trigger: Heading03_Title_Ref.current,
+            trigger: Heading04_Title_Ref.current,
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
@@ -117,13 +117,13 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
         }
       );
       gsap.fromTo(
-        Heading03_SubTitle_Ref.current,
+        Heading04_SubTitle_Ref.current,
         { opacity: 0, y: 50 }, //시작
         {
           opacity: 1,
           y: 0,
           scrollTrigger: {
-            trigger: Heading03_SubTitle_Ref.current,
+            trigger: Heading04_SubTitle_Ref.current,
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
@@ -153,14 +153,14 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
     <WhoIamSection>
       <WhoIamBg isDarkMode={isDarkMode} src={ImgSrc} alt="" />
       <WhoIamSectionInnerBox>
-        <Heading03 ref={Heading03_Title_Ref} isDarkMode={isDarkMode}>
+        <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
           {TextData.WhoIam.Title}
-        </Heading03>
+        </Heading04>
         <Rectangle_L ref={Rectangle_Ref} />
         <WhoIamTextBox>
-          <Heading03 ref={Heading03_SubTitle_Ref} isDarkMode={isDarkMode}>
+          <Heading04 ref={Heading04_SubTitle_Ref} isDarkMode={isDarkMode}>
             {TextData.WhoIam.MainText}
-          </Heading03>
+          </Heading04>
           <Subtitle_M ref={SubTitle_M_Ref} isDarkMode={isDarkMode}>
             {TextData.WhoIam.SubText}
           </Subtitle_M>

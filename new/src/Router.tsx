@@ -10,7 +10,7 @@ export default Router;
  */
 import styled from "@emotion/styled";
 
-export const Chip_L = styled.div<{ isDarkMode: boolean }>`
+export const Chip_L_filled = styled.div<{ isDarkMode: boolean }>`
   display: flex;
   width: fit-content;
   height: fit-content;

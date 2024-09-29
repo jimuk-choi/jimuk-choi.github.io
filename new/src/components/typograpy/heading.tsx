@@ -126,16 +126,6 @@ export const Heading01 = styled.h1<{ isDarkMode: boolean }>`
     letter-spacing: -0.2px;
   }
 `;
-export const Heading04 = styled.h2<{ isDarkMode: boolean }>`
-  width: 100%;
-  text-align: center;
-  font-size: 2.8rem;
-  color: ${(props) => props.theme.Color.white};
-  font-weight: 700;
-  letter-spacing: 6px;
-  line-height: normal;
-  letter-spacing: 4px;
-`;
 export const Heading02 = styled.h4<{ isDarkMode: boolean }>`
   font-size: 12rem;
   color: ${(props) => props.theme.Color.white};
@@ -163,12 +153,19 @@ export const Heading03_Exclusion = styled.h3<{ isDarkMode: boolean }>`
 `;
 
 export const Heading03 = styled.h3<{ isDarkMode: boolean }>`
+  text-align: center;
+  font-size: 4.8rem;
+  color: ${(props) => props.theme.Color.white};
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: normal;
+`;
+export const Heading04 = styled.h2<{ isDarkMode: boolean }>`
   width: 100%;
   text-align: center;
   font-size: 2.8rem;
   color: ${(props) => props.theme.Color.white};
   font-weight: 700;
-  letter-spacing: 4px;
   line-height: normal;
   letter-spacing: 4px;
   @media (max-width: ${breakpoints.desktopXS}px) {

@@ -11,7 +11,7 @@ import { ReactComponent as AppDesign_Object } from "../../assets/AppDesign_Objec
 import { ReactComponent as DesignSystems_Object } from "../../assets/DesignSystems_Object.svg";
 import { ReactComponent as Webflow_Object } from "../../assets/Webflow_Object.svg";
 import { ReactComponent as Branding_Object } from "../../assets/Branding_Object.svg";
-import { Heading03 } from "../typograpy/heading";
+import { Heading04 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { breakpoints } from "../../style/breakpoints";
 
@@ -233,19 +233,19 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
   };
 
   // gsap 애니메이션
-  const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
+  const Heading04_Title_Ref = useRef<HTMLHeadingElement>(null);
   const Rectangle_Ref = useRef<HTMLDivElement>(null);
   const ListBox_Refs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    if (Heading03_Title_Ref.current) {
+    if (Heading04_Title_Ref.current) {
       gsap.fromTo(
-        Heading03_Title_Ref.current,
+        Heading04_Title_Ref.current,
         { opacity: 0 },
         {
           opacity: 1,
           scrollTrigger: {
-            trigger: Heading03_Title_Ref.current,
+            trigger: Heading04_Title_Ref.current,
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
@@ -290,9 +290,9 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
   return (
     <MyServicesSection>
       <MyServicesSectionInnerBox>
-        <Heading03 ref={Heading03_Title_Ref} isDarkMode={isDarkMode}>
+        <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
           {TextData.MyServices.Title}
-        </Heading03>
+        </Heading04>
         <Rectangle_L ref={Rectangle_Ref} />
         <MyServicesSectionListWrapper>
           {services.map((service, index) => {

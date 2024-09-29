@@ -26,7 +26,7 @@ import Excel from "../../assets/excel.png";
 import Powerpoint from "../../assets/powerpoint.png";
 import Word from "../../assets/word.png";
 // component
-import { Heading03 } from "../typograpy/heading";
+import { Heading04 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
 import { Subtitle_S_MainToolIUse } from "../typograpy/subtitle";
 import { breakpoints } from "../../style/breakpoints";
@@ -139,19 +139,19 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
   );
 
   //gsap 애니메이션
-  const Heading03_Title_Ref = useRef<HTMLHeadingElement>(null);
+  const Heading04_Title_Ref = useRef<HTMLHeadingElement>(null);
   const Rectangle_Ref = useRef<HTMLDivElement>(null);
   const Img = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (Heading03_Title_Ref.current) {
+    if (Heading04_Title_Ref.current) {
       gsap.fromTo(
-        Heading03_Title_Ref.current,
+        Heading04_Title_Ref.current,
         { opacity: 0 }, //시작
         {
           opacity: 1,
           scrollTrigger: {
-            trigger: Heading03_Title_Ref.current,
+            trigger: Heading04_Title_Ref.current,
             start: "top 85%",
             end: "bottom 80%",
             scrub: true,
@@ -191,9 +191,9 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
   return (
     <ToolIUseSection>
       <ToolIUseSectionInnerBox>
-        <Heading03 ref={Heading03_Title_Ref} isDarkMode={isDarkMode}>
+        <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
           {TextData.ToolIUse.Title}
-        </Heading03>
+        </Heading04>
         <Rectangle_L ref={Rectangle_Ref} />
         <ToolIUseImgBoxWrapper ref={Img}>
           {tools.map((tool, index) => (

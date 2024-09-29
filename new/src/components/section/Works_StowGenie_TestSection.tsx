@@ -3,8 +3,7 @@ import {
   MainSectionTitleWrapper,
   MainGreetingSectionTitleWrapperInnerBox,
   MainGreetingSectionTitle,
-  Heading01,
-  Heading03,
+  Heading04,
 } from "../typograpy/heading";
 import { useContext, useRef, useEffect } from "react";
 //GSAP
@@ -31,7 +30,6 @@ function WorksStowGenieTestSection({ isDarkMode }: MainGreetingSectionProps) {
 
   //Title Ref 설정
   const MainSectionTitle_Ref = useRef(null);
-  const Heading01_Ref = useRef(null);
   const Heading04_Ref = useRef(null);
   const Rectangle_L_Ref = useRef(null);
 
@@ -64,9 +62,9 @@ function WorksStowGenieTestSection({ isDarkMode }: MainGreetingSectionProps) {
     <GreetingSection>
       <MainSectionTitleWrapper>
         <MainGreetingSectionTitleWrapperInnerBox>
-          <Heading03 ref={Heading04_Ref} isDarkMode={isDarkMode}>
+          <Heading04 ref={Heading04_Ref} isDarkMode={isDarkMode}>
             StowGenie
-          </Heading03>
+          </Heading04>
           <Rectangle_L ref={Rectangle_L_Ref} />
           <MainGreetingSectionTitle
             ref={MainSectionTitle_Ref}
