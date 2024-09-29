@@ -1,7 +1,7 @@
 {
   "name": "new",
   "version": "0.1.0",
-  "homepage": "https://jimuk-choi.github.io/new",
+  "homepage": "https://jimuk-choi.github.io/",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.25.2",
