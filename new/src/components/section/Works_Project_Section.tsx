@@ -16,8 +16,8 @@ import { Button_E } from "../button/button_style01";
 //chip
 import { Chip_L } from "../chip/Chip";
 //img
-import StowGenie_Cover_Img from "../../assets/Works_StowGenie_Main.jpg";
-import MUKI_Cover_Img from "../../assets/Works_MUKI_Main.jpg";
+import StowGenie_Cover_Img from "../../assets/Works_StowGenie_Main.webp";
+import MUKI_Cover_Img from "../../assets/Works_MUKI_Main.webp";
 import Photoshop from "../../assets/photoshop.png";
 import Illustrator from "../../assets/illustrator.png";
 import XD from "../../assets/xd.png";
