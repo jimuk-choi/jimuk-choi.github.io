@@ -9,8 +9,7 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
     styles={css`
       @font-face {
         font-family: "Helvetica Neue";
-        src: /* url("/fonts/HelveticaNeue-Regular.woff2") format("woff2"), */ url("../../public/font/HelveticaNeue-Regular.woff")
-          format("woff");
+        src: url("../public/font/HelveticaNeue-Regular.woff") format("woff");
         font-weight: normal;
         font-style: normal;
       }
