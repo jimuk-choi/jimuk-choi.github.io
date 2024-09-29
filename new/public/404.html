@@ -1,7 +1,7 @@
-<!-- public/404.html -->
 <script type="text/javascript">
-  var target = window.location.pathname;
-  if (target && target !== "/") {
-    window.location = "/" + target;
-  }
+  var redirect = function () {
+    var url = window.location.pathname;
+    window.location.replace("/" + url + "#");
+  };
+  redirect();
 </script>
