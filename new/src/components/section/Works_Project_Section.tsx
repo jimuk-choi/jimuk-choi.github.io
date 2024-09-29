@@ -10,9 +10,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 //Text
 import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
 //Card
-import { Card_L, Card_L_InnerCard, Card_M } from "../Card/Card";
+import {
+  Card_L,
+  Card_L_InnerCard,
+  Card_M,
+  Card_S_JobSeeking,
+} from "../Card/Card";
 //Button
-import { Button_E } from "../button/button_style01";
+import { Button_A, Button_E } from "../button/button_style01";
 //chip
 import { Chip_L_fill, Chip_M_Storke } from "../chip/Chip";
 //img
@@ -22,6 +27,14 @@ import MAOIA01 from "../../assets/mAOiA_01.webp";
 import MAOIA02 from "../../assets/mAOiA_02.webp";
 import JO01 from "../../assets/JO_01.webp";
 import JO02 from "../../assets/JO_02.webp";
+import NH01 from "../../assets/NH_01.webp";
+import NH02 from "../../assets/NH_02.webp";
+import FloraFusionHome from "../../assets/FloraFusion_Home.webp";
+import FloraFusionLogin from "../../assets/FloraFusion_LoginPage.webp";
+import FloraFusionMy01 from "../../assets/FloraFusion_MyPage01.webp";
+import FloraFusionMy02 from "../../assets/FloraFusion_MyPage02.webp";
+import FloraFusionPlants from "../../assets/FloraFusion_MyPlantsDetail.webp";
+import Memoji from "../../assets/Memoji.png";
 import Photoshop from "../../assets/photoshop.png";
 import Illustrator from "../../assets/illustrator.png";
 import XD from "../../assets/xd.png";
@@ -74,7 +87,7 @@ const Card_L_Introduce_Title_Number = styled.div`
   color: ${(props) => props.theme.Color.white};
 `;
 const Card_L_Img_Wrapper = styled.div`
-  width: 40%;
+  /* width: 40%; */
   border-radius: 40px;
   overflow: hidden;
   position: relative;
@@ -132,15 +145,16 @@ const Card_M_CenterBox = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  width: 100%;
+  /* width: 100%; */
 `;
-const Card_M_CenterBox_ImgWrapper = styled.div`
+const Card_M_CenterBox_ImgWrapper_Web = styled.div`
   display: flex;
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
 `;
+
 const Card_M_Img = styled.img`
   width: 100%;
   height: 100%;
@@ -196,6 +210,10 @@ function WorksProjetSection({
       { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
     );
   }, [isDarkMode]);
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:jimook1995@naver.com";
+  };
 
   // 현재 언어에 맞는 데이터를 동적으로 불러옵니다.
   const TextData =
@@ -399,12 +417,12 @@ function WorksProjetSection({
             </Card_M_TopBox_ChipBox>
           </Card_M_TopBox>
           <Card_M_CenterBox>
-            <Card_M_CenterBox_ImgWrapper>
+            <Card_M_CenterBox_ImgWrapper_Web>
               <Card_M_Img src={MAOIA01} />
-            </Card_M_CenterBox_ImgWrapper>
-            <Card_M_CenterBox_ImgWrapper>
+            </Card_M_CenterBox_ImgWrapper_Web>
+            <Card_M_CenterBox_ImgWrapper_Web>
               <Card_M_Img src={MAOIA02} />
-            </Card_M_CenterBox_ImgWrapper>
+            </Card_M_CenterBox_ImgWrapper_Web>
           </Card_M_CenterBox>
           <Card_M_BottomBox>
             <P_M isDarkMode={isDarkMode}>
@@ -431,12 +449,12 @@ function WorksProjetSection({
             </Card_M_TopBox_ChipBox>
           </Card_M_TopBox>
           <Card_M_CenterBox>
-            <Card_M_CenterBox_ImgWrapper>
+            <Card_M_CenterBox_ImgWrapper_Web>
               <Card_M_Img src={JO01} />
-            </Card_M_CenterBox_ImgWrapper>
-            <Card_M_CenterBox_ImgWrapper>
+            </Card_M_CenterBox_ImgWrapper_Web>
+            <Card_M_CenterBox_ImgWrapper_Web>
               <Card_M_Img src={JO02} />
-            </Card_M_CenterBox_ImgWrapper>
+            </Card_M_CenterBox_ImgWrapper_Web>
           </Card_M_CenterBox>
           <Card_M_BottomBox>
             <P_M isDarkMode={isDarkMode}>
@@ -450,6 +468,102 @@ function WorksProjetSection({
             </P_M>
           </Card_M_BottomBox>
         </Card_M>
+      </Card_M_Box>
+      <Card_M_Box>
+        <Card_M isDarkMode={isDarkMode}>
+          <Card_M_TopBox>
+            <Card_M_TopBox_TitleBox>
+              <Heading03 isDarkMode={isDarkMode}>NH</Heading03>
+              <Card_M_TopBox_Number>#05</Card_M_TopBox_Number>
+            </Card_M_TopBox_TitleBox>
+            <Card_M_TopBox_ChipBox>
+              <Chip_M_Storke isDarkMode={isDarkMode}>GUI</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>UX</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>Figma</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>Web</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>Mobile</Chip_M_Storke>
+            </Card_M_TopBox_ChipBox>
+          </Card_M_TopBox>
+          <Card_M_CenterBox>
+            <Card_M_CenterBox_ImgWrapper_Web style={{ width: "29%" }}>
+              <Card_M_Img src={NH01} />
+            </Card_M_CenterBox_ImgWrapper_Web>
+            <Card_M_CenterBox_ImgWrapper_Web>
+              <Card_M_Img src={NH02} />
+            </Card_M_CenterBox_ImgWrapper_Web>
+          </Card_M_CenterBox>
+          <Card_M_BottomBox>
+            <P_M isDarkMode={isDarkMode}>
+              This solution program is an integrated management system designed
+              to efficiently manage company vehicles, employee leave schedules,
+              and various materials. It automates complex asset management and
+              scheduling tasks, aiming to reduce time and costs while maximizing
+              operational efficiency.
+            </P_M>
+          </Card_M_BottomBox>
+        </Card_M>
+        <Card_M isDarkMode={isDarkMode}>
+          <Card_M_TopBox>
+            <Card_M_TopBox_TitleBox>
+              <Heading03 isDarkMode={isDarkMode}>Flora Fusion</Heading03>
+              <Card_M_TopBox_Number>#06</Card_M_TopBox_Number>
+            </Card_M_TopBox_TitleBox>
+            <Card_M_TopBox_ChipBox>
+              <Chip_M_Storke isDarkMode={isDarkMode}>GUI</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>UX</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>Figma</Chip_M_Storke>
+            </Card_M_TopBox_ChipBox>
+          </Card_M_TopBox>
+          <Card_M_CenterBox>
+            <Card_M_CenterBox_ImgWrapper_Web>
+              <Card_M_Img src={FloraFusionHome} />
+            </Card_M_CenterBox_ImgWrapper_Web>
+            <Card_M_CenterBox_ImgWrapper_Web>
+              <Card_M_Img src={FloraFusionLogin} />
+            </Card_M_CenterBox_ImgWrapper_Web>
+            <Card_M_CenterBox_ImgWrapper_Web>
+              <Card_M_Img src={FloraFusionMy01} />
+            </Card_M_CenterBox_ImgWrapper_Web>
+            <Card_M_CenterBox_ImgWrapper_Web>
+              <Card_M_Img src={FloraFusionMy02} />
+            </Card_M_CenterBox_ImgWrapper_Web>
+            <Card_M_CenterBox_ImgWrapper_Web>
+              <Card_M_Img src={FloraFusionPlants} />
+            </Card_M_CenterBox_ImgWrapper_Web>
+          </Card_M_CenterBox>
+          <Card_M_BottomBox>
+            <P_M isDarkMode={isDarkMode}>
+              Flora Fusion is a solution app designed to help users manage their
+              plants and gardens. It automates schedules for watering, sunlight,
+              fertilizing, and repotting. Users can share photos of their
+              gardens and pots like a social media platform, interacting with
+              others through likes, comments, and shares. Additionally, users
+              can raise virtual plants, earning real plants as rewards for
+              reaching goals. The app also offers product purchases and a search
+              function for plant care information, making it easy to find
+              everything you need.
+            </P_M>
+          </Card_M_BottomBox>
+        </Card_M>
+        <Card_S_JobSeeking
+          style={{ alignItems: "center" }}
+          isDarkMode={isDarkMode}
+        >
+          <Card_M_Img src={Memoji} />
+          <Heading03 isDarkMode={isDarkMode}>Job Seeking...</Heading03>
+
+          <P_M style={{ textAlign: "center" }} isDarkMode={isDarkMode}>
+            I am looking for a partnership to collaborate on projects.
+          </P_M>
+          <Button_A
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            onClick={handleEmailClick}
+            isDarkMode={isDarkMode}
+          >
+            Contact Me
+          </Button_A>
+        </Card_S_JobSeeking>
       </Card_M_Box>
     </ProjectSectionWrapper>
   );
