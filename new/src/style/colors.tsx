@@ -44,6 +44,7 @@ export const LightTheme: Theme = {
   },
   Border: {
     Button_Secondary: palette.black,
+    White: palette.white,
   },
 };
 
@@ -69,6 +70,7 @@ export const DarkTheme: Theme = {
   },
   Border: {
     Button_Secondary: palette.white,
+    White: palette.white,
   },
 };
 

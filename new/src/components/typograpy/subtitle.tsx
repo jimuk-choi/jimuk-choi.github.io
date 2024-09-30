@@ -28,6 +28,11 @@ export const Subtitle_M = styled.p<{ isDarkMode: boolean }>`
     font-size: 1.6rem;
   }
 `;
+export const Subtitle_S = styled.p<{ isDarkMode: boolean }>`
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+`;
 
 export const Subtitle_S_MainToolIUse = styled.p<{ isDarkMode: boolean }>`
   font-size: 1.6rem;

@@ -197,5 +197,212 @@
     "Title": "Job Seeking...",
     "Content": "I am looking for a partner to collaborate on projects.",
     "buttonText": "Contact Me Now"
+  },
+  "Genesis": {
+    "Title": "GENESIS",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Musign": {
+    "Title": "MUSIGN",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Younglim": {
+    "Title": "YOUNGLIM",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "CrewALa": {
+    "Title": "CrewALa",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Daebang": {
+    "Title": "Daebang",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Dopda": {
+    "Title": "Dopda",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Phomain": {
+    "Title": "Phomain",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Hanwha": {
+    "Title": "Hanwha",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "YStudio": {
+    "Title": "YStudio",
+    "SubTitle": "Clone Coding",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
   }
 }

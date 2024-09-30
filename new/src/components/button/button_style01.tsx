@@ -125,3 +125,18 @@ export const Button_E = styled.button<{ isDarkMode: boolean }>`
     padding: 12px 16px;
   }
 `;
+
+export const Button_F = styled.button<{ isDarkMode: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 32px;
+  border-radius: 32px;
+  color: ${(props) => props.theme.Color.Button_Primary};
+  font-size: 2.4rem;
+  font-weight: 500;
+  background-color: ${(props) =>
+    props.isDarkMode ? props.theme.Bg.whiteT20 : props.theme.Bg.whiteT20};
+  backdrop-filter: blur(10px);
+`;

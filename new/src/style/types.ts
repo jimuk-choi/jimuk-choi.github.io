@@ -26,6 +26,7 @@ declare module "@emotion/react" {
     };
     Border: {
       Button_Secondary: string;
+      White: string;
     };
   }
 }

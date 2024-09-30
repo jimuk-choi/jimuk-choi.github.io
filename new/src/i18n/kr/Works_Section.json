@@ -1,6 +1,6 @@
 {
   "StowGenie": {
-    "SubTitle": "컨테이너 선박 적재 솔루션",
+    "SubTitle": "컨테이너 적재 솔루션",
     "Title": "StowGenie",
     "Number": "#01",
     "Slogan": "StowGenie와 함께 마법의 항해를 시작해요 - 모든 컨테이너가 완벽한 위치를 찾는 그곳으로!",
@@ -195,7 +195,214 @@
   },
   "JobSeeking": {
     "Title": "함께할 동료를 찾습니다...",
-    "Content": "저와 함께 프로젝트를 진행할 파트너를 찾고있습니다.",
+    "Content": "저와 함께할 파트너를 찾고있습니다.",
     "buttonText": "지금 연락주세요"
+  },
+  "Genesis": {
+    "Title": "제네시스",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Musign": {
+    "Title": "뮤자인",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Younglim": {
+    "Title": "영림",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "CrewALa": {
+    "Title": "크루 엘 라",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Daebang": {
+    "Title": "대방건설",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Dopda": {
+    "Title": "돕다",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Hanwha": {
+    "Title": "한화 케미칼",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "YStudio": {
+    "Title": "와이 스튜디오",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
+  },
+  "Phomain": {
+    "Title": "포메인",
+    "SubTitle": "클론코딩",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "HTML"
+      },
+      {
+        "id": 2,
+        "label": "CSS"
+      },
+      {
+        "id": 3,
+        "label": "Javascript"
+      },
+      {
+        "id": 4,
+        "label": "jQuery"
+      }
+    ],
+    "ButtonText": "Go to Site."
   }
 }

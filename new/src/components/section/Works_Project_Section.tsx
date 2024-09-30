@@ -130,6 +130,7 @@ const Card_M_TopBox = styled.div`
 `;
 const Card_M_TopBox_TitleBox = styled.div`
   display: flex;
+  color: ${(props) => props.theme.Color.white};
 `;
 const Card_M_TopBox_Number = styled.div`
   display: flex;
@@ -141,6 +142,10 @@ const Card_M_TopBox_ChipBox = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
+  color: ${(props) => props.theme.Border.Button_Secondary};
+  div {
+    border: 1.5px solid ${(props) => props.theme.Border.Button_Secondary};
+  }
 `;
 const Card_M_CenterBox = styled.div`
   display: flex;
@@ -168,7 +173,7 @@ const Card_M_BottomBox = styled.div`
   width: 100%;
 `;
 
-export const Arrow_Img = styled(ArrowRightUp, {
+const Arrow_Img = styled(ArrowRightUp, {
   shouldForwardProp: (prop) => !["isDarkMode"].includes(prop),
 })<{ isDarkMode: boolean }>`
   width: 32px;
