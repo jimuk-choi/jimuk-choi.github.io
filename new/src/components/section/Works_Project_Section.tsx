@@ -186,33 +186,6 @@ function WorksProjetSection({
   setIsHovering,
 }: MainProjectSectionProps) {
   const { language } = useContext(LanguageContext); // 현재 언어 정보 가져오기
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  //Title Ref 설정
-  const MainSectionTitle_Ref = useRef(null);
-  const Heading04_Ref = useRef(null);
-  const Rectangle_L_Ref = useRef(null);
-
-  // 다크 모드 상태에 따라 비디오를 다시 로드
-  useEffect(() => {
-    //배경 비디오
-    if (videoRef.current) {
-      videoRef.current.load(); // 비디오 소스
-      gsap.fromTo(
-        videoRef.current,
-        { scale: 3 },
-        { scale: 1, duration: 2.2, ease: "Power3.easeOut" }
-      );
-    }
-
-    //GSAP 애니메이션
-    gsap.fromTo(
-      MainSectionTitle_Ref.current,
-      { opacity: 0, y: 180 },
-      { opacity: 1, y: 0, duration: 2.2, ease: "Power3.easeOut" }
-    );
-  }, [isDarkMode]);
-
   const handleEmailClick = () => {
     window.location.href = "mailto:jimook1995@naver.com";
   };
@@ -267,20 +240,20 @@ function WorksProjetSection({
                   <UsedTool_Img src={Confluence} />
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
+              <NavLink to="/Works/StowGenie">
+                <Button_E
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  isDarkMode={isDarkMode}
+                  style={{ width: "100%" }}
+                >
+                  <Subtitle_XL isDarkMode={isDarkMode}>
+                    {TextData.StowGenie.Card[2].title}
+                  </Subtitle_XL>
+                  <Arrow_Img isDarkMode={isDarkMode} />
+                </Button_E>
+              </NavLink>
             </Card_L_InnerCard_Wrapper>
-            <NavLink to="/Works/StowGenie">
-              <Button_E
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                isDarkMode={isDarkMode}
-                style={{ width: "100%" }}
-              >
-                <Subtitle_XL isDarkMode={isDarkMode}>
-                  {TextData.StowGenie.Card[2].title}
-                </Subtitle_XL>
-                <Arrow_Img isDarkMode={isDarkMode} />
-              </Button_E>
-            </NavLink>
           </Card_L_Introduce_Wrapper>
 
           <Card_L_Img_Wrapper>
@@ -358,20 +331,20 @@ function WorksProjetSection({
                   <UsedTool_Img src={Confluence} />
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
+              <NavLink to="/Works/MUKI">
+                <Button_E
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  isDarkMode={isDarkMode}
+                  style={{ width: "100%" }}
+                >
+                  <Subtitle_XL isDarkMode={isDarkMode}>
+                    {TextData.StowGenie.Card[2].title}
+                  </Subtitle_XL>
+                  <Arrow_Img isDarkMode={isDarkMode} />
+                </Button_E>
+              </NavLink>
             </Card_L_InnerCard_Wrapper>
-            <NavLink to="/Works/MUKI">
-              <Button_E
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                isDarkMode={isDarkMode}
-                style={{ width: "100%" }}
-              >
-                <Subtitle_XL isDarkMode={isDarkMode}>
-                  {TextData.StowGenie.Card[2].title}
-                </Subtitle_XL>
-                <Arrow_Img isDarkMode={isDarkMode} />
-              </Button_E>
-            </NavLink>
           </Card_L_Introduce_Wrapper>
 
           <Card_L_Img_Wrapper>
@@ -406,15 +379,25 @@ function WorksProjetSection({
         <Card_M isDarkMode={isDarkMode}>
           <Card_M_TopBox>
             <Card_M_TopBox_TitleBox>
-              <Heading03 isDarkMode={isDarkMode}>mAOiA</Heading03>
-              <Card_M_TopBox_Number>#03</Card_M_TopBox_Number>
+              <Heading03 isDarkMode={isDarkMode}>
+                {TextData.mAOiA.Title}
+              </Heading03>
+              <Card_M_TopBox_Number>
+                {TextData.mAOiA.Number}
+              </Card_M_TopBox_Number>
             </Card_M_TopBox_TitleBox>
             <Card_M_TopBox_ChipBox>
-              <Chip_M_Storke isDarkMode={isDarkMode}>GUI</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>UX</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>XD</Chip_M_Storke>
               <Chip_M_Storke isDarkMode={isDarkMode}>
-                Data Visuallization
+                {TextData.mAOiA.Chip[0].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.mAOiA.Chip[1].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.mAOiA.Chip[2].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.mAOiA.Chip[3].label}
               </Chip_M_Storke>
             </Card_M_TopBox_ChipBox>
           </Card_M_TopBox>
@@ -427,27 +410,25 @@ function WorksProjetSection({
             </Card_M_CenterBox_ImgWrapper_Web>
           </Card_M_CenterBox>
           <Card_M_BottomBox>
-            <P_M isDarkMode={isDarkMode}>
-              The mAOiA solution is a system designed to manage real-time
-              outbound data in maritime shipping and port operations, offering
-              data-driven analysis and insights to support efficient outbound
-              planning and operational decision-making. Its key features include
-              the automation of outbound management, special cargo handling, and
-              container stowage planning (Bayplan), providing visualized
-              insights to assist managers in easily analyzing the data.
-            </P_M>
+            <P_M isDarkMode={isDarkMode}>{TextData.mAOiA.Content}</P_M>
           </Card_M_BottomBox>
         </Card_M>
         <Card_M isDarkMode={isDarkMode}>
           <Card_M_TopBox>
             <Card_M_TopBox_TitleBox>
-              <Heading03 isDarkMode={isDarkMode}>JO</Heading03>
-              <Card_M_TopBox_Number>#04</Card_M_TopBox_Number>
+              <Heading03 isDarkMode={isDarkMode}>{TextData.JO.Title}</Heading03>
+              <Card_M_TopBox_Number>{TextData.JO.Number}</Card_M_TopBox_Number>
             </Card_M_TopBox_TitleBox>
             <Card_M_TopBox_ChipBox>
-              <Chip_M_Storke isDarkMode={isDarkMode}>GUI</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>UX</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>Figma</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.JO.Chip[0].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.JO.Chip[1].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.JO.Chip[2].label}
+              </Chip_M_Storke>
             </Card_M_TopBox_ChipBox>
           </Card_M_TopBox>
           <Card_M_CenterBox>
@@ -459,15 +440,7 @@ function WorksProjetSection({
             </Card_M_CenterBox_ImgWrapper_Web>
           </Card_M_CenterBox>
           <Card_M_BottomBox>
-            <P_M isDarkMode={isDarkMode}>
-              The solution is designed to effectively manage the complex
-              processes of settlement, revenue distribution, BSA contract
-              management, allocation settings, monthly settlement, and data
-              validation for shipping companies and ports. Its core
-              functionality lies in automating and monitoring the distribution
-              of revenue and costs among multiple stakeholders in jointly
-              operated shipping routes, as well as managing BSA agreements.
-            </P_M>
+            <P_M isDarkMode={isDarkMode}>{TextData.JO.Content}</P_M>
           </Card_M_BottomBox>
         </Card_M>
       </Card_M_Box>
@@ -475,15 +448,25 @@ function WorksProjetSection({
         <Card_M isDarkMode={isDarkMode}>
           <Card_M_TopBox>
             <Card_M_TopBox_TitleBox>
-              <Heading03 isDarkMode={isDarkMode}>NH</Heading03>
-              <Card_M_TopBox_Number>#05</Card_M_TopBox_Number>
+              <Heading03 isDarkMode={isDarkMode}>{TextData.NH.Title}</Heading03>
+              <Card_M_TopBox_Number>{TextData.NH.Number}</Card_M_TopBox_Number>
             </Card_M_TopBox_TitleBox>
             <Card_M_TopBox_ChipBox>
-              <Chip_M_Storke isDarkMode={isDarkMode}>GUI</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>UX</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>Figma</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>Web</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>Mobile</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.NH.Chip[0].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.NH.Chip[1].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.NH.Chip[2].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.NH.Chip[3].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.NH.Chip[4].label}
+              </Chip_M_Storke>
             </Card_M_TopBox_ChipBox>
           </Card_M_TopBox>
           <Card_M_CenterBox>
@@ -495,25 +478,29 @@ function WorksProjetSection({
             </Card_M_CenterBox_ImgWrapper_Web>
           </Card_M_CenterBox>
           <Card_M_BottomBox>
-            <P_M isDarkMode={isDarkMode}>
-              This solution program is an integrated management system designed
-              to efficiently manage company vehicles, employee leave schedules,
-              and various materials. It automates complex asset management and
-              scheduling tasks, aiming to reduce time and costs while maximizing
-              operational efficiency.
-            </P_M>
+            <P_M isDarkMode={isDarkMode}>{TextData.NH.Content}</P_M>
           </Card_M_BottomBox>
         </Card_M>
         <Card_M isDarkMode={isDarkMode}>
           <Card_M_TopBox>
             <Card_M_TopBox_TitleBox>
-              <Heading03 isDarkMode={isDarkMode}>Flora Fusion</Heading03>
-              <Card_M_TopBox_Number>#06</Card_M_TopBox_Number>
+              <Heading03 isDarkMode={isDarkMode}>
+                {TextData.FloraFusion.Title}
+              </Heading03>
+              <Card_M_TopBox_Number>
+                {TextData.FloraFusion.Number}
+              </Card_M_TopBox_Number>
             </Card_M_TopBox_TitleBox>
             <Card_M_TopBox_ChipBox>
-              <Chip_M_Storke isDarkMode={isDarkMode}>GUI</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>UX</Chip_M_Storke>
-              <Chip_M_Storke isDarkMode={isDarkMode}>Figma</Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.FloraFusion.Chip[0].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.FloraFusion.Chip[1].label}
+              </Chip_M_Storke>
+              <Chip_M_Storke isDarkMode={isDarkMode}>
+                {TextData.FloraFusion.Chip[2].label}
+              </Chip_M_Storke>
             </Card_M_TopBox_ChipBox>
           </Card_M_TopBox>
           <Card_M_CenterBox>
@@ -534,17 +521,7 @@ function WorksProjetSection({
             </Card_M_CenterBox_ImgWrapper_Web>
           </Card_M_CenterBox>
           <Card_M_BottomBox>
-            <P_M isDarkMode={isDarkMode}>
-              Flora Fusion is a solution app designed to help users manage their
-              plants and gardens. It automates schedules for watering, sunlight,
-              fertilizing, and repotting. Users can share photos of their
-              gardens and pots like a social media platform, interacting with
-              others through likes, comments, and shares. Additionally, users
-              can raise virtual plants, earning real plants as rewards for
-              reaching goals. The app also offers product purchases and a search
-              function for plant care information, making it easy to find
-              everything you need.
-            </P_M>
+            <P_M isDarkMode={isDarkMode}>{TextData.FloraFusion.Content}</P_M>
           </Card_M_BottomBox>
         </Card_M>
         <Card_S_JobSeeking
@@ -552,10 +529,12 @@ function WorksProjetSection({
           isDarkMode={isDarkMode}
         >
           <Card_M_Img src={Memoji} />
-          <Heading03 isDarkMode={isDarkMode}>Job Seeking...</Heading03>
+          <Heading03 isDarkMode={isDarkMode}>
+            {TextData.JobSeeking.Title}
+          </Heading03>
 
           <P_M style={{ textAlign: "center" }} isDarkMode={isDarkMode}>
-            I am looking for a partnership to collaborate on projects.
+            {TextData.JobSeeking.Content}
           </P_M>
           <Button_A
             onMouseEnter={() => setIsHovering(true)}
@@ -563,7 +542,7 @@ function WorksProjetSection({
             onClick={handleEmailClick}
             isDarkMode={isDarkMode}
           >
-            Contact Me Now
+            {TextData.JobSeeking.buttonText}
           </Button_A>
         </Card_S_JobSeeking>
       </Card_M_Box>

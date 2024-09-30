@@ -104,5 +104,98 @@
         "label": "Agile"
       }
     ]
+  },
+  "mAOiA": {
+    "Title": "mAOiA",
+    "Number": "#03",
+    "Content": "The mAOiA solution is a system designed to manage real-time outbound data in maritime shipping and port operations, offering data-driven analysis and insights to support efficient outbound planning and operational decision-making. Its key features include the automation of outbound management, special cargo handling, and container stowage planning (Bayplan), providing visualized insights to assist managers in easily analyzing the data.",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "GUI"
+      },
+      {
+        "id": 2,
+        "label": "UX"
+      },
+      {
+        "id": 3,
+        "label": "XD"
+      },
+      {
+        "id": 4,
+        "label": "Data Visualization"
+      }
+    ]
+  },
+  "JO": {
+    "Title": "JO",
+    "Number": "#04",
+    "Content": "The solution is designed to effectively manage the complex processes of settlement, revenue distribution, BSA contract management, allocation settings, monthly settlement, and data validation for shipping companies and ports. Its core functionality lies in automating and monitoring the distribution of revenue and costs among multiple stakeholders in jointly operated shipping routes, as well as managing BSA agreements.",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "GUI"
+      },
+      {
+        "id": 2,
+        "label": "UX"
+      },
+      {
+        "id": 3,
+        "label": "Figma"
+      }
+    ]
+  },
+  "NH": {
+    "Title": "NH",
+    "Number": "#05",
+    "Content": "This solution program is an integrated management system designed to efficiently manage company vehicles, employee leave schedules, and various materials. It automates complex asset management and scheduling tasks, aiming to reduce time and costs while maximizing operational efficiency.",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "GUI"
+      },
+      {
+        "id": 2,
+        "label": "UX"
+      },
+      {
+        "id": 3,
+        "label": "Figma"
+      },
+      {
+        "id": 4,
+        "label": "Web"
+      },
+      {
+        "id": 5,
+        "label": "Mobile"
+      }
+    ]
+  },
+  "FloraFusion": {
+    "Title": "Flora Fusion",
+    "Number": "#06",
+    "Content": "Flora Fusion is a solution app designed to help users manage their plants and gardens. It automates schedules for watering, sunlight, fertilizing, and repotting. Users can share photos of their gardens and pots like a social media platform, interacting with others through likes, comments, and shares. Additionally, users can raise virtual plants, earning real plants as rewards for reaching goals. The app also offers product purchases and a search function for plant care information, making it easy to find everything you need.",
+    "Chip": [
+      {
+        "id": 1,
+        "label": "GUI"
+      },
+      {
+        "id": 2,
+        "label": "UX"
+      },
+      {
+        "id": 3,
+        "label": "Figma"
+      }
+    ]
+  },
+  "JobSeeking": {
+    "Title": "Job Seeking...",
+    "Content": "I am looking for a partner to collaborate on projects.",
+    "buttonText": "Contact Me Now"
   }
 }
