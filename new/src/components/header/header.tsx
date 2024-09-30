@@ -66,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({
           </Header_LogoText>
         </Header_LogoBox>
         <Header_MenuBox>
-          <NavLink to="/">
+          <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
             {({ isActive }) => (
               <Button_C
                 onMouseEnter={() => setIsHovering(true)}
@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({
               </Button_C>
             )}
           </NavLink>
-          <NavLink to="/Works">
+          <NavLink to="/Works" onClick={() => window.scrollTo(0, 0)}>
             {({ isActive }) => (
               <Button_C
                 onMouseEnter={() => setIsHovering(true)}
@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({
               </Button_C>
             )}
           </NavLink>
-          <NavLink to="/Process">
+          <NavLink to="/Process" onClick={() => window.scrollTo(0, 0)}>
             {({ isActive }) => (
               <Button_C
                 onMouseEnter={() => setIsHovering(true)}
