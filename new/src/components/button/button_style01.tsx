@@ -131,7 +131,7 @@ export const Button_F = styled.button<{ isDarkMode: boolean }>`
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 24px 32px;
+  padding: 16px 28px;
   border-radius: 32px;
   color: ${(props) => props.theme.Color.Button_Primary};
   font-size: 2.4rem;

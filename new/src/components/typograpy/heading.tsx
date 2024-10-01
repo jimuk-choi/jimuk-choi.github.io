@@ -153,12 +153,12 @@ export const Heading03_Exclusion = styled.h3<{ isDarkMode: boolean }>`
 `;
 
 export const Heading03 = styled.h3<{ isDarkMode: boolean }>`
-  /* text-align: center; */
   font-size: 4.8rem;
-  /* color: ${(props) => props.theme.Color.white}; */
-  /* font-weight: 700; */
   letter-spacing: 2px;
   line-height: normal;
+  @media (max-width: ${breakpoints.desktopM}px) {
+    font-size: 3.6rem;
+  }
 `;
 export const Heading04 = styled.h2<{ isDarkMode: boolean }>`
   width: 100%;

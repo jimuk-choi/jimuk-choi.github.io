@@ -4,6 +4,7 @@ import { Heading02, Heading03 } from "../typograpy/heading";
 import { useContext, useRef, useEffect } from "react";
 import { Subtitle_XL, Subtitle_L } from "../typograpy/subtitle";
 import { P_L, P_M } from "../typograpy/paragraph";
+import { breakpoints } from "../../style/breakpoints";
 //GSAP
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -64,8 +65,11 @@ const Card_L_Introduce_Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 40px;
-  width: 60%;
+  width: 1400px;
   height: 900px;
+  @media (max-width: ${breakpoints.desktopL}px) {
+    width: 570px;
+  }
 `;
 const Card_L_InnerCard_Wrapper = styled.div`
   display: flex;
@@ -81,6 +85,11 @@ const Card_L_Introduce_Title_Section = styled.div`
 `;
 const Card_L_Introduce_Title_Box = styled.div`
   display: flex;
+  @media (max-width: ${breakpoints.desktopL}px) {
+    h4 {
+      font-size: 10rem;
+    }
+  }
 `;
 const Card_L_Introduce_Title_Number = styled.div`
   font-size: 40px;
@@ -114,14 +123,31 @@ const Card_L_ChipBox = styled.div`
 const UsedTool_ImgBox = styled.div`
   display: flex;
   gap: 16px;
+  @media (max-width: ${breakpoints.desktopL}px) {
+    gap: 8px;
+  }
 `;
 const UsedTool_Img = styled.img`
   width: 48px;
 `;
-const Card_M_Box = styled.div`
+const Card_M_Box_01 = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.Bg.white90};
   gap: 32px;
+`;
+const Card_M_Box_02 = styled.div`
+  display: flex;
+  background-color: ${(props) => props.theme.Bg.white90};
+  gap: 32px;
+  @media (max-width: ${breakpoints.desktopL}px) {
+    flex-wrap: wrap;
+    & > div:nth-of-type(2) {
+      width: 65.8%;
+    }
+    & > div:nth-of-type(3) {
+      width: 20%;
+    }
+  }
 `;
 const Card_M_TopBox = styled.div`
   display: flex;
@@ -380,7 +406,7 @@ function WorksProjetSection({
           </Card_L_Img_Wrapper>
         </Card_L>
       </Card_L_Box>
-      <Card_M_Box>
+      <Card_M_Box_01>
         <Card_M isDarkMode={isDarkMode}>
           <Card_M_TopBox>
             <Card_M_TopBox_TitleBox>
@@ -448,8 +474,8 @@ function WorksProjetSection({
             <P_M isDarkMode={isDarkMode}>{TextData.JO.Content}</P_M>
           </Card_M_BottomBox>
         </Card_M>
-      </Card_M_Box>
-      <Card_M_Box>
+      </Card_M_Box_01>
+      <Card_M_Box_02>
         <Card_M isDarkMode={isDarkMode}>
           <Card_M_TopBox>
             <Card_M_TopBox_TitleBox>
@@ -550,7 +576,7 @@ function WorksProjetSection({
             {TextData.JobSeeking.buttonText}
           </Button_A>
         </Card_S_JobSeeking>
-      </Card_M_Box>
+      </Card_M_Box_02>
     </ProjectSectionWrapper>
   );
 }

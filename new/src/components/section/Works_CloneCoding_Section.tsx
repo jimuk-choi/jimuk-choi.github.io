@@ -11,6 +11,7 @@ import { Heading03 } from "../typograpy/heading";
 import { useContext, useRef, useEffect } from "react";
 import { Button_F } from "../button/button_style01";
 import { ReactComponent as ArrowRightUp } from "../../assets/ArrowRightUp.svg";
+import { breakpoints } from "../../style/breakpoints";
 //GSAP
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -41,6 +42,7 @@ const CloneCoding_Card_Img = styled.img`
 `;
 const CloneCoding_Card_ChipBox = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   gap: 6px;
   color: ${(props) => props.theme.Color.Button_Primary};
@@ -48,12 +50,19 @@ const CloneCoding_Card_ChipBox = styled.div`
   div {
     border: 1.5px solid ${(props) => props.theme.Border.White};
   }
+  @media (max-width: ${breakpoints.desktopL}px) {
+    div {
+      border: 1.5px solid ${(props) => props.theme.Border.White};
+      padding: 4px 12px;
+      font-size: 1.2rem;
+    }
+  }
 `;
 const Arrow_Img = styled(ArrowRightUp, {
   shouldForwardProp: (prop) => !["isDarkMode"].includes(prop),
 })<{ isDarkMode: boolean }>`
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   color: ${(props) => props.theme.Color.Button_Primary};
 `;
 

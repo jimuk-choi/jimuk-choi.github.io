@@ -36,7 +36,7 @@ export const Card_M = styled.div<{ isDarkMode: boolean }>`
 `;
 export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
   display: flex;
-  width: 32.4%;
+  width: 19.1%;
   border-radius: 40px;
   overflow: hidden;
   position: relative;
@@ -51,6 +51,12 @@ export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
     transition: transform 0.3s ease; /* 이미지 기본 상태에서 부드러운 전환 추가 */
     transform: scale(1.01);
   }
+  @media (max-width: ${breakpoints.desktopXL}px) {
+    width: 32.4%;
+  }
+  @media (max-width: ${breakpoints.desktopL}px) {
+    width: 32.1%;
+  }
 `;
 export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
   display: flex;
@@ -64,7 +70,7 @@ export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
   top: 50%;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
-  padding: 40px;
+  padding: 32px;
 `;
 
 export const CloneCoding_Card_InnerBox_TopBox = styled.div`
@@ -97,6 +103,7 @@ export const Card_S_JobSeeking = styled.div<{ isDarkMode: boolean }>`
     props.isDarkMode ? "none" : "2px 2px 12px #ededed;"};
   button {
     width: 100%;
+    padding: 18px 0;
   }
   h3 {
     width: 100%;
@@ -104,5 +111,10 @@ export const Card_S_JobSeeking = styled.div<{ isDarkMode: boolean }>`
   }
   img {
     height: auto;
+  }
+  @media (max-width: ${breakpoints.desktopL}px) {
+    button {
+      font-size: 1.5em;
+    }
   }
 `;

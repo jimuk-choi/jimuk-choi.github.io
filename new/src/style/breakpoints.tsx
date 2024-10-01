@@ -1,5 +1,6 @@
 // Breakpoints
 export const breakpoints = {
+  desktopXL: 2560,
   desktopL: 1920,
   desktopM: 1728,
   desktopS: 1512,
