@@ -9,7 +9,9 @@ export const Card_L = styled.div<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.Card_Primary};
   box-shadow: ${(props) =>
     props.isDarkMode ? "none" : "2px 2px 12px #ededed;"};
-  /* color: ${(props) => props.theme.Color.Button_Primary}; */
+  @media (max-width: ${breakpoints.desktopS}px) {
+    gap: 40px;
+  }
 `;
 
 export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
@@ -17,9 +19,23 @@ export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
   flex-direction: column;
   gap: 16px;
   padding: 24px 32px;
+  box-sizing: border-box;
   border-radius: 32px;
   background-color: ${(props) => props.theme.Bg.InnerCard_Primary};
-  /* color: ${(props) => props.theme.Color.Button_Primary}; */
+  @media (max-width: ${breakpoints.desktopS}px) {
+    gap: 8px;
+    padding: 20px 28px;
+    & > p:nth-child(1) {
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+    }
+    & > p:nth-child(2) {
+      font-size: 1.6rem;
+    }
+    a > button > p {
+      color: red;
+    }
+  }
 `;
 
 export const Card_M = styled.div<{ isDarkMode: boolean }>`

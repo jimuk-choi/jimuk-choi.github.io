@@ -70,11 +70,25 @@ const Card_L_Introduce_Wrapper = styled.div`
   @media (max-width: ${breakpoints.desktopL}px) {
     width: 570px;
   }
+  @media (max-width: ${breakpoints.desktopS}px) {
+    width: 500px;
+    height: 700px;
+  }
 `;
 const Card_L_InnerCard_Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  a > div {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @media (max-width: ${breakpoints.desktopS}px) {
+    a > button > p {
+      color: red;
+    }
+  }
 `;
 const Card_L_Introduce_Title_Section = styled.div`
   display: flex;
@@ -82,12 +96,28 @@ const Card_L_Introduce_Title_Section = styled.div`
   gap: 8px;
   width: 100%;
   padding: 0 32px;
+  @media (max-width: ${breakpoints.desktopS}px) {
+    & > p:nth-child(1) {
+      font-size: 2rem;
+    }
+    & > p:nth-child(3) {
+      font-size: 2rem;
+    }
+  }
 `;
 const Card_L_Introduce_Title_Box = styled.div`
   display: flex;
   @media (max-width: ${breakpoints.desktopL}px) {
     h4 {
       font-size: 10rem;
+    }
+  }
+  @media (max-width: ${breakpoints.desktopS}px) {
+    h4 {
+      font-size: 8rem;
+    }
+    div {
+      font-size: 3.2rem;
     }
   }
 `;
@@ -100,6 +130,9 @@ const Card_L_Img_Wrapper = styled.div`
   border-radius: 40px;
   overflow: hidden;
   position: relative;
+  @media (max-width: ${breakpoints.desktopL}px) {
+    width: 100%;
+  }
 `;
 const Card_L_Img = styled.img`
   width: 100%;
@@ -116,9 +149,15 @@ const Card_L_ChipBox = styled.div`
   bottom: 0%;
   transform: translate(-50%, 0%);
   display: flex;
-  /* flex-direction: column-reverse; */
   flex-wrap: wrap;
   gap: 8px;
+  @media (max-width: ${breakpoints.desktopS}px) {
+    gap: 4px;
+    div {
+      padding: 6px 24px;
+      font-size: 1.6rem;
+    }
+  }
 `;
 const UsedTool_ImgBox = styled.div`
   display: flex;
@@ -129,6 +168,9 @@ const UsedTool_ImgBox = styled.div`
 `;
 const UsedTool_Img = styled.img`
   width: 48px;
+  @media (max-width: ${breakpoints.desktopS}px) {
+    width: 40px;
+  }
 `;
 const Card_M_Box_01 = styled.div`
   display: flex;
@@ -138,8 +180,19 @@ const Card_M_Box_01 = styled.div`
 const Card_M_Box_02 = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.Bg.white90};
+  /* gap: 32px; */
   gap: 32px;
   @media (max-width: ${breakpoints.desktopL}px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    & > div:nth-of-type(2) {
+      width: 65.8%;
+    }
+    & > div:nth-of-type(3) {
+      width: 21.9%;
+    }
+  }
+  @media (max-width: ${breakpoints.desktopM}px) {
     flex-wrap: wrap;
     & > div:nth-of-type(2) {
       width: 65.8%;
@@ -272,7 +325,7 @@ function WorksProjetSection({
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
               <NavLink to="/Works/StowGenie">
-                <Button_E
+                <Card_L_InnerCard
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
                   isDarkMode={isDarkMode}
@@ -282,7 +335,7 @@ function WorksProjetSection({
                     {TextData.StowGenie.Card[2].title}
                   </Subtitle_XL>
                   <Arrow_Img isDarkMode={isDarkMode} />
-                </Button_E>
+                </Card_L_InnerCard>
               </NavLink>
             </Card_L_InnerCard_Wrapper>
           </Card_L_Introduce_Wrapper>
@@ -363,7 +416,7 @@ function WorksProjetSection({
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
               <NavLink to="/Works/MUKI">
-                <Button_E
+                <Card_L_InnerCard
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
                   isDarkMode={isDarkMode}
@@ -373,7 +426,7 @@ function WorksProjetSection({
                     {TextData.StowGenie.Card[2].title}
                   </Subtitle_XL>
                   <Arrow_Img isDarkMode={isDarkMode} />
-                </Button_E>
+                </Card_L_InnerCard>
               </NavLink>
             </Card_L_InnerCard_Wrapper>
           </Card_L_Introduce_Wrapper>
