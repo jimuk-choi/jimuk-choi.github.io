@@ -59,12 +59,18 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <HeaderSection>
       <Header_InnerBox isDarkMode={isDarkMode}>
-        <Header_LogoBox isDarkMode={isDarkMode}>
-          <Header_LogoImg isDarkMode={isDarkMode} />
-          <Header_LogoText isDarkMode={isDarkMode}>
-            {currentHeaderTexts.LogoText}
-          </Header_LogoText>
-        </Header_LogoBox>
+        <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
+          <Header_LogoBox
+            isDarkMode={isDarkMode}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
+            <Header_LogoImg isDarkMode={isDarkMode} />
+            <Header_LogoText isDarkMode={isDarkMode}>
+              {currentHeaderTexts.LogoText}
+            </Header_LogoText>
+          </Header_LogoBox>
+        </NavLink>
         <Header_MenuBox>
           <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
             {({ isActive }) => (

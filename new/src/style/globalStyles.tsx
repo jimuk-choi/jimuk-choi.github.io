@@ -16,7 +16,10 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
       html {
         font-size: 62.5%;
       }
-      body {
+      body,
+      div,
+      img,
+      rect {
         margin: 0;
         padding: 0;
         font-family: "Helvetica Neue", sans-serif;
