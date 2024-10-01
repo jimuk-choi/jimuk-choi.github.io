@@ -59,6 +59,9 @@ const Card_L_Box = styled.div`
   flex-direction: column;
   background-color: ${(props) => props.theme.Bg.white90};
   gap: 32px;
+  & > div:nth-child(2) {
+    flex-direction: row-reverse;
+  }
 `;
 const Card_L_Introduce_Wrapper = styled.div`
   display: flex;
@@ -74,6 +77,11 @@ const Card_L_Introduce_Wrapper = styled.div`
     width: 500px;
     height: 700px;
   }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    width: 100%;
+    height: fit-content;
+    gap: 24px;
+  }
 `;
 const Card_L_InnerCard_Wrapper = styled.div`
   display: flex;
@@ -84,17 +92,13 @@ const Card_L_InnerCard_Wrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
   }
-  @media (max-width: ${breakpoints.desktopS}px) {
-    a > button > p {
-      color: red;
-    }
-  }
 `;
 const Card_L_Introduce_Title_Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
   width: 100%;
+  box-sizing: border-box;
   padding: 0 32px;
   @media (max-width: ${breakpoints.desktopS}px) {
     & > p:nth-child(1) {
@@ -138,6 +142,9 @@ const Card_L_Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    height: 360px;
+  }
 `;
 const Card_L_ChipBox = styled.div`
   width: 100%;
@@ -176,6 +183,9 @@ const Card_M_Box_01 = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.Bg.white90};
   gap: 32px;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    flex-direction: column;
+  }
 `;
 const Card_M_Box_02 = styled.div`
   display: flex;
@@ -206,6 +216,14 @@ const Card_M_Box_02 = styled.div`
     }
     & > div:nth-of-type(3) {
       width: 22.8%;
+    }
+  }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    & > div:nth-of-type(2) {
+      width: 56%;
+    }
+    & > div:nth-of-type(3) {
+      width: 21.8%;
     }
   }
 `;
@@ -379,9 +397,9 @@ function WorksProjetSection({
         </Card_L>
         <Card_L
           isDarkMode={isDarkMode}
-          style={{
+          /* style={{
             flexDirection: "row-reverse",
-          }}
+          }} */
         >
           <Card_L_Introduce_Wrapper>
             <Card_L_Introduce_Title_Section>

@@ -9,8 +9,15 @@ export const Card_L = styled.div<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.Card_Primary};
   box-shadow: ${(props) =>
     props.isDarkMode ? "none" : "2px 2px 12px #ededed;"};
+  @media (max-width: ${breakpoints.desktopM}px) {
+    gap: 56px;
+  }
   @media (max-width: ${breakpoints.desktopS}px) {
     gap: 40px;
+  }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    flex-direction: column-reverse;
+    gap: 24px;
   }
 `;
 
@@ -75,6 +82,9 @@ export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
   }
   @media (max-width: ${breakpoints.desktopS}px) {
     width: 31.9%;
+  }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    width: 48.6%;
   }
 `;
 export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
