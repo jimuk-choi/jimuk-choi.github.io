@@ -193,12 +193,19 @@ const Card_M_Box_02 = styled.div`
     }
   }
   @media (max-width: ${breakpoints.desktopM}px) {
-    flex-wrap: wrap;
     & > div:nth-of-type(2) {
       width: 65.8%;
     }
     & > div:nth-of-type(3) {
       width: 20%;
+    }
+  }
+  @media (max-width: ${breakpoints.desktopS}px) {
+    & > div:nth-of-type(2) {
+      width: 60%;
+    }
+    & > div:nth-of-type(3) {
+      width: 22.8%;
     }
   }
 `;

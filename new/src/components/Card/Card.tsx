@@ -73,6 +73,9 @@ export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
   @media (max-width: ${breakpoints.desktopL}px) {
     width: 32.1%;
   }
+  @media (max-width: ${breakpoints.desktopS}px) {
+    width: 31.9%;
+  }
 `;
 export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
   display: flex;
