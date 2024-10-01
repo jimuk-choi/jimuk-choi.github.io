@@ -62,6 +62,11 @@ const Card_L_Box = styled.div`
   & > div:nth-child(2) {
     flex-direction: row-reverse;
   }
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    & > div:nth-child(2) {
+      flex-direction: column-reverse;
+    }
+  }
 `;
 const Card_L_Introduce_Wrapper = styled.div`
   display: flex;
@@ -395,12 +400,7 @@ function WorksProjetSection({
             </Card_L_ChipBox>
           </Card_L_Img_Wrapper>
         </Card_L>
-        <Card_L
-          isDarkMode={isDarkMode}
-          /* style={{
-            flexDirection: "row-reverse",
-          }} */
-        >
+        <Card_L isDarkMode={isDarkMode}>
           <Card_L_Introduce_Wrapper>
             <Card_L_Introduce_Title_Section>
               <Subtitle_L isDarkMode={isDarkMode}>
