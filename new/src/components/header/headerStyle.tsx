@@ -16,6 +16,9 @@ export const HeaderSection = styled.header`
   @media (max-width: ${breakpoints.desktopXS}px) {
     padding: 0 40px;
   }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 0 24px;
+  }
   @media (max-width: ${breakpoints.mobileL}px) {
     padding: 0 12px;
   }

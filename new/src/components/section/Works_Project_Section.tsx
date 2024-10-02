@@ -56,6 +56,15 @@ const ProjectSectionWrapper = styled.div`
   @media (max-width: ${breakpoints.tabletM}px) {
     padding: 140px 40px 32px 40px;
   }
+  @media (max-width: ${breakpoints.tabletM}px) {
+    padding: 140px 24px 32px 24px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 120px 24px 32px 24px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    gap: 16px;
+  }
 `;
 const Card_L_Box = styled.div`
   display: flex;
@@ -69,6 +78,9 @@ const Card_L_Box = styled.div`
     & > div:nth-child(2) {
       flex-direction: column-reverse;
     }
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    gap: 16px;
   }
 `;
 const Card_L_Introduce_Wrapper = styled.div`
@@ -90,6 +102,9 @@ const Card_L_Introduce_Wrapper = styled.div`
     height: fit-content;
     gap: 24px;
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    gap: 16px;
+  }
 `;
 const Card_L_InnerCard_Wrapper = styled.div`
   display: flex;
@@ -99,6 +114,9 @@ const Card_L_InnerCard_Wrapper = styled.div`
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    gap: 8px;
   }
 `;
 const Card_L_Introduce_Title_Section = styled.div`
@@ -116,6 +134,18 @@ const Card_L_Introduce_Title_Section = styled.div`
       font-size: 2rem;
     }
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    & > p:nth-child(1) {
+      font-size: 1.4rem;
+      letter-spacing: 0px;
+      font-weight: 500;
+    }
+    & > p:nth-child(3) {
+      font-size: 1.4rem;
+      letter-spacing: 0px;
+    }
+    padding: 0 8px;
+  }
 `;
 const Card_L_Introduce_Title_Box = styled.div`
   display: flex;
@@ -130,6 +160,15 @@ const Card_L_Introduce_Title_Box = styled.div`
     }
     div {
       font-size: 3.2rem;
+    }
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    h4 {
+      font-size: 4rem;
+      font-weight: 900;
+    }
+    div {
+      font-size: 1.8rem;
     }
   }
 `;
@@ -148,6 +187,9 @@ const Card_L_Img_Wrapper = styled.div`
   @media (max-width: ${breakpoints.tabletL}px) {
     border-radius: 24px;
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    border-radius: 12px;
+  }
 `;
 const Card_L_Img = styled.img`
   width: 100%;
@@ -156,6 +198,9 @@ const Card_L_Img = styled.img`
   @media (max-width: ${breakpoints.desktopXS}px) {
     height: 360px;
     transform: scale(1.1);
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    height: 160px;
   }
 `;
 const Card_L_ChipBox = styled.div`
@@ -177,6 +222,9 @@ const Card_L_ChipBox = styled.div`
       font-size: 1.6rem;
     }
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    display: none;
+  }
 `;
 const UsedTool_ImgBox = styled.div`
   display: flex;
@@ -190,6 +238,9 @@ const UsedTool_Img = styled.img`
   @media (max-width: ${breakpoints.desktopS}px) {
     width: 40px;
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    width: 24px;
+  }
 `;
 const Card_M_Box_01 = styled.div`
   display: flex;
@@ -198,11 +249,13 @@ const Card_M_Box_01 = styled.div`
   @media (max-width: ${breakpoints.desktopXS}px) {
     flex-direction: column;
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    gap: 16px;
+  }
 `;
 const Card_M_Box_02 = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.Bg.white90};
-  /* gap: 32px; */
   gap: 32px;
   @media (max-width: ${breakpoints.desktopL}px) {
     flex-wrap: wrap;
@@ -249,15 +302,27 @@ const Card_M_Box_02 = styled.div`
       width: 40%;
     }
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    gap: 16px;
+  }
 `;
 const Card_M_TopBox = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    flex-direction: column;
+    gap: 6px;
+  }
 `;
 const Card_M_TopBox_TitleBox = styled.div`
   display: flex;
   color: ${(props) => props.theme.Color.white};
+  @media (max-width: ${breakpoints.tabletS}px) {
+    h3 {
+      font-size: 4rem;
+    }
+  }
 `;
 const Card_M_TopBox_Number = styled.div`
   display: flex;
@@ -273,12 +338,17 @@ const Card_M_TopBox_ChipBox = styled.div`
   div {
     border: 1.5px solid ${(props) => props.theme.Border.Button_Secondary};
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    div {
+      font-size: 1.2rem;
+      padding: 6px 12px;
+    }
+  }
 `;
 const Card_M_CenterBox = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  /* width: 100%; */
 `;
 const Card_M_CenterBox_ImgWrapper_Web = styled.div`
   display: flex;
@@ -298,6 +368,11 @@ const Card_M_BottomBox = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    p {
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 const Arrow_Img = styled(ArrowRightUp, {
@@ -306,6 +381,10 @@ const Arrow_Img = styled(ArrowRightUp, {
   width: 32px;
   height: 32px;
   color: ${(props) => props.theme.Color.white};
+  @media (max-width: ${breakpoints.tabletS}px) {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 interface MainProjectSectionProps {

@@ -23,6 +23,11 @@ export const Card_L = styled.div<{ isDarkMode: boolean }>`
     padding: 24px;
     border-radius: 32px;
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 16px;
+    border-radius: 16px;
+    gap: 16px;
+  }
 `;
 
 export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
@@ -43,12 +48,21 @@ export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
     & > p:nth-child(2) {
       font-size: 1.6rem;
     }
-    a > button > p {
-      color: red;
-    }
   }
   @media (max-width: ${breakpoints.tabletL}px) {
     border-radius: 16px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    border-radius: 12px;
+    gap: 8px;
+    padding: 16px 24px;
+    & > p:nth-child(1) {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    & > p:nth-child(2) {
+      font-size: 1.4rem;
+    }
   }
 `;
 
@@ -66,6 +80,11 @@ export const Card_M = styled.div<{ isDarkMode: boolean }>`
   @media (max-width: ${breakpoints.tabletL}px) {
     padding: 24px;
     border-radius: 32px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 16px;
+    border-radius: 16px;
+    gap: 12px;
   }
 `;
 export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
@@ -104,6 +123,10 @@ export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
   @media (max-width: ${breakpoints.tabletL}px) {
     width: 48%;
     border-radius: 24px;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    width: 100%;
+    border-radius: 16px;
   }
 `;
 export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
@@ -159,7 +182,7 @@ export const Card_S_JobSeeking = styled.div<{ isDarkMode: boolean }>`
   }
   h3 {
     width: 100%;
-    font-size: 32px;
+    font-size: 3.2rem;
   }
   img {
     height: auto;
@@ -167,6 +190,20 @@ export const Card_S_JobSeeking = styled.div<{ isDarkMode: boolean }>`
   @media (max-width: ${breakpoints.desktopL}px) {
     button {
       font-size: 1.5em;
+    }
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 16px 16px;
+    border-radius: 16px;
+    gap: 8px;
+    h3 {
+      font-size: 2.4rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+    button {
+      padding: 12px 0;
     }
   }
 `;

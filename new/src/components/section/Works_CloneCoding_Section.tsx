@@ -38,6 +38,10 @@ const CloneCodingSectionWrapper = styled.div`
   @media (max-width: ${breakpoints.tabletM}px) {
     padding: 0px 40px 32px;
   }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    padding: 0px 24px 32px;
+    gap: 16px;
+  }
 `;
 const CloneCoding_Card_Img = styled.img`
   width: 100%;
