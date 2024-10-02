@@ -53,6 +53,9 @@ const ProjectSectionWrapper = styled.div`
   background-color: ${(props) => props.theme.Bg.white90};
   padding: 140px 80px 32px 80px;
   gap: 32px;
+  @media (max-width: ${breakpoints.tabletM}px) {
+    padding: 140px 40px 32px 40px;
+  }
 `;
 const Card_L_Box = styled.div`
   display: flex;
@@ -142,6 +145,9 @@ const Card_L_Img_Wrapper = styled.div`
   @media (max-width: ${breakpoints.desktopL}px) {
     width: 100%;
   }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    border-radius: 24px;
+  }
 `;
 const Card_L_Img = styled.img`
   width: 100%;
@@ -149,6 +155,7 @@ const Card_L_Img = styled.img`
   object-fit: cover;
   @media (max-width: ${breakpoints.desktopXS}px) {
     height: 360px;
+    transform: scale(1.1);
   }
 `;
 const Card_L_ChipBox = styled.div`
@@ -229,6 +236,17 @@ const Card_M_Box_02 = styled.div`
     }
     & > div:nth-of-type(3) {
       width: 21.8%;
+    }
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    & > div:nth-of-type(2) {
+      width: 100%;
+    }
+    & > div:nth-of-type(3) {
+      width: 100%;
+    }
+    & > div:nth-of-type(3) > img {
+      width: 40%;
     }
   }
 `;

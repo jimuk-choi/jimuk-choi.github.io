@@ -19,6 +19,10 @@ export const Card_L = styled.div<{ isDarkMode: boolean }>`
     flex-direction: column-reverse;
     gap: 24px;
   }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 24px;
+    border-radius: 32px;
+  }
 `;
 
 export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
@@ -43,6 +47,9 @@ export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
       color: red;
     }
   }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    border-radius: 16px;
+  }
 `;
 
 export const Card_M = styled.div<{ isDarkMode: boolean }>`
@@ -56,6 +63,10 @@ export const Card_M = styled.div<{ isDarkMode: boolean }>`
   box-shadow: ${(props) =>
     props.isDarkMode ? "none" : "2px 2px 12px #ededed;"};
   /* color: ${(props) => props.theme.Color.Button_Primary}; */
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 24px;
+    border-radius: 32px;
+  }
 `;
 export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
   display: flex;
@@ -86,6 +97,14 @@ export const CloneCoding_Card = styled.div<{ isDarkMode: boolean }>`
   @media (max-width: ${breakpoints.desktopXS}px) {
     width: 48.6%;
   }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 48.2%;
+    border-radius: 24px;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 48%;
+    border-radius: 24px;
+  }
 `;
 export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
   display: flex;
@@ -100,6 +119,10 @@ export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 32px;
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 24px;
+    border-radius: 32px;
+  }
 `;
 
 export const CloneCoding_Card_InnerBox_TopBox = styled.div`

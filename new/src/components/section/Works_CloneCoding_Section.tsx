@@ -35,6 +35,9 @@ const CloneCodingSectionWrapper = styled.div`
   gap: 24px;
   padding: 0px 80px 32px;
   background-color: ${(props) => props.theme.Bg.white90};
+  @media (max-width: ${breakpoints.tabletM}px) {
+    padding: 0px 40px 32px;
+  }
 `;
 const CloneCoding_Card_Img = styled.img`
   width: 100%;
@@ -56,6 +59,9 @@ const CloneCoding_Card_ChipBox = styled.div`
       padding: 4px 12px;
       font-size: 1.2rem;
     }
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    gap: 4px;
   }
 `;
 const Arrow_Img = styled(ArrowRightUp, {
