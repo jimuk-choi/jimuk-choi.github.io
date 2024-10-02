@@ -147,6 +147,8 @@ const Header: React.FC<HeaderProps> = ({
             {currentHeaderTexts.contactText}
           </Button_A>
         </Header_ButtonBox>
+
+        {/* Hamburger Menu */}
         <HamburgerWrapper
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -170,27 +172,51 @@ const Header: React.FC<HeaderProps> = ({
           </MobileMenuCloseBox>
           <MobileMenuMain>
             <MobileMenuBox>
-              <HamburgerMenuButton
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                isDarkMode={isDarkMode}
+              <NavLink
+                to="/"
+                onClick={() => {
+                  window.scrollTo(0, 0); // 첫 번째 효과
+                  toggleMenu(); // 두 번째 효과
+                }}
               >
-                {currentHeaderTexts.menu01}
-              </HamburgerMenuButton>
-              <HamburgerMenuButton
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                isDarkMode={isDarkMode}
+                <HamburgerMenuButton
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  isDarkMode={isDarkMode}
+                >
+                  {currentHeaderTexts.menu01}
+                </HamburgerMenuButton>
+              </NavLink>
+              <NavLink
+                to="/Works"
+                onClick={() => {
+                  window.scrollTo(0, 0); // 첫 번째 효과
+                  toggleMenu(); // 두 번째 효과
+                }}
               >
-                {currentHeaderTexts.menu02}
-              </HamburgerMenuButton>
-              <HamburgerMenuButton
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                isDarkMode={isDarkMode}
+                <HamburgerMenuButton
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  isDarkMode={isDarkMode}
+                >
+                  {currentHeaderTexts.menu02}
+                </HamburgerMenuButton>
+              </NavLink>
+              <NavLink
+                to="/Process"
+                onClick={() => {
+                  window.scrollTo(0, 0); // 첫 번째 효과
+                  toggleMenu(); // 두 번째 효과
+                }}
               >
-                {currentHeaderTexts.menu03}
-              </HamburgerMenuButton>
+                <HamburgerMenuButton
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  isDarkMode={isDarkMode}
+                >
+                  {currentHeaderTexts.menu03}
+                </HamburgerMenuButton>
+              </NavLink>
               <Link
                 target="blank"
                 to="https://jimukchoi.github.io/JMC.github.io/"
