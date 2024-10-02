@@ -35,7 +35,8 @@ const CloneCodingSectionWrapper = styled.div`
   gap: 24px;
   padding: 0px 80px 32px;
   background-color: ${(props) => props.theme.Bg.white90};
-  @media (max-width: ${breakpoints.tabletM}px) {
+
+  @media (max-width: ${breakpoints.desktopXS}px) {
     padding: 0px 40px 32px;
   }
   @media (max-width: ${breakpoints.tabletS}px) {

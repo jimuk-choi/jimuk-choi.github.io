@@ -53,7 +53,7 @@ const ProjectSectionWrapper = styled.div`
   background-color: ${(props) => props.theme.Bg.white90};
   padding: 140px 80px 32px 80px;
   gap: 32px;
-  @media (max-width: ${breakpoints.tabletM}px) {
+  @media (max-width: ${breakpoints.desktopXS}px) {
     padding: 140px 40px 32px 40px;
   }
   @media (max-width: ${breakpoints.tabletM}px) {
@@ -61,8 +61,6 @@ const ProjectSectionWrapper = styled.div`
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     padding: 120px 24px 32px 24px;
-  }
-  @media (max-width: ${breakpoints.tabletS}px) {
     gap: 16px;
   }
 `;
@@ -251,6 +249,9 @@ const Card_M_Box_01 = styled.div`
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     gap: 16px;
+    & > div > div:nth-child(2) {
+      flex-direction: column;
+    }
   }
 `;
 const Card_M_Box_02 = styled.div`
