@@ -64,6 +64,17 @@ export const Card_L_InnerCard = styled.div<{ isDarkMode: boolean }>`
       font-size: 1.4rem;
     }
   }
+
+  @media (max-width: ${breakpoints.mobileS}px) {
+    padding: 16px 16px;
+    & > p:nth-child(1) {
+      font-size: 1.6rem;
+      letter-spacing: 0px;
+    }
+    & > p:nth-child(2) {
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 export const Card_M = styled.div<{ isDarkMode: boolean }>`
@@ -146,6 +157,9 @@ export const CloneCoding_Card_InnerBox = styled.div<{ isDarkMode: boolean }>`
     padding: 24px;
     border-radius: 32px;
   }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    padding: 20px;
+  }
 `;
 
 export const CloneCoding_Card_InnerBox_TopBox = styled.div`
@@ -156,11 +170,29 @@ export const CloneCoding_Card_InnerBox_TopBox = styled.div`
   p {
     font-weight: 400;
   }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    & > div {
+      gap: 2px;
+    }
+    & > div > div {
+      padding: 4px 8px;
+      font-size: 1rem;
+    }
+  }
 `;
 export const CloneCoding_Card_InnerBox_BottomBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  @media (max-width: ${breakpoints.mobileS}px) {
+    button > p {
+      font-size: 1.4rem;
+    }
+    button > svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
 `;
 
 export const Card_S_JobSeeking = styled.div<{ isDarkMode: boolean }>`

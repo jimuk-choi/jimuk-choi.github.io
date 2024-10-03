@@ -169,6 +169,15 @@ const Card_L_Introduce_Title_Box = styled.div`
       font-size: 1.8rem;
     }
   }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    h4 {
+      font-size: 3.2rem;
+      letter-spacing: 0;
+    }
+    div {
+      font-size: 1.6rem;
+    }
+  }
 `;
 const Card_L_Introduce_Title_Number = styled.div`
   font-size: 40px;
@@ -200,6 +209,9 @@ const Card_L_Img = styled.img`
   @media (max-width: ${breakpoints.tabletS}px) {
     height: 160px;
   }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    height: 120px;
+  }
 `;
 const Card_L_ChipBox = styled.div`
   width: 100%;
@@ -230,6 +242,12 @@ const UsedTool_ImgBox = styled.div`
   @media (max-width: ${breakpoints.desktopL}px) {
     gap: 8px;
   }
+  @media (max-width: ${breakpoints.mobileL}px) {
+    gap: 4px;
+  }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    gap: 2px;
+  }
 `;
 const UsedTool_Img = styled.img`
   width: 48px;
@@ -238,6 +256,9 @@ const UsedTool_Img = styled.img`
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     width: 24px;
+  }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    width: 22px;
   }
 `;
 const Card_M_Box_01 = styled.div`
@@ -324,6 +345,11 @@ const Card_M_TopBox_TitleBox = styled.div`
       font-size: 4rem;
     }
   }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    h3 {
+      font-size: 2.8rem;
+    }
+  }
 `;
 const Card_M_TopBox_Number = styled.div`
   display: flex;
@@ -343,6 +369,13 @@ const Card_M_TopBox_ChipBox = styled.div`
     div {
       font-size: 1.2rem;
       padding: 6px 12px;
+    }
+  }
+  @media (max-width: ${breakpoints.mobileS}px) {
+    gap: 2px;
+    div {
+      font-size: 1.2rem;
+      padding: 4px 8px;
     }
   }
 `;
