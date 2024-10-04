@@ -13,8 +13,8 @@ export const Collapse_Card_L = styled.div<{
   background-color: ${(props) => props.theme.Bg.Card_Primary};
   box-shadow: ${(props) =>
     props.isDarkMode ? "none" : "2px 2px 12px #ededed"};
+  overflow: hidden;
 `;
-
 export const Collapse_Card_L_TitleBox = styled.div`
   display: flex;
   justify-content: space-between;
@@ -34,6 +34,7 @@ export const Collapse_Card_L_ContentsBox_LogoBox = styled.div`
   margin: 16px 0px 40px;
 `;
 export const Collapse_Card_L_ContentsBox_InnerBox_Wrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;

@@ -1,4 +1,5 @@
 import WorksStowGenieBrandSection from "../components/section/Works_StowGenie_BrandSection";
+import WorksStowGenieColorSection from "../components/section/Works_StowGenie_ColorSection";
 import styled from "@emotion/styled";
 
 const WorksStowGenie_Wrapper = styled.div`
@@ -22,7 +23,7 @@ function WorksStowGenie({ isDarkMode, setIsHovering }: MainProps) {
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieBrandSection
+        <WorksStowGenieColorSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />

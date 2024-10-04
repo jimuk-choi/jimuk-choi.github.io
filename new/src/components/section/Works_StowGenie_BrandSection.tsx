@@ -7,7 +7,8 @@ import { Subtitle_XL, Subtitle_M_900 } from "../typograpy/subtitle";
 import { P_M } from "../typograpy/paragraph";
 //img
 import { ReactComponent as Chev } from "../../assets/Chev.svg";
-import StowGenie_Logo from "../../assets/StowGenie_Logo_Light.jpg";
+import StowGenie_Logo_Light from "../../assets/StowGenie_Logo_Light.png";
+import StowGenie_Logo_Dark from "../../assets/StowGenie_Logo_Dark.png";
 // Card
 import {
   Collapse_Card_L,
@@ -62,7 +63,7 @@ function WorksStowGenieBrandSection({
   const toggleCard = () => {
     setIsExpanded((prev) => !prev); // 상태 토글
   };
-
+  const ImgSrc = isDarkMode ? StowGenie_Logo_Dark : StowGenie_Logo_Light;
   const TextData =
     language === "en"
       ? require("../../i18n/en/Works_StowGenie.json")
@@ -85,7 +86,7 @@ function WorksStowGenieBrandSection({
         {isExpanded && (
           <Collapse_Card_L_ContentsBox>
             <Collapse_Card_L_ContentsBox_LogoBox>
-              <img src={StowGenie_Logo} alt="Logo" />
+              <img src={ImgSrc} alt="Logo" />
             </Collapse_Card_L_ContentsBox_LogoBox>
             <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
               <Collapse_Card_L_ContentsBox_InnerBox>
