@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.1ea9a794.js",
+    "main.js": "/static/js/main.b55e3937.js",
     "static/js/453.f0e33eac.chunk.js": "/static/js/453.f0e33eac.chunk.js",
     "static/media/Works_MUKI_Main.webp": "/static/media/Works_MUKI_Main.ae6c2209a2db155e9959.webp",
     "static/media/Works_StowGenie_Main.webp": "/static/media/Works_StowGenie_Main.ca60cdffb7c015916a23.webp",
@@ -17,6 +17,7 @@
     "static/media/phomain.webp": "/static/media/phomain.527953eed468a1335687.webp",
     "static/media/dopda.webp": "/static/media/dopda.efd8b03d051b84d34666.webp",
     "static/media/crew a la.webp": "/static/media/crew a la.364559fd8a90e2acd825.webp",
+    "static/media/StowGenie_Logo_Light.jpg": "/static/media/StowGenie_Logo_Light.fca7da2cad7110591567.jpg",
     "static/media/FloraFusion_MyPlantsDetail.webp": "/static/media/FloraFusion_MyPlantsDetail.2b032dfd25cceb49264b.webp",
     "static/media/JO_02.webp": "/static/media/JO_02.f9a4191a161dfcb2c69a.webp",
     "static/media/musign.webp": "/static/media/musign.2ddc6640442479f3c1b1.webp",
@@ -36,13 +37,14 @@
     "index.html": "/index.html",
     "static/media/x.svg": "/static/media/x.15f0d3c5a46a3e516196aa682f365610.svg",
     "static/media/ArrowRightUp.svg": "/static/media/ArrowRightUp.95c08bb79295771f3d2767365bdd7320.svg",
+    "static/media/Chev.svg": "/static/media/Chev.58384f6cf1aeaadb187c4207c7f812ab.svg",
     "static/media/Logo.svg": "/static/media/Logo.ee125afdac620f02fc5e2700154534fc.svg",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.1ea9a794.js.map": "/static/js/main.1ea9a794.js.map",
+    "main.b55e3937.js.map": "/static/js/main.b55e3937.js.map",
     "453.f0e33eac.chunk.js.map": "/static/js/453.f0e33eac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.1ea9a794.js"
+    "static/js/main.b55e3937.js"
   ]
 }
