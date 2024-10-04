@@ -16,8 +16,8 @@ export const palette = {
   black90: "#3f3f3f",
   black50: "#505050",
   black_Main: "#262527",
-  gray80: "#808080",
-  gray30: "#b2b2b2",
+  gray40: "#b2b2b2",
+  gray30: "#c0c0c0",
   gray20: "#f7f7f7",
 };
 
@@ -40,7 +40,7 @@ export const LightTheme: Theme = {
     Button_Primary: palette.white,
     Button_Secondary: palette.black,
     Button_Third: palette.Light_primary_Main,
-    Paragraph: palette.gray80,
+    Paragraph: palette.gray30,
   },
   Border: {
     Button_Secondary: palette.black,
@@ -57,7 +57,7 @@ export const DarkTheme: Theme = {
     Button_Primary: palette.Dark_primary100,
     Button_Primary_Hover: palette.Light_primary80,
     Button_Primary_Active: palette.Light_primary100,
-    Button_Secondary: palette.gray30,
+    Button_Secondary: palette.gray40,
     Card_Primary: palette.black90,
     InnerCard_Primary: palette.black50,
   },

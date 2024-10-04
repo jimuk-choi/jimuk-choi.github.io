@@ -1,0 +1,31 @@
+{
+  "Brand": {
+    "Title": "Brand",
+    "Card": [
+      {
+        "id": 1,
+        "title": "StowGenie Brand Identity Aim",
+        "content": "Stowgenie aims to provide innovative port solutions for global shipping."
+      },
+      {
+        "id": 2,
+        "title": "Slogan",
+        "content": "Embark on a Magical Voyage with StowGenie – Where Every Container Finds its Perfect Location!"
+      },
+      {
+        "id": 3,
+        "title": "Design Definition",
+        "content": "This identity not only symbolizes the 'S' of Stowage and the 'G' of Genie, but also features visual flexibility that can represent various forms of container loading, making the logo versatile in its application. The deep navy color, reminiscent of the mysterious and vast ocean, and the image symbol, which evokes both a flat and three-dimensional feeling depending on the perspective, reflect Stowgenie's creative and diverse port solutions."
+      },
+      {
+        "id": 4,
+        "title": "Keywords",
+        "content": "ingenious transformable, a perfect fit, reliable supply"
+      }
+    ]
+  },
+  "Color": {
+    "Title": "Color",
+    "Content": "The color concept for Stowgenie's identity draws inspiration from the deep, mysterious shades of the ocean. Just as the ocean is vast, powerful, and full of hidden depths, the rich navy blue used in the design symbolizes the company's ability to navigate complex and large-scale shipping challenges. This color choice not only reflects the maritime industry but also conveys a sense of trust, stability, and professionalism, which are key qualities in the global logistics and port solutions that Stowgenie provides."
+  }
+}

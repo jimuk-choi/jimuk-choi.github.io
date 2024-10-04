@@ -14,6 +14,18 @@ export const Subtitle_L = styled.p<{ isDarkMode: boolean }>`
   font-weight: 900;
   letter-spacing: 2px;
 `;
+export const Subtitle_M_900 = styled.p<{ isDarkMode: boolean }>`
+  font-size: 2.4rem;
+  color: ${(props) => props.theme.Color.white};
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    font-size: 2rem;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 1.6rem;
+  }
+`;
 
 export const Subtitle_M = styled.p<{ isDarkMode: boolean }>`
   font-size: 2.4rem;
