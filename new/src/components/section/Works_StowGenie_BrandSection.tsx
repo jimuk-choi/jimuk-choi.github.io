@@ -25,7 +25,7 @@ const WorksStowGenieBrandSectionWrapper = styled.div`
   background-color: ${(props) => props.theme.Bg.white90};
   gap: 32px;
 
-  @media (max-width: ${breakpoints.desktopXS}px) {
+  /* @media (max-width: ${breakpoints.desktopXS}px) {
     padding: 140px 40px 32px 40px;
   }
   @media (max-width: ${breakpoints.tabletM}px) {
@@ -34,7 +34,7 @@ const WorksStowGenieBrandSectionWrapper = styled.div`
   @media (max-width: ${breakpoints.tabletS}px) {
     padding: 120px 24px 32px 24px;
     gap: 16px;
-  }
+  } */
 `;
 
 const Chev_Img = styled(Chev, {

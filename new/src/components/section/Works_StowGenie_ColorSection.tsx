@@ -10,12 +10,12 @@ import { ReactComponent as Chev } from "../../assets/Chev.svg";
 import Bg from "../../assets/StowGenie_ColorBg.jpg";
 // Card
 import {
-  Collapse_Card_L,
-  Collapse_Card_L_TitleBox,
-  Collapse_Card_L_ContentsBox,
-  Collapse_Card_L_ContentsBox_LogoBox,
-  Collapse_Card_L_ContentsBox_InnerBox,
-  Collapse_Card_L_ContentsBox_InnerBox_Wrapper,
+  Collapse_Card_L_Bg,
+  Collapse_Card_L_BG_TitleBox,
+  Collapse_Card_L_BG_ContentsBox,
+  Collapse_Card_L_BG_ContentsBox_InnerBox,
+  Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip,
+  Collapse_Card_L_BG_ContentsBox_TextBox,
 } from "../Card/Collapse_Card";
 
 const WorksStowGenieColorSectionWrapper = styled.div`
@@ -26,7 +26,7 @@ const WorksStowGenieColorSectionWrapper = styled.div`
   div {
     color: #ffffff;
   }
-  @media (max-width: ${breakpoints.desktopXS}px) {
+  /* @media (max-width: ${breakpoints.desktopXS}px) {
     padding: 140px 40px 32px 40px;
   }
   @media (max-width: ${breakpoints.tabletM}px) {
@@ -35,13 +35,7 @@ const WorksStowGenieColorSectionWrapper = styled.div`
   @media (max-width: ${breakpoints.tabletS}px) {
     padding: 120px 24px 32px 24px;
     gap: 16px;
-  }
-`;
-const Color_Bg_Wrapper = styled.div`
-  width: 100%;
-  height: auto;
-
-  z-index: -1;
+  } */
 `;
 const Color_Bg = styled.img`
   width: 100%;
@@ -56,7 +50,7 @@ const Chev_Img = styled(Chev, {
 })<{ isDarkMode: boolean; isExpanded: boolean }>`
   width: 32px;
   height: 32px;
-  color: ${(props) => props.theme.Color.white};
+  color: #ffffff;
   transition: transform 0.3s ease;
   transform: ${(props) =>
     props.isExpanded ? "rotate(0deg)" : "rotate(180deg)"}; // 펼쳐질 때 회전
@@ -85,8 +79,9 @@ function WorksStowGenieColorSection({
 
   return (
     <WorksStowGenieColorSectionWrapper>
-      <Collapse_Card_L isDarkMode={isDarkMode} isExpanded={isExpanded}>
-        <Collapse_Card_L_TitleBox
+      <Collapse_Card_L_Bg isDarkMode={isDarkMode} isExpanded={isExpanded}>
+        <Color_Bg src={Bg} />
+        <Collapse_Card_L_BG_TitleBox
           onClick={toggleCard}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -95,23 +90,58 @@ function WorksStowGenieColorSection({
             {TextData.Color.Title}
           </Subtitle_XL>
           <Chev_Img isDarkMode={isDarkMode} isExpanded={isExpanded} />
-        </Collapse_Card_L_TitleBox>
+        </Collapse_Card_L_BG_TitleBox>
 
         {isExpanded && (
-          <Collapse_Card_L_ContentsBox>
-            <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-              <Collapse_Card_L_ContentsBox_InnerBox>
-                <Subtitle_M_900 isDarkMode={isDarkMode}>
-                  {TextData.Brand.Card[0].title}
-                </Subtitle_M_900>
-                <P_M isDarkMode={isDarkMode}>
-                  {TextData.Brand.Card[0].content}
-                </P_M>
-              </Collapse_Card_L_ContentsBox_InnerBox>
-            </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-          </Collapse_Card_L_ContentsBox>
+          <Collapse_Card_L_BG_ContentsBox>
+            <Collapse_Card_L_BG_ContentsBox_InnerBox isDarkMode={isDarkMode}>
+              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
+                isDarkMode={isDarkMode}
+              >
+                #10181E
+              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
+              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
+                isDarkMode={isDarkMode}
+              >
+                #1A2734
+              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
+              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
+                isDarkMode={isDarkMode}
+              >
+                #243844
+              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
+              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
+                isDarkMode={isDarkMode}
+              >
+                #4B5763
+              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
+              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
+                isDarkMode={isDarkMode}
+              >
+                #899296
+              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
+              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
+                isDarkMode={isDarkMode}
+              >
+                #BBC0BE
+              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
+            </Collapse_Card_L_BG_ContentsBox_InnerBox>
+            <Collapse_Card_L_BG_ContentsBox_TextBox>
+              <P_M style={{ color: "#ffffff" }} isDarkMode={isDarkMode}>
+                The color concept for Stowgenie's identity draws inspiration
+                from the deep, mysterious shades of the ocean. Just as the ocean
+                is vast, powerful, and full of hidden depths, the rich navy blue
+                used in the design symbolizes the company's ability to navigate
+                complex and large-scale shipping challenges. This color choice
+                not only reflects the maritime industry but also conveys a sense
+                of trust, stability, and professionalism, which are key
+                qualities in the global logistics and port solutions that
+                Stowgenie provides.
+              </P_M>
+            </Collapse_Card_L_BG_ContentsBox_TextBox>
+          </Collapse_Card_L_BG_ContentsBox>
         )}
-      </Collapse_Card_L>
+      </Collapse_Card_L_Bg>
     </WorksStowGenieColorSectionWrapper>
   );
 }
