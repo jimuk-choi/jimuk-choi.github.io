@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.fe8337ca.js",
+    "main.js": "/static/js/main.b9230b5c.js",
     "static/js/453.1fd1f10b.chunk.js": "/static/js/453.1fd1f10b.chunk.js",
+    "static/media/StowGenie_ColorBg.jpg": "/static/media/StowGenie_ColorBg.82f2e9dc0e2e309dc308.jpg",
     "static/media/Works_MUKI_Main.webp": "/static/media/Works_MUKI_Main.ae6c2209a2db155e9959.webp",
     "static/media/Works_StowGenie_Main.webp": "/static/media/Works_StowGenie_Main.ca60cdffb7c015916a23.webp",
     "static/media/mAOiA_02.webp": "/static/media/mAOiA_02.5ede0c277df035bdd68b.webp",
@@ -41,11 +42,11 @@
     "static/media/Chev.svg": "/static/media/Chev.f4f5648450bd939623bd9377426f0a15.svg",
     "static/media/Logo.svg": "/static/media/Logo.ee125afdac620f02fc5e2700154534fc.svg",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.fe8337ca.js.map": "/static/js/main.fe8337ca.js.map",
+    "main.b9230b5c.js.map": "/static/js/main.b9230b5c.js.map",
     "453.1fd1f10b.chunk.js.map": "/static/js/453.1fd1f10b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.fe8337ca.js"
+    "static/js/main.b9230b5c.js"
   ]
 }
