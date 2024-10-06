@@ -27,6 +27,12 @@ export const Collapse_Card_L_ContentsBox = styled.div`
   align-items: center;
   width: 100%;
 `;
+export const Collapse_Card_L_ContentsBox_LogoBox_W97 = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  margin: 16px 0px 40px;
+`;
 export const Collapse_Card_L_ContentsBox_LogoBox = styled.div`
   display: flex;
   flex-direction: column;

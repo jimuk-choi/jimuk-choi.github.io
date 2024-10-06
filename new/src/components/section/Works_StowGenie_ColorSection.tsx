@@ -128,15 +128,7 @@ function WorksStowGenieColorSection({
             </Collapse_Card_L_BG_ContentsBox_InnerBox>
             <Collapse_Card_L_BG_ContentsBox_TextBox>
               <P_M style={{ color: "#ffffff" }} isDarkMode={isDarkMode}>
-                The color concept for Stowgenie's identity draws inspiration
-                from the deep, mysterious shades of the ocean. Just as the ocean
-                is vast, powerful, and full of hidden depths, the rich navy blue
-                used in the design symbolizes the company's ability to navigate
-                complex and large-scale shipping challenges. This color choice
-                not only reflects the maritime industry but also conveys a sense
-                of trust, stability, and professionalism, which are key
-                qualities in the global logistics and port solutions that
-                Stowgenie provides.
+                {TextData.Color.Content}
               </P_M>
             </Collapse_Card_L_BG_ContentsBox_TextBox>
           </Collapse_Card_L_BG_ContentsBox>
