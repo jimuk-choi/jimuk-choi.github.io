@@ -30,5 +30,57 @@
   },
   "Typo": {
     "Title": "Typography"
+  },
+  "RnR": {
+    "Title": "Role & Responsibilities",
+    "Card": [
+      {
+        "id": 1,
+        "title": "Branding",
+        "Contribution": "Contribution: 50%",
+        "content": "Contributed to the creation of the brand identity by designing the logo, defining the color palette, and typography. Ensured the brand’s vision and message were clearly communicated, providing a cohesive brand experience across all platforms."
+      },
+      {
+        "id": 2,
+        "title": "GUI Design",
+        "Contribution": "Contribution: 100%",
+        "content": "Led the visual design of the user interface, creating intuitive and consistent interfaces that enhance the user experience. Carefully refined the layout, color schemes, and typography of UI components to improve overall readability and usability of the product."
+      },
+      {
+        "id": 3,
+        "title": "UX Design",
+        "Contribution": "Contribution: 50%",
+        "content": "Contributed to defining user personas and crafting use case scenarios based on user research. Developed information architecture and user flows to create optimal user experiences that align with real user needs and behaviors."
+      },
+      {
+        "id": 4,
+        "title": "Design System Creation",
+        "Contribution": "Contribution: 100%",
+        "content": "Built a consistent design language and component library to streamline collaboration within the team and maintain product consistency. This approach significantly improved the efficiency of both the design and development processes."
+      },
+      {
+        "id": 5,
+        "title": "Data Visualization",
+        "Contribution": "Contribution: 50%",
+        "content": "Designed data visualizations to make complex data easily understandable. Focused on clarity and readability to ensure data was effectively communicated."
+      },
+      {
+        "id": 6,
+        "title": "Prototype Creation & Video Editing",
+        "Contribution": "Contribution: 100%",
+        "content": "Created high-fidelity prototypes using Figma and led video production for project presentations and product demonstrations. These tools helped clearly convey design intentions and simulate user interactions. Video editing played a key role in visually delivering the project’s core ideas."
+      },
+      {
+        "id": 7,
+        "title": "Publishing",
+        "Contribution": "Contribution: 50%",
+        "content": "Worked on web page publishing using HTML, CSS, and ReactJS. Implemented responsive web design to ensure optimal user experiences across different devices by turning design concepts into fully functional web pages."
+      },
+      {
+        "id": 8,
+        "title": "User Testing and Feedback Implementation",
+        "content": "Worked on web page publishing using HTML, CSS, and ReactJS. Implemented responsive web design to ensure optimal user experiences across different devices by turning design concepts into fully functional web pages."
+      }
+    ]
   }
 }

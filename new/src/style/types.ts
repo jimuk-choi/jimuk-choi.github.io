@@ -23,6 +23,7 @@ declare module "@emotion/react" {
       Button_Secondary: string;
       Button_Third: string;
       Paragraph: string;
+      Lnb: string;
     };
     Border: {
       Button_Secondary: string;
