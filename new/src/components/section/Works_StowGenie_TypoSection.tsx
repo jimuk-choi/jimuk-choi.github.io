@@ -7,7 +7,8 @@ import { Subtitle_XL, Subtitle_M_900 } from "../typograpy/subtitle";
 import { P_M } from "../typograpy/paragraph";
 //img
 import { ReactComponent as Chev } from "../../assets/Chev.svg";
-import Typo_Img from "../../assets/Typography.png";
+import Typo_Img_Light from "../../assets/Typography_Light.png";
+import Typo_Img_Dark from "../../assets/Typography_Dark.png";
 // Card
 import {
   Collapse_Card_L,
@@ -62,6 +63,7 @@ function WorksStowGenieTypoSection({
   const toggleCard = () => {
     setIsExpanded((prev) => !prev); // 상태 토글
   };
+  const ImgSrc = isDarkMode ? Typo_Img_Dark : Typo_Img_Light;
   const TextData =
     language === "en"
       ? require("../../i18n/en/Works_StowGenie.json")
@@ -84,7 +86,7 @@ function WorksStowGenieTypoSection({
         {isExpanded && (
           <Collapse_Card_L_ContentsBox>
             <Collapse_Card_L_ContentsBox_LogoBox_W97>
-              <img src={Typo_Img} alt="Logo" />
+              <img src={ImgSrc} alt="Logo" />
             </Collapse_Card_L_ContentsBox_LogoBox_W97>
           </Collapse_Card_L_ContentsBox>
         )}
