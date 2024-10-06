@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.f73df8ee.js",
+    "main.js": "/static/js/main.f0725120.js",
     "static/js/453.1fd1f10b.chunk.js": "/static/js/453.1fd1f10b.chunk.js",
     "static/media/StowGenie_ColorBg.jpg": "/static/media/StowGenie_ColorBg.82f2e9dc0e2e309dc308.jpg",
     "static/media/Works_MUKI_Main.webp": "/static/media/Works_MUKI_Main.ae6c2209a2db155e9959.webp",
@@ -21,9 +21,10 @@
     "static/media/FloraFusion_MyPlantsDetail.webp": "/static/media/FloraFusion_MyPlantsDetail.2b032dfd25cceb49264b.webp",
     "static/media/JO_02.webp": "/static/media/JO_02.f9a4191a161dfcb2c69a.webp",
     "static/media/musign.webp": "/static/media/musign.2ddc6640442479f3c1b1.webp",
+    "static/media/Typography_Dark.png": "/static/media/Typography_Dark.daf9cf1055e0985b2840.png",
     "static/media/ystudio.webp": "/static/media/ystudio.4d08b830ab8d213f0f28.webp",
     "static/media/object_Light.png": "/static/media/object_Light.deccb0001abf37eee629.png",
-    "static/media/Typography.png": "/static/media/Typography.cc4f7635098e88a15a06.png",
+    "static/media/Typography_Light.png": "/static/media/Typography_Light.cc4f7635098e88a15a06.png",
     "static/media/younglim.webp": "/static/media/younglim.a0873ed4fc559abb515c.webp",
     "static/media/genesis.webp": "/static/media/genesis.70128c32e442d7ddd007.webp",
     "static/media/FloraFusion_MyPage01.webp": "/static/media/FloraFusion_MyPage01.0de1ed3bd113ad676c8c.webp",
@@ -43,11 +44,11 @@
     "static/media/Chev.svg": "/static/media/Chev.f4f5648450bd939623bd9377426f0a15.svg",
     "static/media/Logo.svg": "/static/media/Logo.ee125afdac620f02fc5e2700154534fc.svg",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.f73df8ee.js.map": "/static/js/main.f73df8ee.js.map",
+    "main.f0725120.js.map": "/static/js/main.f0725120.js.map",
     "453.1fd1f10b.chunk.js.map": "/static/js/453.1fd1f10b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.f73df8ee.js"
+    "static/js/main.f0725120.js"
   ]
 }
