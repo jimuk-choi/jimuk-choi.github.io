@@ -65,7 +65,7 @@ function WorksStowGenieBrandSection({
   };
   const ImgSrc = isDarkMode ? StowGenie_Logo_Dark : StowGenie_Logo_Light;
   const TextData =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/Works_StowGenie.json")
       : require("../../i18n/kr/Works_StowGenie.json");
 

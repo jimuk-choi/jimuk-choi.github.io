@@ -437,7 +437,7 @@ function WorksProjetSection({
 
   // 현재 언어에 맞는 데이터를 동적으로 불러옵니다.
   const TextData =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/Works_Section.json")
       : require("../../i18n/kr/Works_Section.json");
 

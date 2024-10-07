@@ -67,7 +67,7 @@ function WorksStowGenieDemoSection({
 
   const ImgSrc = isDarkMode ? Deom_Img_Dark : Deom_Img_Light;
   const TextData =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/Works_StowGenie.json")
       : require("../../i18n/kr/Works_StowGenie.json");
 

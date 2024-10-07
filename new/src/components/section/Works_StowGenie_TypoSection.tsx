@@ -65,7 +65,7 @@ function WorksStowGenieTypoSection({
   };
   const ImgSrc = isDarkMode ? Typo_Img_Dark : Typo_Img_Light;
   const TextData =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/Works_StowGenie.json")
       : require("../../i18n/kr/Works_StowGenie.json");
 

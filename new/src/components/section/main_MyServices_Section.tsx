@@ -204,7 +204,7 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
 
   // JSON 파일을 불러와서 데이터 설정
   const TextData = useMemo(() => {
-    return language === "en"
+    return language === "ko"
       ? require("../../i18n/en/main_Section.json")
       : require("../../i18n/kr/main_Section.json");
   }, [language]);

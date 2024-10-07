@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
   const { language } = useContext(LanguageContext); // 언어 정보를 가져오는 컨텍스트
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentHeaderTexts =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/header.json")
       : require("../../i18n/kr/header.json");
 

@@ -68,7 +68,7 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
 
   // 현재 언어에 맞는 데이터를 동적으로 불러옵니다.
   const TextData =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/main_Section.json")
       : require("../../i18n/kr/main_Section.json");
 

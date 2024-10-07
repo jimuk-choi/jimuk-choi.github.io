@@ -54,7 +54,7 @@ function WorksMUKITestSection({ isDarkMode }: MainGreetingSectionProps) {
   }, [isDarkMode]);
 
   const TextData =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/Process_Section.json")
       : require("../../i18n/kr/Process_Section.json");
 

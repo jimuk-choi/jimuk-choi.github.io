@@ -69,7 +69,7 @@ function WorksStowGenieRnRSection({
     setIsExpanded((prev) => !prev); // 상태 토글
   };
   const TextData =
-    language === "en"
+    language === "ko"
       ? require("../../i18n/en/Works_StowGenie.json")
       : require("../../i18n/kr/Works_StowGenie.json");
 
