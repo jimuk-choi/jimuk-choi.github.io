@@ -94,37 +94,39 @@ function MainGreetingSection({ isDarkMode }: MainGreetingSectionProps) {
       : require("../../i18n/kr/main_Section.json");
 
   return (
-    <GreetingSection>
-      <MainSectionTitleWrapper>
-        <MainGreetingSectionTitleWrapperInnerBox>
-          <Heading04 ref={Heading04_Ref} isDarkMode={isDarkMode}>
-            {TextData.Greeting.Name}
-          </Heading04>
-          <Rectangle_L ref={Rectangle_L_Ref} />
-          <MainGreetingSectionTitle
-            ref={MainSectionTitle_Ref}
-            isDarkMode={isDarkMode}
-          >
-            {TextData.Greeting.GreetingTitle}
-          </MainGreetingSectionTitle>
-          <Heading01 ref={Heading01_Ref} isDarkMode={isDarkMode}>
-            {TextData.Greeting.Slogan}
-          </Heading01>
-        </MainGreetingSectionTitleWrapperInnerBox>
-      </MainSectionTitleWrapper>
-      <VideoWrapper>
-        <StyledVideo ref={videoRef} autoPlay loop muted>
-          <source
-            src={
-              isDarkMode
-                ? `${process.env.PUBLIC_URL}/Videos/Video_02_DarkMode.mp4` // 다크 모드일 때 재생할 비디오
-                : `${process.env.PUBLIC_URL}/Videos/Video_02_LightMode.mp4` // 라이트 모드일 때 재생할 비디오
-            }
-            type="video/mp4"
-          />
-        </StyledVideo>
-      </VideoWrapper>
-    </GreetingSection>
+    <>
+      <GreetingSection>
+        <MainSectionTitleWrapper>
+          <MainGreetingSectionTitleWrapperInnerBox>
+            <Heading04 ref={Heading04_Ref} isDarkMode={isDarkMode}>
+              {TextData.Greeting.Name}
+            </Heading04>
+            <Rectangle_L ref={Rectangle_L_Ref} />
+            <MainGreetingSectionTitle
+              ref={MainSectionTitle_Ref}
+              isDarkMode={isDarkMode}
+            >
+              {TextData.Greeting.GreetingTitle}
+            </MainGreetingSectionTitle>
+            <Heading01 ref={Heading01_Ref} isDarkMode={isDarkMode}>
+              {TextData.Greeting.Slogan}
+            </Heading01>
+          </MainGreetingSectionTitleWrapperInnerBox>
+        </MainSectionTitleWrapper>
+        <VideoWrapper>
+          <StyledVideo ref={videoRef} autoPlay loop muted>
+            <source
+              src={
+                isDarkMode
+                  ? `${process.env.PUBLIC_URL}/Videos/Video_02_DarkMode.mp4` // 다크 모드일 때 재생할 비디오
+                  : `${process.env.PUBLIC_URL}/Videos/Video_02_LightMode.mp4` // 라이트 모드일 때 재생할 비디오
+              }
+              type="video/mp4"
+            />
+          </StyledVideo>
+        </VideoWrapper>
+      </GreetingSection>
+    </>
   );
 }
 export default MainGreetingSection;

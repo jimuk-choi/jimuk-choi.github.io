@@ -1,26 +1,23 @@
 import styled from "@emotion/styled";
 import { useContext, useState } from "react";
-import { breakpoints } from "../../style/breakpoints";
+import { breakpoints } from "../../../style/breakpoints";
 // Text
-import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
-import { Subtitle_XL, Subtitle_M_900 } from "../typograpy/subtitle";
-import { P_M } from "../typograpy/paragraph";
+import { LanguageContext } from "../../../App"; // 언어 정보를 가져올 컨텍스트
+import { Subtitle_XL, Subtitle_M_900 } from "../../typograpy/subtitle";
+//Button
+import { Button_Chev } from "../../button/button_chev";
 //img
-import { ReactComponent as Chev } from "../../assets/Chev.svg";
-import Deom_Img_Light from "../../assets/Works_StowGenie_Screenshot_Light.png";
-import Deom_Img_Dark from "../../assets/Works_StowGenie_Screenshot_Dark.png";
-
+import Typo_Img_Light from "../../../assets/Typography_Light.png";
+import Typo_Img_Dark from "../../../assets/Typography_Dark.png";
 // Card
 import {
   Collapse_Card_L,
   Collapse_Card_L_TitleBox,
   Collapse_Card_L_ContentsBox,
   Collapse_Card_L_ContentsBox_LogoBox_W97,
-  Collapse_Card_L_ContentsBox_InnerBox,
-  Collapse_Card_L_ContentsBox_InnerBox_Wrapper,
-} from "../Card/Collapse_Card";
+} from "../../Card/Collapse_Card";
 
-const WorksStowGenieDemoSectionWrapper = styled.div`
+const WorksStowGenieTypoSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.Bg.white90};
@@ -38,41 +35,29 @@ const WorksStowGenieDemoSectionWrapper = styled.div`
   } */
 `;
 
-const Chev_Img = styled(Chev, {
-  shouldForwardProp: (prop) => !["isDarkMode", "isExpanded"].includes(prop),
-})<{ isDarkMode: boolean; isExpanded: boolean }>`
-  width: 32px;
-  height: 32px;
-  color: ${(props) => props.theme.Color.white};
-  transition: transform 0.3s ease;
-  transform: ${(props) =>
-    props.isExpanded ? "rotate(0deg)" : "rotate(180deg)"}; // 펼쳐질 때 회전
-`;
-
-interface WorksStowGenieDemoSectionProps {
+interface WorksStowGenieTypoSectionProps {
   isDarkMode: boolean;
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function WorksStowGenieDemoSection({
+function WorksStowGenieTypoSection({
   isDarkMode,
   setIsHovering,
-}: WorksStowGenieDemoSectionProps) {
+}: WorksStowGenieTypoSectionProps) {
   const { language } = useContext(LanguageContext); // 현재 언어 정보 가져오기
   const [isExpanded, setIsExpanded] = useState(true); // 기본적으로 펼쳐진 상태로 설정
 
   const toggleCard = () => {
     setIsExpanded((prev) => !prev); // 상태 토글
   };
-
-  const ImgSrc = isDarkMode ? Deom_Img_Dark : Deom_Img_Light;
+  const ImgSrc = isDarkMode ? Typo_Img_Dark : Typo_Img_Light;
   const TextData =
     language === "ko"
-      ? require("../../i18n/en/Works_StowGenie.json")
-      : require("../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_StowGenie.json")
+      : require("../../../i18n/kr/Works_StowGenie.json");
 
   return (
-    <WorksStowGenieDemoSectionWrapper>
+    <WorksStowGenieTypoSectionWrapper>
       <Collapse_Card_L isDarkMode={isDarkMode} isExpanded={isExpanded}>
         <Collapse_Card_L_TitleBox
           onClick={toggleCard}
@@ -80,9 +65,9 @@ function WorksStowGenieDemoSection({
           onMouseLeave={() => setIsHovering(false)}
         >
           <Subtitle_XL isDarkMode={isDarkMode}>
-            {TextData.Demo.Title}
+            {TextData.Typo.Title}
           </Subtitle_XL>
-          <Chev_Img isDarkMode={isDarkMode} isExpanded={isExpanded} />
+          <Button_Chev isDarkMode={isDarkMode} isExpanded={isExpanded} />
         </Collapse_Card_L_TitleBox>
 
         {isExpanded && (
@@ -93,8 +78,8 @@ function WorksStowGenieDemoSection({
           </Collapse_Card_L_ContentsBox>
         )}
       </Collapse_Card_L>
-    </WorksStowGenieDemoSectionWrapper>
+    </WorksStowGenieTypoSectionWrapper>
   );
 }
 
-export default WorksStowGenieDemoSection;
+export default WorksStowGenieTypoSection;

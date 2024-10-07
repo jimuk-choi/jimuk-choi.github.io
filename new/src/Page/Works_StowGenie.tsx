@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
-import WorksStowGenieBrandSection from "../components/section/Works_StowGenie_BrandSection";
-import WorksStowGenieColorSection from "../components/section/Works_StowGenie_ColorSection";
-import WorksStowGenieTypoSection from "../components/section/Works_StowGenie_TypoSection";
-import WorksStowGenieRnRSection from "../components/section/Works_StowGenie_RnRSection";
-import WorksStowGenieGoalSection from "../components/section/Works_StowGenie_GoalSection";
-import WorksStowGenieDemoSection from "../components/section/Works_StowGenie_DemoSection";
-import WorksStowGenieSolutionSection from "../components/section/Works_StowGenie_SolutionSection";
-import WorksStowGenieConclusionSection from "../components/section/Works_StowGenie_ConclusionSection";
+import { breakpoints } from "../style/breakpoints";
+import WorksDetailBrandSection from "../components/section/Works_StowGenie/Works_StowGenie_BrandSection";
+import WorksDetailColorSection from "../components/section/Works_StowGenie/Works_StowGenie_ColorSection";
+import WorksDetailTypoSection from "../components/section/Works_StowGenie//Works_StowGenie_TypoSection";
+import WorksDetailRnRSection from "../components/section/Works_StowGenie//Works_StowGenie_RnRSection";
+import WorksDetailGoalSection from "../components/section/Works_StowGenie//Works_StowGenie_GoalSection";
+import WorksDetailDemoSection from "../components/section/Works_StowGenie//Works_StowGenie_DemoSection";
+import WorksDetailSolutionSection from "../components/section/Works_StowGenie//Works_StowGenie_SolutionSection";
+import WorksDetailConclusionSection from "../components/section/Works_StowGenie//Works_StowGenie_ConclusionSection";
 
 const WorksStowGenie_Wrapper = styled.div`
   display: flex;
@@ -15,6 +16,18 @@ const WorksStowGenie_Wrapper = styled.div`
   padding: 140px 80px 32px 80px;
   gap: 16px;
   min-height: calc(100vh - 172px);
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    padding: 140px 40px 32px 40px;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 140px 28px 32px 28px;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    gap: 8px;
+  }
+  @media (max-width: ${breakpoints.mobileL}px) {
+    padding: 120px 14px 32px 14px;
+  }
 `;
 
 interface MainProps {
@@ -26,35 +39,35 @@ function WorksStowGenie({ isDarkMode, setIsHovering }: MainProps) {
   return (
     <>
       <WorksStowGenie_Wrapper>
-        <WorksStowGenieBrandSection
+        <WorksDetailBrandSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieColorSection
+        <WorksDetailColorSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieTypoSection
+        <WorksDetailTypoSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieRnRSection
+        <WorksDetailRnRSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieGoalSection
+        <WorksDetailGoalSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieDemoSection
+        <WorksDetailDemoSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieSolutionSection
+        <WorksDetailSolutionSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieConclusionSection
+        <WorksDetailConclusionSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />

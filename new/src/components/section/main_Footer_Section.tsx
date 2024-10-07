@@ -121,47 +121,49 @@ function MainFooterSection({ isDarkMode, setIsHovering }: FooterProps) {
   }, []);
 
   return (
-    <Footer>
-      <FooterBG isDarkMode={isDarkMode} src={ImgSrc} alt="" />
-      <FooterSectionInnerBox>
-        <MainFooterSectionTitleWrapperInnerBox>
-          <MainFooterSectionTitle
-            ref={MainFooterSectionTitle_Ref}
-            isDarkMode={isDarkMode}
-          >
-            {TextData.Footer.Title}
-          </MainFooterSectionTitle>
-          <ButtonBox ref={ButtonBox_Ref}>
-            <Button_D
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-              onClick={handleEmailClick}
+    <>
+      <Footer>
+        <FooterBG isDarkMode={isDarkMode} src={ImgSrc} alt="" />
+        <FooterSectionInnerBox>
+          <MainFooterSectionTitleWrapperInnerBox>
+            <MainFooterSectionTitle
+              ref={MainFooterSectionTitle_Ref}
               isDarkMode={isDarkMode}
             >
-              <Button_D_Title isDarkMode={isDarkMode}>
-                {TextData.Footer.Email_Button_title}
-              </Button_D_Title>
-              <Button_D_Content isDarkMode={isDarkMode}>
-                {TextData.Footer.Email_Button_Content}
-              </Button_D_Content>
-            </Button_D>
-            <Button_D
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-              onClick={handlePhoneClick}
-              isDarkMode={isDarkMode}
-            >
-              <Button_D_Title isDarkMode={isDarkMode}>
-                {TextData.Footer.PhoneNumber_Button_title}
-              </Button_D_Title>
-              <Button_D_Content isDarkMode={isDarkMode}>
-                {TextData.Footer.PhoneNumber_Button_Content}
-              </Button_D_Content>
-            </Button_D>
-          </ButtonBox>
-        </MainFooterSectionTitleWrapperInnerBox>
-      </FooterSectionInnerBox>
-    </Footer>
+              {TextData.Footer.Title}
+            </MainFooterSectionTitle>
+            <ButtonBox ref={ButtonBox_Ref}>
+              <Button_D
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                onClick={handleEmailClick}
+                isDarkMode={isDarkMode}
+              >
+                <Button_D_Title isDarkMode={isDarkMode}>
+                  {TextData.Footer.Email_Button_title}
+                </Button_D_Title>
+                <Button_D_Content isDarkMode={isDarkMode}>
+                  {TextData.Footer.Email_Button_Content}
+                </Button_D_Content>
+              </Button_D>
+              <Button_D
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                onClick={handlePhoneClick}
+                isDarkMode={isDarkMode}
+              >
+                <Button_D_Title isDarkMode={isDarkMode}>
+                  {TextData.Footer.PhoneNumber_Button_title}
+                </Button_D_Title>
+                <Button_D_Content isDarkMode={isDarkMode}>
+                  {TextData.Footer.PhoneNumber_Button_Content}
+                </Button_D_Content>
+              </Button_D>
+            </ButtonBox>
+          </MainFooterSectionTitleWrapperInnerBox>
+        </FooterSectionInnerBox>
+      </Footer>
+    </>
   );
 }
 export default MainFooterSection;

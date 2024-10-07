@@ -6,6 +6,9 @@ export const Subtitle_XL = styled.p<{ isDarkMode: boolean }>`
   color: ${(props) => props.theme.Color.white};
   font-weight: 900;
   letter-spacing: 2px;
+  @media (max-width: ${breakpoints.tabletS}px) {
+    font-size: 2.4rem;
+  }
 `;
 
 export const Subtitle_L = styled.p<{ isDarkMode: boolean }>`
@@ -24,6 +27,10 @@ export const Subtitle_M_900 = styled.p<{ isDarkMode: boolean }>`
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     font-size: 1.6rem;
+  }
+  @media (max-width: ${breakpoints.mobileM}px) {
+    letter-spacing: 0px;
+    font-size: 1.4rem;
   }
 `;
 

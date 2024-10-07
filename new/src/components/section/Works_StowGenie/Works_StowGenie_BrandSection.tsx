@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
 import { useContext, useState } from "react";
-import { breakpoints } from "../../style/breakpoints";
+import { breakpoints } from "../../../style/breakpoints";
 // Text
-import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
-import { Subtitle_XL, Subtitle_M_900 } from "../typograpy/subtitle";
-import { P_M } from "../typograpy/paragraph";
+import { LanguageContext } from "../../../App"; // 언어 정보를 가져올 컨텍스트
+import { Subtitle_XL, Subtitle_M_900 } from "../../typograpy/subtitle";
+import { P_M } from "../../typograpy/paragraph";
+//Button
+import { Button_Chev } from "../../button/button_chev";
 //img
-import { ReactComponent as Chev } from "../../assets/Chev.svg";
-import StowGenie_Logo_Light from "../../assets/StowGenie_Logo_Light.png";
-import StowGenie_Logo_Dark from "../../assets/StowGenie_Logo_Dark.png";
+import { ReactComponent as Chev } from "../../../assets/Chev.svg";
+import StowGenie_Logo_Light from "../../../assets/StowGenie_Logo_Light.png";
+import StowGenie_Logo_Dark from "../../../assets/StowGenie_Logo_Dark.png";
 // Card
 import {
   Collapse_Card_L,
@@ -17,7 +19,7 @@ import {
   Collapse_Card_L_ContentsBox_LogoBox,
   Collapse_Card_L_ContentsBox_InnerBox,
   Collapse_Card_L_ContentsBox_InnerBox_Wrapper,
-} from "../Card/Collapse_Card";
+} from "../../Card/Collapse_Card";
 
 const WorksStowGenieBrandSectionWrapper = styled.div`
   display: flex;
@@ -35,17 +37,6 @@ const WorksStowGenieBrandSectionWrapper = styled.div`
     padding: 120px 24px 32px 24px;
     gap: 16px;
   } */
-`;
-
-const Chev_Img = styled(Chev, {
-  shouldForwardProp: (prop) => !["isDarkMode", "isExpanded"].includes(prop),
-})<{ isDarkMode: boolean; isExpanded: boolean }>`
-  width: 32px;
-  height: 32px;
-  color: ${(props) => props.theme.Color.white};
-  transition: transform 0.3s ease;
-  transform: ${(props) =>
-    props.isExpanded ? "rotate(0deg)" : "rotate(180deg)"}; // 펼쳐질 때 회전
 `;
 
 interface WorksStowGenieBrandSectionProps {
@@ -66,8 +57,8 @@ function WorksStowGenieBrandSection({
   const ImgSrc = isDarkMode ? StowGenie_Logo_Dark : StowGenie_Logo_Light;
   const TextData =
     language === "ko"
-      ? require("../../i18n/en/Works_StowGenie.json")
-      : require("../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_StowGenie.json")
+      : require("../../../i18n/kr/Works_StowGenie.json");
 
   return (
     <WorksStowGenieBrandSectionWrapper>
@@ -80,7 +71,7 @@ function WorksStowGenieBrandSection({
           <Subtitle_XL isDarkMode={isDarkMode}>
             {TextData.Brand.Title}
           </Subtitle_XL>
-          <Chev_Img isDarkMode={isDarkMode} isExpanded={isExpanded} />
+          <Button_Chev isDarkMode={isDarkMode} isExpanded={isExpanded} />
         </Collapse_Card_L_TitleBox>
 
         {isExpanded && (

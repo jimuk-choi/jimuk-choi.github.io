@@ -150,23 +150,25 @@ function MainWhoIamSection({ isDarkMode }: WhoIamProps) {
   }, []);
 
   return (
-    <WhoIamSection>
-      <WhoIamBg isDarkMode={isDarkMode} src={ImgSrc} alt="" />
-      <WhoIamSectionInnerBox>
-        <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
-          {TextData.WhoIam.Title}
-        </Heading04>
-        <Rectangle_L ref={Rectangle_Ref} />
-        <WhoIamTextBox>
-          <Heading04 ref={Heading04_SubTitle_Ref} isDarkMode={isDarkMode}>
-            {TextData.WhoIam.MainText}
+    <>
+      <WhoIamSection>
+        <WhoIamBg isDarkMode={isDarkMode} src={ImgSrc} alt="" />
+        <WhoIamSectionInnerBox>
+          <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
+            {TextData.WhoIam.Title}
           </Heading04>
-          <Subtitle_M ref={SubTitle_M_Ref} isDarkMode={isDarkMode}>
-            {TextData.WhoIam.SubText}
-          </Subtitle_M>
-        </WhoIamTextBox>
-      </WhoIamSectionInnerBox>
-    </WhoIamSection>
+          <Rectangle_L ref={Rectangle_Ref} />
+          <WhoIamTextBox>
+            <Heading04 ref={Heading04_SubTitle_Ref} isDarkMode={isDarkMode}>
+              {TextData.WhoIam.MainText}
+            </Heading04>
+            <Subtitle_M ref={SubTitle_M_Ref} isDarkMode={isDarkMode}>
+              {TextData.WhoIam.SubText}
+            </Subtitle_M>
+          </WhoIamTextBox>
+        </WhoIamSectionInnerBox>
+      </WhoIamSection>
+    </>
   );
 }
 export default MainWhoIamSection;

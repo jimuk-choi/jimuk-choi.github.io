@@ -1,14 +1,12 @@
 import styled from "@emotion/styled";
 import { useContext, useState } from "react";
-import { breakpoints } from "../../style/breakpoints";
+import { breakpoints } from "../../../style/breakpoints";
 // Text
-import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
-import { Subtitle_XL, Subtitle_M_900 } from "../typograpy/subtitle";
-import { P_M } from "../typograpy/paragraph";
-import { Lnb_L } from "../typograpy/lnb";
-//img
-import { ReactComponent as Chev } from "../../assets/Chev.svg";
-
+import { LanguageContext } from "../../../App"; // 언어 정보를 가져올 컨텍스트
+import { Subtitle_XL, Subtitle_M_900 } from "../../typograpy/subtitle";
+import { P_M } from "../../typograpy/paragraph";
+//Button
+import { Button_Chev } from "../../button/button_chev";
 // Card
 import {
   Collapse_Card_L,
@@ -17,7 +15,7 @@ import {
   Collapse_Card_L_ContentsBox_LogoBox,
   Collapse_Card_L_ContentsBox_InnerBox,
   Collapse_Card_L_ContentsBox_InnerBox_Wrapper,
-} from "../Card/Collapse_Card";
+} from "../../Card/Collapse_Card";
 
 const WorksStowGenieConclusionSectionWrapper = styled.div`
   display: flex;
@@ -37,17 +35,6 @@ const WorksStowGenieConclusionSectionWrapper = styled.div`
   } */
 `;
 
-const Chev_Img = styled(Chev, {
-  shouldForwardProp: (prop) => !["isDarkMode", "isExpanded"].includes(prop),
-})<{ isDarkMode: boolean; isExpanded: boolean }>`
-  width: 32px;
-  height: 32px;
-  color: ${(props) => props.theme.Color.white};
-  transition: transform 0.3s ease;
-  transform: ${(props) =>
-    props.isExpanded ? "rotate(0deg)" : "rotate(180deg)"}; // 펼쳐질 때 회전
-`;
-
 interface WorksStowGenieConclusionSectionProps {
   isDarkMode: boolean;
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
@@ -65,8 +52,8 @@ function WorksStowGenieConclusionSection({
   };
   const TextData =
     language === "ko"
-      ? require("../../i18n/en/Works_StowGenie.json")
-      : require("../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_StowGenie.json")
+      : require("../../../i18n/kr/Works_StowGenie.json");
 
   return (
     <WorksStowGenieConclusionSectionWrapper>
@@ -79,7 +66,7 @@ function WorksStowGenieConclusionSection({
           <Subtitle_XL isDarkMode={isDarkMode}>
             {TextData.Conclusion.Title}
           </Subtitle_XL>
-          <Chev_Img isDarkMode={isDarkMode} isExpanded={isExpanded} />
+          <Button_Chev isDarkMode={isDarkMode} isExpanded={isExpanded} />
         </Collapse_Card_L_TitleBox>
 
         {isExpanded && (

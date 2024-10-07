@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 import { useContext, useState } from "react";
-import { breakpoints } from "../../style/breakpoints";
+import { breakpoints } from "../../../style/breakpoints";
 // Text
-import { LanguageContext } from "../../App"; // 언어 정보를 가져올 컨텍스트
-import { Subtitle_XL, Subtitle_M_900 } from "../typograpy/subtitle";
-import { P_M } from "../typograpy/paragraph";
+import { LanguageContext } from "../../../App"; // 언어 정보를 가져올 컨텍스트
+import { Subtitle_XL, Subtitle_M_900 } from "../../typograpy/subtitle";
+import { P_M } from "../../typograpy/paragraph";
+//Button
+import { Button_Chev } from "../../button/button_chev";
 //img
-import { ReactComponent as Chev } from "../../assets/Chev.svg";
-import Bg from "../../assets/StowGenie_ColorBg.jpg";
+import Bg from "../../../assets/StowGenie_ColorBg.jpg";
 // Card
 import {
   Collapse_Card_L_Bg,
@@ -16,7 +17,7 @@ import {
   Collapse_Card_L_BG_ContentsBox_InnerBox,
   Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip,
   Collapse_Card_L_BG_ContentsBox_TextBox,
-} from "../Card/Collapse_Card";
+} from "../../Card/Collapse_Card";
 
 const WorksStowGenieColorSectionWrapper = styled.div`
   display: flex;
@@ -43,17 +44,9 @@ const Color_Bg = styled.img`
   object-fit: cover;
   position: absolute;
   transform: scale(1.4);
-`;
-
-const Chev_Img = styled(Chev, {
-  shouldForwardProp: (prop) => !["isDarkMode", "isExpanded"].includes(prop),
-})<{ isDarkMode: boolean; isExpanded: boolean }>`
-  width: 32px;
-  height: 32px;
-  color: #ffffff;
-  transition: transform 0.3s ease;
-  transform: ${(props) =>
-    props.isExpanded ? "rotate(0deg)" : "rotate(180deg)"}; // 펼쳐질 때 회전
+  @media (max-width: ${breakpoints.mobileL}px) {
+    transform: scale(1.6);
+  }
 `;
 
 interface WorksStowGenieColorSectionProps {
@@ -74,8 +67,8 @@ function WorksStowGenieColorSection({
 
   const TextData =
     language === "ko"
-      ? require("../../i18n/en/Works_StowGenie.json")
-      : require("../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_StowGenie.json")
+      : require("../../../i18n/kr/Works_StowGenie.json");
 
   return (
     <WorksStowGenieColorSectionWrapper>
@@ -89,7 +82,11 @@ function WorksStowGenieColorSection({
           <Subtitle_XL isDarkMode={isDarkMode}>
             {TextData.Color.Title}
           </Subtitle_XL>
-          <Chev_Img isDarkMode={isDarkMode} isExpanded={isExpanded} />
+          <Button_Chev
+            style={{ color: "#ffffff" }}
+            isDarkMode={isDarkMode}
+            isExpanded={isExpanded}
+          />
         </Collapse_Card_L_BG_TitleBox>
 
         {isExpanded && (

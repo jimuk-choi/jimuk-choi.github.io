@@ -189,24 +189,26 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
   }, []);
 
   return (
-    <ToolIUseSection>
-      <ToolIUseSectionInnerBox>
-        <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
-          {TextData.ToolIUse.Title}
-        </Heading04>
-        <Rectangle_L ref={Rectangle_Ref} />
-        <ToolIUseImgBoxWrapper ref={Img}>
-          {tools.map((tool, index) => (
-            <ToolIUseImgBox key={index}>
-              <ToolIUseImg src={tool.img} />
-              <Subtitle_S_MainToolIUse isDarkMode={isDarkMode}>
-                {tool.text}
-              </Subtitle_S_MainToolIUse>
-            </ToolIUseImgBox>
-          ))}
-        </ToolIUseImgBoxWrapper>
-      </ToolIUseSectionInnerBox>
-    </ToolIUseSection>
+    <>
+      <ToolIUseSection>
+        <ToolIUseSectionInnerBox>
+          <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
+            {TextData.ToolIUse.Title}
+          </Heading04>
+          <Rectangle_L ref={Rectangle_Ref} />
+          <ToolIUseImgBoxWrapper ref={Img}>
+            {tools.map((tool, index) => (
+              <ToolIUseImgBox key={index}>
+                <ToolIUseImg src={tool.img} />
+                <Subtitle_S_MainToolIUse isDarkMode={isDarkMode}>
+                  {tool.text}
+                </Subtitle_S_MainToolIUse>
+              </ToolIUseImgBox>
+            ))}
+          </ToolIUseImgBoxWrapper>
+        </ToolIUseSectionInnerBox>
+      </ToolIUseSection>
+    </>
   );
 }
 export default MainToolIUseSection;

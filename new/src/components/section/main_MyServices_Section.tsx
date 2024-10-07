@@ -288,67 +288,69 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
   }, []);
 
   return (
-    <MyServicesSection>
-      <MyServicesSectionInnerBox>
-        <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
-          {TextData.MyServices.Title}
-        </Heading04>
-        <Rectangle_L ref={Rectangle_Ref} />
-        <MyServicesSectionListWrapper>
-          {services.map((service, index) => {
-            const ServiceImage = getServiceImage(service.img);
-            return (
-              <ListBox
-                key={service.id}
-                isOpen={openList === service.id}
-                ref={(el) =>
-                  (ListBox_Refs.current[index] = el as HTMLDivElement)
-                }
-              >
-                <ListTopBox>
-                  <NumberBox isOpen={openList === service.id}>
-                    {service.id}
-                  </NumberBox>
-                  <MainBox>
-                    <MainBox_ImgBox>
-                      {ServiceImage && (
-                        <MainBox_Img
-                          as={ServiceImage}
+    <>
+      <MyServicesSection>
+        <MyServicesSectionInnerBox>
+          <Heading04 ref={Heading04_Title_Ref} isDarkMode={isDarkMode}>
+            {TextData.MyServices.Title}
+          </Heading04>
+          <Rectangle_L ref={Rectangle_Ref} />
+          <MyServicesSectionListWrapper>
+            {services.map((service, index) => {
+              const ServiceImage = getServiceImage(service.img);
+              return (
+                <ListBox
+                  key={service.id}
+                  isOpen={openList === service.id}
+                  ref={(el) =>
+                    (ListBox_Refs.current[index] = el as HTMLDivElement)
+                  }
+                >
+                  <ListTopBox>
+                    <NumberBox isOpen={openList === service.id}>
+                      {service.id}
+                    </NumberBox>
+                    <MainBox>
+                      <MainBox_ImgBox>
+                        {ServiceImage && (
+                          <MainBox_Img
+                            as={ServiceImage}
+                            isOpen={openList === service.id}
+                            isDarkMode={isDarkMode}
+                          />
+                        )}
+                      </MainBox_ImgBox>
+                      <MainBox_TextBox>
+                        <MainBox_TextBox_TitleBox
                           isOpen={openList === service.id}
-                          isDarkMode={isDarkMode}
-                        />
-                      )}
-                    </MainBox_ImgBox>
-                    <MainBox_TextBox>
-                      <MainBox_TextBox_TitleBox
+                        >
+                          {service.title}
+                        </MainBox_TextBox_TitleBox>
+                        <MainBox_TextBox_ContentBox
+                          isOpen={openList === service.id}
+                        >
+                          {service.content}
+                        </MainBox_TextBox_ContentBox>
+                      </MainBox_TextBox>
+                    </MainBox>
+                    <ButtonBox>
+                      <OpenButton
+                        onMouseEnter={() => setIsHovering(true)}
+                        onMouseLeave={() => setIsHovering(false)}
+                        onClick={() => toggleButton(service.id)}
                         isOpen={openList === service.id}
                       >
-                        {service.title}
-                      </MainBox_TextBox_TitleBox>
-                      <MainBox_TextBox_ContentBox
-                        isOpen={openList === service.id}
-                      >
-                        {service.content}
-                      </MainBox_TextBox_ContentBox>
-                    </MainBox_TextBox>
-                  </MainBox>
-                  <ButtonBox>
-                    <OpenButton
-                      onMouseEnter={() => setIsHovering(true)}
-                      onMouseLeave={() => setIsHovering(false)}
-                      onClick={() => toggleButton(service.id)}
-                      isOpen={openList === service.id}
-                    >
-                      {openList === service.id ? "[ Close ]" : "[ Open ]"}
-                    </OpenButton>
-                  </ButtonBox>
-                </ListTopBox>
-              </ListBox>
-            );
-          })}
-        </MyServicesSectionListWrapper>
-      </MyServicesSectionInnerBox>
-    </MyServicesSection>
+                        {openList === service.id ? "[ Close ]" : "[ Open ]"}
+                      </OpenButton>
+                    </ButtonBox>
+                  </ListTopBox>
+                </ListBox>
+              );
+            })}
+          </MyServicesSectionListWrapper>
+        </MyServicesSectionInnerBox>
+      </MyServicesSection>
+    </>
   );
 }
 
