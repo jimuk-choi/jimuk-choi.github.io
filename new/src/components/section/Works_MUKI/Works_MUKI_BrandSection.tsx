@@ -8,9 +8,7 @@ import { P_M } from "../../typograpy/paragraph";
 //Button
 import { Button_Chev } from "../../button/button_chev";
 //img
-import { ReactComponent as Chev } from "../../../assets/Chev.svg";
-import StowGenie_Logo_Light from "../../../assets/StowGenie_Logo_Light.png";
-import StowGenie_Logo_Dark from "../../../assets/StowGenie_Logo_Dark.png";
+import MUKI_Logo from "../../../assets/MUKI_Logo.png";
 // Card
 import {
   Collapse_Card_L,
@@ -54,11 +52,11 @@ function WorksStowGenieBrandSection({
   const toggleCard = () => {
     setIsExpanded((prev) => !prev); // 상태 토글
   };
-  const ImgSrc = isDarkMode ? StowGenie_Logo_Dark : StowGenie_Logo_Light;
+
   const TextData =
     language === "ko"
-      ? require("../../../i18n/en/Works_StowGenie.json")
-      : require("../../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_MUKI.json")
+      : require("../../../i18n/kr/Works_MUKI.json");
 
   return (
     <WorksStowGenieBrandSectionWrapper>
@@ -77,7 +75,7 @@ function WorksStowGenieBrandSection({
         {isExpanded && (
           <Collapse_Card_L_ContentsBox>
             <Collapse_Card_L_ContentsBox_LogoBox>
-              <img src={ImgSrc} alt="Logo" />
+              <img src={MUKI_Logo} alt="Logo" />
             </Collapse_Card_L_ContentsBox_LogoBox>
             <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
               <Collapse_Card_L_ContentsBox_InnerBox>

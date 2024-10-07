@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakpoints } from "../../style/breakpoints";
+import exp from "constants";
 
 export const Collapse_Card_L = styled.div<{
   isDarkMode: boolean;
@@ -116,9 +117,7 @@ export const Collapse_Card_L_BG_TitleBox = styled.div`
   box-sizing: border-box;
   padding: 12px 24px;
   position: relative;
-  p {
-    color: #ffffff;
-  }
+
   @media (max-width: ${breakpoints.mobileL}px) {
     padding: 4px 12px;
     gap: 8px;
@@ -178,6 +177,35 @@ export const Collapse_Card_L_BG_ContentsBox_InnerBox = styled.div<{
     flex-wrap: wrap;
   }
 `;
+export const Collapse_Card_L_BG_ContentsBox_InnerBox_MUKI = styled.div<{
+  isDarkMode: boolean;
+}>`
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  /* background-color: ${(props) =>
+    props.isDarkMode ? props.theme.Bg.whiteT20 : props.theme.Bg.whiteT20};
+  backdrop-filter: blur(10px); */
+  /* box-shadow: 2px 2px 12px #ededed; */
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 0;
+  & div:nth-child(1) {
+    background-color: #69ab8c;
+  }
+  & div:nth-child(2) {
+    background-color: #ebfaeb;
+    color: #69ab8c;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    gap: 8px;
+    padding: 0;
+  }
+  @media (max-width: ${breakpoints.tabletS}px) {
+    flex-wrap: wrap;
+  }
+`;
+
 export const Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip = styled.div<{
   isDarkMode: boolean;
 }>`

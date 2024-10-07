@@ -1,15 +1,15 @@
 import styled from "@emotion/styled";
 import { breakpoints } from "../style/breakpoints";
-import WorksDetailBrandSection from "../components/section/Works_StowGenie/Works_StowGenie_BrandSection";
-import WorksDetailColorSection from "../components/section/Works_StowGenie/Works_StowGenie_ColorSection";
-import WorksDetailTypoSection from "../components/section/Works_StowGenie//Works_StowGenie_TypoSection";
-import WorksDetailRnRSection from "../components/section/Works_StowGenie//Works_StowGenie_RnRSection";
-import WorksDetailGoalSection from "../components/section/Works_StowGenie//Works_StowGenie_GoalSection";
-import WorksDetailDemoSection from "../components/section/Works_StowGenie//Works_StowGenie_DemoSection";
-import WorksDetailSolutionSection from "../components/section/Works_StowGenie//Works_StowGenie_SolutionSection";
-import WorksDetailConclusionSection from "../components/section/Works_StowGenie//Works_StowGenie_ConclusionSection";
+import WorksDetailBrandSection from "../components/section/Works_MUKI/Works_MUKI_BrandSection";
+import WorksDetailColorSection from "../components/section/Works_MUKI/Works_MUKI_ColorSection";
+import WorksDetailTypoSection from "../components/section/Works_MUKI//Works_MUKI_TypoSection";
+import WorksDetailRnRSection from "../components/section/Works_MUKI//Works_MUKI_RnRSection";
+import WorksDetailGoalSection from "../components/section/Works_MUKI//Works_MUKI_GoalSection";
+import WorksDetailDemoSection from "../components/section/Works_MUKI//Works_MUKI_DemoSection";
+import WorksDetailSolutionSection from "../components/section/Works_MUKI//Works_MUKI_SolutionSection";
+import WorksDetailConclusionSection from "../components/section/Works_MUKI//Works_MUKI_ConclusionSection";
 
-const WorksStowGenie_Wrapper = styled.div`
+const WorksMUKI_Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.Bg.white90};
@@ -38,7 +38,7 @@ interface MainProps {
 function WorksMUKI({ isDarkMode, setIsHovering }: MainProps) {
   return (
     <>
-      <WorksStowGenie_Wrapper>
+      <WorksMUKI_Wrapper>
         <WorksDetailBrandSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
@@ -71,7 +71,7 @@ function WorksMUKI({ isDarkMode, setIsHovering }: MainProps) {
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-      </WorksStowGenie_Wrapper>
+      </WorksMUKI_Wrapper>
     </>
   );
 }

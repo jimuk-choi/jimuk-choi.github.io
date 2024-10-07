@@ -1,0 +1,193 @@
+{
+  "Brand": {
+    "Title": "Brand",
+    "Card": [
+      {
+        "id": 1,
+        "title": "MUKI Brand Identity Aim",
+        "content": "MUKI's brand identity focuses on delivering a fast and efficient automated solution that provides users with an intuitive and user-friendly experience."
+      },
+      {
+        "id": 2,
+        "title": "Slogan",
+        "content": "Business innovation, realized directly in the field."
+      },
+      {
+        "id": 3,
+        "title": "Design Definition",
+        "content": "MUKI is designed to reduce complex manual tasks and offer a more intuitive and efficient work environment. By automatically tracking user locations and data, it enables salespeople to work more efficiently. The design centers around intuitiveness, efficiency, and speed."
+      },
+      {
+        "id": 4,
+        "title": "Keywords",
+        "content": "Speed, Efficiency, Automation, User-Friendly, Intutive"
+      }
+    ]
+  },
+  "Color": {
+    "Title": "Color",
+    "Content": "MUKI's main color is mint, conveying a sense of speed, precision, and freshness. The mint color symbolizes the message that salespeople can handle their tasks more quickly and efficiently, freeing them from complex work. The freshness of the mint color reduces the stress of the sales process, reflecting how MUKI’s solution lightens and streamlines users' workloads, making them more efficient."
+  },
+  "Typo": {
+    "Title": "Typography"
+  },
+  "RnR": {
+    "Title": "Role & Responsibilities",
+    "Card": [
+      {
+        "id": 1,
+        "title": "Branding",
+        "Contribution": "Contribution: 100%",
+        "content": "Contributed to the creation of the brand identity by designing the logo, defining the color palette, and typography. Ensured the brand’s vision and message were clearly communicated, providing a cohesive brand experience across all platforms."
+      },
+      {
+        "id": 2,
+        "title": "GUI Design",
+        "Contribution": "Contribution: 100%",
+        "content": "Led the visual design of the user interface, creating intuitive and consistent interfaces that enhance the user experience. Carefully refined the layout, color schemes, and typography of UI components to improve overall readability and usability of the product."
+      },
+      {
+        "id": 3,
+        "title": "UX Design",
+        "Contribution": "Contribution: 50%",
+        "content": "Contributed to defining user personas and crafting use case scenarios based on user research. Developed information architecture and user flows to create optimal user experiences that align with real user needs and behaviors."
+      },
+      {
+        "id": 4,
+        "title": "Design System Creation",
+        "Contribution": "Contribution: 100%",
+        "content": "Built a consistent design language and component library to streamline collaboration within the team and maintain product consistency. This approach significantly improved the efficiency of both the design and development processes."
+      },
+      {
+        "id": 5,
+        "title": "Publishing",
+        "Contribution": "Contribution: 50%",
+        "content": "Worked on web page publishing using HTML, CSS, and ReactJS. Implemented responsive web design to ensure optimal user experiences across different devices by turning design concepts into fully functional web pages."
+      },
+      {
+        "id": 6,
+        "title": "User Testing and Feedback Implementation",
+        "content": "Led usability tests and analyzed user feedback to identify design improvements. Continuously refined the product through iterative feedback cycles, enhancing user experience."
+      }
+    ]
+  },
+  "Goal": {
+    "Title": "Problem Definition & Goals",
+    "ProblemTitle": "Problem Definition",
+    "ProblemContent": "MUKI was developed to address the inefficiencies bancassurance salespeople faced due to manually managing their tasks. Sales agents were spending excessive time logging calls, messages, and emails manually in notebooks and then compiling them into daily reports at the office. This led to reduced efficiency, and managers found it challenging to track sales performance at a glance. The following key problems were identified:",
+    "GoalTitle": "Goals",
+    "GoalContent": "The primary goal of MUKI was to provide an integrated solution that reduced manual tasks and increased efficiency for both sales agents and managers. The key objectives were.",
+    "Problem": [
+      {
+        "id": 1,
+        "title": "Inefficiency due to manual tasks",
+        "content": "Sales agents spent considerable time recording calls, messages, and emails manually and then organizing them into work reports."
+      },
+      {
+        "id": 2,
+        "title": "Disjointed functionality",
+        "content": "Tools for scheduling, communication, and record-keeping were separate, leading to inefficiency."
+      },
+      {
+        "id": 3,
+        "title": "Lack of integrated communication tool",
+        "content": "The absence of a communication tool within the solution made collaboration difficult for sales agents."
+      },
+      {
+        "id": 4,
+        "title": "Challenges in tracking sales performance",
+        "content": "Managers had difficulty viewing and analyzing sales agents' performance data clearly."
+      }
+    ],
+    "Goal": [
+      {
+        "id": 1,
+        "title": "Automation of tasks",
+        "content": "The mobile application would automatically log sales agents' visits to assigned branches, support call recording, and allow the use of message/email templates to streamline communication."
+      },
+      {
+        "id": 2,
+        "title": "Enhancing Sales Efficiency through Automated Branch Registration",
+        "content": "A feature was introduced to automatically register all branches, allowing sales agents to efficiently manage information and contacts related to their assigned branches. This enhancement enables agents to quickly find necessary information and communicate effectively, facilitating smoother operations."
+      },
+      {
+        "id": 3,
+        "title": "Improved scheduling management",
+        "content": "A calendar feature was added, allowing sales agents to easily track their schedules and sales progress."
+      },
+      {
+        "id": 4,
+        "title": "Gamification elements",
+        "content": "To reduce monotony and boost motivation, a points system was introduced, where agents could accumulate points and exchange them for rewards, increasing engagement with the platform."
+      }
+    ]
+  },
+  "Demo": {
+    "Title": "Screenshots & Demonstrations"
+  },
+  "Solution": {
+    "Title": "Solution & Outcome",
+    "Card": [
+      {
+        "id": 1,
+        "title": "Automated Branch Registration",
+        "content": "TAll branches are automatically registered, reducing the complexity of management. Salespeople no longer need to manually input information, allowing managers to manage all branches centrally."
+      },
+      {
+        "id": 2,
+        "title": "GPS Functionality and Improved Accuracy",
+        "content": "During extensive testing in densely bank-populated areas like Teheran-ro, various errors were identified and resolved by implementing methods to verify whether users actually visited a location and by narrowing the radius for improved accuracy. This helped prevent situations where two branches were registered simultaneously, enabling more accurate data recording."
+      },
+      {
+        "id": 3,
+        "title": "Gamification",
+        "content": "A point-earning system was introduced, allowing salespeople to exchange earned points for rewards upon achieving their targets. This increased the enjoyment of work and provided ongoing motivation."
+      }
+    ]
+  },
+  "Conclusion": {
+    "Title": "Conclusion & Lessons Learned",
+    "Card": [
+      {
+        "id": 1,
+        "title": "Importance of User-Centered Design",
+        "content": "Designing solutions that reflect user needs and behaviors is essential. Continuous communication with users to understand and incorporate their needs is key to successful product development."
+      },
+      {
+        "id": 2,
+        "title": "Value of Feature Integration",
+        "content": "By consolidating various features into a single platform, user convenience was enhanced, and work efficiency maximized. Reducing complexity and providing an intuitive experience is crucial."
+      },
+      {
+        "id": 3,
+        "title": "Accurate GPS Data Recording",
+        "content": "It is important to anticipate potential errors arising from GPS functionality and prepare methods to resolve them. We improved accuracy by verifying users' actual visits and adjusting the radius to address the issue of duplicate registrations in densely populated bank areas."
+      },
+      {
+        "id": 4,
+        "title": "Effectiveness of Gamification",
+        "content": "Adding elements of fun to work can boost employee motivation and enhance performance. The point-earning system effectively encouraged user engagement."
+      },
+      {
+        "id": 5,
+        "title": "Continuous Feedback Implementation",
+        "content": "It is essential to continuously incorporate user feedback during the product development process. This contributes to improved product quality and increased user satisfaction."
+      },
+      {
+        "id": 6,
+        "title": "Calendar UX Improvement",
+        "content": "While contemplating the user experience of the calendar feature, we gained many ideas for enhancing the intuitiveness of schedule management. Simplifying processes for quickly adding and editing schedules and increasing visibility were identified as necessary improvements."
+      },
+      {
+        "id": 7,
+        "title": "Favorite Management and Data Classification",
+        "content": "Managing numerous branches through favorites provided valuable insights into effectively classifying data. An intuitive classification system is essential to help users easily find and utilize information"
+      },
+      {
+        "id": 8,
+        "title": "Increased Understanding of List Sorting and Filtering",
+        "content": "To effectively manage various branches, our understanding of list sorting and filtering features has deepened. These elements are crucial for helping users swiftly find the information they need and perform their tasks more efficiently."
+      }
+    ]
+  }
+}

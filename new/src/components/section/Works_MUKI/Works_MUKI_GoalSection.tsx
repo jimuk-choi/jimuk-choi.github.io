@@ -16,7 +16,7 @@ import {
   Collapse_Card_L_ContentsBox_InnerBox_Wrapper,
 } from "../../Card/Collapse_Card";
 
-const WorksStowGenieGoalSectionWrapper = styled.div`
+const WorksMUKIGoalSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.Bg.white90};
@@ -24,17 +24,6 @@ const WorksStowGenieGoalSectionWrapper = styled.div`
   & > div {
     gap: 8px;
   }
-
-  /* @media (max-width: ${breakpoints.desktopXS}px) {
-    padding: 140px 40px 32px 40px;
-  }
-  @media (max-width: ${breakpoints.tabletM}px) {
-    padding: 140px 24px 32px 24px;
-  }
-  @media (max-width: ${breakpoints.tabletS}px) {
-    padding: 120px 24px 32px 24px;
-    gap: 16px;
-  } */
 `;
 const Problem_Goal_Box_InnerBox = styled.div`
   display: flex;
@@ -61,7 +50,7 @@ interface WorksStowGenieRnRSectionProps {
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function WorksStowGenieGoalSection({
+function WorksMUKIGoalSection({
   isDarkMode,
   setIsHovering,
 }: WorksStowGenieRnRSectionProps) {
@@ -73,11 +62,11 @@ function WorksStowGenieGoalSection({
   };
   const TextData =
     language === "ko"
-      ? require("../../../i18n/en/Works_StowGenie.json")
-      : require("../../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_MUKI.json")
+      : require("../../../i18n/kr/Works_MUKI.json");
 
   return (
-    <WorksStowGenieGoalSectionWrapper>
+    <WorksMUKIGoalSectionWrapper>
       <Collapse_Card_L isDarkMode={isDarkMode} isExpanded={isExpanded}>
         <Collapse_Card_L_TitleBox
           onClick={toggleCard}
@@ -103,6 +92,9 @@ function WorksStowGenieGoalSection({
               </Problem_Goal_Box_InnerBox_TopBox>
               <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
                 <Collapse_Card_L_ContentsBox_InnerBox>
+                  <Subtitle_M_900 isDarkMode={isDarkMode}>
+                    {TextData.Goal.Problem[0].title}
+                  </Subtitle_M_900>
                   <P_M isDarkMode={isDarkMode}>
                     {TextData.Goal.Problem[0].content}
                   </P_M>
@@ -110,6 +102,9 @@ function WorksStowGenieGoalSection({
               </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
               <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
                 <Collapse_Card_L_ContentsBox_InnerBox>
+                  <Subtitle_M_900 isDarkMode={isDarkMode}>
+                    {TextData.Goal.Problem[1].title}
+                  </Subtitle_M_900>
                   <P_M isDarkMode={isDarkMode}>
                     {TextData.Goal.Problem[1].content}
                   </P_M>
@@ -117,6 +112,9 @@ function WorksStowGenieGoalSection({
               </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
               <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
                 <Collapse_Card_L_ContentsBox_InnerBox>
+                  <Subtitle_M_900 isDarkMode={isDarkMode}>
+                    {TextData.Goal.Problem[2].title}
+                  </Subtitle_M_900>
                   <P_M isDarkMode={isDarkMode}>
                     {TextData.Goal.Problem[2].content}
                   </P_M>
@@ -124,22 +122,11 @@ function WorksStowGenieGoalSection({
               </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
               <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
                 <Collapse_Card_L_ContentsBox_InnerBox>
+                  <Subtitle_M_900 isDarkMode={isDarkMode}>
+                    {TextData.Goal.Problem[3].title}
+                  </Subtitle_M_900>
                   <P_M isDarkMode={isDarkMode}>
                     {TextData.Goal.Problem[3].content}
-                  </P_M>
-                </Collapse_Card_L_ContentsBox_InnerBox>
-              </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-              <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-                <Collapse_Card_L_ContentsBox_InnerBox>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Goal.Problem[4].content}
-                  </P_M>
-                </Collapse_Card_L_ContentsBox_InnerBox>
-              </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-              <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-                <Collapse_Card_L_ContentsBox_InnerBox>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Goal.Problem[5].content}
                   </P_M>
                 </Collapse_Card_L_ContentsBox_InnerBox>
               </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
@@ -191,52 +178,12 @@ function WorksStowGenieGoalSection({
                   </P_M>
                 </Collapse_Card_L_ContentsBox_InnerBox>
               </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-              <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-                <Collapse_Card_L_ContentsBox_InnerBox>
-                  <Subtitle_M_900 isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[4].title}
-                  </Subtitle_M_900>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[4].content}
-                  </P_M>
-                </Collapse_Card_L_ContentsBox_InnerBox>
-              </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-              <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-                <Collapse_Card_L_ContentsBox_InnerBox>
-                  <Subtitle_M_900 isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[5].title}
-                  </Subtitle_M_900>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[5].content}
-                  </P_M>
-                </Collapse_Card_L_ContentsBox_InnerBox>
-              </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-              <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-                <Collapse_Card_L_ContentsBox_InnerBox>
-                  <Subtitle_M_900 isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[6].title}
-                  </Subtitle_M_900>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[6].content}
-                  </P_M>
-                </Collapse_Card_L_ContentsBox_InnerBox>
-              </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-              <Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
-                <Collapse_Card_L_ContentsBox_InnerBox>
-                  <Subtitle_M_900 isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[7].title}
-                  </Subtitle_M_900>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Goal.Goal[7].content}
-                  </P_M>
-                </Collapse_Card_L_ContentsBox_InnerBox>
-              </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
             </Problem_Goal_Box_InnerBox>
           </Collapse_Card_L_ContentsBox>
         )}
       </Collapse_Card_L>
-    </WorksStowGenieGoalSectionWrapper>
+    </WorksMUKIGoalSectionWrapper>
   );
 }
 
-export default WorksStowGenieGoalSection;
+export default WorksMUKIGoalSection;

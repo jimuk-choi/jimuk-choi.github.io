@@ -18,7 +18,7 @@ import {
   Collapse_Card_L_ContentsBox_InnerBox_Wrapper,
 } from "../../Card/Collapse_Card";
 
-const WorksStowGenieRnRSectionWrapper = styled.div`
+const WorksMUKIRnRSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.Bg.white90};
@@ -53,7 +53,7 @@ interface WorksStowGenieRnRSectionProps {
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function WorksStowGenieRnRSection({
+function WorksMUKIRnRSection({
   isDarkMode,
   setIsHovering,
 }: WorksStowGenieRnRSectionProps) {
@@ -65,11 +65,11 @@ function WorksStowGenieRnRSection({
   };
   const TextData =
     language === "ko"
-      ? require("../../../i18n/en/Works_StowGenie.json")
-      : require("../../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_MUKI.json")
+      : require("../../../i18n/kr/Works_MUKI.json");
 
   return (
-    <WorksStowGenieRnRSectionWrapper>
+    <WorksMUKIRnRSectionWrapper>
       <Collapse_Card_L isDarkMode={isDarkMode} isExpanded={isExpanded}>
         <Collapse_Card_L_TitleBox
           onClick={toggleCard}
@@ -155,56 +155,17 @@ function WorksStowGenieRnRSection({
                   <Subtitle_M_900 isDarkMode={isDarkMode}>
                     {TextData.RnR.Card[5].title}
                   </Subtitle_M_900>
-                  <Lnb_L isDarkMode={isDarkMode}>
-                    {TextData.RnR.Card[5].Contribution}
-                  </Lnb_L>
                 </Subtitle_M_900_Wrapper>
                 <P_M isDarkMode={isDarkMode}>
                   {TextData.RnR.Card[5].content}
-                </P_M>
-              </Collapse_Card_L_ContentsBox_InnerBox>
-              <Collapse_Card_L_ContentsBox_InnerBox>
-                <Subtitle_M_900_Wrapper>
-                  <Subtitle_M_900 isDarkMode={isDarkMode}>
-                    {TextData.RnR.Card[5].title}
-                  </Subtitle_M_900>
-                  <Lnb_L isDarkMode={isDarkMode}>
-                    {TextData.RnR.Card[5].Contribution}
-                  </Lnb_L>
-                </Subtitle_M_900_Wrapper>
-                <P_M isDarkMode={isDarkMode}>
-                  {TextData.RnR.Card[5].content}
-                </P_M>
-              </Collapse_Card_L_ContentsBox_InnerBox>
-              <Collapse_Card_L_ContentsBox_InnerBox>
-                <Subtitle_M_900_Wrapper>
-                  <Subtitle_M_900 isDarkMode={isDarkMode}>
-                    {TextData.RnR.Card[6].title}
-                  </Subtitle_M_900>
-                  <Lnb_L isDarkMode={isDarkMode}>
-                    {TextData.RnR.Card[6].Contribution}
-                  </Lnb_L>
-                </Subtitle_M_900_Wrapper>
-                <P_M isDarkMode={isDarkMode}>
-                  {TextData.RnR.Card[6].content}
-                </P_M>
-              </Collapse_Card_L_ContentsBox_InnerBox>
-              <Collapse_Card_L_ContentsBox_InnerBox>
-                <Subtitle_M_900_Wrapper>
-                  <Subtitle_M_900 isDarkMode={isDarkMode}>
-                    {TextData.RnR.Card[7].title}
-                  </Subtitle_M_900>
-                </Subtitle_M_900_Wrapper>
-                <P_M isDarkMode={isDarkMode}>
-                  {TextData.RnR.Card[7].content}
                 </P_M>
               </Collapse_Card_L_ContentsBox_InnerBox>
             </Collapse_Card_L_ContentsBox_InnerBox_Wrapper>
           </Collapse_Card_L_ContentsBox>
         )}
       </Collapse_Card_L>
-    </WorksStowGenieRnRSectionWrapper>
+    </WorksMUKIRnRSectionWrapper>
   );
 }
 
-export default WorksStowGenieRnRSection;
+export default WorksMUKIRnRSection;

@@ -18,7 +18,7 @@ import {
   Collapse_Card_L_ContentsBox_InnerBox_Wrapper,
 } from "../../Card/Collapse_Card";
 
-const WorksStowGenieSolutionSectionWrapper = styled.div`
+const WorksMUKISolutionSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.Bg.white90};
@@ -44,15 +44,15 @@ const Subtitle_M_Contents_Wrapper = styled.div`
   }
 `;
 
-interface WorksStowGenieSolutionSectionProps {
+interface WorksMUKISolutionSectionProps {
   isDarkMode: boolean;
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function WorksStowGenieSolutionSection({
+function WorksMUKISolutionSection({
   isDarkMode,
   setIsHovering,
-}: WorksStowGenieSolutionSectionProps) {
+}: WorksMUKISolutionSectionProps) {
   const { language } = useContext(LanguageContext); // 현재 언어 정보 가져오기
   const [isExpanded, setIsExpanded] = useState(true); // 기본적으로 펼쳐진 상태로 설정
 
@@ -61,11 +61,11 @@ function WorksStowGenieSolutionSection({
   };
   const TextData =
     language === "ko"
-      ? require("../../../i18n/en/Works_StowGenie.json")
-      : require("../../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_MUKI.json")
+      : require("../../../i18n/kr/Works_MUKI.json");
 
   return (
-    <WorksStowGenieSolutionSectionWrapper>
+    <WorksMUKISolutionSectionWrapper>
       <Collapse_Card_L isDarkMode={isDarkMode} isExpanded={isExpanded}>
         <Collapse_Card_L_TitleBox
           onClick={toggleCard}
@@ -96,19 +96,8 @@ function WorksStowGenieSolutionSection({
                   {TextData.Solution.Card[1].title}
                 </Subtitle_M_900>
                 <Subtitle_M_Contents_Wrapper>
-                  <Lnb_L isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[1].subtitle01}
-                  </Lnb_L>
                   <P_M isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[1].content01}
-                  </P_M>
-                </Subtitle_M_Contents_Wrapper>
-                <Subtitle_M_Contents_Wrapper>
-                  <Lnb_L isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[1].subtitle02}
-                  </Lnb_L>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[1].content02}
+                    {TextData.Solution.Card[1].content}
                   </P_M>
                 </Subtitle_M_Contents_Wrapper>
               </Collapse_Card_L_ContentsBox_InnerBox>
@@ -117,29 +106,8 @@ function WorksStowGenieSolutionSection({
                   {TextData.Solution.Card[2].title}
                 </Subtitle_M_900>
                 <Subtitle_M_Contents_Wrapper>
-                  <Lnb_L isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[2].subtitle01}
-                  </Lnb_L>
                   <P_M isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[2].content01}
-                  </P_M>
-                </Subtitle_M_Contents_Wrapper>
-                <Subtitle_M_Contents_Wrapper>
-                  <Lnb_L isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[2].subtitle02}
-                  </Lnb_L>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[2].content02}
-                  </P_M>
-                </Subtitle_M_Contents_Wrapper>
-              </Collapse_Card_L_ContentsBox_InnerBox>
-              <Collapse_Card_L_ContentsBox_InnerBox>
-                <Subtitle_M_900 isDarkMode={isDarkMode}>
-                  {TextData.Solution.Card[3].title}
-                </Subtitle_M_900>
-                <Subtitle_M_Contents_Wrapper>
-                  <P_M isDarkMode={isDarkMode}>
-                    {TextData.Solution.Card[3].content}
+                    {TextData.Solution.Card[2].content}
                   </P_M>
                 </Subtitle_M_Contents_Wrapper>
               </Collapse_Card_L_ContentsBox_InnerBox>
@@ -147,8 +115,8 @@ function WorksStowGenieSolutionSection({
           </Collapse_Card_L_ContentsBox>
         )}
       </Collapse_Card_L>
-    </WorksStowGenieSolutionSectionWrapper>
+    </WorksMUKISolutionSectionWrapper>
   );
 }
 
-export default WorksStowGenieSolutionSection;
+export default WorksMUKISolutionSection;

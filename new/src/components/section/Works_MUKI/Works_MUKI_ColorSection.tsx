@@ -14,12 +14,12 @@ import {
   Collapse_Card_L_Bg,
   Collapse_Card_L_BG_TitleBox,
   Collapse_Card_L_BG_ContentsBox,
-  Collapse_Card_L_BG_ContentsBox_InnerBox,
+  Collapse_Card_L_BG_ContentsBox_InnerBox_MUKI,
   Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip,
   Collapse_Card_L_BG_ContentsBox_TextBox,
 } from "../../Card/Collapse_Card";
 
-const WorksStowGenieColorSectionWrapper = styled.div`
+const WorksMUKIColorSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.Bg.white90};
@@ -27,34 +27,13 @@ const WorksStowGenieColorSectionWrapper = styled.div`
   div {
     color: #ffffff;
   }
-  /* @media (max-width: ${breakpoints.desktopXS}px) {
-    padding: 140px 40px 32px 40px;
-  }
-  @media (max-width: ${breakpoints.tabletM}px) {
-    padding: 140px 24px 32px 24px;
-  }
-  @media (max-width: ${breakpoints.tabletS}px) {
-    padding: 120px 24px 32px 24px;
-    gap: 16px;
-  } */
 `;
-const Color_Bg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  transform: scale(1.4);
-  @media (max-width: ${breakpoints.mobileL}px) {
-    transform: scale(1.6);
-  }
-`;
-
 interface WorksStowGenieColorSectionProps {
   isDarkMode: boolean;
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function WorksStowGenieColorSection({
+function WorksMUKIColorSection({
   isDarkMode,
   setIsHovering,
 }: WorksStowGenieColorSectionProps) {
@@ -67,13 +46,12 @@ function WorksStowGenieColorSection({
 
   const TextData =
     language === "ko"
-      ? require("../../../i18n/en/Works_StowGenie.json")
-      : require("../../../i18n/kr/Works_StowGenie.json");
+      ? require("../../../i18n/en/Works_MUKI.json")
+      : require("../../../i18n/kr/Works_MUKI.json");
 
   return (
-    <WorksStowGenieColorSectionWrapper>
+    <WorksMUKIColorSectionWrapper>
       <Collapse_Card_L_Bg isDarkMode={isDarkMode} isExpanded={isExpanded}>
-        <Color_Bg src={Bg} />
         <Collapse_Card_L_BG_TitleBox
           onClick={toggleCard}
           onMouseEnter={() => setIsHovering(true)}
@@ -82,57 +60,35 @@ function WorksStowGenieColorSection({
           <Subtitle_XL isDarkMode={isDarkMode}>
             {TextData.Color.Title}
           </Subtitle_XL>
-          <Button_Chev
-            style={{ color: "#ffffff" }}
-            isDarkMode={isDarkMode}
-            isExpanded={isExpanded}
-          />
+          <Button_Chev isDarkMode={isDarkMode} isExpanded={isExpanded} />
         </Collapse_Card_L_BG_TitleBox>
 
         {isExpanded && (
           <Collapse_Card_L_BG_ContentsBox>
-            <Collapse_Card_L_BG_ContentsBox_InnerBox isDarkMode={isDarkMode}>
+            <Collapse_Card_L_BG_ContentsBox_InnerBox_MUKI
+              isDarkMode={isDarkMode}
+            >
               <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
                 isDarkMode={isDarkMode}
+                style={{ background: "#69AB8C" }}
               >
-                #10181E
+                #69AB8C
               </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
               <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
                 isDarkMode={isDarkMode}
+                style={{ background: "#EBFAEB", color: "#69AB8C" }}
               >
-                #1A2734
+                #EBFAEB
               </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
-              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
-                isDarkMode={isDarkMode}
-              >
-                #243844
-              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
-              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
-                isDarkMode={isDarkMode}
-              >
-                #4B5763
-              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
-              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
-                isDarkMode={isDarkMode}
-              >
-                #899296
-              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
-              <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
-                isDarkMode={isDarkMode}
-              >
-                #BBC0BE
-              </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
-            </Collapse_Card_L_BG_ContentsBox_InnerBox>
+            </Collapse_Card_L_BG_ContentsBox_InnerBox_MUKI>
             <Collapse_Card_L_BG_ContentsBox_TextBox>
-              <P_M style={{ color: "#ffffff" }} isDarkMode={isDarkMode}>
-                {TextData.Color.Content}
-              </P_M>
+              <P_M isDarkMode={isDarkMode}>{TextData.Color.Content}</P_M>
             </Collapse_Card_L_BG_ContentsBox_TextBox>
           </Collapse_Card_L_BG_ContentsBox>
         )}
       </Collapse_Card_L_Bg>
-    </WorksStowGenieColorSectionWrapper>
+    </WorksMUKIColorSectionWrapper>
   );
 }
 
-export default WorksStowGenieColorSection;
+export default WorksMUKIColorSection;

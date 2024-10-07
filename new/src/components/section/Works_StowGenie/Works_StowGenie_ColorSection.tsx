@@ -79,7 +79,7 @@ function WorksStowGenieColorSection({
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
-          <Subtitle_XL isDarkMode={isDarkMode}>
+          <Subtitle_XL style={{ color: "#ffffff" }} isDarkMode={isDarkMode}>
             {TextData.Color.Title}
           </Subtitle_XL>
           <Button_Chev
