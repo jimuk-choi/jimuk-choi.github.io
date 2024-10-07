@@ -84,77 +84,77 @@
     ]
   },
   "Goal": {
-    "Title": "Problem Definition & Goals",
-    "ProblemTitle": "Problem Definition",
-    "ProblemContent": "The client faced several challenges with their existing system, which included outdated GUI design, scattered functionalities, and a lack of engaging user experiences. The existing interface made it difficult for planners to perform their tasks efficiently, and there was no central communication tool integrated into the solution. The following were key issues identified.",
-    "GoalTitle": "Goals",
-    "GoalContent": "The primary goal of this project was to create a user-centered solution that not only addressed the client's functional needs but also provided a fresh, engaging, and efficient user experience. The key objectives were.",
+    "Title": "문제 정의 및 목표",
+    "ProblemTitle": "문제 정의",
+    "ProblemContent": "고객사는 기존 시스템에서 여러 가지 문제를 겪고 있었습니다. GUI 디자인이 오래되었고, 기능이 흩어져 있어 사용자가 업무를 효율적으로 수행하기 어려웠습니다. 또한, 솔루션 내에서 중앙화된 커뮤니케이션 툴이 없어서 별도의 프로그램을 사용해야 했습니다. 주요 문제점은 다음과 같습니다.",
+    "GoalTitle": "목표",
+    "GoalContent": "이 프로젝트의 주요 목표는 고객사의 기능적 요구를 충족시키면서 사용자 중심의 신선하고 효율적인 경험을 제공하는 솔루션을 만드는 것이었습니다. 핵심 목표는 다음과 같습니다.",
     "Problem": [
       {
         "id": 1,
-        "content": "The outdated GUI needed a complete overhaul for a modern, intuitive experience."
+        "content": "오래된 GUI로 인해 직관적이지 않은 인터페이스가 문제였습니다."
       },
       {
         "id": 2,
-        "content": "Planners expressed a desire for more enjoyable and engaging workflows."
+        "content": "플래너들은 업무를 더 즐겁고 흥미롭게 수행할 수 있는 기능이 부족했습니다."
       },
       {
         "id": 3,
-        "content": "There was a need for a centralized platform that could consolidate communication, planning, and task management."
+        "content": "커뮤니케이션, 플래닝, 업무 관리 기능이 통합된 중앙화된 플랫폼이 필요했습니다."
       },
       {
         "id": 4,
-        "content": "The client wanted to integrate AI-powered planning tools for more stability and predictive analytics."
+        "content": "AI 기반의 안정적인 플래닝 도구가 요구되었습니다."
       },
       {
         "id": 5,
-        "content": "Existing data was displayed in simple Excel-like tables, lacking visual appeal or clarity."
+        "content": "기존 데이터는 단순한 엑셀 형식의 표로만 제공되어, 시각적인 요소가 부족하고 가독성이 떨어졌습니다."
       },
       {
         "id": 6,
-        "content": "An improved dashboard was needed to give users a comprehensive view of their tasks at a glance."
+        "content": "전체 작업을 한눈에 파악할 수 있는 대시보드가 필요했습니다."
       }
     ],
     "Goal": [
       {
         "id": 1,
-        "title": "Comprehensive Redesign",
-        "content": "Completely revamp the UI/UX to break away from the outdated design, providing a clean and modern interface."
+        "title": "전체적인 재설계",
+        "content": "기존의 낡은 디자인에서 벗어나, 깔끔하고 현대적인 UI/UX를 완전히 새롭게 디자인."
       },
       {
         "id": 2,
-        "title": "Consolidation of Features",
-        "content": "Merge all scattered features into one centralized platform, streamlining the user experience without the need for external tools."
+        "title": "기능 통합",
+        "content": "흩어져 있던 기능을 한 곳에 모아 별도의 프로그램 없이 하나의 플랫폼에서 모든 기능을 사용할 수 있도록 개선."
       },
       {
         "id": 3,
-        "title": "Enhanced Communication",
-        "content": "Add a 'Sticker' feature that allows users to communicate within the platform, removing the need for external communication tools."
+        "title": "커뮤니케이션 강화",
+        "content": "외부 프로그램 없이 플랫폼 내에서 사용자들이 소통할 수 있도록 '스티커' 기능 추가."
       },
       {
         "id": 4,
-        "title": "Visual Data Representation",
-        "content": "Create visually appealing charts and integrate a dashboard, making data easily digestible and accessible."
+        "title": "시각적 데이터 표현",
+        "content": "데이터를 더욱 시각적으로 전달할 수 있도록 차트와 대시보드를 설계하여, 가독성과 접근성을 향상."
       },
       {
         "id": 5,
-        "title": "3D BayView",
-        "content": "Incorporate a 3D BayView feature to allow users to view the status of ships in real-time, providing an overview of operations at a glance."
+        "title": "3D BayView 추가",
+        "content": "실시간으로 배의 상태를 확인할 수 있는 3D BayView 기능을 추가해, 운영 상태를 한눈에 파악할 수 있도록 개선."
       },
       {
         "id": 6,
-        "title": "Interactive and Engaging Experience",
-        "content": "Implement gamification elements to make tasks less monotonous and more enjoyable for planners."
+        "title": "인터랙티브한 사용자 경험",
+        "content": "Gamification 요소를 도입하여 업무의 지루함을 줄이고, 사용자에게 더 즐거운 경험을 제공."
       },
       {
         "id": 7,
-        "title": "Improved Interaction",
-        "content": "Replace traditional click-based interactions with more intuitive drag-and-drop features for task planning and option setting."
+        "title": "향상된 인터랙션",
+        "content": "기존의 클릭 방식에서 벗어나, 드래그 앤 드롭 방식의 직관적인 인터랙션을 도입해 작업 및 설정이 더욱 편리해지도록 개선."
       },
       {
         "id": 8,
-        "title": "AI-Powered Planning",
-        "content": "Utilize AI to provide more stable and predictive planning capabilities, improving efficiency and decision-making."
+        "title": "AI 기반 플래닝",
+        "content": "AI를 활용해 더욱 안정적이고 예측 가능한 플래닝 기능을 제공, 효율성과 의사결정 능력을 향상."
       }
     ]
   }

@@ -43,13 +43,14 @@ const Problem_Goal_Box_InnerBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
   padding: 0 32px 0px;
 `;
 const Problem_Goal_Box_InnerBox_TopBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 0 12px 8px;
+  padding: 0 28px 8px;
 `;
 
 const Chev_Img = styled(Chev, {
