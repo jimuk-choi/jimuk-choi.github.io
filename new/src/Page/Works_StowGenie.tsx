@@ -1,7 +1,8 @@
 import WorksStowGenieBrandSection from "../components/section/Works_StowGenie_BrandSection";
 import WorksStowGenieColorSection from "../components/section/Works_StowGenie_ColorSection";
-import WorksStowGenieTypoSectionWrapper from "../components/section/Works_StowGenie_TypoSection";
-import WorksStowGenieRnRSectionWrapper from "../components/section/Works_StowGenie_RnRSection";
+import WorksStowGenieTypoSection from "../components/section/Works_StowGenie_TypoSection";
+import WorksStowGenieRnRSection from "../components/section/Works_StowGenie_RnRSection";
+import WorksStowGenieGoalSection from "../components/section/Works_StowGenie_GoalSection";
 import styled from "@emotion/styled";
 
 const WorksStowGenie_Wrapper = styled.div`
@@ -30,11 +31,15 @@ function WorksStowGenie({ isDarkMode, setIsHovering }: MainProps) {
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieTypoSectionWrapper
+        <WorksStowGenieTypoSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />
-        <WorksStowGenieRnRSectionWrapper
+        <WorksStowGenieRnRSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksStowGenieGoalSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />

@@ -8,8 +8,7 @@ import { P_M } from "../typograpy/paragraph";
 import { Lnb_L } from "../typograpy/lnb";
 //img
 import { ReactComponent as Chev } from "../../assets/Chev.svg";
-import StowGenie_Logo_Light from "../../assets/StowGenie_Logo_Light.png";
-import StowGenie_Logo_Dark from "../../assets/StowGenie_Logo_Dark.png";
+
 // Card
 import {
   Collapse_Card_L,
@@ -59,7 +58,7 @@ interface WorksStowGenieRnRSectionProps {
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function WorksStowGenieBrandSection({
+function WorksStowGenieRnRSection({
   isDarkMode,
   setIsHovering,
 }: WorksStowGenieRnRSectionProps) {
@@ -213,4 +212,4 @@ function WorksStowGenieBrandSection({
   );
 }
 
-export default WorksStowGenieBrandSection;
+export default WorksStowGenieRnRSection;

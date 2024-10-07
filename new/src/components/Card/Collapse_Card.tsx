@@ -26,6 +26,7 @@ export const Collapse_Card_L_ContentsBox = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  gap: 40px;
 `;
 export const Collapse_Card_L_ContentsBox_LogoBox_W97 = styled.div`
   display: flex;

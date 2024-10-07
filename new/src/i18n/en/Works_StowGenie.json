@@ -82,5 +82,80 @@
         "content": "Worked on web page publishing using HTML, CSS, and ReactJS. Implemented responsive web design to ensure optimal user experiences across different devices by turning design concepts into fully functional web pages."
       }
     ]
+  },
+  "Goal": {
+    "Title": "Problem Definition & Goals",
+    "ProblemTitle": "Problem Definition",
+    "ProblemContent": "The client faced several challenges with their existing system, which included outdated GUI design, scattered functionalities, and a lack of engaging user experiences. The existing interface made it difficult for planners to perform their tasks efficiently, and there was no central communication tool integrated into the solution. The following were key issues identified.",
+    "GoalTitle": "Goals",
+    "GoalContent": "The primary goal of this project was to create a user-centered solution that not only addressed the client's functional needs but also provided a fresh, engaging, and efficient user experience. The key objectives were.",
+    "Problem": [
+      {
+        "id": 1,
+        "content": "The outdated GUI needed a complete overhaul for a modern, intuitive experience."
+      },
+      {
+        "id": 2,
+        "content": "Planners expressed a desire for more enjoyable and engaging workflows."
+      },
+      {
+        "id": 3,
+        "content": "There was a need for a centralized platform that could consolidate communication, planning, and task management."
+      },
+      {
+        "id": 4,
+        "content": "The client wanted to integrate AI-powered planning tools for more stability and predictive analytics."
+      },
+      {
+        "id": 5,
+        "content": "Existing data was displayed in simple Excel-like tables, lacking visual appeal or clarity."
+      },
+      {
+        "id": 6,
+        "content": "An improved dashboard was needed to give users a comprehensive view of their tasks at a glance."
+      }
+    ],
+    "Goal": [
+      {
+        "id": 1,
+        "title": "Comprehensive Redesign",
+        "content": "Completely revamp the UI/UX to break away from the outdated design, providing a clean and modern interface."
+      },
+      {
+        "id": 2,
+        "title": "Consolidation of Features",
+        "content": "Merge all scattered features into one centralized platform, streamlining the user experience without the need for external tools."
+      },
+      {
+        "id": 3,
+        "title": "Enhanced Communication",
+        "content": "Add a 'Sticker' feature that allows users to communicate within the platform, removing the need for external communication tools."
+      },
+      {
+        "id": 4,
+        "title": "Visual Data Representation",
+        "content": "Create visually appealing charts and integrate a dashboard, making data easily digestible and accessible."
+      },
+      {
+        "id": 5,
+        "title": "3D BayView",
+        "content": "Incorporate a 3D BayView feature to allow users to view the status of ships in real-time, providing an overview of operations at a glance."
+      },
+      {
+        "id": 6,
+        "title": "Interactive and Engaging Experience",
+        "content": "Implement gamification elements to make tasks less monotonous and more enjoyable for planners."
+      },
+      {
+        "id": 7,
+        "title": "Improved Interaction",
+        "content": "Replace traditional click-based interactions with more intuitive drag-and-drop features for task planning and option setting."
+      },
+      {
+        "id": 8,
+        "title": "AI-Powered Planning",
+        "content": "Utilize AI to provide more stable and predictive planning capabilities, improving efficiency and decision-making."
+      }
+    ]
   }
 }
