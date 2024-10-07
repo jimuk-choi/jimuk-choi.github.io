@@ -5,6 +5,7 @@ import WorksStowGenieTypoSection from "../components/section/Works_StowGenie_Typ
 import WorksStowGenieRnRSection from "../components/section/Works_StowGenie_RnRSection";
 import WorksStowGenieGoalSection from "../components/section/Works_StowGenie_GoalSection";
 import WorksStowGenieDemoSection from "../components/section/Works_StowGenie_DemoSection";
+import WorksStowGenieSolutionSection from "../components/section/Works_StowGenie_SolutionSection";
 
 const WorksStowGenie_Wrapper = styled.div`
   display: flex;
@@ -45,6 +46,10 @@ function WorksStowGenie({ isDarkMode, setIsHovering }: MainProps) {
           setIsHovering={setIsHovering}
         />
         <WorksStowGenieDemoSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksStowGenieSolutionSection
           isDarkMode={isDarkMode}
           setIsHovering={setIsHovering}
         />

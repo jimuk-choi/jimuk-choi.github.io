@@ -80,7 +80,7 @@ function WorksStowGenieDemoSection({
           onMouseLeave={() => setIsHovering(false)}
         >
           <Subtitle_XL isDarkMode={isDarkMode}>
-            {TextData.Typo.Title}
+            {TextData.Demo.Title}
           </Subtitle_XL>
           <Chev_Img isDarkMode={isDarkMode} isExpanded={isExpanded} />
         </Collapse_Card_L_TitleBox>

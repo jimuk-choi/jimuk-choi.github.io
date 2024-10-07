@@ -157,5 +157,39 @@
         "content": "Utilize AI to provide more stable and predictive planning capabilities, improving efficiency and decision-making."
       }
     ]
+  },
+  "Demo": {
+    "Title": "Screenshots & Demonstrations"
+  },
+  "Solution": {
+    "Title": "Solution & Outcome",
+    "Card": [
+      {
+        "id": 1,
+        "title": "Overview of the Final Solution",
+        "content": "The project involved a complete redesign of the overall UI/UX. Key features, including the 3D BayView, Sticker communication, and Gamification elements, were introduced to create a more engaging and efficient user experience."
+      },
+      {
+        "id": 2,
+        "title": "Design System Implementation",
+        "subtitle01": "Consistent Design System",
+        "content01": "A cohesive design system was implemented throughout the project, defining reusable components like colors, typography, and button styles. This ensures design consistency for future updates and expansions while improving team collaboration.",
+        "subtitle02": "Streamlined Collaboration with Development",
+        "content02": "The design system also facilitated smoother communication between designers and developers, ensuring that the design intent was accurately reflected during development by providing clear guidelines."
+      },
+      {
+        "id": 3,
+        "title": "UX Improvements",
+        "subtitle01": "User-Centric UX",
+        "content01": "The solution was built around user personas and scenarios, ensuring that each feature aligned with the actual needs and workflows of users. The Drag-and-Drop functionality allowed users to interact with the system more intuitively and naturally.",
+        "subtitle02": "Feedback-Driven Enhancements",
+        "content02": "Through iterative UX improvements based on user testing, we refined the interface to be more intuitive and user-friendly, addressing pain points identified in early feedback."
+      },
+      {
+        "id": 4,
+        "title": "Scalability of the Modular Design System",
+        "content": "The design system was built to be modular and scalable, allowing for easy expansion and integration of new features or pages. This ensures that any future additions can be implemented quickly and without disrupting the overall visual consistency."
+      }
+    ]
   }
 }
