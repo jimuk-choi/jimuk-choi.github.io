@@ -1,4 +1,34 @@
-import WorksMUKITestSection from "../components/section/Works_MUKI_TestSection";
+import styled from "@emotion/styled";
+import { breakpoints } from "../style/breakpoints";
+import WorksDetailBrandSection from "../components/section/Works_StowGenie/Works_StowGenie_BrandSection";
+import WorksDetailColorSection from "../components/section/Works_StowGenie/Works_StowGenie_ColorSection";
+import WorksDetailTypoSection from "../components/section/Works_StowGenie//Works_StowGenie_TypoSection";
+import WorksDetailRnRSection from "../components/section/Works_StowGenie//Works_StowGenie_RnRSection";
+import WorksDetailGoalSection from "../components/section/Works_StowGenie//Works_StowGenie_GoalSection";
+import WorksDetailDemoSection from "../components/section/Works_StowGenie//Works_StowGenie_DemoSection";
+import WorksDetailSolutionSection from "../components/section/Works_StowGenie//Works_StowGenie_SolutionSection";
+import WorksDetailConclusionSection from "../components/section/Works_StowGenie//Works_StowGenie_ConclusionSection";
+
+const WorksStowGenie_Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.Bg.white90};
+  padding: 140px 80px 32px 80px;
+  gap: 16px;
+  min-height: calc(100vh - 172px);
+  @media (max-width: ${breakpoints.desktopXS}px) {
+    padding: 140px 40px 32px 40px;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    padding: 140px 28px 32px 28px;
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    gap: 8px;
+  }
+  @media (max-width: ${breakpoints.mobileL}px) {
+    padding: 120px 14px 32px 14px;
+  }
+`;
 
 interface MainProps {
   isDarkMode: boolean;
@@ -8,7 +38,40 @@ interface MainProps {
 function WorksMUKI({ isDarkMode, setIsHovering }: MainProps) {
   return (
     <>
-      <WorksMUKITestSection isDarkMode={isDarkMode} />
+      <WorksStowGenie_Wrapper>
+        <WorksDetailBrandSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksDetailColorSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksDetailTypoSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksDetailRnRSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksDetailGoalSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksDetailDemoSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksDetailSolutionSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+        <WorksDetailConclusionSection
+          isDarkMode={isDarkMode}
+          setIsHovering={setIsHovering}
+        />
+      </WorksStowGenie_Wrapper>
     </>
   );
 }
