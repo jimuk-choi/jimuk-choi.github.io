@@ -70,15 +70,15 @@ function WorksMUKIColorSection({
             >
               <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
                 isDarkMode={isDarkMode}
-                style={{ background: "#69AB8C" }}
+                style={{ background: "#227CFF" }}
               >
-                #69AB8C
+                #227CFF
               </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
               <Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip
                 isDarkMode={isDarkMode}
-                style={{ background: "#EBFAEB", color: "#69AB8C" }}
+                style={{ background: "#F0F6FF", color: "#227CFF" }}
               >
-                #EBFAEB
+                #F0F6FF
               </Collapse_Card_L_BG_ContentsBox_InnerBox_ColorChip>
             </Collapse_Card_L_BG_ContentsBox_InnerBox_MUKI>
             <Collapse_Card_L_BG_ContentsBox_TextBox>
