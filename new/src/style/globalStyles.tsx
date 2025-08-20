@@ -8,10 +8,7 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
   <Global
     styles={css`
       @font-face {
-        font-family: "Helvetica Neue";
-        src: url("../public/font/HelveticaNeue-Regular.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
+        /* Using Pretendard from CDN via link in index.html */
       }
       html {
         font-size: 62.5%;
@@ -22,7 +19,10 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
       rect {
         margin: 0;
         padding: 0;
-        font-family: "Helvetica Neue", sans-serif;
+        font-family: "Pretendard Variable", "Pretendard", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR",
+          "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial,
+          sans-serif;
         cursor: none;
       }
       p,
@@ -39,7 +39,10 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
       button {
         border: none;
         background-color: transparent;
-        font-family: "Helvetica Neue", sans-serif;
+        font-family: "Pretendard Variable", "Pretendard", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR",
+          "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial,
+          sans-serif;
         cursor: none;
       }
       ::selection {
