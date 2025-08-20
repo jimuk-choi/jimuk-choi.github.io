@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.abcc5ad8.js",
+    "main.css": "/static/css/main.b325b1e3.css",
+    "main.js": "/static/js/main.afdd0a9d.js",
     "static/js/453.1fd1f10b.chunk.js": "/static/js/453.1fd1f10b.chunk.js",
     "static/media/Works_StowGenie_Screenshot_Light.png": "/static/media/Works_StowGenie_Screenshot_Light.725581b3b61c30711c57.png",
     "static/media/Works_StowGenie_Screenshot_Dark.png": "/static/media/Works_StowGenie_Screenshot_Dark.b5034cb87228fe24daf8.png",
@@ -47,12 +47,12 @@
     "static/media/ArrowRightUp.svg": "/static/media/ArrowRightUp.95c08bb79295771f3d2767365bdd7320.svg",
     "static/media/Chev.svg": "/static/media/Chev.f4f5648450bd939623bd9377426f0a15.svg",
     "static/media/Logo.svg": "/static/media/Logo.ee125afdac620f02fc5e2700154534fc.svg",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.abcc5ad8.js.map": "/static/js/main.abcc5ad8.js.map",
+    "main.b325b1e3.css.map": "/static/css/main.b325b1e3.css.map",
+    "main.afdd0a9d.js.map": "/static/js/main.afdd0a9d.js.map",
     "453.1fd1f10b.chunk.js.map": "/static/js/453.1fd1f10b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.abcc5ad8.js"
+    "static/css/main.b325b1e3.css",
+    "static/js/main.afdd0a9d.js"
   ]
 }
