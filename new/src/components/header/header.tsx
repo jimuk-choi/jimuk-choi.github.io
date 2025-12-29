@@ -29,14 +29,12 @@ import object_Dark from "../../assets/object_Dark.png";
 interface HeaderProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
-  toggleLanguage: () => void;
   setIsHovering: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Header: React.FC<HeaderProps> = ({
   isDarkMode,
   toggleDarkMode,
-  toggleLanguage,
   setIsHovering,
 }) => {
   const { language } = useContext(LanguageContext); // 언어 정보를 가져오는 컨텍스트
@@ -120,14 +118,6 @@ const Header: React.FC<HeaderProps> = ({
           </Link>
         </Header_MenuBox>
         <Header_ButtonBox>
-          <Button_B
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            onClick={toggleLanguage}
-            isDarkMode={isDarkMode}
-          >
-            {currentHeaderTexts.buttonText}
-          </Button_B>
           <Button_B
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
@@ -240,14 +230,6 @@ const Header: React.FC<HeaderProps> = ({
                 {isDarkMode
                   ? currentHeaderTexts.buttonLightMode
                   : currentHeaderTexts.buttonDarkMode}
-              </Button_B>
-              <Button_B
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-                onClick={toggleLanguage}
-                isDarkMode={isDarkMode}
-              >
-                {currentHeaderTexts.buttonText}
               </Button_B>
               <Button_A
                 onMouseEnter={() => setIsHovering(true)}

@@ -102,7 +102,6 @@ function App() {
             <Header
               isDarkMode={isDarkMode}
               toggleDarkMode={toggleDarkMode}
-              toggleLanguage={toggleLanguage}
               setIsHovering={setIsHovering}
             />
           </div>
