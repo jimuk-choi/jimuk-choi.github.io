@@ -28,7 +28,7 @@ const LanguageContext = createContext({
 
 function App() {
   const [language, setLanguage] = useState<"en" | "ko">("en");
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovering, setIsHovering] = useState(false);
 

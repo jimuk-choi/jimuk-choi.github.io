@@ -14,7 +14,7 @@ export const Subtitle_XL = styled.p<{ isDarkMode: boolean }>`
 export const Subtitle_L = styled.p<{ isDarkMode: boolean }>`
   font-size: 2.8rem;
   color: ${(props) => props.theme.Color.white};
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 2px;
 `;
 export const Subtitle_M_900 = styled.p<{ isDarkMode: boolean }>`

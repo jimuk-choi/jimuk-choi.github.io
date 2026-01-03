@@ -6,7 +6,7 @@ export const Chip_L_fill = styled.div<{ isDarkMode: boolean }>`
   width: fit-content;
   height: fit-content;
   background-color: ${(props) => props.theme.Bg.white};
-  color: #222222;
+  color: #202020;
   padding: 12px 32px;
   border-radius: 50px;
   font-weight: 600;

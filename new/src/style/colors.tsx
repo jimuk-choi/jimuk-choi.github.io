@@ -12,7 +12,7 @@ export const palette = {
   white90: "#FAF9FA",
   white80: "#fefefe",
   whiteT20: "rgba(255,255,255,0.2)",
-  black: "#222222",
+  black: "#202020",
   black90: "#3f3f3f",
   black50: "#505050",
   black_Main: "#262527",

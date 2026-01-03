@@ -5,7 +5,7 @@ import ArroRightUp from "../../assets/ArrowRightUP.svg";
 export const Button_A = styled.button<{ isDarkMode: boolean }>`
   background-color: ${(props) => props.theme.Bg.Button_Primary};
   color: ${(props) => props.theme.Color.Button_Primary};
-  padding: 12px 48px;
+  padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.8rem;
@@ -23,9 +23,9 @@ export const Button_A = styled.button<{ isDarkMode: boolean }>`
 `;
 
 export const Button_B = styled.button<{ isDarkMode: boolean }>`
-  background-color: ${(props) => props.theme.Bg.Button_Secondary};
-  color: ${(props) => props.theme.Color.Button_Secondary};
-  border: 1px solid ${(props) => props.theme.Border.Button_Secondary};
+  background-color: ${(props) => props.isDarkMode ? props.theme.Bg.Button_Secondary : 'rgba(255, 255, 255, 0.24)'};
+  color: ${(props) => props.isDarkMode ? props.theme.Color.Button_Secondary : 'rgba(80, 80, 80, 1)'};
+  border: 1px solid ${(props) => props.isDarkMode ? props.theme.Border.Button_Secondary : 'rgba(160, 160, 160, 1)'};
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;

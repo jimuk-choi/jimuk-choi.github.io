@@ -1,8 +1,8 @@
 {
   "buttonText": "EN",
-  "buttonDarkMode": "DarkMode",
-  "buttonLightMode": "LightMode",
-  "contactText": "지금 연락주세요",
+  "buttonDarkMode": "다크모드",
+  "buttonLightMode": "라이트모드",
+  "contactText": "Let's Talk",
   "menu01": "홈",
   "menu02": "작업물",
   "menu03": "프로세스",
