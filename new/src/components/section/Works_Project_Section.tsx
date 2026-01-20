@@ -486,9 +486,11 @@ function WorksProjetSection({
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
 
-              <NavLink
-                to="/Works/StowGenie"
-                onClick={() => window.scrollTo(0, 0)}
+              <a
+                href="https://drive.google.com/file/d/1YIp9cSH1U5X9y-5uVxue38j8s_aMPH1-/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", width: "100%" }}
               >
                 <Card_L_InnerCard
                   onMouseEnter={() => setIsHovering(true)}
@@ -501,7 +503,7 @@ function WorksProjetSection({
                   </Subtitle_XL>
                   <Arrow_Img isDarkMode={isDarkMode} />
                 </Card_L_InnerCard>
-              </NavLink>
+              </a>
             </Card_L_InnerCard_Wrapper>
           </Card_L_Introduce_Wrapper>
 
@@ -575,7 +577,12 @@ function WorksProjetSection({
                   <UsedTool_Img src={Confluence} />
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
-              <NavLink to="/Works/MUKI" onClick={() => window.scrollTo(0, 0)}>
+              <a
+                href="https://drive.google.com/file/d/1PtDy-pH3R0ml4x5T24pBSJrau51dta7H/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", width: "100%" }}
+              >
                 <Card_L_InnerCard
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
@@ -587,7 +594,7 @@ function WorksProjetSection({
                   </Subtitle_XL>
                   <Arrow_Img isDarkMode={isDarkMode} />
                 </Card_L_InnerCard>
-              </NavLink>
+              </a>
             </Card_L_InnerCard_Wrapper>
           </Card_L_Introduce_Wrapper>
 
