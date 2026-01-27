@@ -12,6 +12,7 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
       }
       html {
         font-size: 62.5%;
+        background-color: ${isDarkMode ? "#262527" : "#FAF9FA"};
       }
       body,
       div,
@@ -19,11 +20,21 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
       rect {
         margin: 0;
         padding: 0;
-        font-family: "Pretendard Variable", "Pretendard", -apple-system,
-          BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR",
-          "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial,
+        font-family:
+          "Pretendard Variable",
+          "Pretendard",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          "Noto Sans KR",
+          "Apple SD Gothic Neo",
+          "Malgun Gothic",
+          "Helvetica Neue",
+          Arial,
           sans-serif;
         cursor: none;
+        /* background-color: red; */
       }
       p,
       h1,
@@ -39,9 +50,18 @@ const GlobalStyles = ({ isDarkMode }: GlobalStylesProps) => (
       button {
         border: none;
         background-color: transparent;
-        font-family: "Pretendard Variable", "Pretendard", -apple-system,
-          BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR",
-          "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial,
+        font-family:
+          "Pretendard Variable",
+          "Pretendard",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          "Noto Sans KR",
+          "Apple SD Gothic Neo",
+          "Malgun Gothic",
+          "Helvetica Neue",
+          Arial,
           sans-serif;
         cursor: none;
       }
