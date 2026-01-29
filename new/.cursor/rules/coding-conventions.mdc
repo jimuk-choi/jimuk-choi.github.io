@@ -1,0 +1,96 @@
+---
+description: 코딩 컨벤션 및 스타일 가이드
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# Coding Conventions
+
+## Styled Components 패턴
+
+```typescript
+// 1. import 순서
+import styled from "@emotion/styled";
+import { breakpoints } from "../../style/breakpoints";
+// 기타 imports...
+
+// 2. Props 인터페이스 (필요시)
+interface ComponentProps {
+  isDarkMode: boolean;
+  setIsHovering?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+// 3. Styled 컴포넌트 정의 (함수 컴포넌트 위에)
+const Wrapper = styled.div<{ isDarkMode: boolean }>`
+  display: flex;
+  background-color: ${(props) => props.theme.Bg.white90};
+`;
+
+// 4. 함수 컴포넌트
+function MyComponent({ isDarkMode, setIsHovering }: ComponentProps) {
+  return <Wrapper isDarkMode={isDarkMode}>...</Wrapper>;
+}
+
+export default MyComponent;
+```
+
+## 네이밍 규칙
+
+| 타입 | 규칙 | 예시 |
+|-----|-----|-----|
+| 컴포넌트 파일 | PascalCase | `Works_Project_Section.tsx` |
+| Styled 컴포넌트 | PascalCase + 용도 | `Card_L_Img_Wrapper` |
+| Props 인터페이스 | PascalCase + Props | `MainProjectSectionProps` |
+| 이벤트 핸들러 | handle + Action | `handleEmailClick` |
+
+## 폰트 크기
+
+**rem 단위 사용** (1rem = 10px, html font-size: 62.5%):
+
+```typescript
+// ✅ GOOD
+font-size: 2.4rem;  // 24px
+font-size: 1.8rem;  // 18px
+font-size: 1.4rem;  // 14px
+
+// ❌ BAD
+font-size: 24px;
+```
+
+## 호버 인터랙션
+
+커스텀 커서 사용으로 인해 호버 시 `setIsHovering` 상태 관리 필요:
+
+```typescript
+<Button
+  onMouseEnter={() => setIsHovering(true)}
+  onMouseLeave={() => setIsHovering(false)}
+  onClick={handleClick}
+>
+  Click
+</Button>
+```
+
+## 이미지 처리
+
+```typescript
+// 이미지 import (assets 폴더)
+import CoverImg from "../../assets/Works_Project_Main.webp";
+
+// Styled 이미지 컴포넌트
+const StyledImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+// 사용
+<StyledImg src={CoverImg} alt="Project Cover" />
+```
+
+## box-shadow 규칙
+
+```typescript
+// 다크모드에서는 그림자 제거
+box-shadow: ${(props) => props.isDarkMode ? "none" : "2px 2px 12px #ededed;"};
+```

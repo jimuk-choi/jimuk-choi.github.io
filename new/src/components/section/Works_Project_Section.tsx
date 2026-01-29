@@ -23,7 +23,7 @@ import { Button_A, Button_E } from "../button/button_style01";
 import { Chip_L_fill, Chip_M_Storke } from "../chip/Chip";
 //img
 import StowGenie_Cover_Img from "../../assets/Works_StowGenie_Main.webp";
-import SPORTAL_Cover_Img from "../../assets/Works_SPORTAL_Main.jpg";
+import SPORTAL_Cover_Img from "../../assets/Works_SPORTAL_Main.jpeg";
 import MUKI_Cover_Img from "../../assets/Works_MUKI_Main.webp";
 import MAOIA01 from "../../assets/mAOiA_01.webp";
 import MAOIA02 from "../../assets/mAOiA_02.webp";

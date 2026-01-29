@@ -1,0 +1,63 @@
+---
+description: 색상 및 테마 시스템 사용 가이드
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# Color & Theme System
+
+## 색상 사용 규칙
+
+색상은 반드시 `src/style/colors.tsx`의 테마 시스템을 통해 사용합니다.
+
+### 팔레트 (palette)
+```typescript
+// 직접 사용 금지 - 테마를 통해서만 접근
+Light_primary100: "#f77463"
+Light_primary_Main: "#F2887a"  // 메인 브랜드 컬러
+Light_primary80: "#f89486"
+Light_primary40: "#f8efee"
+Dark_primary100: "#c26a5f"
+Dark_primary40: "#7b5753"
+```
+
+### 테마 사용법
+
+```typescript
+// ✅ GOOD - 테마 변수 사용
+const Component = styled.div<{ isDarkMode: boolean }>`
+  background-color: ${(props) => props.theme.Bg.white90};
+  color: ${(props) => props.theme.Color.white};
+`;
+
+// ❌ BAD - 하드코딩
+const Component = styled.div`
+  background-color: #FAF9FA;
+  color: #202020;
+`;
+```
+
+### 테마 속성 가이드
+
+**배경색 (Bg)**
+- `Bg.white90`: 페이지 배경
+- `Bg.Card_Primary`: 카드 배경
+- `Bg.InnerCard_Primary`: 내부 카드 배경
+- `Bg.Button_Primary`: Primary 버튼 배경
+- `Bg.Button_Primary_Hover`: 버튼 호버 상태
+- `Bg.Button_Primary_Active`: 버튼 활성 상태
+
+**텍스트색 (Color)**
+- `Color.white`: 기본 텍스트
+- `Color.Paragraph`: 본문 텍스트 (회색)
+- `Color.Button_Primary`: Primary 버튼 텍스트
+- `Color.Button_Secondary`: Secondary 버튼 텍스트
+- `Color.Lnb`: LNB 텍스트
+
+**테두리 (Border)**
+- `Border.Button_Secondary`: Secondary 버튼 테두리
+- `Border.White`: 흰색 테두리
+
+### 다크모드 전환
+다크/라이트 모드는 `isDarkMode` prop으로 자동 처리됩니다.
+테마 변수만 사용하면 모드 전환 시 색상이 자동 변경됩니다.

@@ -1,0 +1,78 @@
+---
+description: 다국어(i18n) 텍스트 관리 가이드
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# i18n (Internationalization) Guide
+
+## 폴더 구조
+
+```
+src/i18n/
+├── en/              # 영어 (기본값이 아닌 언어)
+│   ├── Works_Section.json
+│   └── main_Section.json
+└── kr/              # 한국어
+    ├── Works_Section.json
+    └── main_Section.json
+```
+
+## 사용법
+
+```typescript
+import { useContext } from "react";
+import { LanguageContext } from "../../App";
+
+function MyComponent() {
+  const { language } = useContext(LanguageContext);
+  
+  // 언어에 따른 데이터 로드
+  const TextData = language === "ko"
+    ? require("../../i18n/en/Works_Section.json")
+    : require("../../i18n/kr/Works_Section.json");
+  
+  return (
+    <div>
+      <h1>{TextData.ProjectName.Title}</h1>
+      <p>{TextData.ProjectName.Content}</p>
+    </div>
+  );
+}
+```
+
+## JSON 구조 규칙
+
+```json
+{
+  "SectionName": {
+    "Title": "제목",
+    "SubTitle": "부제목",
+    "Content": "내용",
+    "Number": "#1",
+    "Slogan": "슬로건",
+    "Card": [
+      { "id": 1, "title": "카드 제목", "content": "카드 내용" }
+    ],
+    "Chip": [
+      { "id": 1, "label": "칩 레이블" }
+    ],
+    "buttonText": "버튼 텍스트"
+  }
+}
+```
+
+## 규칙
+
+1. **하드코딩 텍스트 금지**: 모든 사용자 노출 텍스트는 JSON으로 관리
+2. **양쪽 언어 동기화**: en/kr JSON 파일의 키 구조를 동일하게 유지
+3. **새 텍스트 추가 시**: 반드시 두 언어 파일 모두 업데이트
+4. **ID 관리**: 배열 아이템에는 고유 `id` 필드 포함
+
+```typescript
+// ❌ BAD
+<p>Hello World</p>
+
+// ✅ GOOD
+<p>{TextData.Greeting.HelloWorld}</p>
+```

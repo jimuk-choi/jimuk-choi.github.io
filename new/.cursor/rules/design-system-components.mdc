@@ -1,0 +1,85 @@
+---
+description: 컴포넌트 시스템 사용 가이드
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# Component System
+
+새 UI 작성 시 **반드시 기존 컴포넌트를 재사용**합니다.
+
+## Typography Components
+
+`src/components/typograpy/` 에서 import:
+
+```typescript
+// Headings
+import { Heading01, Heading02, Heading03, Heading04 } from "../typograpy/heading";
+// Subtitles
+import { Subtitle_XL, Subtitle_L, Subtitle_M, Subtitle_S } from "../typograpy/subtitle";
+// Paragraphs
+import { P_L, P_M } from "../typograpy/paragraph";
+
+// 사용 예시 - isDarkMode prop 필수
+<Heading02 isDarkMode={isDarkMode}>Title</Heading02>
+<Subtitle_L isDarkMode={isDarkMode}>Subtitle</Subtitle_L>
+<P_M isDarkMode={isDarkMode}>Content</P_M>
+```
+
+## Button Components
+
+`src/components/button/button_style01.tsx`:
+
+| 버튼 | 용도 |
+|-----|-----|
+| `Button_A` | Primary CTA 버튼 (배경색 있음) |
+| `Button_B` | Secondary 버튼 (테두리 있음) |
+| `Button_C` | Text 버튼 (호버 시 색상 변경) |
+| `Button_D` | Pill 버튼 (둥근 테두리) |
+| `Button_E` | 내부 카드용 버튼 |
+| `Button_F` | Glassmorphism 버튼 |
+
+```typescript
+import { Button_A, Button_B } from "../button/button_style01";
+
+<Button_A isDarkMode={isDarkMode} onClick={handleClick}>
+  Click Me
+</Button_A>
+```
+
+## Card Components
+
+`src/components/Card/Card.tsx`:
+
+| 카드 | 용도 |
+|-----|-----|
+| `Card_L` | 대형 프로젝트 카드 |
+| `Card_L_InnerCard` | Card_L 내부 정보 카드 |
+| `Card_M` | 중형 프로젝트 카드 |
+| `Card_S_JobSeeking` | 작은 CTA 카드 |
+| `CloneCoding_Card` | 클론코딩 프로젝트 카드 |
+
+## Chip Components
+
+`src/components/chip/Chip.tsx`:
+
+```typescript
+import { Chip_L_fill, Chip_M_Storke } from "../chip/Chip";
+
+<Chip_L_fill isDarkMode={isDarkMode}>GUI</Chip_L_fill>
+<Chip_M_Storke isDarkMode={isDarkMode}>UX</Chip_M_Storke>
+```
+
+## 컴포넌트 작성 규칙
+
+```typescript
+// ✅ 모든 스타일 컴포넌트는 이 패턴을 따릅니다
+export const MyComponent = styled.div<{ isDarkMode: boolean }>`
+  background-color: ${(props) => props.theme.Bg.Card_Primary};
+  color: ${(props) => props.theme.Color.white};
+  
+  @media (max-width: ${breakpoints.tabletS}px) {
+    // 반응형 스타일
+  }
+`;
+```
