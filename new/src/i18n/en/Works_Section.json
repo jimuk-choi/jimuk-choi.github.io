@@ -1,8 +1,63 @@
 {
+  "DataCatalog": {
+    "SubTitle": "Data Catalog Solution",
+    "Title": "SPORTAL",
+    "Number": "#1",
+    "Slogan": "Explore data, discover value.",
+    "Card": [
+      {
+        "id": 1,
+        "title": "What is SPORTAL?",
+        "content": "SPORTAL is our company's Data Catalog & Discovery solution. However, even after being introduced to clients, it was rarely used in practice. It remained merely an \"entry point\" to other solutions, and was developed without planning or design resources, lacking even basic usability—which led to a full-scale improvement project."
+      },
+      {
+        "id": 2,
+        "title": "Used Tool"
+      },
+      {
+        "id": 3,
+        "title": "Go to Detail Page."
+      }
+    ],
+    "Chip": [
+      {
+        "id": 1,
+        "label": "GUI"
+      },
+      {
+        "id": 2,
+        "label": "UX"
+      },
+      {
+        "id": 3,
+        "label": "Design System - Atomic Design"
+      },
+      {
+        "id": 4,
+        "label": "Prototype"
+      },
+      {
+        "id": 5,
+        "label": "Data Visualization"
+      },
+      {
+        "id": 6,
+        "label": "Gamification"
+      },
+      {
+        "id": 7,
+        "label": "Web"
+      },
+      {
+        "id": 8,
+        "label": "Agile"
+      }
+    ]
+  },
   "StowGenie": {
     "SubTitle": "Container Ship Loading Solution",
     "Title": "StowGenie",
-    "Number": "#01",
+    "Number": "#2",
     "Slogan": "Embark on a Magical Voyage with StowGenie – Where Every Container Finds its Perfect Location!",
     "Card": [
       {
@@ -57,7 +112,7 @@
   "MUKI": {
     "SubTitle": "User Location-Based Solution",
     "Title": "MUKI",
-    "Number": "#02",
+    "Number": "#3",
     "Slogan": "Business innovation, realized directly in the field.",
     "Card": [
       {
@@ -107,7 +162,7 @@
   },
   "mAOiA": {
     "Title": "mAOiA",
-    "Number": "#03",
+    "Number": "#4",
     "Content": "The mAOiA solution is a system designed to manage real-time outbound data in maritime shipping and port operations, offering data-driven analysis and insights to support efficient outbound planning and operational decision-making. Its key features include the automation of outbound management, special cargo handling, and container stowage planning (Bayplan), providing visualized insights to assist managers in easily analyzing the data.",
     "Chip": [
       {
@@ -130,7 +185,7 @@
   },
   "JO": {
     "Title": "JO",
-    "Number": "#04",
+    "Number": "#5",
     "Content": "The solution is designed to effectively manage the complex processes of settlement, revenue distribution, BSA contract management, allocation settings, monthly settlement, and data validation for shipping companies and ports. Its core functionality lies in automating and monitoring the distribution of revenue and costs among multiple stakeholders in jointly operated shipping routes, as well as managing BSA agreements.",
     "Chip": [
       {
@@ -149,7 +204,7 @@
   },
   "NH": {
     "Title": "NH",
-    "Number": "#05",
+    "Number": "#6",
     "Content": "This solution program is an integrated management system designed to efficiently manage company vehicles, employee leave schedules, and various materials. It automates complex asset management and scheduling tasks, aiming to reduce time and costs while maximizing operational efficiency.",
     "Chip": [
       {
@@ -176,7 +231,7 @@
   },
   "FloraFusion": {
     "Title": "Flora Fusion",
-    "Number": "#06",
+    "Number": "#7",
     "Content": "Flora Fusion is a solution app designed to help users manage their plants and gardens. It automates schedules for watering, sunlight, fertilizing, and repotting. Users can share photos of their gardens and pots like a social media platform, interacting with others through likes, comments, and shares. Additionally, users can raise virtual plants, earning real plants as rewards for reaching goals. The app also offers product purchases and a search function for plant care information, making it easy to find everything you need.",
     "Chip": [
       {

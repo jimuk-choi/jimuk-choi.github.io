@@ -41,7 +41,7 @@ export const LightTheme: Theme = {
     Button_Primary: palette.white,
     Button_Secondary: palette.black,
     Button_Third: palette.Light_primary_Main,
-    Paragraph: palette.gray30,
+    Paragraph: palette.gray80,
     Lnb: palette.gray80,
   },
   Border: {

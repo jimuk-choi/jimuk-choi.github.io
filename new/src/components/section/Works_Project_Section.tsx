@@ -23,6 +23,7 @@ import { Button_A, Button_E } from "../button/button_style01";
 import { Chip_L_fill, Chip_M_Storke } from "../chip/Chip";
 //img
 import StowGenie_Cover_Img from "../../assets/Works_StowGenie_Main.webp";
+import SPORTAL_Cover_Img from "../../assets/Works_SPORTAL_Main.jpg";
 import MUKI_Cover_Img from "../../assets/Works_MUKI_Main.webp";
 import MAOIA01 from "../../assets/mAOiA_01.webp";
 import MAOIA02 from "../../assets/mAOiA_02.webp";
@@ -444,6 +445,99 @@ function WorksProjetSection({
   return (
     <ProjectSectionWrapper>
       <Card_L_Box>
+        {/* MUKI - Duplicated to top */}
+        <Card_L isDarkMode={isDarkMode}>
+          <Card_L_Introduce_Wrapper>
+            <Card_L_Introduce_Title_Section>
+              <Subtitle_L isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.SubTitle}
+              </Subtitle_L>
+              <Card_L_Introduce_Title_Box>
+                <Heading02 isDarkMode={isDarkMode}>
+                  {TextData.DataCatalog.Title}
+                </Heading02>
+                <Card_L_Introduce_Title_Number>
+                  {TextData.DataCatalog.Number}
+                </Card_L_Introduce_Title_Number>
+              </Card_L_Introduce_Title_Box>
+              <P_L isDarkMode={isDarkMode}>{TextData.DataCatalog.Slogan}</P_L>
+            </Card_L_Introduce_Title_Section>
+            <Card_L_InnerCard_Wrapper>
+              <Card_L_InnerCard isDarkMode={isDarkMode}>
+                <Subtitle_XL isDarkMode={isDarkMode}>
+                  {TextData.DataCatalog.Card[0].title}
+                </Subtitle_XL>
+                <P_M isDarkMode={isDarkMode}>
+                  {TextData.DataCatalog.Card[0].content}
+                </P_M>
+              </Card_L_InnerCard>
+              <Card_L_InnerCard isDarkMode={isDarkMode}>
+                <Subtitle_XL isDarkMode={isDarkMode}>
+                  {TextData.MUKI.Card[1].title}
+                </Subtitle_XL>
+                <UsedTool_ImgBox>
+                  <UsedTool_Img src={Photoshop} />
+                  <UsedTool_Img src={Illustrator} />
+                  <UsedTool_Img src={Figma} />
+                  <UsedTool_Img src={HTML} />
+                  <UsedTool_Img src={CSS} />
+                  <UsedTool_Img src={React} />
+                  <UsedTool_Img src={Git} />
+                  <UsedTool_Img src={Confluence} />
+                </UsedTool_ImgBox>
+              </Card_L_InnerCard>
+              <a
+                href="https://drive.google.com/file/d/1PtDy-pH3R0ml4x5T24pBSJrau51dta7H/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", width: "100%" }}
+              >
+                <Card_L_InnerCard
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                  isDarkMode={isDarkMode}
+                  style={{ width: "100%" }}
+                >
+                  <Subtitle_XL isDarkMode={isDarkMode}>
+                    {TextData.DataCatalog.Card[2].title}
+                  </Subtitle_XL>
+                  <Arrow_Img isDarkMode={isDarkMode} />
+                </Card_L_InnerCard>
+              </a>
+            </Card_L_InnerCard_Wrapper>
+          </Card_L_Introduce_Wrapper>
+
+          <Card_L_Img_Wrapper>
+            <Card_L_Img src={SPORTAL_Cover_Img} />
+            <Card_L_ChipBox>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[0].label}
+              </Chip_L_fill>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[1].label}
+              </Chip_L_fill>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[2].label}
+              </Chip_L_fill>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[3].label}
+              </Chip_L_fill>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[4].label}
+              </Chip_L_fill>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[5].label}
+              </Chip_L_fill>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[6].label}
+              </Chip_L_fill>
+              <Chip_L_fill isDarkMode={isDarkMode}>
+                {TextData.DataCatalog.Chip[7].label}
+              </Chip_L_fill>
+            </Card_L_ChipBox>
+          </Card_L_Img_Wrapper>
+        </Card_L>
+        {/* StowGenie */}
         <Card_L isDarkMode={isDarkMode}>
           <Card_L_Introduce_Wrapper>
             <Card_L_Introduce_Title_Section>
