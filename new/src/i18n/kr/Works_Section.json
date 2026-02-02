@@ -254,8 +254,10 @@
     "buttonText": "지금 연락주세요"
   },
   "Genesis": {
-    "Title": "제네시스",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "제네시스",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "GENESIS",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -277,8 +279,10 @@
     "ButtonText": "Go to Site."
   },
   "Musign": {
-    "Title": "뮤자인",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "뮤자인",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "MUSIGN",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -300,8 +304,10 @@
     "ButtonText": "Go to Site."
   },
   "Younglim": {
-    "Title": "영림",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "영림",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "YOUNGLIM",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -323,8 +329,10 @@
     "ButtonText": "Go to Site."
   },
   "CrewALa": {
-    "Title": "크루 엘 라",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "크루 엘 라",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "CrewALa",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -346,8 +354,10 @@
     "ButtonText": "Go to Site."
   },
   "Daebang": {
-    "Title": "대방건설",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "대방건설",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "Daebang",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -369,8 +379,10 @@
     "ButtonText": "Go to Site."
   },
   "Dopda": {
-    "Title": "돕다",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "돕다",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "Dopda",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -392,8 +404,10 @@
     "ButtonText": "Go to Site."
   },
   "Hanwha": {
-    "Title": "한화 케미칼",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "한화 케미칼",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "Hanwha",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -415,8 +429,10 @@
     "ButtonText": "Go to Site."
   },
   "YStudio": {
-    "Title": "와이 스튜디오",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "와이 스튜디오",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "Y Studio",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
@@ -438,8 +454,10 @@
     "ButtonText": "Go to Site."
   },
   "Phomain": {
-    "Title": "포메인",
-    "SubTitle": "클론코딩",
+    "_Title_kr": "포메인",
+    "_SubTitle_kr": "클론코딩",
+    "Title": "Phomain",
+    "SubTitle": "Clone Coding",
     "Chip": [
       {
         "id": 1,
