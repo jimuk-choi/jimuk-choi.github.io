@@ -282,44 +282,26 @@ const Card_M_Box_02 = styled.div`
   gap: 32px;
   @media (max-width: ${breakpoints.desktopL}px) {
     flex-wrap: wrap;
-    justify-content: space-between;
+    & > div:nth-of-type(1) {
+      width: 100%;
+    }
     & > div:nth-of-type(2) {
-      width: 65.8%;
+      flex: 1;
+      min-width: 0;
     }
     & > div:nth-of-type(3) {
-      width: 21.9%;
-    }
-  }
-  @media (max-width: ${breakpoints.desktopM}px) {
-    & > div:nth-of-type(2) {
-      width: 65.8%;
-    }
-    & > div:nth-of-type(3) {
-      width: 20%;
-    }
-  }
-  @media (max-width: ${breakpoints.desktopS}px) {
-    & > div:nth-of-type(2) {
-      width: 60%;
-    }
-    & > div:nth-of-type(3) {
-      width: 22.8%;
-    }
-  }
-  @media (max-width: ${breakpoints.desktopXS}px) {
-    & > div:nth-of-type(2) {
-      width: 56%;
-    }
-    & > div:nth-of-type(3) {
-      width: 21.8%;
+      flex: 1;
+      min-width: 280px;
     }
   }
   @media (max-width: ${breakpoints.tabletL}px) {
     & > div:nth-of-type(2) {
       width: 100%;
+      flex: unset;
     }
     & > div:nth-of-type(3) {
       width: 100%;
+      flex: unset;
     }
     & > div:nth-of-type(3) > img {
       width: 40%;

@@ -69,12 +69,12 @@ const NumberBox = styled.div<{ isOpen: boolean }>`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 200px;
+  width: 120px;
   font-size: 2.4rem;
   color: ${(props) =>
     props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
   @media (max-width: ${breakpoints.tabletL}px) {
-    width: 120px;
+    width: 80px;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     display: none;
@@ -85,9 +85,9 @@ const MainBox = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  gap: 80px;
+  gap: 40px;
   @media (max-width: ${breakpoints.tabletL}px) {
-    gap: 40px;
+    gap: 24px;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     gap: 16px;
@@ -100,11 +100,11 @@ const MainBox_ImgBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 40%;
+  width: 30%;
   padding: 0 24px;
   box-sizing: border-box;
   @media (max-width: ${breakpoints.tabletL}px) {
-    width: 32%;
+    width: 25%;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     width: 100%;
@@ -114,12 +114,12 @@ const MainBox_ImgBox = styled.div`
 
 const MainBox_Img = styled.div<{ isDarkMode: boolean; isOpen: boolean }>`
   display: flex;
-  width: ${(props) => (props.isOpen ? "180px" : "100px")};
+  width: ${(props) => (props.isOpen ? "140px" : "80px")};
   color: ${(props) =>
     props.isOpen ? props.theme.Color.Button_Third : props.theme.Color.white};
   transition: width 0.4s ease-in-out;
   @media (max-width: ${breakpoints.tabletS}px) {
-    width: ${(props) => (props.isOpen ? "140px" : "100px")};
+    width: ${(props) => (props.isOpen ? "120px" : "80px")};
   }
 `;
 
@@ -128,11 +128,12 @@ const MainBox_TextBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 70%;
   padding: 0 40px 0 0;
   gap: 24px;
   color: ${(props) => props.theme.Color.white};
   @media (max-width: ${breakpoints.tabletL}px) {
+    width: 75%;
     padding: 0 2px 0 0;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
@@ -168,9 +169,9 @@ const MainBox_TextBox_ContentBox = styled.div<{ isOpen: boolean }>`
 
 const ButtonBox = styled.div`
   display: flex;
-  width: 200px;
+  width: 120px;
   @media (max-width: ${breakpoints.tabletL}px) {
-    width: 120px;
+    width: 80px;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     font-size: 2.8rem;
@@ -226,6 +227,15 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
       case "Webflow_Object":
         return Webflow_Object;
       case "Branding_Object":
+        return Branding_Object;
+      // New mappings using existing images
+      case "Research_Object":
+        return WebDesign_Object;
+      case "Architecture_Object":
+        return AppDesign_Object;
+      case "UIDesign_Object":
+        return Webflow_Object;
+      case "Handoff_Object":
         return Branding_Object;
       default:
         return null;

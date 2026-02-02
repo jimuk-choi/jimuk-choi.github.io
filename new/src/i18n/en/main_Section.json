@@ -14,33 +14,33 @@
     "List": [
       {
         "id": 1,
-        "img": "WebDesign_Object",
-        "title": "Web Design",
-        "content": "Transforming ideas into stunning, user-friendly websites that captivate and engage. My expertise in web design ensures that every project not only looks exceptional but also performs seamlessly across all devices."
+        "img": "Research_Object",
+        "title": "UX Research & Strategy",
+        "content": "I start by understanding who the users are and why they need this product. Through persona definition, competitor benchmarking, and user research, I define problems and establish UX strategies aligned with business goals."
       },
       {
         "id": 2,
-        "img": "AppDesign_Object",
-        "title": "App Design",
-        "content": "Crafting intuitive and visually appealing app interfaces that delight users and enhance their experience. My app design approach focuses on creating seamless interactions and innovative solutions."
+        "img": "Architecture_Object",
+        "title": "Information Architecture",
+        "content": "I design complex information into structures that users can easily understand. Through IA redesign, userflow definition, and screen structure design, I create experiences where user navigation flows naturally."
       },
       {
         "id": 3,
         "img": "DesignSystems_Object",
         "title": "Design Systems",
-        "content": "Developing comprehensive design systems that streamline design and development processes. My approach ensures consistency and efficiency, empowering teams to build cohesive and scalable solutions."
+        "content": "I build systematic design systems based on Atomic Design. Through consistent component libraries and style guides, I enhance design-development collaboration efficiency and create scalable products."
       },
       {
         "id": 4,
-        "img": "Webflow_Object",
-        "title": "Webflow",
-        "content": "Harnessing the power of Webflow to create dynamic, responsive websites with ease. My skills in Webflow enable me to deliver visually stunning websites that are both functional and flexible."
+        "img": "UIDesign_Object",
+        "title": "UI/UX Design",
+        "content": "Based on strategy and structure, I design intuitive and attractive interfaces. From B2B solutions to data visualization, I translate complex functions into user-friendly screens."
       },
       {
         "id": 5,
-        "img": "Branding_Object",
-        "title": "Branding",
-        "content": "Designing compelling brand identities that resonate and leave a lasting impression. My branding expertise helps businesses articulate their unique value and connect with their audience effectively."
+        "img": "Handoff_Object",
+        "title": "Design Engineering",
+        "content": "With HTML, CSS, JavaScript publishing experience and Figma-Cursor MCP integration, I minimize the gap between design and development. I propose realistic designs considering implementation feasibility."
       }
     ]
   },
@@ -66,7 +66,10 @@
     "Confluence": "Confluence",
     "Excel": "Excel",
     "Powerpoint": "Powerpoint",
-    "Word": "Word"
+    "Word": "Word",
+    "Cursor": "Cursor",
+    "Claude": "Claude",
+    "Jira": "Jira"
   },
   "Footer": {
     "Title": "Let's Talk.",

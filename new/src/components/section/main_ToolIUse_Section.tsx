@@ -25,6 +25,9 @@ import Confluence from "../../assets/confluence.png";
 import Excel from "../../assets/excel.png";
 import Powerpoint from "../../assets/powerpoint.png";
 import Word from "../../assets/word.png";
+import Cursor from "../../assets/Cursor.png";
+import Claude from "../../assets/Claude.png";
+import Jira from "../../assets/Jira.png";
 // component
 import { Heading04 } from "../typograpy/heading";
 import { Rectangle_L } from "../shape/rectangle";
@@ -130,10 +133,13 @@ function MainToolIUseSection({ isDarkMode }: WhoIamProps) {
       { img: jQuery, text: TextData.ToolIUse.jQuery },
       { img: Git, text: TextData.ToolIUse.Git },
       { img: Notion, text: TextData.ToolIUse.Notion },
+      { img: Jira, text: TextData.ToolIUse.Jira },
       { img: Confluence, text: TextData.ToolIUse.Confluence },
       { img: Excel, text: TextData.ToolIUse.Excel },
       { img: Powerpoint, text: TextData.ToolIUse.Powerpoint },
       { img: Word, text: TextData.ToolIUse.Word },
+      { img: Cursor, text: TextData.ToolIUse.Cursor },
+      { img: Claude, text: TextData.ToolIUse.Claude },
     ],
     [TextData]
   );

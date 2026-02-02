@@ -1,0 +1,27 @@
+---
+description: Always sync both i18n language files (en/kr) when making changes
+globs: new/src/i18n/**/*.json
+alwaysApply: false
+---
+
+# i18n Language File Sync Rule
+
+When modifying i18n JSON files, **always update both language files together**:
+
+- `new/src/i18n/en/` (English)
+- `new/src/i18n/kr/` (Korean)
+
+## Required Actions
+
+1. When adding new keys, add to both `en` and `kr` files
+2. When modifying structure (like MyServices, ToolIUse), update both files
+3. When removing keys, remove from both files
+
+## Example
+
+If updating `kr/main_Section.json`, also update `en/main_Section.json` with the English equivalent.
+
+```
+❌ BAD: Only updating one language file
+✅ GOOD: Updating both en/ and kr/ files simultaneously
+```

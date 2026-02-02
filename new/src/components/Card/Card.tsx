@@ -200,7 +200,8 @@ export const Card_S_JobSeeking = styled.div<{ isDarkMode: boolean }>`
   flex-direction: column;
   justify-content: space-evenly;
   gap: 16px;
-  width: 40%;
+  flex: 1;
+  min-width: 280px;
   text-align: center;
   padding: 62px 40px;
   border-radius: 40px;
@@ -223,6 +224,12 @@ export const Card_S_JobSeeking = styled.div<{ isDarkMode: boolean }>`
     button {
       font-size: 1.5em;
     }
+  }
+  @media (max-width: ${breakpoints.tabletL}px) {
+    width: 100%;
+    flex: unset;
+    padding: 40px;
+    border-radius: 32px;
   }
   @media (max-width: ${breakpoints.tabletS}px) {
     padding: 16px 16px;
