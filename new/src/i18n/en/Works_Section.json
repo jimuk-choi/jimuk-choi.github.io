@@ -16,7 +16,7 @@
       },
       {
         "id": 3,
-        "title": "Go to Detail Page."
+        "title": "In Progress..."
       }
     ],
     "Chip": [
@@ -34,23 +34,23 @@
       },
       {
         "id": 4,
-        "label": "Prototype"
+        "label": "Information Architecture"
       },
       {
         "id": 5,
-        "label": "Data Visualization"
+        "label": "User Research"
       },
       {
         "id": 6,
-        "label": "Gamification"
+        "label": "Benchmarking"
       },
       {
         "id": 7,
-        "label": "Web"
+        "label": "Data Visualization"
       },
       {
         "id": 8,
-        "label": "Agile"
+        "label": "Gamification"
       }
     ]
   },

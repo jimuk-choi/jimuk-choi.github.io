@@ -46,6 +46,10 @@ import CSS from "../../assets/css.png";
 import React from "../../assets/react.png";
 import Git from "../../assets/git.png";
 import Confluence from "../../assets/confluence.png";
+import CursorIcon from "../../assets/Cursor.png";
+import Claude from "../../assets/Claude.png";
+import Jira from "../../assets/Jira.png";
+import Notion from "../../assets/notion.png";
 import { ReactComponent as ArrowRightUp } from "../../assets/ArrowRightUp.svg";
 
 const ProjectSectionWrapper = styled.div`
@@ -458,27 +462,23 @@ function WorksProjetSection({
                   {TextData.MUKI.Card[1].title}
                 </Subtitle_XL>
                 <UsedTool_ImgBox>
-                  <UsedTool_Img src={Photoshop} />
-                  <UsedTool_Img src={Illustrator} />
                   <UsedTool_Img src={Figma} />
-                  <UsedTool_Img src={HTML} />
-                  <UsedTool_Img src={CSS} />
-                  <UsedTool_Img src={React} />
-                  <UsedTool_Img src={Git} />
+                  <UsedTool_Img src={CursorIcon} />
+                  <UsedTool_Img src={Claude} />
+                  <UsedTool_Img src={Notion} />
+                  <UsedTool_Img src={Jira} />
                   <UsedTool_Img src={Confluence} />
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
+              {/* SPORTAL - Temporarily Disabled */}
               <a
-                href="https://drive.google.com/file/d/1PtDy-pH3R0ml4x5T24pBSJrau51dta7H/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", width: "100%" }}
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                style={{ textDecoration: "none", width: "100%", pointerEvents: "none" }}
               >
                 <Card_L_InnerCard
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)}
                   isDarkMode={isDarkMode}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", opacity: 0.5 }}
                 >
                   <Subtitle_XL isDarkMode={isDarkMode}>
                     {TextData.DataCatalog.Card[2].title}
