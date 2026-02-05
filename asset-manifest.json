@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b325b1e3.css",
-    "main.js": "/static/js/main.59f189d8.js",
+    "main.js": "/static/js/main.1fdeb2b5.js",
     "static/js/453.1fd1f10b.chunk.js": "/static/js/453.1fd1f10b.chunk.js",
     "static/media/Works_StowGenie_Screenshot_Light.png": "/static/media/Works_StowGenie_Screenshot_Light.725581b3b61c30711c57.png",
     "static/media/Works_StowGenie_Screenshot_Dark.png": "/static/media/Works_StowGenie_Screenshot_Dark.b5034cb87228fe24daf8.png",
@@ -49,11 +49,11 @@
     "static/media/Chev.svg": "/static/media/Chev.f4f5648450bd939623bd9377426f0a15.svg",
     "static/media/Logo.svg": "/static/media/Logo.ee125afdac620f02fc5e2700154534fc.svg",
     "main.b325b1e3.css.map": "/static/css/main.b325b1e3.css.map",
-    "main.59f189d8.js.map": "/static/js/main.59f189d8.js.map",
+    "main.1fdeb2b5.js.map": "/static/js/main.1fdeb2b5.js.map",
     "453.1fd1f10b.chunk.js.map": "/static/js/453.1fd1f10b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b325b1e3.css",
-    "static/js/main.59f189d8.js"
+    "static/js/main.1fdeb2b5.js"
   ]
 }
