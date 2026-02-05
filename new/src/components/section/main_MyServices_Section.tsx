@@ -260,7 +260,7 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
             end: "bottom 80%",
             scrub: true,
           },
-        }
+        },
       );
       gsap.fromTo(
         Rectangle_Ref.current,
@@ -273,7 +273,7 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
             end: "bottom 80%",
             scrub: true,
           },
-        }
+        },
       );
       // 각 리스트 박스에 대해 애니메이션 적용
       ListBox_Refs.current.forEach((listBox) => {
@@ -290,7 +290,7 @@ function MainMyServicesSection({ isDarkMode, setIsHovering }: MyServicesProps) {
                 end: "bottom 80%",
                 scrub: true,
               },
-            }
+            },
           );
         }
       });
