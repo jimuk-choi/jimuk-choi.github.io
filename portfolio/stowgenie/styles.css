@@ -1,0 +1,1049 @@
+/* =========================================================
+   StowGenie Portfolio Viewer — 공유 스타일 (톤앤매너 토큰 + 뷰어)
+   Figma: 2026_JMC_PDF / StowGenie section (node 2059-4378)
+   페이지 = 1440 x 900 고정 시트 (원본 PDF 포맷), --s 로 화면 맞춤 스케일
+   ※ 뷰어 셸/토큰은 MUKI 뷰어와 동일 (톤앤매너 통일)
+   ========================================================= */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+:root {
+  /* color tokens (Figma에서 추출) */
+  --c-bg:          #ffffff;
+  --c-ink:         #202632; /* 주 헤딩 네이비 */
+  --c-ink-2:       #202020;
+  --c-gray:        #a0a0a0; /* 본문 보조 텍스트 */
+  --c-gray-d:      #404040;
+  --c-gray-m:      #808080;
+  --c-accent:      #0099ff; /* 액센트 블루 */
+  --c-card-bg:     #fefefe;
+  --c-card-border: #cfd8dd;
+  --c-line:        #cccccc;
+
+  /* type */
+  --font: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --s: 1; /* 시트 화면 맞춤 스케일 (JS가 갱신) */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100%; }
+body {
+  font-family: var(--font);
+  color: var(--c-ink);
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+/* =========================================================
+   뷰어 셸 (툴바 + 덱 + 하단 인디케이터)
+   ========================================================= */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+/* 상단 툴바 — 모달 임베드 시 헤더는 모달이 대체하므로 숨김(콘텐츠 막대 .p05 .bar 등은 영향 없음) */
+header.bar {
+  display: none;
+}
+.bar {
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e8ec;
+  z-index: 5;
+}
+.bar .title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3a4250;
+  letter-spacing: -0.01em;
+}
+.bar .controls { display: flex; align-items: center; gap: 10px; }
+.bar-left { display: flex; align-items: center; gap: 12px; }
+.bar .back-btn { display: none; align-items: center; gap: 4px; height: 32px; padding: 0 10px 0 7px; border: 1px solid #e5e8ec; border-radius: 9px; background: #fff; color: #5b6573; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .15s, color .15s; }
+.bar .back-btn:hover { background: #f3f5f7; color: #3a4250; }
+.bar .back-btn svg { width: 16px; height: 16px; }
+body.embed .bar .back-btn { display: inline-flex; }
+
+/* segment control */
+.seg {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: #eef1f4;
+  border-radius: 10px;
+}
+.seg button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 30px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #8a93a0;
+  cursor: pointer;
+  transition: color .15s, background .15s, box-shadow .15s;
+}
+.seg button:hover { color: #5b6573; }
+.seg button.active {
+  background: #ffffff;
+  color: var(--c-accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+}
+.seg button svg { width: 18px; height: 18px; }
+
+/* PDF 버튼 — 공개 사이트 모달에서는 숨김 */
+.pdf-btn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--c-accent);
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .15s;
+}
+.pdf-btn:hover { filter: brightness(0.94); }
+.pdf-btn svg { width: 16px; height: 16px; }
+
+/* 덱(페이지 컨테이너) */
+.deck { position: relative; flex: 1 1 auto; min-height: 0; }
+.track { height: 100%; }
+.slot { display: flex; align-items: center; justify-content: center; }
+
+/* 시트 프레임 — zoom 으로 축소(재렌더 → 선명). transform:scale 비트맵 스케일 회피 */
+.frame {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+.sheet {
+  width: 1440px;
+  height: 900px;
+  background: var(--c-bg);
+  overflow: hidden;
+  contain: paint;
+  zoom: var(--s);
+}
+
+/* --- 스크롤 모드 --- */
+[data-mode="scroll"] .deck {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
+}
+[data-mode="scroll"] .track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 0 104px;
+  height: auto;
+  min-height: 100%;
+}
+[data-mode="scroll"] .slot {
+  width: 100%;
+  scroll-snap-align: center;
+}
+
+/* --- 슬라이드 모드 (세로 넘치면 스크롤) --- */
+[data-mode="slide"] .deck { overflow-x: hidden; overflow-y: auto; }
+[data-mode="slide"] .track {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  min-height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-mode="slide"] .slot {
+  flex: 0 0 100vw;
+  align-items: center;
+  padding: 16px 0 28px;
+}
+
+/* 하단 페이지 인디케이터 (dark UI) */
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  background: rgba(20, 23, 30, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  z-index: 6;
+}
+.dots .nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #9aa3b0;
+  cursor: pointer;
+  transition: color .15s;
+}
+.dots .nav-btn:hover { color: #fff; }
+.dots .nav-btn svg { width: 16px; height: 16px; }
+.dots .dot-row { display: flex; align-items: center; gap: 7px; padding: 0 8px; }
+.dots .dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+}
+.dots .dot:hover { background: rgba(255, 255, 255, 0.55); }
+.dots .dot.active { background: #f2887a; transform: scale(1.25); } /* 웹 Primary 컬러 */
+.dots .counter {
+  min-width: 56px;
+  padding: 0 6px 0 2px;
+  color: #cbd2db;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   공통 페이지 푸터 (브랜드명 + 페이지번호)
+   ========================================================= */
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--c-gray);
+  font-size: 18px;
+}
+.page-footer .brand { font-weight: 700; line-height: 1.4; }
+.page-footer .pageno { display: flex; align-items: center; gap: 8px; font-weight: 400; line-height: 1.5; }
+
+/* =========================================================
+   01 — 표지
+   ========================================================= */
+.p01 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 80px 140px;
+}
+.p01 .top-year {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: var(--c-gray-d);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.p01 .lower { display: flex; flex-direction: column; gap: 120px; width: 100%; }
+.p01 .title-h { font-weight: 700; font-size: 80px; line-height: 1.1; }
+.p01 .title-h .l1 { color: var(--c-ink); }
+.p01 .title-h .l2 { color: var(--c-ink-2); }
+.p01 .contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--c-ink-2);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.p01 .contact .left { display: flex; gap: 120px; }
+.p01 .contact a { color: inherit; text-decoration: underline; }
+
+/* =========================================================
+   02 — 프로젝트 개요 (StowGenie 인트로 + 모니터 목업)
+   ========================================================= */
+.p02 { position: relative; }
+.p02 .intro { position: absolute; left: 80px; top: 200px; width: 1280px; height: 501px; }
+.p02 .left-box {
+  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 12px; width: 560px;
+}
+.p02 .head { display: flex; align-items: flex-end; gap: 12px; }
+.p02 .head .name { font-weight: 700; font-size: 80px; line-height: 1.03; color: var(--c-ink); }
+.p02 .head .contrib { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-ink); padding-bottom: 14px; }
+.p02 .desc { font-weight: 500; font-size: 18px; line-height: 1.4; color: var(--c-gray); }
+.p02 .monitor { position: absolute; left: 685px; top: 0; width: 595px; height: 501px; }
+.p02 .monitor img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.p02 .credit { position: absolute; left: 80px; top: 791px; display: flex; flex-direction: column; gap: 11px; }
+.p02 .credit .logo { height: 21px; }
+.p02 .credit .logo img { height: 21px; width: auto; display: block; }
+.p02 .credit .role { display: flex; align-items: center; gap: 8px; color: var(--c-gray-d); font-size: 16px; line-height: 1.5; }
+.p02 .credit .role .sep { width: 1px; height: 14px; background: var(--c-gray-d); display: inline-block; }
+
+/* =========================================================
+   03 — 페인포인트 (기존 시스템 주요 문제점 / 가로 막대 차트)
+   ========================================================= */
+.p03 {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 24px;
+  padding: 48px 80px;
+}
+.p03 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p03 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p03 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+
+.p03 .body { display: flex; gap: 31px; width: 100%; flex: 1; align-items: stretch; }
+.p03 .sub { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+
+/* 좌측 — 배경설명 + 기존 시스템 스크린샷 */
+.p03 .col-left { display: flex; flex-direction: column; gap: 16px; width: 434px; flex-shrink: 0; }
+.p03 .bg-card { display: flex; flex-direction: column; gap: 8px; }
+.p03 .bg-card p:not(.sub) { font-weight: 500; font-size: 16px; line-height: 1.5; color: var(--c-gray); }
+.p03 .screens { width: 100%; }
+.p03 .screens img { width: 100%; height: auto; display: block; }
+
+/* 우측 — 문제 정의 (84% + 막대) + 카드 */
+.p03 .col-right { display: flex; flex-direction: column; gap: 28px; flex: 1; min-width: 0; }
+.p03 .problem { display: flex; flex-direction: column; gap: 20px; }
+.p03 .survey { display: flex; align-items: center; }
+.p03 .stat-84 { width: 214px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 0 16px; text-align: center; }
+.p03 .stat-84 .q { font-weight: 700; font-size: 14px; line-height: 1.5; letter-spacing: -0.21px; color: var(--c-ink); }
+.p03 .stat-84 .num { font-weight: 700; font-size: 80px; line-height: 1; color: var(--c-accent); }
+.p03 .stat-84 .cap { font-weight: 500; font-size: 12px; line-height: 1.5; color: var(--c-ink); }
+.p03 .divider { width: 1px; height: 237px; background: var(--c-line); flex-shrink: 0; }
+.p03 .hbar { flex: 1; min-width: 0; display: flex; flex-direction: column; padding-left: 31px; overflow: visible; }
+.p03 .hbar-row { height: 40px; display: flex; align-items: center; gap: 8px; }
+.p03 .hbar-row .lbl { width: 129px; flex-shrink: 0; text-align: right; font-weight: 500; font-size: 14px; line-height: 1.2; color: var(--c-gray-m); white-space: nowrap; }
+.p03 .hbar-row .bar { height: 24px; border-radius: 2px 12px 12px 2px; flex: none; }
+.p03 .hbar-row .pct { display: flex; align-items: baseline; gap: 2px; font-weight: 400; font-size: 16px; line-height: 1; color: var(--c-gray-d); white-space: nowrap; }
+.p03 .hbar-row .pct i { font-size: 12px; font-style: normal; }
+
+/* 카드 그리드 (3 x 2) */
+.p03 .cards { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.p03 .cards .row { display: flex; gap: 12px; width: 100%; }
+.p03 .cards .card { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; padding: 16px; background: var(--c-card-bg); border: 0.75px solid var(--c-card-border); }
+.p03 .cards .card .t { font-weight: 700; font-size: 15px; line-height: 1.2; color: var(--c-gray-m); }
+.p03 .cards .card .d { font-weight: 500; font-size: 14px; line-height: 1.42; color: var(--c-gray); }
+
+/* =========================================================
+   04 — 프로젝트의 목표 (TO BE GOAL / 육각형 GOAL + 해결방안)
+   ========================================================= */
+.p04 { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 48px 80px; }
+.p04 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p04 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p04 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p04 .subtitle { font-weight: 500; font-size: 16px; line-height: 1.5; color: var(--c-gray); }
+.p04 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.p04 .sec { display: flex; flex-direction: column; align-items: center; gap: 28px; width: 100%; }
+.p04 .sec-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+
+.p04 .hexes { display: flex; gap: 12px; justify-content: center; }
+.p04 .hex { width: 200px; height: 232px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 0 20px; text-align: center; background: var(--c-accent); clip-path: polygon(50% 0, 100% 22%, 100% 78%, 50% 100%, 0 78%, 0 22%); }
+.p04 .hex .h-title { font-weight: 800; font-size: 14px; line-height: 1.25; color: #fff; }
+.p04 .hex .h-desc { font-weight: 500; font-size: 11px; line-height: 1.35; color: #fff; }
+
+.p04 .sols { display: flex; gap: 12px; justify-content: center; align-items: stretch; }
+.p04 .sol { width: 200px; min-height: 226px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding: 24px; text-align: center; background: var(--c-card-bg); border: 0.75px solid var(--c-card-border); }
+.p04 .sol .s-title { height: 36px; font-weight: 700; font-size: 15px; line-height: 1.2; color: var(--c-gray-m); overflow: hidden; }
+.p04 .sol .s-desc { margin-top: 12px; font-weight: 500; font-size: 11px; line-height: 1.35; color: var(--c-gray); }
+.p04 .sol .s-tag { margin-top: auto; padding-top: 14px; font-weight: 700; font-size: 10px; line-height: 1.2; color: var(--c-gray-m); }
+
+/* =========================================================
+   05 — SOLUTION 01 브랜딩 전략 (로고 · 슬로건 · 색상 · 방법론)
+   ========================================================= */
+.p05 { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 48px 80px; }
+.p05 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p05 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p05 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p05 .subtitle { font-weight: 500; font-size: 16px; line-height: 1.5; color: var(--c-gray); }
+.p05 .subtitle b { font-weight: 700; color: var(--c-gray-d); }
+
+.p05 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; }
+.p05 .col-left { width: 680px; flex-shrink: 0; display: flex; flex-direction: column; gap: 20px; }
+.p05 .logo-card { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; padding: 32px; border: 0.75px solid var(--c-card-border); }
+.p05 .logo-card .lc-label { font-weight: 700; font-size: 16px; line-height: 1.2; color: var(--c-ink); }
+.p05 .logo-box { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.p05 .logo-box img { max-width: 88%; max-height: 100%; object-fit: contain; display: block; }
+.p05 .goal-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 0.75px solid var(--c-card-border); }
+.p05 .goal-card .gc-title { font-weight: 700; font-size: 16px; line-height: 1.2; color: var(--c-ink); }
+.p05 .goal-card .gc-desc { font-weight: 500; font-size: 14px; line-height: 1.4; color: var(--c-gray); }
+
+.p05 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.p05 .r-row { display: flex; gap: 16px; }
+.p05 .card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 0.75px solid var(--c-card-border); }
+.p05 .card .c-label { font-weight: 700; font-size: 16px; line-height: 1.2; color: var(--c-ink); }
+.p05 .card .c-body { font-weight: 500; font-size: 14px; line-height: 1.45; color: var(--c-gray); }
+.p05 .r-row .card { flex: 1; min-width: 0; }
+.p05 .col-right .r-row:last-child { margin-top: auto; }
+
+.p05 .swatches { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content; align-content: space-evenly; column-gap: 36px; margin-top: 4px; }
+.p05 .swatch { display: flex; align-items: center; gap: 15px; }
+.p05 .swatch .chip { width: 26px; height: 28px; flex-shrink: 0; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+.p05 .swatch .hx { font-weight: 500; font-size: 14px; line-height: 1.2; color: var(--c-ink); }
+
+/* 방법론 ATOMIC DESIGN — 클래스명을 뷰어 하단 네비(.dots/.dot)와 분리 */
+.p05 .atomic { display: flex; flex-direction: column; align-items: center; gap: 18px; padding-top: 16px; }
+.p05 .atomic-grid { display: grid; grid-template-columns: repeat(3, 41px); grid-auto-rows: 41px; gap: 8px; }
+.p05 .atomic-dot { width: 41px; height: 41px; border-radius: 50%; background: #dfe3e6; display: flex; align-items: center; justify-content: center; }
+.p05 .atomic-dot span { width: 23px; height: 23px; border-radius: 50%; background: #1a2734; }
+.p05 .atomic .a-label { font-weight: 700; font-size: 16px; line-height: 1.2; letter-spacing: 0.02em; color: var(--c-ink); }
+
+/* =========================================================
+   06 — SOLUTION 02 통합 플랫폼 부재 · 커뮤니케이션 (원형 카드 + 위젯)
+   ========================================================= */
+.p06 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p06 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p06 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p06 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p06 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 48px; }
+
+/* 상단 — 공지사항 + 이메일 + 스티커 원형 카드 */
+.p06 .circles { display: flex; align-items: center; gap: 24px; }
+.p06 .circle { width: 264px; height: 264px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 32px 20px 24px; background: var(--c-accent); border: 0.75px solid var(--c-card-border); border-radius: 500px; }
+.p06 .circle span { font-weight: 800; font-size: 40px; line-height: 1.2; color: #fff; text-align: center; }
+.p06 .plus { position: relative; width: 54px; height: 54px; flex-shrink: 0; color: #c4ccd2; }
+.p06 .plus::before, .p06 .plus::after { content: ""; position: absolute; background: currentColor; border-radius: 3px; }
+.p06 .plus::before { left: 50%; top: 7px; transform: translateX(-50%); width: 12px; height: 40px; }
+.p06 .plus::after { top: 50%; left: 7px; transform: translateY(-50%); width: 40px; height: 12px; }
+
+/* 하단 — 커뮤니케이션 위젯 미리보기 */
+.p06 .widgets { display: flex; gap: 12px; align-items: flex-start; }
+.p06 .widget { width: 404px; height: 239px; flex-shrink: 0; border: 0.5px solid #aaa; }
+.p06 .widget.last { width: 405px; }
+.p06 .widget img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   07 — SOLUTION 02 (스티커 프로세스 비교 · 전환율 차트 · 만족도)
+   ========================================================= */
+.p07 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p07 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p07 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p07 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p07 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; justify-content: center; }
+
+/* 좌측 — 베이플랜 + 프로세스 비교 */
+.p07 .col-left { width: 660px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px; }
+.p07 .bayplan { width: 660px; height: 340px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p07 .bayplan img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p07 .proc { display: flex; flex-direction: column; gap: 8px; }
+.p07 .proc-t { font-weight: 500; font-size: 14px; line-height: 1.5; letter-spacing: -0.21px; color: var(--c-ink); }
+.p07 .steps { display: flex; align-items: center; gap: 12px; }
+.p07 .step { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: center; padding: 16px; background: #afbccf; color: #fff; font-weight: 700; font-size: 12px; line-height: 1.2; text-align: center; }
+.p07 .step.on { background: var(--c-accent); }
+.p07 .arr { width: 9px; height: 9px; flex-shrink: 0; border-top: 2px solid #c4ccd2; border-right: 2px solid #c4ccd2; transform: rotate(45deg); }
+
+/* 우측 */
+.p07 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+
+/* 전환율 차트 + 만족도 */
+.p07 .chart-area { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; }
+.p07 .chart { display: flex; flex-direction: column; gap: 12px; }
+.p07 .chart-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.p07 .ch-t { font-weight: 500; font-size: 14px; line-height: 1.5; letter-spacing: -0.21px; color: var(--c-ink); }
+.p07 .legend { display: flex; gap: 8px; align-items: center; }
+.p07 .legend .lg { display: flex; align-items: center; gap: 4px; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+.p07 .legend .lg i { width: 20px; height: 20px; border-radius: 4px; flex-shrink: 0; }
+.p07 .chart-body { display: flex; gap: 8px; align-items: stretch; }
+.p07 .chart-body .ax { display: flex; flex-direction: column; }
+.p07 .chart-body .ax span { flex: 1; display: flex; align-items: center; justify-content: flex-end; width: 55px; text-align: right; font-weight: 500; font-size: 12px; line-height: 1.2; color: var(--c-gray); }
+.p07 .bars { display: flex; flex-direction: column; }
+.p07 .bar-row { width: 400px; height: 60px; display: flex; align-items: center; }
+.p07 .cbar { height: 48px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 500; font-size: 16px; line-height: 1; overflow: hidden; }
+.p07 .cbar.big { font-weight: 600; font-size: 18px; }
+.p07 .vline { width: 1px; height: 156px; background: var(--c-line); flex-shrink: 0; }
+.p07 .satis { width: 135px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 6px; text-align: center; }
+.p07 .satis .s-t { font-weight: 500; font-size: 14px; line-height: 1.5; letter-spacing: -0.21px; color: var(--c-ink); white-space: nowrap; }
+.p07 .satis .s-num { font-weight: 700; font-size: 48px; line-height: 1; color: var(--c-accent); }
+.p07 .satis .s-cap { font-weight: 300; font-size: 12px; line-height: 1.5; color: var(--c-ink); white-space: nowrap; }
+
+/* 정보 카드 3종 (페인포인트 · 솔루션 · 사용자 반응) — 여러 페이지 공통 컴포넌트 */
+.info-cards { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.ic { display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--c-card-bg); border: 0.75px solid var(--c-card-border); }
+.ic-label { font-weight: 700; font-size: 14px; line-height: 1.03; color: var(--c-accent); }
+.ic-item { display: flex; gap: 8px; align-items: flex-start; }
+.ic-emo { flex-shrink: 0; font-size: 16px; line-height: 1.3; }
+.ic-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ic-h { font-weight: 700; font-size: 16px; line-height: 1.3; color: #808080; }
+.ic-d { font-weight: 500; font-size: 16px; line-height: 1.3; color: var(--c-gray); }
+.ic-d b { font-weight: 600; color: #818181; }
+.ic-quote { display: flex; gap: 8px; align-items: flex-start; }
+.ic-quote p { flex: 1; min-width: 0; font-weight: 600; font-size: 16px; line-height: 1.3; color: #818181; }
+
+/* =========================================================
+   08 — SOLUTION 02 (Planning+Workflow 통합 · 이미지 2 + 카드 3)
+   ========================================================= */
+.p08 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p08 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p08 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p08 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p08 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; justify-content: center; }
+.p08 .col-left { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
+.p08 .shot { width: 446px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p08 .shot.wf { height: 251px; }
+.p08 .shot.tb { height: 249px; }
+.p08 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p08 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+
+/* =========================================================
+   09 — SOLUTION 02 (주요 기능 통합 만족도 · 막대 차트 2종)
+   ========================================================= */
+.p09 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p09 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p09 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p09 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p09 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p09 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+
+.p09 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p09 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p09 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p09 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+
+.p09 .chart { width: 600px; max-width: 100%; }
+.p09 .plot-wrap { position: relative; height: 300px; }
+.p09 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p09 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.bcell { flex: 1; min-width: 0; display: flex; align-items: flex-end; justify-content: center; }
+.p09 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p09 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p09 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p09 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p09 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p09 .bar.hi .val { color: var(--c-accent); }
+.p09 .bar.hi .val b, .p09 .bar.hi .val i { font-weight: 700; }
+.p09 .axis { display: flex; padding: 0 20px; }
+.p09 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   10 — SOLUTION 03 대시보드의 부재 (위젯 리스트 + 대시보드 + 카드)
+   ========================================================= */
+.p10 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p10 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p10 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p10 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p10 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; }
+.p10 .col-left { display: flex; gap: 16px; height: 100%; align-items: center; flex-shrink: 0; }
+
+/* 위젯 리스트 */
+.p10 .wlist { width: 212px; height: 605px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.p10 .wlist .wtitle { font-weight: 700; font-size: 18px; line-height: 1.03; color: var(--c-ink); }
+.p10 .witems { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; gap: 4px; }
+.p10 .wcard { flex: 1; min-height: 0; display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--c-card-bg); border: 0.75px solid var(--c-card-border); font-size: 14px; line-height: 1.03; }
+.p10 .wcard .no { font-weight: 700; color: var(--c-accent); flex-shrink: 0; }
+.p10 .wcard .nm { font-weight: 700; color: var(--c-ink); }
+
+/* 대시보드 캡처 */
+.p10 .dash { width: 569px; height: 613px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p10 .dash img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 우측 카드 3종 */
+.p10 .col-right { flex: 1; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+
+/* =========================================================
+   11 — SOLUTION 03 대시보드 위젯 상세 (#01 선박 세팅 · #02 대시보드 편집)
+   ========================================================= */
+.p11 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p11 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p11 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p11 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p11 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+
+/* 위젯 상세 섹션 + 기능/사용자 반응 2단 카드 — 여러 페이지 공통 컴포넌트 */
+.sec { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.sec-title { display: flex; gap: 4px; align-items: center; font-weight: 700; font-size: 24px; line-height: 1.03; }
+.sec-title .no { color: var(--c-accent); }
+.sec-title .nm { color: var(--c-ink); }
+.sec-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; width: 100%; }
+.feat-row { display: flex; gap: 8px; width: 100%; }
+.feat-row .feat { flex: 1; }
+.feat-col { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.feat { min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--c-card-bg); border: 0.75px solid var(--c-card-border); }
+.feat .f-label { font-weight: 700; font-size: 14px; line-height: 1.03; color: var(--c-accent); }
+.feat .f-list { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.feat .f-row { display: flex; gap: 4px; align-items: flex-start; }
+.feat .f-emo { flex-shrink: 0; font-size: 16px; line-height: 1.3; }
+.feat .f-txt { flex: 1; min-width: 0; font-weight: 500; font-size: 16px; line-height: 1.3; color: var(--c-gray); }
+
+/* p11 캡처 이미지 (#01 탭바 · #02 대시보드 편집) */
+.p11 .topbar { width: 100%; height: 34px; border: 0.5px solid #aaa; overflow: hidden; }
+.p11 .dashedit { width: 100%; height: 78px; border: 0.5px solid #aaa; overflow: hidden; }
+.p11 .edit-img { display: flex; flex-direction: column; gap: 8px; }
+.p11 .vessels { display: flex; gap: 4px; }
+.p11 .vessels .vw { width: 413px; height: 132px; flex-shrink: 0; }
+.p11 .topbar img, .p11 .dashedit img, .p11 .vessels .vw img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   12 — SOLUTION 03 대시보드 위젯 상세 (#03 Workflow · #04 지도)
+   ========================================================= */
+.p12 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p12 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p12 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p12 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p12 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.p12 .vessels { display: flex; gap: 4px; }
+.p12 .vessels .vw { width: 413px; height: 126px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p12 .vmap { width: 100%; height: 212px; border: 0.5px solid #aaa; overflow: hidden; }
+.p12 .vessels .vw img, .p12 .vmap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   13 — SOLUTION 03 대시보드 위젯 상세 (#05 캘린더 · #06 체크리스트) — 좌우 2단
+   ========================================================= */
+.p13 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p13 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p13 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p13 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p13 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 24px; align-items: center; justify-content: center; }
+.p13 .shot { width: 100%; height: 247px; border: 0.5px solid #aaa; overflow: hidden; }
+.p13 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 위젯 그리드 컬럼 — p13·p15 공통 (제목 + 패딩 카드 + 위젯/차트) */
+.col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.p13 .sec-card, .p15 .sec-card { padding: 16px 0; }
+
+/* =========================================================
+   15 — SOLUTION 03 대시보드 위젯 상세 (#08~#11 차트 4종) — 가로 4단
+   ========================================================= */
+.p15 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p15 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p15 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p15 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p15 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 24px; align-items: flex-start; justify-content: center; padding-top: 56px; }
+.p15 .chartbox { width: 100%; height: 207px; border: 0.5px solid #aaa; overflow: hidden; }
+.p15 .chartbox img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   16 — SOLUTION 03 대시보드 위젯 상세 (#12 스케줄 · #13 등급) — 비대칭 2단
+   ========================================================= */
+.p16 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p16 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p16 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p16 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p16 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 8px; align-items: flex-start; justify-content: center; padding-top: 56px; }
+.p16 .col-wide { width: 828px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
+.p16 .col-narrow { width: 428px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
+.p16 .shot { border: 0.5px solid #aaa; overflow: hidden; }
+.p16 .shot.sched { width: 796px; height: 321px; }
+.p16 .shot.grade { width: 396px; height: 319px; }
+.p16 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   17 — SOLUTION 03 대시보드 도입 만족도 (막대 차트 2종) — p09와 동일 패턴
+   ========================================================= */
+.p17 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p17 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p17 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p17 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p17 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p17 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+.p17 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p17 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p17 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p17 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+.p17 .chart { width: 600px; max-width: 100%; }
+.p17 .plot-wrap { position: relative; height: 300px; }
+.p17 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p17 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.p17 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p17 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p17 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p17 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p17 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p17 .bar.hi .val { color: var(--c-accent); }
+.p17 .bar.hi .val b, .p17 .bar.hi .val i { font-weight: 700; }
+.p17 .axis { display: flex; padding: 0 20px; }
+.p17 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   18 — SOLUTION 04 가독성 낮은 데이터 · Timeframe (테이블→타임프레임 + 카드)
+   ========================================================= */
+.p18 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p18 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p18 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p18 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p18 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; }
+
+/* 좌측 — 테이블 + 화살표 + 타임프레임 캡처 */
+.p18 .left { position: relative; width: 700px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+.p18 .tbl { width: 700px; height: 89px; }
+.p18 .tfshot { width: 700px; height: 395px; border: 0.5px solid #aaa; overflow: hidden; }
+.p18 .tbl img, .p18 .tfshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* 변환 화살표 (테이블 → 시각화) — 여러 페이지 공통, 위치는 페이지별 */
+.arrow { position: absolute; transform: translate(-50%, -50%); width: 100px; height: 132px; z-index: 2; pointer-events: none; opacity: 0.55; }
+.arrow::before { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 30px; height: 48px; background: #d6d6d6; }
+.arrow::after { content: ""; position: absolute; left: 50%; top: 44px; transform: translateX(-50%); width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-top: 88px solid #d6d6d6; }
+.p18 .arrow { left: calc(50% + 7px); top: 113px; }
+
+/* 우측 — 페인포인트 · 솔루션 · 사용자 반응 */
+.p18 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+
+/* =========================================================
+   19 — SOLUTION 04 Timeframe 만족도 (막대 차트 2종) — p09/p17 패턴
+   ========================================================= */
+.p19 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p19 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p19 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p19 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p19 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p19 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+.p19 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p19 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p19 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p19 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+.p19 .chart { width: 600px; max-width: 100%; }
+.p19 .plot-wrap { position: relative; height: 300px; }
+.p19 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p19 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.p19 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p19 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p19 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p19 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p19 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p19 .bar.hi .val { color: var(--c-accent); }
+.p19 .bar.hi .val b, .p19 .bar.hi .val i { font-weight: 700; }
+.p19 .axis { display: flex; padding: 0 20px; }
+.p19 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   14 — SOLUTION 03 대시보드 위젯 상세 (#07 공지사항 · 이메일 · 스티커)
+   ========================================================= */
+.p14 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p14 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p14 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p14 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p14 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.p14 .widgets { display: flex; gap: 12px; }
+.p14 .w { height: 239px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p14 .w.n, .p14 .w.e { width: 404px; }
+.p14 .w.s { width: 405px; }
+.p14 .w img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   20 — SOLUTION 04 가독성 낮은 데이터 · Workflow (이미지 2 + 카드 3)
+   ========================================================= */
+.p20 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p20 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p20 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p20 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p20 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; }
+.p20 .col-left { flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; }
+.p20 .shot { width: 446px; height: 251px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p20 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p20 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+
+/* =========================================================
+   21 — SOLUTION 04 Workflow 만족도 (막대 차트 2종) — p17/p19 패턴
+   ========================================================= */
+.p21 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p21 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p21 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p21 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p21 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p21 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+.p21 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p21 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p21 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p21 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+.p21 .chart { width: 600px; max-width: 100%; }
+.p21 .plot-wrap { position: relative; height: 300px; }
+.p21 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p21 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.p21 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p21 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p21 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p21 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p21 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p21 .bar.hi .val { color: var(--c-accent); }
+.p21 .bar.hi .val b, .p21 .bar.hi .val i { font-weight: 700; }
+.p21 .axis { display: flex; padding: 0 20px; }
+.p21 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   22 — SOLUTION 04 가독성 낮은 데이터 · Data Repository (이미지 1 + 카드 3)
+   ========================================================= */
+.p22 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p22 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p22 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p22 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p22 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; }
+.p22 .shot { width: 730px; height: 413px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p22 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p22 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+
+/* =========================================================
+   23 — SOLUTION 04 Data Repository 만족도 (막대 차트 2종) — p17/p19/p21 패턴
+   ========================================================= */
+.p23 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p23 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p23 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p23 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p23 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p23 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+.p23 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p23 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p23 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p23 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+.p23 .chart { width: 600px; max-width: 100%; }
+.p23 .plot-wrap { position: relative; height: 300px; }
+.p23 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p23 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.p23 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p23 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p23 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p23 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p23 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p23 .bar.hi .val { color: var(--c-accent); }
+.p23 .bar.hi .val b, .p23 .bar.hi .val i { font-weight: 700; }
+.p23 .axis { display: flex; padding: 0 20px; min-height: 56px; align-items: flex-start; }
+.p23 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   24 — SOLUTION 04 가독성 낮은 데이터 · Loadlist (테이블→Loadlist + 카드)
+   ========================================================= */
+.p24 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p24 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p24 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p24 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p24 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; }
+.p24 .left { position: relative; width: 580px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+.p24 .tbl { width: 580px; height: 288px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p24 .shot { width: 580px; height: 310px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p24 .tbl img, .p24 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p24 .arrow { left: 50%; top: 288px; }
+.p24 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+
+/* =========================================================
+   25 — SOLUTION 04 Loadlist 만족도 (막대 차트 2종) — p21/p23 패턴
+   ========================================================= */
+.p25 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p25 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p25 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p25 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p25 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p25 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+.p25 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p25 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p25 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p25 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+.p25 .chart { width: 600px; max-width: 100%; }
+.p25 .plot-wrap { position: relative; height: 300px; }
+.p25 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p25 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.p25 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p25 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p25 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p25 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p25 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p25 .bar.hi .val { color: var(--c-accent); }
+.p25 .bar.hi .val b, .p25 .bar.hi .val i { font-weight: 700; }
+.p25 .axis { display: flex; padding: 0 20px; }
+.p25 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   26 — SOLUTION 05 AI를 활용한 데이터 · Bayplan Explorer (이미지 1 + 카드 3)
+   ========================================================= */
+.p26 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p26 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p26 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p26 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p26 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; }
+.p26 .shot { width: 751px; height: 423px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p26 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p26 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+
+/* =========================================================
+   27 — SOLUTION 05 Bayplan Explorer 만족도 (막대 차트 2종) — p23 패턴
+   ========================================================= */
+.p27 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p27 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p27 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p27 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p27 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p27 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+.p27 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p27 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p27 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p27 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+.p27 .chart { width: 600px; max-width: 100%; }
+.p27 .plot-wrap { position: relative; height: 300px; }
+.p27 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p27 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.p27 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p27 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p27 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p27 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p27 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p27 .bar.hi .val { color: var(--c-accent); }
+.p27 .bar.hi .val b, .p27 .bar.hi .val i { font-weight: 700; }
+.p27 .axis { display: flex; padding: 0 20px; }
+.p27 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   28 — SOLUTION 06 Gamification (등급·재료·Planning·Workflow 시각 + 카드)
+   ========================================================= */
+.p28 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p28 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p28 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p28 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p28 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 16px; align-items: center; }
+.p28 .gami { flex-shrink: 0; display: flex; gap: 24px; align-items: center; }
+.p28 .gcol { display: flex; flex-direction: column; align-items: center; }
+.p28 .gcol.a { gap: 39px; }
+.p28 .gcol.b { gap: 26px; }
+.p28 .gblock { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.p28 .gimg { display: block; height: auto; }
+.p28 .gimg-grades { width: 418px; }
+.p28 .gimg-items { width: 408px; }
+.p28 .gimg-planning { width: 328px; }
+.p28 .gimg-workflow { width: 278px; }
+.p28 .gcap { font-weight: 500; font-size: 13px; line-height: 1.4; color: var(--c-gray); text-align: center; }
+.p28 .gcap.sm { font-size: 11px; }
+.p28 .col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+
+/* =========================================================
+   29 — SOLUTION 06 Gamification 만족도 (막대 차트 2종) — p25 패턴
+   ========================================================= */
+.p29 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p29 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p29 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p29 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p29 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 40px; align-items: center; }
+.p29 .divider { width: 1px; height: 477px; flex-shrink: 0; background: var(--c-line); }
+.p29 .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.p29 .q-head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.p29 .q-label { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p29 .q-text { font-weight: 500; font-size: 24px; line-height: 1.5; letter-spacing: -0.36px; color: var(--c-ink); }
+.p29 .chart { width: 600px; max-width: 100%; }
+.p29 .plot-wrap { position: relative; height: 300px; }
+.p29 .grid { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.p29 .grid span { flex: 1; border-bottom: 0.25px solid #aaa; }
+.p29 .plot { position: absolute; inset: 0; display: flex; align-items: stretch; padding: 0 20px; }
+.p29 .bar { width: 80px; flex-shrink: 0; border-radius: 8px 8px 0 0; position: relative; }
+.p29 .bar .val { position: absolute; top: -22px; left: 0; right: 0; display: flex; justify-content: center; align-items: baseline; gap: 2px; white-space: nowrap; color: var(--c-ink); }
+.p29 .bar .val b { font-weight: 300; font-size: 16px; line-height: 1; }
+.p29 .bar .val i { font-style: normal; font-weight: 300; font-size: 12px; line-height: 1; }
+.p29 .bar.hi .val { color: var(--c-accent); }
+.p29 .bar.hi .val b, .p29 .bar.hi .val i { font-weight: 700; }
+.p29 .axis { display: flex; padding: 0 20px; }
+.p29 .axis span { flex: 1; text-align: center; padding: 12px 0; font-weight: 300; font-size: 12px; line-height: 1.2; color: var(--c-ink); }
+
+/* =========================================================
+   30 — RESULT 고객 피드백 종합 결과 (피드백 카드 4종)
+   ========================================================= */
+.p30 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p30 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p30 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p30 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p30 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding-top: 80px; }
+.p30 .sub { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.p30 .sub .s1 { font-weight: 700; font-size: 16px; line-height: 1.03; color: var(--c-accent); }
+.p30 .sub .s2 { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-ink); }
+.p30 .cards { display: flex; gap: 16px; width: 100%; }
+.p30 .fb { flex: 1; min-width: 0; height: 284px; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 28px 16px 16px; background: var(--c-card-bg); border: 0.75px solid var(--c-card-border); }
+.p30 .fb .t { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); white-space: nowrap; }
+.p30 .fb .q { font-weight: 500; font-size: 16px; line-height: 1.3; color: var(--c-gray); text-align: center; }
+.p30 .fb .q b { font-weight: 700; color: #808080; }
+
+/* =========================================================
+   31 — RETROSPECT 회고 (배운 점 · 느낀 점 · 회고 카드)
+   ========================================================= */
+.p31 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p31 .heading { display: flex; flex-direction: column; gap: 8px; }
+.p31 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: var(--c-accent); }
+.p31 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: var(--c-ink); }
+.p31 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.p31 .retro { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+.p31 .row { display: flex; gap: 16px; width: 100%; align-items: stretch; }
+.p31 .rcard { display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--c-card-bg); border: 0.75px solid var(--c-card-border); }
+.p31 .row .rcard { flex: 1; min-width: 0; }
+.p31 .rcard .rt { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-accent); }
+.p31 .ritems { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.p31 .ritem { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.p31 .ritem .h { font-weight: 700; font-size: 16px; line-height: 1.3; color: #808080; }
+.p31 .ritem .d { font-weight: 500; font-size: 16px; line-height: 1.3; color: var(--c-gray); }
+
+/* =========================================================
+   32 — MUKI 프로젝트 표지 (텍스트 + 폰 목업 6종)
+   ========================================================= */
+.p32 { position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 200px 80px 56px; }
+.p32 .topbox { width: 560px; padding-top: 80px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+.p32 .head { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.p32 .name-row { display: flex; gap: 12px; align-items: flex-end; }
+.p32 .name { font-weight: 700; font-size: 80px; line-height: 1.03; color: var(--c-ink); }
+.p32 .contrib { font-weight: 700; font-size: 18px; line-height: 1.23; color: var(--c-ink); padding-bottom: 8px; }
+.p32 .desc { font-weight: 500; font-size: 18px; line-height: 1.4; color: var(--c-gray); }
+.p32 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; background: #5d9fff; border-radius: 500px; font-weight: 700; font-size: 18px; line-height: 1.23; color: #fff; text-decoration: none; }
+.p32 .credit { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.p32 .credit .tylogo { height: 21px; }
+.p32 .credit .tylogo img { height: 21px; width: auto; display: block; }
+.p32 .credit .role { display: flex; gap: 8px; align-items: center; color: var(--c-gray-d); font-size: 16px; line-height: 1.5; }
+.p32 .credit .role .v { display: flex; gap: 8px; align-items: center; }
+.p32 .credit .role .sep { width: 1px; height: 14px; background: var(--c-gray-d); display: inline-block; }
+.p32 .phones { position: absolute; left: 786px; top: 89px; width: 573px; z-index: 0; }
+.p32 .phones img { width: 100%; height: auto; display: block; }
+
+/* =========================================================
+   33·34 — OTHER PROJECTS 기타 프로젝트 (mAOiA · JO, 이미지 2종)
+   ========================================================= */
+.p33, .p34, .p35, .p36 { display: flex; flex-direction: column; align-items: flex-start; gap: 33px; padding: 56px 80px; }
+.p33 .heading, .p34 .heading, .p35 .heading, .p36 .heading { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.p33 .heading .titlebox, .p34 .heading .titlebox, .p35 .heading .titlebox, .p36 .heading .titlebox { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.p33 .heading .label, .p34 .heading .label, .p35 .heading .label, .p36 .heading .label { font-weight: 700; font-size: 24px; line-height: 1.03; color: #5d9fff; }
+.p33 .heading .title-row, .p34 .heading .title-row, .p35 .heading .title-row, .p36 .heading .title-row { display: flex; gap: 10px; align-items: center; }
+.p33 .heading .title-h, .p34 .heading .title-h, .p35 .heading .title-h, .p36 .heading .title-h { font-weight: 700; font-size: 48px; line-height: 1.03; color: #000; white-space: nowrap; }
+.p33 .heading .meta, .p34 .heading .meta, .p35 .heading .meta, .p36 .heading .meta { font-weight: 500; font-size: 16px; line-height: 1.2; color: var(--c-gray); white-space: nowrap; }
+.p33 .desc, .p34 .desc, .p35 .desc, .p36 .desc { font-weight: 500; font-size: 16px; line-height: 1.4; color: var(--c-gray); width: 100%; }
+.p33 .body, .p34 .body { flex: 1; min-height: 0; width: 100%; display: flex; gap: 8px; align-items: flex-start; padding-top: 60px; }
+.p33 .shot, .p34 .shot { width: 636px; height: 359px; flex-shrink: 0; border: 0.5px solid #aaa; overflow: hidden; }
+.p33 .shot img, .p34 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 35 — OTHER PROJECTS NH총무 솔루션 (웹 1 + 폰 3) */
+.p35 .body { flex: 1; min-height: 0; width: 100%; display: flex; align-items: flex-start; justify-content: space-between; padding-top: 60px; }
+.p35 .webshot { width: 636px; height: 382px; flex-shrink: 0; border: 1px solid #aaa; overflow: hidden; }
+.p35 .phoneshot { width: 175px; height: 382px; flex-shrink: 0; border: 1px solid #aaa; border-radius: 24px; overflow: hidden; }
+.p35 .webshot img, .p35 .phoneshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 36 — Personal Projects Flora Fusion (폰 5) */
+.p36 .body { flex: 1; min-height: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+.p36 .fphone { width: 233px; height: 503px; flex-shrink: 0; border: 1px solid #aaa; border-radius: 32px; overflow: hidden; }
+.p36 .fphone img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   37 — THANKS FOR READING (엔딩)
+   ========================================================= */
+.p37 { display: flex; flex-direction: column; align-items: flex-start; padding: 56px 80px; }
+.p37 .body { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 64px; }
+.p37 .inner { display: flex; flex-direction: column; align-items: center; gap: 48px; }
+.p37 .memoji { width: 202px; height: 181px; }
+.p37 .memoji img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.p37 .thx { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.p37 .thx .t1 { font-weight: 700; font-size: 24px; line-height: 1.03; color: #5d9fff; }
+.p37 .thx .t2 { font-weight: 700; font-size: 36px; line-height: 1.03; color: #000; }
+.p37 .links { display: flex; flex-direction: column; align-items: center; gap: 24px; font-size: 18px; }
+.p37 .links a { color: #000; text-decoration: underline; }
+.p37 .links a.url { color: var(--c-ink-2); }
