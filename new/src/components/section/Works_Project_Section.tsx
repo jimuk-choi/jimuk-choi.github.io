@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 import { Heading02, Heading03 } from "../typograpy/heading";
-import { useContext, useRef, useEffect } from "react";
+import { useContext, useRef, useEffect, useState } from "react";
+import PortfolioModal from "../util/PortfolioModal";
 import { Subtitle_XL, Subtitle_L } from "../typograpy/subtitle";
 import { P_L, P_M } from "../typograpy/paragraph";
 import { breakpoints } from "../../style/breakpoints";
@@ -113,11 +114,6 @@ const Card_L_InnerCard_Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  a > div {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-  }
   @media (max-width: ${breakpoints.tabletL}px) {
     gap: 8px;
   }
@@ -422,6 +418,18 @@ function WorksProjetSection({
     window.location.href = "mailto:jimook1995@naver.com";
   };
 
+  // 포트폴리오 모달: 새 탭 대신 iframe으로 띄울 콘텐츠
+  const [modal, setModal] = useState<{
+    src: string;
+    title: string;
+    showModeToggle?: boolean;
+  } | null>(null);
+  const base = process.env.PUBLIC_URL || "";
+  const closeModal = () => {
+    setModal(null);
+    setIsHovering(false);
+  };
+
   // 현재 언어에 맞는 데이터를 동적으로 불러옵니다.
   const TextData =
     language === "ko"
@@ -470,24 +478,22 @@ function WorksProjetSection({
                   <UsedTool_Img src={Confluence} />
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
-              <a
-                href="https://drive.google.com/file/d/1VwU9sbLxFBaGlEjZo5vaYh9vKRnBt0dh/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", width: "100%" }}
+              {/* SPORTAL 솔루션 자세히보기 — 일단 비활성화 */}
+              <Card_L_InnerCard
+                isDarkMode={isDarkMode}
+                style={{
+                  width: "100%",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  opacity: 0.4,
+                  cursor: "not-allowed",
+                }}
               >
-                <Card_L_InnerCard
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)}
-                  isDarkMode={isDarkMode}
-                  style={{ width: "100%" }}
-                >
-                  <Subtitle_XL isDarkMode={isDarkMode}>
-                    {TextData.DataCatalog.Card[2].title}
-                  </Subtitle_XL>
-                  <Arrow_Img isDarkMode={isDarkMode} />
-                </Card_L_InnerCard>
-              </a>
+                <Subtitle_XL isDarkMode={isDarkMode}>
+                  {TextData.DataCatalog.Card[2].title}
+                </Subtitle_XL>
+                <Arrow_Img isDarkMode={isDarkMode} />
+              </Card_L_InnerCard>
             </Card_L_InnerCard_Wrapper>
           </Card_L_Introduce_Wrapper>
 
@@ -564,24 +570,29 @@ function WorksProjetSection({
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
 
-              <a
-                href="https://drive.google.com/file/d/1YIp9cSH1U5X9y-5uVxue38j8s_aMPH1-/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", width: "100%" }}
+              <Card_L_InnerCard
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                onClick={() =>
+                  setModal({
+                    src: `${base}/portfolio/stowgenie/index.html`,
+                    title: TextData.StowGenie.Title,
+                    showModeToggle: true,
+                  })
+                }
+                isDarkMode={isDarkMode}
+                style={{
+                  width: "100%",
+                  cursor: "pointer",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
               >
-                <Card_L_InnerCard
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)}
-                  isDarkMode={isDarkMode}
-                  style={{ width: "100%" }}
-                >
-                  <Subtitle_XL isDarkMode={isDarkMode}>
-                    {TextData.StowGenie.Card[2].title}
-                  </Subtitle_XL>
-                  <Arrow_Img isDarkMode={isDarkMode} />
-                </Card_L_InnerCard>
-              </a>
+                <Subtitle_XL isDarkMode={isDarkMode}>
+                  {TextData.StowGenie.Card[2].title}
+                </Subtitle_XL>
+                <Arrow_Img isDarkMode={isDarkMode} />
+              </Card_L_InnerCard>
             </Card_L_InnerCard_Wrapper>
           </Card_L_Introduce_Wrapper>
 
@@ -655,24 +666,29 @@ function WorksProjetSection({
                   <UsedTool_Img src={Confluence} />
                 </UsedTool_ImgBox>
               </Card_L_InnerCard>
-              <a
-                href="https://drive.google.com/file/d/1PtDy-pH3R0ml4x5T24pBSJrau51dta7H/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", width: "100%" }}
+              <Card_L_InnerCard
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                onClick={() =>
+                  setModal({
+                    src: `${base}/portfolio/muki/index.html`,
+                    title: TextData.MUKI.Title,
+                    showModeToggle: true,
+                  })
+                }
+                isDarkMode={isDarkMode}
+                style={{
+                  width: "100%",
+                  cursor: "pointer",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
               >
-                <Card_L_InnerCard
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)}
-                  isDarkMode={isDarkMode}
-                  style={{ width: "100%" }}
-                >
-                  <Subtitle_XL isDarkMode={isDarkMode}>
-                    {TextData.StowGenie.Card[2].title}
-                  </Subtitle_XL>
-                  <Arrow_Img isDarkMode={isDarkMode} />
-                </Card_L_InnerCard>
-              </a>
+                <Subtitle_XL isDarkMode={isDarkMode}>
+                  {TextData.StowGenie.Card[2].title}
+                </Subtitle_XL>
+                <Arrow_Img isDarkMode={isDarkMode} />
+              </Card_L_InnerCard>
             </Card_L_InnerCard_Wrapper>
           </Card_L_Introduce_Wrapper>
 
@@ -875,6 +891,14 @@ function WorksProjetSection({
           </Button_A>
         </Card_S_JobSeeking>
       </Card_M_Box_02>
+      <PortfolioModal
+        isOpen={modal !== null}
+        onClose={closeModal}
+        src={modal?.src ?? ""}
+        title={modal?.title ?? ""}
+        showModeToggle={modal?.showModeToggle ?? false}
+        setIsHovering={setIsHovering}
+      />
     </ProjectSectionWrapper>
   );
 }
